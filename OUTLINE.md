@@ -161,14 +161,14 @@ hello-mysql 共 130 页（basics 13 / database-design 18 / advanced-sql 24 / int
 
 ## 第 10 部分：工具与实战 tools（约 8 页）
 
-- [ ] psql 高阶（变量、\gexec、模板、锚定查询）
-- [ ] pgAdmin 4（部署、查询工具、监控面板）
-- [ ] DBeaver / VS Code 插件（连接管理、ER 图、数据编辑）
-- [ ] schema 迁移工具（migrate、golang-migrate、Flyway、prisma migrate）
-- [ ] 客户端驱动（psycopg、node-postgres、连接字符串与池）
-- [ ] 排障工具箱（pg_stat_activity 抓现场、auto_explain、log_min_duration）
-- [ ] 本地开发环境（docker compose 起库、seed 数据、测试库隔离）
-- [ ] 实战案例（订单库分页、库存扣减幂等、活动计数器）
+- [x] psql 高阶（变量、\gexec、模板、锚定查询）
+- [x] pgAdmin 4（部署、查询工具、监控面板）
+- [x] DBeaver / VS Code 插件（连接管理、ER 图、数据编辑）
+- [x] schema 迁移工具（migrate、golang-migrate、Flyway、prisma migrate）
+- [x] 客户端驱动（psycopg、node-postgres、连接字符串与池）
+- [x] 排障工具箱（pg_stat_activity 抓现场、auto_explain、log_min_duration）
+- [x] 本地开发环境（docker compose 起库、seed 数据、测试库隔离）
+- [x] 实战案例（订单库分页、库存扣减幂等、活动计数器）
 
 ## 附录 appendix（约 5 页）
 
