@@ -105,20 +105,20 @@ hello-mysql 共 130 页（basics 13 / database-design 18 / advanced-sql 24 / int
 
 ## 第 6 部分：查询调优与性能 performance（约 14 页）
 
-- [ ] EXPLAIN 读法（cost/rows/actual、计划树从内到外）
-- [ ] EXPLAIN (ANALYZE, BUFFERS, WAL)（真实执行、缓存命中、IO）
-- [ ] 常见坏计划（seq scan 大表、错误 rows 估计、nested loop 爆炸）
-- [ ] 统计信息与 ANALYZE（采样率、手动加大、过期统计）
-- [ ] pg_stat_statements（top SQL、规划/执行时间、归一化、重置）
-- [ ] 慢查询治理流程（采集→复现→改写→验证 A/B）
-- [ ] 连接与 ORM 优化（N+1、批量、prepared、管道）
-- [ ] 写入吞吐优化（批量插入、unlogged 表、提交频率、synchronous_commit）
-- [ ] 参数调优（shared_buffers/work_mem/effective_cache_size 指导）
-- [ ] 分区裁剪与裁剪失败（约束排除、运行时裁剪、分区键设计）
-- [ ] 锁与并发瓶颈（长事务、热点行、UPDATE 自旋、advisory 锁队列）
-- [ ] VACUUM 卡顿对性能的影响（IO 争用、age 阈值、监控）
-- [ ] 基准工具（pgbench 自定义脚本、TPC-C 类近似、指标口径）
-- [ ] 容量与扩展边界（单机上限、什么时候该分片/换方案）
+- [x] EXPLAIN 读法（cost/rows/actual、计划树从内到外）
+- [x] EXPLAIN (ANALYZE, BUFFERS, WAL)（真实执行、缓存命中、IO）
+- [x] 常见坏计划（seq scan 大表、错误 rows 估计、nested loop 爆炸）
+- [x] 统计信息与 ANALYZE（采样率、手动加大、过期统计）
+- [x] pg_stat_statements（top SQL、规划/执行时间、归一化、重置）
+- [x] 慢查询治理流程（采集→复现→改写→验证 A/B）
+- [x] 连接与 ORM 优化（N+1、批量、prepared、管道）
+- [x] 写入吞吐优化（批量插入、unlogged 表、提交频率、synchronous_commit）
+- [x] 参数调优（shared_buffers/work_mem/effective_cache_size 指导）
+- [x] 分区裁剪与裁剪失败（约束排除、运行时裁剪、分区键设计）
+- [x] 锁与并发瓶颈（长事务、热点行、UPDATE 自旋、advisory 锁队列）
+- [x] VACUUM 卡顿对性能的影响（IO 争用、age 阈值、监控）
+- [x] 基准工具（pgbench 自定义脚本、TPC-C 类近似、指标口径）
+- [x] 容量与扩展边界（单机上限、什么时候该分片/换方案）
 
 ## 第 7 部分：架构与部署 operations（约 12 页）
 
