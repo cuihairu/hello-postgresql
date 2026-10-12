@@ -48,7 +48,7 @@ hello-mysql 共 130 页（basics 13 / database-design 18 / advanced-sql 24 / int
 
 - [x] CTE 与非递归 WITH（可读性、MATERIALIZED/NOT MATERIALIZED）
 - [x] 递归 CTE（层级遍历、树/图、循环终止、UNION ALL 语义）
-- [ ] 窗口函数（OVER/PARTITION BY/ORDER BY、frame 行为）
+- [x] 窗口函数（OVER/PARTITION BY/ORDER BY、frame 行为）
 - [x] 窗口函数进阶（LAG/LEAD、NTILE、排名族、移动平均 frame）
 - [x] 集合运算（UNION/INTERSECT/EXCEPT、ALL 与去重、排序）
 - [x] LATERAL 与 FROM 子查询（相关子查询下推、top-N per group）
@@ -92,9 +92,9 @@ hello-mysql 共 130 页（basics 13 / database-design 18 / advanced-sql 24 / int
 
 - [x] B-tree 结构与原则（等值/范围/排序、最左前缀、选择性）
 - [x] 组合索引设计（列序、覆盖索引 INCLUDE、索引跳扫）
-- [ ] GIN（倒排、jsonb/数组/全文、fastupdate 与 pending list）
-- [ ] GiST（空间/范围/全文、弹性索引、KNN 查询）
-- [ ] BRIN（列存式块摘要、时序/追加表、minmax-multi）
+- [x] GIN（倒排、jsonb/数组/全文、fastupdate 与 pending list）
+- [x] GiST（空间/范围/全文、弹性索引、KNN 查询）
+- [x] BRIN（列存式块摘要、时序/追加表、minmax-multi）
 - [x] SP-GiST 与 Hash（分区式结构、等值哈希、适用场景）
 - [x] 部分索引（WHERE 条件索引、热点行、软删配合）
 - [x] 表达式索引（函数索引、大小写/去空白、生成列取舍）
@@ -137,27 +137,27 @@ hello-mysql 共 130 页（basics 13 / database-design 18 / advanced-sql 24 / int
 
 ## 第 8 部分：安全 security（约 8 页）
 
-- [ ] 角色与权限模型（ROLE/GRANT/REVOKE、属性 NOLOGIN/SUPERUSER）
-- [ ] 对象授权层级（库/schema/表/列/行级、默认权限 ALTER DEFAULT）
-- [ ] 行级安全 RLS（policy、USING/FOR CHECK、角色与策略组合）
-- [ ] pg_hba 与认证（method 顺序、hostssl、md5/scram、拒绝排查）
-- [ ] SSL 与传输加密（配置、证书、强制加密）
-- [ ] 数据静态加密（pgcrypto、密钥管理、备份加密）
-- [ ] 审计（pgaudit、日志开关、statement 归档）
-- [ ] 加固清单（最小权限、禁超级用户登录应用、扩展白名单）
+- [x] 角色与权限模型（ROLE/GRANT/REVOKE、属性 NOLOGIN/SUPERUSER）
+- [x] 对象授权层级（库/schema/表/列/行级、默认权限 ALTER DEFAULT）
+- [x] 行级安全 RLS（policy、USING/FOR CHECK、角色与策略组合）
+- [x] pg_hba 与认证（method 顺序、hostssl、md5/scram、拒绝排查）
+- [x] SSL 与传输加密（配置、证书、强制加密）
+- [x] 数据静态加密（pgcrypto、密钥管理、备份加密）
+- [x] 审计（pgaudit、日志开关、statement 归档）
+- [x] 加固清单（最小权限、禁超级用户登录应用、扩展白名单）
 
 ## 第 9 部分：生态与新特性 ecosystem（约 10 页）
 
-- [ ] PostgreSQL 16 新特性摘要
-- [ ] PostgreSQL 17 新特性摘要
-- [ ] 向量检索 pgvector（embedding、HNSW/IVFFlat、召回与过滤）
-- [ ] 时序扩展 TimescaleDB（hypertable、压缩、连续聚合）
-- [ ] 空间扩展 PostGIS（geometry/geography、索引、常用函数）
-- [ ] 分布式 Citus（分片、共置、适用与不适用）
-- [ ] FDW 与外部数据（postgres_fdw、mysql_fdw、跨库查询）
-- [ ] 扩展管理（CREATE EXTENSION、版本、pgxn）
-- [ ] 与 MySQL 对比（复制/锁/类型/生态、迁移注意、双栈共存）
-- [ ] 选型问答（什么时候 PG 是对的）
+- [x] PostgreSQL 16 新特性摘要
+- [x] PostgreSQL 17 新特性摘要
+- [x] 向量检索 pgvector（embedding、HNSW/IVFFlat、召回与过滤）
+- [x] 时序扩展 TimescaleDB（hypertable、压缩、连续聚合）
+- [x] 空间扩展 PostGIS（geometry/geography、索引、常用函数）
+- [x] 分布式 Citus（分片、共置、适用与不适用）
+- [x] FDW 与外部数据（postgres_fdw、mysql_fdw、跨库查询）
+- [x] 扩展管理（CREATE EXTENSION、版本、pgxn）
+- [x] 与 MySQL 对比（复制/锁/类型/生态、迁移注意、双栈共存）
+- [x] 选型问答（什么时候 PG 是对的）
 
 ## 第 10 部分：工具与实战 tools（约 8 页）
 
