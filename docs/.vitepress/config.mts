@@ -5,14 +5,14 @@ import sidebar from './sidebar.json'
 // https://vitepress.dev/reference/site-config
 export default withMermaid(defineConfig({
   lang: 'zh-CN',
-  title: 'Hello MySQL',
-  description: 'MySQL 知识手册——基础与 SQL、数据库设计、底层原理、架构部署、性能调优与工具实战',
-  base: '/hello-mysql/',
+  title: 'Hello PostgreSQL',
+  description: 'PostgreSQL 知识手册——基础与 SQL、数据库设计、高级 SQL、内核机制、索引体系、查询调优、架构部署、安全与工具实战',
+  base: '/hello-postgresql/',
   cleanUrls: true,
   lastUpdated: true,
 
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/hello-mysql/favicon.svg' }]
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/hello-postgresql/favicon.svg' }]
   ],
 
   // mdbook 遗留的目录文件保留在仓库作映射底稿，不作为页面构建
@@ -20,31 +20,32 @@ export default withMermaid(defineConfig({
 
   themeConfig: {
     logo: '/logo.svg',
-    siteTitle: 'Hello MySQL',
+    siteTitle: 'Hello PostgreSQL',
 
     nav: [
       { text: '首页', link: '/' },
       { text: '基础知识', link: '/basics/README' },
       { text: '数据库设计', link: '/database-design/README' },
-      { text: '高级SQL', link: '/advanced-sql-data-processing/README' },
-      { text: '底层原理', link: '/advanced-features-internals/README' },
-      { text: '架构部署', link: '/architecture-deployment/README' },
-      { text: '性能调优', link: '/performance-tuning/README' },
-      { text: '工具实战', link: '/tools-practice/README' },
+      { text: '高级SQL', link: '/advanced-sql/README' },
+      { text: '底层原理', link: '/internals/README' },
+      { text: '索引体系', link: '/indexing/README' },
+      { text: '查询调优', link: '/performance/README' },
+      { text: '架构部署', link: '/operations/README' },
+      { text: '安全', link: '/security/README' },
+      { text: '生态与新特性', link: '/ecosystem/README' },
+      { text: '工具实战', link: '/tools/README' },
       { text: '附录', link: '/appendix/README' },
       { text: '知识点整理', link: '/knowledge' }
     ],
 
-    // 由 mdbook SUMMARY.md 结构映射而来（vitepress-migration/parse_summary.py），
-    // 7 个部分 + 未入目录散页归入「附录 · 未入目录」
     sidebar: sidebar as never,
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/cuihairu/hello-mysql' }
+      { icon: 'github', link: 'https://github.com/cuihairu/hello-postgresql' }
     ],
 
     footer: {
-      message: 'Hello MySQL',
+      message: 'Hello PostgreSQL',
       copyright: '© 2025 cuihairu'
     },
 

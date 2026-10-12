@@ -1,5 +1,5 @@
 {
-  "name": "hello-mysql",
+  "name": "hello-postgresql",
   "private": true,
   "type": "module",
   "scripts": {
