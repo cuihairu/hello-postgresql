@@ -172,11 +172,11 @@ hello-mysql 共 130 页（basics 13 / database-design 18 / advanced-sql 24 / int
 
 ## 附录 appendix（约 5 页）
 
-- [ ] 术语表（中英对照）
-- [ ] SQL 命令速查
-- [ ] psql 元命令速查
-- [ ] 常见错误与排查对照表
-- [ ] 参考书与官方文档索引
+- [x] 术语表（中英对照）
+- [x] SQL 命令速查
+- [x] psql 元命令速查
+- [x] 常见错误与排查对照表
+- [x] 参考书与官方文档索引
 
 ---
 
