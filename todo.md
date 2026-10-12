@@ -26,11 +26,11 @@
 
 ## 二、只有设计（1 项）
 
-- [ ] mermaid 架构图内容：`vitepress-plugin-mermaid` 已配置，但全站 0 个 ```mermaid 围栏，属于「装了插件没画图」。处置：未使用的插件依赖本次直接移除（见三.1），未来确需画图再按需重装并从第4部分底层原理开始补图。验收口径：如恢复，至少 1 张图在站点正常渲染；如维持移除，本条关闭。期次 P2。
+- [x] mermaid 架构图内容：`vitepress-plugin-mermaid` 已配置，但全站 0 个 ```mermaid 围栏，属于「装了插件没画图」。处置：未使用的插件依赖已随 patrol-20261013 移除（commit `2af267d`），按本条验收口径「维持移除，本条关闭」结项；未来确需画图再按需重装并从第4部分底层原理开始补图。期次 P2。
 
 ## 三、完全没有（4 项）
 
 - [x] 移除未使用依赖 `vitepress-plugin-mermaid` + `mermaid` + `playwright`（mermaid 全站 0 使用、playwright 全仓无引用；npm audit 6 条中 katex 原型污染链 GHSA-238p-pmpm-9mq7 随之消除）。验收口径：`npm audit` 中 katex/mermaid/vitepress-plugin-mermaid 行消失；`npm run docs:build` 绿；站点线上抽查 200。期次 P1。**已完成**：本次提交 `chore: remove unused mermaid and playwright deps`（hash 见巡检回报），audit 6→3 条，构建绿。
 - [ ] vite/esbuild dev-server 告警（GHSA-67mh-4wv8-2f99，npm audit「No fix available」：修复版 vite 需要 vitepress 2，目前只有 `2.0.0-alpha.20`）。验收口径：npm audit 无 vite/esbuild 行。期次 P2（**被上游阻塞**，vitepress 2 stable 发布后升级）。
-- [ ] 仓库根 README.md：项目简介、本地构建（npm ci + npm run docs:build）、写作口径（每页 1-2 个知识点/可复现示例）、与 OUTLINE.md 的对照说明。验收口径：新读者按 README 能在 10 分钟内本地跑起站点。期次 P1。
+- [x] 仓库根 README.md：项目简介、本地构建（npm ci + npm run docs:build）、写作口径（每页 1-2 个知识点/可复现示例）、与 OUTLINE.md 的对照说明。验收口径：新读者按 README 能在 10 分钟内本地跑起站点。期次 P1。**已完成**（patrol-20261013-A1）：`npm ci` + `npm run docs:build` 按 README 实测一次通过（51s），构建含死链核查。
 - [ ] part 目录 URL 404（`/basics/` 返回 404 而 `/basics/README` 200：VitePress 把 `part/README.md` 生成 `README.html` 而非 `index.html`；hello-mysql 同病）。验收口径：`curl /basics/` 返回 200。期次 P2（涉及 11 个文件改名 + 全站链接替换，且需与姊妹站同步决策，等用户拍板）。
