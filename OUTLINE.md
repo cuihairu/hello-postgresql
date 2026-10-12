@@ -11,21 +11,21 @@ hello-mysql 共 130 页（basics 13 / database-design 18 / advanced-sql 24 / int
 
 ## 第 1 部分：基础知识 basics（约 15 页）
 
-- [ ] 什么是 PostgreSQL（历史、许可、ACID、MVCC 取向、生态位）
-- [ ] 安装与快速上手（Linux apt/yum、macOS、Windows、初始化集群 initdb）
-- [ ] psql 入门（连接、元命令 `\dt \d \timing \x`、历史、psqlrc）
-- [ ] 数据库与 schema 对象（database/schema/table/owner 关系、search_path）
-- [ ] 数据类型总览（numeric/text/时间、serial 与 identity、UUID）
-- [ ] 特色类型入门（JSONB、数组、range、hstore、枚举、复合类型）
-- [ ] CRUD 与 ON CONFLICT（INSERT/UPDATE/DELETE、UPSERT、RETURNING）
-- [ ] WHERE 与表达式（比较、LIKE/ILIKE、BETWEEN、IN、NULL 语义）
-- [ ] 聚合与 GROUP BY（COUNT/SUM、HAVING、DISTINCT、分组空值）
-- [ ] JOIN 全家族（inner/left/right/full/cross、USING/NATURAL、自连接）
-- [ ] 函数与运算符（SQL 函数、PL/pgSQL 入门、`::` 强转、COALESCE）
-- [ ] 事务入门（BEGIN/COMMIT/ROLLBACK、SAVEPOINT、autocommit）
-- [ ] 常用系统表与元数据（pg_class/pg_tables/information_schema）
-- [ ] 命名与书写规范（标识符大小写、双引号陷阱、SQL 风格）
-- [ ] 常见新手错误（大小写折叠、NULL 比较、隐式类型转换、时区）
+- [x] 什么是 PostgreSQL（历史、许可、ACID、MVCC 取向、生态位）
+- [x] 安装与快速上手（Linux apt/yum、macOS、Windows、初始化集群 initdb）
+- [x] psql 入门（连接、元命令 `\dt \d \timing \x`、历史、psqlrc）
+- [x] 数据库与 schema 对象（database/schema/table/owner 关系、search_path）
+- [x] 数据类型总览（numeric/text/时间、serial 与 identity、UUID）
+- [x] 特色类型入门（JSONB、数组、range、hstore、枚举、复合类型）
+- [x] CRUD 与 ON CONFLICT（INSERT/UPDATE/DELETE、UPSERT、RETURNING）
+- [x] WHERE 与表达式（比较、LIKE/ILIKE、BETWEEN、IN、NULL 语义）
+- [x] 聚合与 GROUP BY（COUNT/SUM、HAVING、DISTINCT、分组空值）
+- [x] JOIN 全家族（inner/left/right/full/cross、USING/NATURAL、自连接）
+- [x] 函数与运算符（SQL 函数、PL/pgSQL 入门、`::` 强转、COALESCE）
+- [x] 事务入门（BEGIN/COMMIT/ROLLBACK、SAVEPOINT、autocommit）
+- [x] 常用系统表与元数据（pg_class/pg_tables/information_schema）
+- [x] 命名与书写规范（标识符大小写、双引号陷阱、SQL 风格）
+- [x] 常见新手错误（大小写折叠、NULL 比较、隐式类型转换、时区）
 
 ## 第 2 部分：数据库设计 database-design（约 14 页）
 

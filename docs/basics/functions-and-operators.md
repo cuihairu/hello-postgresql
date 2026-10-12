@@ -190,9 +190,7 @@ LANGUAGE sql IMMUTABLE AS $$ SELECT md5(s) $$;
 
 - `NULL` 入参多数函数返回 `NULL`，`||` 拼接同样传染 NULL（`'a' || NULL` 返回 `NULL`）。需要"跳过 NULL 继续拼"的语义时用 `concat()` / `concat_ws()`（NULL 参数被忽略），或用 `COALESCE(col, '')` 包一层。
 - `random()` 每次调用产生新值，`SELECT random(), random()` 同行两列也不同——别指望它"在 SQL 里像种子一样可复现"，需要稳定随机请用 `seed()` 配合。
-- 字符串与数值混用（`WHERE varchar_col = 1`）会触发隐式转换，可能让索引失效——见 [常见新手错误](./common-beginner-mistakes)。
-- 自定义函数里 `CREATE OR REPLACE` 不会修改既有依赖该函数的视图/物化视图，需要刷新。
-- 标量 SQL 函数返回多列请用 `RETURNS TABLE(...)` 或返回复合类型，不要返回 `text` 拼 JSON 字符串再手工解析。
+- 字符串与数值混用（`WHERE varchar_col = 1`）会触发隐式转换，可能让索引失效（见 [常见新手错误](./common-beginner-mistakes)）；`CREATE OR REPLACE` 也不会同步刷新依赖该函数的视图/物化视图。
 
 ## 相关页面
 
