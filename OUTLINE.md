@@ -90,18 +90,18 @@ hello-mysql 共 130 页（basics 13 / database-design 18 / advanced-sql 24 / int
 
 ## 第 5 部分：索引体系 indexing（约 12 页）
 
-- [ ] B-tree 结构与原则（等值/范围/排序、最左前缀、选择性）
-- [ ] 组合索引设计（列序、覆盖索引 INCLUDE、索引跳扫）
+- [x] B-tree 结构与原则（等值/范围/排序、最左前缀、选择性）
+- [x] 组合索引设计（列序、覆盖索引 INCLUDE、索引跳扫）
 - [ ] GIN（倒排、jsonb/数组/全文、fastupdate 与 pending list）
 - [ ] GiST（空间/范围/全文、弹性索引、KNN 查询）
 - [ ] BRIN（列存式块摘要、时序/追加表、minmax-multi）
-- [ ] SP-GiST 与 Hash（分区式结构、等值哈希、适用场景）
-- [ ] 部分索引（WHERE 条件索引、热点行、软删配合）
-- [ ] 表达式索引（函数索引、大小写/去空白、生成列取舍）
-- [ ] 仅索引扫描（INDEX COVERING、visibility map 依赖）
-- [ ] 索引膨胀与维护（REINDEX CONCURRENTLY、统计、监测）
-- [ ] 索引失效与误用（隐式转换、函数包裹列、优化器放弃索引）
-- [ ] 索引选型决策树（按查询形态选 B-tree/GIN/BRIN/GiST）
+- [x] SP-GiST 与 Hash（分区式结构、等值哈希、适用场景）
+- [x] 部分索引（WHERE 条件索引、热点行、软删配合）
+- [x] 表达式索引（函数索引、大小写/去空白、生成列取舍）
+- [x] 仅索引扫描（INDEX COVERING、visibility map 依赖）
+- [x] 索引膨胀与维护（REINDEX CONCURRENTLY、统计、监测）
+- [x] 索引失效与误用（隐式转换、函数包裹列、优化器放弃索引）
+- [x] 索引选型决策树（按查询形态选 B-tree/GIN/BRIN/GiST）
 
 ## 第 6 部分：查询调优与性能 performance（约 14 页）
 
