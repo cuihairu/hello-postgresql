@@ -9,7 +9,7 @@
 验收口径（通用）：`npm run docs:build` 绿（含死链核查）+ Pages 部署 run success + 线上抽查 200。
 
 - [x] 站点骨架与配置修正（base `/hello-postgresql/`、标题、nav/sidebar 指向真实文件、本地搜索、favicon/logo）——commit `61de11f`
-- [x] 构建产物与 node_modules 忽略（曾误提交 6609 个 dist 文件，已清理）——commit `399d8bd`
+- [x] 构建产物与 node_modules 忽略（曾误提交 6609 个 dist 文件，已清理；`399d8bd` 当时只移除了 dist 跟踪，node_modules 14067 个文件直到本次 `chore: untrack node_modules` 才真正移出索引）——commit `399d8bd` + untrack 提交（hash 见巡检回报）
 - [x] 第1部分 基础知识 15 页——commit `f5e25c2`（中间批 `480ef45`/`285b32f`）
 - [x] 第2部分 数据库设计 14 页——commit `aa10ead`
 - [x] 第3部分 高级 SQL 18 页——commit `82770b4`
