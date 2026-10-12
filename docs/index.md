@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: brand
       text: 开始阅读
-      link: /basics/README
+      link: /basics/
     - theme: alt
       text: GitHub
       link: https://github.com/cuihairu/hello-postgresql

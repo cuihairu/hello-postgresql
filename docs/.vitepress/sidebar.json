@@ -1,7 +1,7 @@
 [
   {
     "text": "第1部分：基础知识",
-    "link": "/basics/README",
+    "link": "/basics/",
     "collapsed": true,
     "items": [
       { "text": "什么是 PostgreSQL", "link": "/basics/what-is-postgresql" },
@@ -23,7 +23,7 @@
   },
   {
     "text": "第2部分：数据库设计",
-    "link": "/database-design/README",
+    "link": "/database-design/",
     "collapsed": true,
     "items": [
       { "text": "三范式与反范式", "link": "/database-design/normalization-and-denormalization" },
@@ -44,7 +44,7 @@
   },
   {
     "text": "第3部分：高级 SQL",
-    "link": "/advanced-sql/README",
+    "link": "/advanced-sql/",
     "collapsed": true,
     "items": [
       { "text": "CTE 与非递归 WITH", "link": "/advanced-sql/cte-and-non-recursive-with" },
@@ -69,7 +69,7 @@
   },
   {
     "text": "第4部分：内核机制",
-    "link": "/internals/README",
+    "link": "/internals/",
     "collapsed": true,
     "items": [
       { "text": "进程架构", "link": "/internals/process-architecture" },
@@ -96,7 +96,7 @@
   },
   {
     "text": "第5部分：索引体系",
-    "link": "/indexing/README",
+    "link": "/indexing/",
     "collapsed": true,
     "items": [
       { "text": "B-tree 结构与原则", "link": "/indexing/btree-structure" },
@@ -115,7 +115,7 @@
   },
   {
     "text": "第6部分：查询调优与性能",
-    "link": "/performance/README",
+    "link": "/performance/",
     "collapsed": true,
     "items": [
       { "text": "EXPLAIN 读法", "link": "/performance/explain-basics" },
@@ -136,7 +136,7 @@
   },
   {
     "text": "第7部分：架构与部署",
-    "link": "/operations/README",
+    "link": "/operations/",
     "collapsed": true,
     "items": [
       { "text": "集群初始化与目录布局", "link": "/operations/cluster-init-and-layout" },
@@ -155,7 +155,7 @@
   },
   {
     "text": "第8部分：安全",
-    "link": "/security/README",
+    "link": "/security/",
     "collapsed": true,
     "items": [
       { "text": "角色与权限模型", "link": "/security/roles-and-permissions" },
@@ -170,7 +170,7 @@
   },
   {
     "text": "第9部分：生态与新特性",
-    "link": "/ecosystem/README",
+    "link": "/ecosystem/",
     "collapsed": true,
     "items": [
       { "text": "PostgreSQL 16 新特性摘要", "link": "/ecosystem/postgresql-16-features" },
@@ -187,7 +187,7 @@
   },
   {
     "text": "第10部分：工具与实战",
-    "link": "/tools/README",
+    "link": "/tools/",
     "collapsed": true,
     "items": [
       { "text": "psql 高阶", "link": "/tools/psql-advanced" },
@@ -202,7 +202,7 @@
   },
   {
     "text": "附录",
-    "link": "/appendix/README",
+    "link": "/appendix/",
     "collapsed": true,
     "items": [
       { "text": "术语表", "link": "/appendix/glossary" },

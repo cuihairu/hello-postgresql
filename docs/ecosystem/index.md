@@ -15,4 +15,4 @@ PG 16/17 变化、向量与扩展生态（pgvector/TimescaleDB/PostGIS/Citus）�
 
 ---
 
-- [工具与实战](../tools/README.md) —— 扩展与工具的落地操作。
+- [工具与实战](../tools/) —— 扩展与工具的落地操作。

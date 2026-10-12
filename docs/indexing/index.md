@@ -17,4 +17,4 @@
 
 ---
 
-- [查询调优与性能](../performance/README.md) —— 用 EXPLAIN 验证索引是否被用上。
+- [查询调优与性能](../performance/) —— 用 EXPLAIN 验证索引是否被用上。

@@ -13,4 +13,4 @@ psql 高阶用法、图形与 IDE 工具、schema 迁移、客户端驱动、排
 
 ---
 
-- [基础知识](../basics/README.md) · [查询调优与性能](../performance/README.md) —— 工具背后的原理支撑。
+- [基础知识](../basics/) · [查询调优与性能](../performance/) —— 工具背后的原理支撑。

@@ -25,4 +25,4 @@
 
 ---
 
-- [索引体系](../indexing/README.md) · [查询调优与性能](../performance/README.md) —— 内核知识的应用面。
+- [索引体系](../indexing/) · [查询调优与性能](../performance/) —— 内核知识的应用面。

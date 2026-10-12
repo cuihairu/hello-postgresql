@@ -19,4 +19,4 @@
 
 ---
 
-- [基础知识](../basics/README.md) · [索引体系](../indexing/README.md) —— 设计落地后的索引配套。
+- [基础知识](../basics/) · [索引体系](../indexing/) —— 设计落地后的索引配套。

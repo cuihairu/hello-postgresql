@@ -23,4 +23,4 @@ CTE、窗口函数、LATERAL、JSONB、数组、全文检索——把 PostgreSQL
 
 ---
 
-- [基础知识](../basics/README.md) · [索引体系](../indexing/README.md) —— 高级查询的性能配套。
+- [基础知识](../basics/) · [索引体系](../indexing/) —— 高级查询的性能配套。

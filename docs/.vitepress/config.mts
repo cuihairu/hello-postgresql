@@ -24,17 +24,17 @@ export default defineConfig({
 
     nav: [
       { text: '首页', link: '/' },
-      { text: '基础知识', link: '/basics/README' },
-      { text: '数据库设计', link: '/database-design/README' },
-      { text: '高级SQL', link: '/advanced-sql/README' },
-      { text: '底层原理', link: '/internals/README' },
-      { text: '索引体系', link: '/indexing/README' },
-      { text: '查询调优', link: '/performance/README' },
-      { text: '架构部署', link: '/operations/README' },
-      { text: '安全', link: '/security/README' },
-      { text: '生态与新特性', link: '/ecosystem/README' },
-      { text: '工具实战', link: '/tools/README' },
-      { text: '附录', link: '/appendix/README' },
+      { text: '基础知识', link: '/basics/' },
+      { text: '数据库设计', link: '/database-design/' },
+      { text: '高级SQL', link: '/advanced-sql/' },
+      { text: '底层原理', link: '/internals/' },
+      { text: '索引体系', link: '/indexing/' },
+      { text: '查询调优', link: '/performance/' },
+      { text: '架构部署', link: '/operations/' },
+      { text: '安全', link: '/security/' },
+      { text: '生态与新特性', link: '/ecosystem/' },
+      { text: '工具实战', link: '/tools/' },
+      { text: '附录', link: '/appendix/' },
       { text: '知识点整理', link: '/knowledge' }
     ],
 
