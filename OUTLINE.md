@@ -122,18 +122,18 @@ hello-mysql 共 130 页（basics 13 / database-design 18 / advanced-sql 24 / int
 
 ## 第 7 部分：架构与部署 operations（约 12 页）
 
-- [ ] 集群初始化与目录布局（initdb、data 目录、版本共存）
-- [ ] 连接管理（连接池 pgbouncer/pgbouncer 语义、事务池限制）
-- [ ] 高可用架构（patroni/etcd、自动故障切换、仲裁与脑裂）
-- [ ] 流复制搭建（primary/standby、复制槽、wal sender 监控）
-- [ ] 逻辑复制运维（publication/subscription、DDL 同步边界、冲突）
-- [ ] 备份策略（pg_dump/pg_dumpall、并行、逻辑备份边界）
-- [ ] 物理备份与 PITR（WAL 归档、pg_basebackup、时间点恢复演练）
-- [ ] 版本升级（pg_upgrade --link、扩展兼容、滚动升级路径）
-- [ ] 云原生与容器（Docker 镜像、statefulset 要点、持久卷）
-- [ ] 监控告警（关键指标、exporter、磁盘/复制延迟/事务年龄）
-- [ ] 故障演练清单（主库宕机、磁盘满、表膨胀、复制中断）
-- [ ] 运维 SOP（日常巡检、索引维护、vacuum 监控、保留策略）
+- [x] 集群初始化与目录布局（initdb、data 目录、版本共存）
+- [x] 连接管理（连接池 pgbouncer/pgbouncer 语义、事务池限制）
+- [x] 高可用架构（patroni/etcd、自动故障切换、仲裁与脑裂）
+- [x] 流复制搭建（primary/standby、复制槽、wal sender 监控）
+- [x] 逻辑复制运维（publication/subscription、DDL 同步边界、冲突）
+- [x] 备份策略（pg_dump/pg_dumpall、并行、逻辑备份边界）
+- [x] 物理备份与 PITR（WAL 归档、pg_basebackup、时间点恢复演练）
+- [x] 版本升级（pg_upgrade --link、扩展兼容、滚动升级路径）
+- [x] 云原生与容器（Docker 镜像、statefulset 要点、持久卷）
+- [x] 监控告警（关键指标、exporter、磁盘/复制延迟/事务年龄）
+- [x] 故障演练清单（主库宕机、磁盘满、表膨胀、复制中断）
+- [x] 运维 SOP（日常巡检、索引维护、vacuum 监控、保留策略）
 
 ## 第 8 部分：安全 security（约 8 页）
 
