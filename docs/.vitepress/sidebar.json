@@ -1,0 +1,590 @@
+[
+  {
+    "text": "第1部分：基础知识",
+    "link": "/basics/README",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "简介",
+        "link": "/basics/introduction",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "什么是MySQL",
+            "link": "/basics/what-is-mysql"
+          },
+          {
+            "text": "NoSQL、SQL 和 MySQL 的关系",
+            "link": "/basics/nosql-sql-mysql"
+          },
+          {
+            "text": "MySQL的历史与发展",
+            "link": "/basics/history-and-development"
+          },
+          {
+            "text": "安装与配置MySQL",
+            "link": "/basics/installation-and-configuration"
+          }
+        ]
+      },
+      {
+        "text": "SQL基础",
+        "link": "/basics/sql-basics",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "数据库和表的创建、修改与删除",
+            "link": "/basics/creating-modifying-deleting-databases-tables"
+          },
+          {
+            "text": "数据类型",
+            "link": "/basics/data-types"
+          },
+          {
+            "text": "基本查询语句（SELECT）",
+            "link": "/basics/basic-query-statements-select"
+          },
+          {
+            "text": "插入数据（INSERT）",
+            "link": "/basics/inserting-data"
+          },
+          {
+            "text": "更新数据（UPDATE）",
+            "link": "/basics/updating-data"
+          },
+          {
+            "text": "删除数据（DELETE）",
+            "link": "/basics/deleting-data"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "text": "第2部分：数据库设计",
+    "link": "/database-design/README",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "数据库设计概述",
+        "link": "/database-design/overview"
+      },
+      {
+        "text": "需求分析",
+        "link": "/database-design/requirements-analysis"
+      },
+      {
+        "text": "概念设计",
+        "link": "/database-design/conceptual-design",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "实体-关系模型（ER图）",
+            "link": "/database-design/er-model"
+          },
+          {
+            "text": "实体与属性",
+            "link": "/database-design/entities-attributes"
+          },
+          {
+            "text": "关系与连接",
+            "link": "/database-design/relationships-joins"
+          }
+        ]
+      },
+      {
+        "text": "逻辑设计",
+        "link": "/database-design/logical-design",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "规范化与反规范化",
+            "link": "/database-design/normalization-denormalization"
+          },
+          {
+            "text": "数据库模式",
+            "link": "/database-design/database-schema"
+          },
+          {
+            "text": "主键与外键",
+            "link": "/database-design/primary-foreign-keys"
+          }
+        ]
+      },
+      {
+        "text": "物理设计",
+        "link": "/database-design/physical-design",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "表的设计",
+            "link": "/database-design/table-design"
+          },
+          {
+            "text": "字段的设计",
+            "link": "/database-design/column-design"
+          },
+          {
+            "text": "索引设计",
+            "link": "/database-design/index-design"
+          }
+        ]
+      },
+      {
+        "text": "性能与扩展",
+        "link": "/database-design/performance-scaling",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "分区与分片",
+            "link": "/database-design/partitioning-sharding"
+          },
+          {
+            "text": "垂直与水平拆分",
+            "link": "/database-design/vertical-horizontal-splitting"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "text": "第3部分：高级SQL与数据处理",
+    "link": "/advanced-sql-data-processing/README",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "高级SQL查询",
+        "link": "/advanced-sql-data-processing/advanced-sql-queries",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "复杂查询（JOIN、子查询）",
+            "link": "/advanced-sql-data-processing/complex-queries"
+          },
+          {
+            "text": "视图（Views）",
+            "link": "/advanced-sql-data-processing/views"
+          },
+          {
+            "text": "存储过程与函数（Stored Procedures and Functions）",
+            "link": "/advanced-sql-data-processing/stored-procedures-functions"
+          },
+          {
+            "text": "触发器（Triggers）",
+            "link": "/advanced-sql-data-processing/triggers"
+          },
+          {
+            "text": "游标（Cursors）",
+            "link": "/advanced-sql-data-processing/cursors"
+          }
+        ]
+      },
+      {
+        "text": "数据汇总与分析",
+        "link": "/advanced-sql-data-processing/data-summarization-analysis",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "聚合函数（SUM, AVG, COUNT, MIN, MAX）",
+            "link": "/advanced-sql-data-processing/aggregate-functions"
+          },
+          {
+            "text": "GROUP BY 和 HAVING",
+            "link": "/advanced-sql-data-processing/group-by-having"
+          },
+          {
+            "text": "窗口函数（Window Functions）",
+            "link": "/advanced-sql-data-processing/window-functions"
+          },
+          {
+            "text": "组合查询（UNION, INTERSECT, EXCEPT）",
+            "link": "/advanced-sql-data-processing/set-operations"
+          }
+        ]
+      },
+      {
+        "text": "SQL函数",
+        "link": "/advanced-sql-data-processing/sql-functions",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "字符串函数",
+            "link": "/advanced-sql-data-processing/string-functions"
+          },
+          {
+            "text": "数学函数",
+            "link": "/advanced-sql-data-processing/math-functions"
+          },
+          {
+            "text": "日期和时间函数",
+            "link": "/advanced-sql-data-processing/date-time-functions"
+          },
+          {
+            "text": "条件判断函数（IF, CASE）",
+            "link": "/advanced-sql-data-processing/conditional-functions"
+          },
+          {
+            "text": "JSON 函数",
+            "link": "/advanced-sql-data-processing/json-functions"
+          }
+        ]
+      },
+      {
+        "text": "数据过滤与条件",
+        "link": "/advanced-sql-data-processing/data-filtering-conditions",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "使用WHERE子句",
+            "link": "/advanced-sql-data-processing/where-clause"
+          },
+          {
+            "text": "模糊查询（LIKE）",
+            "link": "/advanced-sql-data-processing/like-operator"
+          },
+          {
+            "text": "IN 和 NOT IN",
+            "link": "/advanced-sql-data-processing/in-not-in"
+          },
+          {
+            "text": "BETWEEN 和 NOT BETWEEN",
+            "link": "/advanced-sql-data-processing/between-not-between"
+          },
+          {
+            "text": "EXISTS 和 NOT EXISTS",
+            "link": "/advanced-sql-data-processing/exists-not-exists"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "text": "第4部分：高级功能与底层原理",
+    "link": "/advanced-features-internals/README",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "索引",
+        "link": "/advanced-features-internals/indexes",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "索引类型",
+            "link": "/advanced-features-internals/index-types"
+          },
+          {
+            "text": "创建与管理索引",
+            "link": "/advanced-features-internals/create-manage-indexes"
+          },
+          {
+            "text": "索引优化",
+            "link": "/advanced-features-internals/index-optimization"
+          },
+          {
+            "text": "索引的底层数据结构选择",
+            "link": "/advanced-features-internals/index-why"
+          }
+        ]
+      },
+      {
+        "text": "事务",
+        "link": "/advanced-features-internals/transactions",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "事务概念",
+            "link": "/advanced-features-internals/transaction-concepts"
+          },
+          {
+            "text": "ACID特性",
+            "link": "/advanced-features-internals/acid-properties"
+          },
+          {
+            "text": "事务的使用（BEGIN, COMMIT, ROLLBACK）",
+            "link": "/advanced-features-internals/transaction-usage"
+          },
+          {
+            "text": "隔离级别与锁",
+            "link": "/advanced-features-internals/isolation-levels-locks"
+          },
+          {
+            "text": "索引与锁",
+            "link": "/advanced-features-internals/index-and-locks"
+          }
+        ]
+      },
+      {
+        "text": "锁机制",
+        "link": "/advanced-features-internals/locking-mechanisms",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "锁的种类（表锁、行锁）",
+            "link": "/advanced-features-internals/lock-types"
+          },
+          {
+            "text": "死锁与检测",
+            "link": "/advanced-features-internals/deadlock-detection"
+          },
+          {
+            "text": "锁的优化策略",
+            "link": "/advanced-features-internals/lock-optimization"
+          }
+        ]
+      },
+      {
+        "text": "底层原理",
+        "link": "/advanced-features-internals/internals",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "存储引擎（InnoDB、MyISAM等）",
+            "link": "/advanced-features-internals/storage-engines"
+          },
+          {
+            "text": "数据页与数据行",
+            "link": "/advanced-features-internals/data-pages-rows"
+          },
+          {
+            "text": "日志（Redo Log, Undo Log, Binary Log）",
+            "link": "/advanced-features-internals/logs"
+          },
+          {
+            "text": "MVCC（多版本并发控制）",
+            "link": "/advanced-features-internals/Multi-Version-Concurrency-Control"
+          },
+          {
+            "text": "查询优化器",
+            "link": "/advanced-features-internals/query-optimizer"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "text": "第5部分：架构与部署",
+    "link": "/architecture-deployment/README",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "数据库架构",
+        "link": "/architecture-deployment/database-architecture",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "单实例架构",
+            "link": "/architecture-deployment/single-instance-architecture"
+          },
+          {
+            "text": "主从复制（Master-Slave Replication）",
+            "link": "/architecture-deployment/master-slave-replication"
+          },
+          {
+            "text": "主主复制（Master-Master Replication）",
+            "link": "/architecture-deployment/master-master-replication"
+          },
+          {
+            "text": "集群架构（MySQL Cluster）",
+            "link": "/architecture-deployment/mysql-cluster"
+          },
+          {
+            "text": "高可用架构（MHA, Galera Cluster）",
+            "link": "/architecture-deployment/high-availability-architecture"
+          }
+        ]
+      },
+      {
+        "text": "备份与恢复",
+        "link": "/architecture-deployment/backup-recovery",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "物理备份（冷备、热备）",
+            "link": "/architecture-deployment/physical-backup"
+          },
+          {
+            "text": "逻辑备份（mysqldump, MySQL Workbench）",
+            "link": "/architecture-deployment/logical-backup"
+          },
+          {
+            "text": "恢复策略",
+            "link": "/architecture-deployment/recovery-strategies"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "text": "第6部分：性能调优",
+    "link": "/performance-tuning/README",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "性能监控",
+        "link": "/performance-tuning/performance-monitoring",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "MySQL自带工具（SHOW STATUS, SHOW PROCESSLIST）",
+            "link": "/performance-tuning/mysql-tools"
+          },
+          {
+            "text": "第三方工具（Percona Toolkit, MySQL Enterprise Monitor）",
+            "link": "/performance-tuning/third-party-tools"
+          }
+        ]
+      },
+      {
+        "text": "查询优化",
+        "link": "/performance-tuning/query-optimization",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "执行计划分析（EXPLAIN）",
+            "link": "/performance-tuning/explain"
+          },
+          {
+            "text": "慢查询日志",
+            "link": "/performance-tuning/slow-query-log"
+          },
+          {
+            "text": "查询重写与优化",
+            "link": "/performance-tuning/query-rewriting-optimization"
+          }
+        ]
+      },
+      {
+        "text": "系统调优",
+        "link": "/performance-tuning/system-tuning",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "参数优化（my.cnf配置文件）",
+            "link": "/performance-tuning/parameter-optimization"
+          },
+          {
+            "text": "硬件调优",
+            "link": "/performance-tuning/hardware-tuning"
+          },
+          {
+            "text": "操作系统级调优",
+            "link": "/performance-tuning/os-tuning"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "text": "第7部分：工具与实战",
+    "link": "/tools-practice/README",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "MySQL工具",
+        "link": "/tools-practice/mysql-tools",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "MySQL Workbench",
+            "link": "/tools-practice/mysql-workbench"
+          },
+          {
+            "text": "phpMyAdmin",
+            "link": "/tools-practice/phpmyadmin"
+          },
+          {
+            "text": "MySQL Shell",
+            "link": "/tools-practice/mysql-shell"
+          },
+          {
+            "text": "Percona Toolkit",
+            "link": "/tools-practice/percona-toolkit"
+          }
+        ]
+      },
+      {
+        "text": "实际案例",
+        "link": "/tools-practice/real-world-cases",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "电商系统数据库设计与优化",
+            "link": "/tools-practice/e-commerce-system"
+          },
+          {
+            "text": "社交网络数据库设计与优化",
+            "link": "/tools-practice/social-network-system"
+          },
+          {
+            "text": "日志处理与分析系统",
+            "link": "/tools-practice/log-processing-analysis"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "text": "附录 · 未入目录",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "附录",
+        "link": "/appendix/README",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "常用命令参考",
+            "link": "/appendix/common-commands"
+          },
+          {
+            "text": "错误代码与解决方案",
+            "link": "/appendix/error-codes-solutions"
+          },
+          {
+            "text": "参考书目与在线资源",
+            "link": "/appendix/references-resources"
+          }
+        ]
+      },
+      {
+        "text": "新技术与未来发展",
+        "link": "/new-technologies-future/README",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "对比其他数据库的新功能",
+            "link": "/new-technologies-future/comparison-with-other-databases"
+          },
+          {
+            "text": "未来发展",
+            "link": "/new-technologies-future/future-development"
+          },
+          {
+            "text": "与NoSQL数据库的整合",
+            "link": "/new-technologies-future/integration-with-nosql"
+          },
+          {
+            "text": "MySQL 8.0及以上版本的新特性",
+            "link": "/new-technologies-future/mysql-8-0-features"
+          },
+          {
+            "text": "MySQL在云环境中的应用",
+            "link": "/new-technologies-future/mysql-in-cloud"
+          },
+          {
+            "text": "新特性与版本更新",
+            "link": "/new-technologies-future/new-features-versions"
+          },
+          {
+            "text": "未来的趋势与展望",
+            "link": "/new-technologies-future/trends-and-outlook"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "text": "知识点整理",
+    "link": "/knowledge"
+  }
+]
