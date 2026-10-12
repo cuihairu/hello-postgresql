@@ -1,9 +1,8 @@
 import { defineConfig } from 'vitepress'
-import { withMermaid } from 'vitepress-plugin-mermaid'
 import sidebar from './sidebar.json'
 
 // https://vitepress.dev/reference/site-config
-export default withMermaid(defineConfig({
+export default defineConfig({
   lang: 'zh-CN',
   title: 'Hello PostgreSQL',
   description: 'PostgreSQL 知识手册——基础与 SQL、数据库设计、高级 SQL、内核机制、索引体系、查询调优、架构部署、安全与工具实战',
@@ -88,4 +87,4 @@ export default withMermaid(defineConfig({
   markdown: {
     lineNumbers: false
   }
-}))
+})
