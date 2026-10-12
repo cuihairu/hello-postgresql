@@ -13,7 +13,7 @@ CREATE TABLE departments (
 CREATE TABLE employees (
     id         int PRIMARY KEY,
     name       text NOT NULL,
-    dept_id    int REFERENCES departments(id),
+    dept_id    int REFERENCES departments(dept_id),
     manager_id int REFERENCES employees(id)
 );
 

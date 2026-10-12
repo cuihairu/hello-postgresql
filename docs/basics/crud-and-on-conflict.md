@@ -28,9 +28,16 @@ INSERT INTO users (email, nickname) VALUES
     ('c@example.com', '小刚'),
     ('d@example.com', '小丽');
 
--- 从查询结果插入
-INSERT INTO users_archive (email, nickname)
-SELECT email, nickname FROM users WHERE updated_at < now() - interval '1 year';
+-- 从查询结果插入：归档一年未活跃的用户
+CREATE TABLE users_archive (
+    id          bigint PRIMARY KEY,
+    email       text NOT NULL,
+    nickname    text NOT NULL,
+    archived_at timestamptz NOT NULL DEFAULT now()
+);
+
+INSERT INTO users_archive (id, email, nickname)
+SELECT id, email, nickname FROM users WHERE updated_at < now() - interval '1 year';
 ```
 
 ## UPDATE ... FROM：用其他表的数据更新

@@ -10,7 +10,7 @@ CREATE TABLE products (
     name     text NOT NULL,
     price    numeric(10,2) NOT NULL,
     category text,
-    active   boolean NOT NULL DEFAULT true,
+    active   boolean DEFAULT true,
     remark   text
 );
 

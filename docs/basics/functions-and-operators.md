@@ -169,7 +169,7 @@ SELECT * FROM accounts WHERE id = 2;  -- balance 仍为 10
 函数有三类易变性标注，**直接影响优化器能否复用结果**：
 
 - `IMMUTABLE`：相同入参必返回相同结果，且不依赖数据库外状态。优化器会做常量折叠、把结果写入索引表达式、把函数表达式下推到子查询。例：`abs()`、`lower()`、`date_part()` 都是内置 IMMUTABLE。
-- `STABLE`：同一次查询内同入参同结果，但跨查询可能变。例：`now()`、`current_user`、`random()` 不在此列但 `now()` 标 STABLE。
+- `STABLE`：同一次查询执行内同入参同结果，但跨查询可能变。例：`now()`、`current_user` 标 STABLE。
 - `VOLATILE`：可能随时变、或有副作用（如修改数据）。优化器**不会**做任何折叠或下推，每行每次调用都重算。`random()`、`nextval()`、`setval()` 都是 VOLATILE。
 
 不指定时默认 `VOLATILE`，最保守。标注错会带来两类问题：
@@ -188,7 +188,7 @@ LANGUAGE sql IMMUTABLE AS $$ SELECT md5(s) $$;
 
 ## 注意事项与常见坑
 
-- `NULL` 入参多数函数返回 `NULL`。需要空串语义时用 `COALESCE` 包一层，或用 `||` 拼接（`'' || NULL` 返回 `''`，是唯一不传染 NULL 的字符串运算符）。
+- `NULL` 入参多数函数返回 `NULL`，`||` 拼接同样传染 NULL（`'a' || NULL` 返回 `NULL`）。需要"跳过 NULL 继续拼"的语义时用 `concat()` / `concat_ws()`（NULL 参数被忽略），或用 `COALESCE(col, '')` 包一层。
 - `random()` 每次调用产生新值，`SELECT random(), random()` 同行两列也不同——别指望它"在 SQL 里像种子一样可复现"，需要稳定随机请用 `seed()` 配合。
 - 字符串与数值混用（`WHERE varchar_col = 1`）会触发隐式转换，可能让索引失效——见 [常见新手错误](./common-beginner-mistakes)。
 - 自定义函数里 `CREATE OR REPLACE` 不会修改既有依赖该函数的视图/物化视图，需要刷新。
