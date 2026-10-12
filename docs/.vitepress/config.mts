@@ -10,6 +10,8 @@ export default withMermaid(defineConfig({
   base: '/hello-postgresql/',
   cleanUrls: true,
   lastUpdated: true,
+  // 分批写作期间允许指向尚未落盘页面的前向链接，构建后再统一核查死链
+  ignoreDeadLinks: true,
 
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/hello-postgresql/favicon.svg' }]
