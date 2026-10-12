@@ -67,26 +67,26 @@ hello-mysql 共 130 页（basics 13 / database-design 18 / advanced-sql 24 / int
 
 ## 第 4 部分：内核机制 internals（约 20 页）
 
-- [ ] 进程架构（postmaster、backend、autovacuum、background worker）
-- [ ] MVCC 与多版本（元组头、xmin/xmax、快照 Snapshot）
-- [ ] 事务与隔离级别（READ COMMITTED 默认、RR/SSI、锁升级）
-- [ ] VACUUM 与 HOT（死元组、可见性映射、HOT 更新、fillfactor）
-- [ ] autovacuum 调优（阈值、比例、cost delay、卡住排查）
-- [ ] WAL 机制（WAL 记录、LSN、预写日志与崩溃恢复）
-- [ ] checkpoint 与 buffer（shared_buffers、bgwriter/checkpointer）
-- [ ] 锁系统（表锁模式、行锁 FOR UPDATE、咨询锁 pg_advisory）
-- [ ] 锁冲突排查（pg_locks、pg_blocking_pids、死锁与重试）
-- [ ] TOAST（大字段外置、压缩、MOVABLE、触发 DML 的行为）
-- [ ] 快照与可见性判定（命令 id、clog、事务状态）
-- [ ] 查询执行管道（parse→rewrite→plan→execute、executor 节点）
-- [ ] 优化器代价模型（cost、统计信息 pg_statistic、直方图）
-- [ ] join 实现（nested loop/merge/hash、选择依据）
-- [ ] 并行查询（parallel workers、代价阈值、不能并行的场景）
-- [ ] 计划缓存与 generic plan（prepared statement 计划漂移）
-- [ ] 逻辑复制底层（wal_level、decoding、publication/subscription）
-- [ ] 流复制与同步（primary/standby、synchronous_commit、延迟）
-- [ ] 体系结构与内存（work_mem、maintenance_work_mem、OOM 风险）
-- [ ] pg_stat 观测（stat_activity、stat_statements、stat_io、计划统计）
+- [x] 进程架构（postmaster、backend、autovacuum、background worker）
+- [x] MVCC 与多版本（元组头、xmin/xmax、快照 Snapshot）
+- [x] 事务与隔离级别（READ COMMITTED 默认、RR/SSI、锁升级）
+- [x] VACUUM 与 HOT（死元组、可见性映射、HOT 更新、fillfactor）
+- [x] autovacuum 调优（阈值、比例、cost delay、卡住排查）
+- [x] WAL 机制（WAL 记录、LSN、预写日志与崩溃恢复）
+- [x] checkpoint 与 buffer（shared_buffers、bgwriter/checkpointer）
+- [x] 锁系统（表锁模式、行锁 FOR UPDATE、咨询锁 pg_advisory）
+- [x] 锁冲突排查（pg_locks、pg_blocking_pids、死锁与重试）
+- [x] TOAST（大字段外置、压缩、MOVABLE、触发 DML 的行为）
+- [x] 快照与可见性判定（命令 id、clog、事务状态）
+- [x] 查询执行管道（parse→rewrite→plan→execute、executor 节点）
+- [x] 优化器代价模型（cost、统计信息 pg_statistic、直方图）
+- [x] join 实现（nested loop/merge/hash、选择依据）
+- [x] 并行查询（parallel workers、代价阈值、不能并行的场景）
+- [x] 计划缓存与 generic plan（prepared statement 计划漂移）
+- [x] 逻辑复制底层（wal_level、decoding、publication/subscription）
+- [x] 流复制与同步（primary/standby、synchronous_commit、延迟）
+- [x] 体系结构与内存（work_mem、maintenance_work_mem、OOM 风险）
+- [x] pg_stat 观测（stat_activity、stat_statements、stat_io、计划统计）
 
 ## 第 5 部分：索引体系 indexing（约 12 页）
 
