@@ -29,20 +29,20 @@ hello-mysql 共 130 页（basics 13 / database-design 18 / advanced-sql 24 / int
 
 ## 第 2 部分：数据库设计 database-design（约 14 页）
 
-- [ ] 三范式与反范式（1NF/2NF/3NF、冗余与读性能权衡）
-- [ ] 主键设计（BIGINT identity vs UUID vs 复合键、游标分页友好）
-- [ ] 外键与引用动作（ON DELETE CASCADE/SET NULL、延迟约束）
-- [ ] CHECK 与域类型（域复用、正则约束、约束命名）
-- [ ] 表继承与分区表设计（声明式 PARTITION BY RANGE/LIST/HASH）
-- [ ] 视图与可更新视图（WITH CHECK OPTION、简单视图可写性）
-- [ ] 物化视图（REFRESH CONCURRENTLY、增量刷新、使用场景）
-- [ ] 逻辑建模到物理落地（E-R 图、序列、默认值、时间戳惯例）
-- [ ] 软删除与墓碑（deleted_at、唯一索引与 NULL、部分索引配合）
-- [ ] 多租户建模（schema-per-tenant vs RLS vs 单表 tenant_id）
-- [ ] 时间建模（timestamptz 惯例、时区、有效期 range 类型）
-- [ ] 金额与数值（numeric 定点、货币、舍入规则）
-- [ ] 约束与数据质量（NOT NULL 策略、EXCLUSION 约束、触发器兜底）
-- [ ] 反模式清单（EAV 滥用、万能 JSONB 表、无界自关联）
+- [x] 三范式与反范式（1NF/2NF/3NF、冗余与读性能权衡）
+- [x] 主键设计（BIGINT identity vs UUID vs 复合键、游标分页友好）
+- [x] 外键与引用动作（ON DELETE CASCADE/SET NULL、延迟约束）
+- [x] CHECK 与域类型（域复用、正则约束、约束命名）
+- [x] 表继承与分区表设计（声明式 PARTITION BY RANGE/LIST/HASH）
+- [x] 视图与可更新视图（WITH CHECK OPTION、简单视图可写性）
+- [x] 物化视图（REFRESH CONCURRENTLY、增量刷新、使用场景）
+- [x] 逻辑建模到物理落地（E-R 图、序列、默认值、时间戳惯例）
+- [x] 软删除与墓碑（deleted_at、唯一索引与 NULL、部分索引配合）
+- [x] 多租户建模（schema-per-tenant vs RLS vs 单表 tenant_id）
+- [x] 时间建模（timestamptz 惯例、时区、有效期 range 类型）
+- [x] 金额与数值（numeric 定点、货币、舍入规则）
+- [x] 约束与数据质量（NOT NULL 策略、EXCLUSION 约束、触发器兜底）
+- [x] 反模式清单（EAV 滥用、万能 JSONB 表、无界自关联）
 
 ## 第 3 部分：高级 SQL advanced-sql（约 18 页）
 
