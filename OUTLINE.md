@@ -46,24 +46,24 @@ hello-mysql 共 130 页（basics 13 / database-design 18 / advanced-sql 24 / int
 
 ## 第 3 部分：高级 SQL advanced-sql（约 18 页）
 
-- [ ] CTE 与非递归 WITH（可读性、MATERIALIZED/NOT MATERIALIZED）
-- [ ] 递归 CTE（层级遍历、树/图、循环终止、UNION ALL 语义）
+- [x] CTE 与非递归 WITH（可读性、MATERIALIZED/NOT MATERIALIZED）
+- [x] 递归 CTE（层级遍历、树/图、循环终止、UNION ALL 语义）
 - [ ] 窗口函数（OVER/PARTITION BY/ORDER BY、frame 行为）
-- [ ] 窗口函数进阶（LAG/LEAD、NTILE、排名族、移动平均 frame）
-- [ ] 集合运算（UNION/INTERSECT/EXCEPT、ALL 与去重、排序）
-- [ ] LATERAL 与 FROM 子查询（相关子查询下推、top-N per group）
-- [ ] 子查询家族（标量/IN/EXISTS/ANY、去相关化）
-- [ ] JSONB 操作（->/->>/#>/@>、jsonb_path、containment 索引）
-- [ ] JSONB 设计模式（文档列、生成列、部分索引、与列存取舍）
-- [ ] 数组操作（`unnest`、数组包含、GIN 索引配合）
-- [ ] 范围类型与 EXCLUDE（tsrange、期间重叠约束）
-- [ ] 全文检索（tsvector/tsquery、权重建模、GIN、同义词与词典）
-- [ ] 三模式匹配（LIKE/ILIKE、正则、pg_trgm 相似度与索引）
-- [ ] 生成列与 CHECK 表达式（GENERATED ALWAYS AS、索引化）
-- [ ] 条件表达式（CASE、FILTER、DISTINCT ON、NULLS FIRST/LAST）
-- [ ] 分页与排序（OFFSET 陷阱、keyset/cursor 分页、不稳定排序）
-- [ ] SQL 函数进阶（plpgsql 变量、异常块、STABLE/IMMUTABLE 标注）
-- [ ] 批量与写入（COPY、INSERT 多值、ON CONFLICT 批量、EXCLUDE）
+- [x] 窗口函数进阶（LAG/LEAD、NTILE、排名族、移动平均 frame）
+- [x] 集合运算（UNION/INTERSECT/EXCEPT、ALL 与去重、排序）
+- [x] LATERAL 与 FROM 子查询（相关子查询下推、top-N per group）
+- [x] 子查询家族（标量/IN/EXISTS/ANY、去相关化）
+- [x] JSONB 操作（->/->>/#>/@>、jsonb_path、containment 索引）
+- [x] JSONB 设计模式（文档列、生成列、部分索引、与列存取舍）
+- [x] 数组操作（`unnest`、数组包含、GIN 索引配合）
+- [x] 范围类型与 EXCLUDE（tsrange、期间重叠约束）
+- [x] 全文检索（tsvector/tsquery、权重建模、GIN、同义词与词典）
+- [x] 三模式匹配（LIKE/ILIKE、正则、pg_trgm 相似度与索引）
+- [x] 生成列与 CHECK 表达式（GENERATED ALWAYS AS、索引化）
+- [x] 条件表达式（CASE、FILTER、DISTINCT ON、NULLS FIRST/LAST）
+- [x] 分页与排序（OFFSET 陷阱、keyset/cursor 分页、不稳定排序）
+- [x] SQL 函数进阶（plpgsql 变量、异常块、STABLE/IMMUTABLE 标注）
+- [x] 批量与写入（COPY、INSERT 多值、ON CONFLICT 批量、EXCLUDE）
 
 ## 第 4 部分：内核机制 internals（约 20 页）
 
