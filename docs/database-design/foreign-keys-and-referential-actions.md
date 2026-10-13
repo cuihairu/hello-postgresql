@@ -132,9 +132,23 @@ CREATE UNIQUE INDEX customers_email_active
 
 约束体系的整体介绍见官方文档 [DDL 约束](https://www.postgresql.org/docs/current/ddl-constraints.html)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 5.5. Constraints](https://www.postgresql.org/docs/current/ddl-constraints.html)
+- [PostgreSQL 官方文档 · 5.12. Table Partitioning](https://www.postgresql.org/docs/current/ddl-partitioning.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [主键设计](./primary-key-design)
 - [软删与墓碑](./soft-delete-and-tombstone)
 - [约束与数据质量](./constraints-and-data-quality)
 - [CHECK 与域类型](./check-and-domains)
+- [recursive-cte](/advanced-sql/recursive-cte.md)
+- [join-family](/basics/join-family.md)
+- [check-and-domains](check-and-domains.md)
+- [constraints-and-data-quality](constraints-and-data-quality.md)
+- [index](index.md)
+- [logical-to-physical-modeling](logical-to-physical-modeling.md)
+- [normalization-and-denormalization](normalization-and-denormalization.md)
+- [primary-key-design](primary-key-design.md)

@@ -1,6 +1,6 @@
 # B-tree 结构与原则
 
-B-tree（多路平衡搜索树）是 PostgreSQL 的默认索引类型：`CREATE INDEX` 不写 `USING` 时建的就是它。它把索引键按序组织成一棵"矮胖"的树——从根页出发，每层一次页面读，最后落到按键排序、彼此用双向链表串联的叶子页。等值查找走一条路径，范围扫描沿叶子链顺序读，`ORDER BY` 甚至可以完全不排序。这三件事让 B-tree 成为绝大多数查询的首选。内部结构细节见官方文档 [B-tree 实现](https://www.postgresql.org/docs/current/btree-implementation.html)。
+B-tree（多路平衡搜索树）是 PostgreSQL 的默认索引类型：`CREATE INDEX` 不写 `USING` 时建的就是它。它把索引键按序组织成一棵"矮胖"的树——从根页出发，每层一次页面读，最后落到按键排序、彼此用双向链表串联的叶子页。等值查找走一条路径，范围扫描沿叶子链顺序读，`ORDER BY` 甚至可以完全不排序。这三件事让 B-tree 成为绝大多数查询的首选。内部结构细节见官方文档 [B-tree 实现](https://www.postgresql.org/docs/current/btree.html)。
 
 ## 树的形状：内部分叉，叶子成链
 
@@ -148,9 +148,26 @@ SELECT level FROM bt_metap('uuid_t_id_idx');   -- 2：比同规模顺序键深�
 
 随机键还会带来另一个问题：索引项在磁盘上分散，范围扫描和索引扫描的随机 I/O 变多。如果业务上不需要全局随机，优先考虑时间有序的键。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Chapter 11. Indexes](https://www.postgresql.org/docs/current/indexes.html)
+- [PostgreSQL 官方文档 · 11.2. Index Types](https://www.postgresql.org/docs/current/indexes-types.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [组合索引设计](./composite-index-design)
 - [索引失效与误用](./index-failure-and-misuse)
 - [EXPLAIN 读法](../performance/explain-basics)
 - [统计信息与 ANALYZE](../performance/statistics-and-analyze)
+- [conditional-expressions](/advanced-sql/conditional-expressions.md)
+- [common-beginner-mistakes](/basics/common-beginner-mistakes.md)
+- [primary-key-design](/database-design/primary-key-design.md)
+- [brin](brin.md)
+- [composite-index-design](composite-index-design.md)
+- [index-bloat-and-maintenance](index-bloat-and-maintenance.md)
+- [index-selection-decision-tree](index-selection-decision-tree.md)
+- [index](index.md)
+- [partial-indexes](partial-indexes.md)
+- [spgist-and-hash](spgist-and-hash.md)
+- [knowledge](/knowledge.md)

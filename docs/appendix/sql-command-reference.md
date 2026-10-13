@@ -106,11 +106,18 @@ UPDATE accounts SET balance = balance + 100 WHERE id = 2;
 COMMIT;
 ```
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · MERGE](https://www.postgresql.org/docs/current/sql-merge.html)
+- [PostgreSQL 官方文档 · SQL Commands](https://www.postgresql.org/docs/current/sql-commands.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [术语表](./glossary)
 - [CRUD 与 ON CONFLICT](../basics/crud-and-on-conflict)
 - [事务基础](../basics/transaction-basics)
 - [角色与权限](../security/roles-and-permissions)
-
+- [index](index.md)
+- [references-and-docs](references-and-docs.md)
 官方文档：[SQL 命令参考](https://www.postgresql.org/docs/current/sql-commands.html)、[MERGE（PG 15 起）](https://www.postgresql.org/docs/current/sql-merge.html)

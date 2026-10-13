@@ -180,9 +180,19 @@ ALTER SEQUENCE big_table_id_seq AS bigint;
 - `count(*)`、`1/2`、`NOT IN` 三类问题的共性：**语法完全合法**，所以测试环境跑不出问题、上线后才暴露。代码评审时值得单独核对。
 - 大部分坑都能靠 `EXPLAIN` 与 `\d 表名` 提前发现：看列类型、看索引、看计划，比读代码更直接。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Part I. Tutorial](https://www.postgresql.org/docs/current/tutorial.html)
+- [PostgreSQL 官方文档 · The SQL Language](https://www.postgresql.org/docs/current/sql.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [命名与书写规范](./naming-and-style-conventions)
 - [数据类型概览](./data-types-overview)
 - [EXPLAIN 读法](../performance/explain-basics)
 - [常见报错与排障](../appendix/common-errors-and-troubleshooting)
+- [common-errors-and-troubleshooting](/appendix/common-errors-and-troubleshooting.md)
+- [functions-and-operators](functions-and-operators.md)
+- [index](index.md)
+- [naming-and-style-conventions](naming-and-style-conventions.md)

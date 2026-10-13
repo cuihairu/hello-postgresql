@@ -134,11 +134,19 @@ CASE 不匹配的行返回 NULL，聚合函数自动忽略 NULL，语义与 FILT
 - 移动平均的窗口宽度是行数不是天数：业务要「近 7 天均值」时，缺数的日子会扭曲口径，先补日历再开窗。
 - WINDOW 命名窗口已含 ORDER BY 时，引用它的 OVER 不能再追加 ORDER BY，只能追加 frame 子句。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 7.8. WITH Queries (Common Table Expressions)](https://www.postgresql.org/docs/current/queries-with.html)
+- [PostgreSQL 官方文档 · 9.22. Window Functions](https://www.postgresql.org/docs/current/functions-window.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [窗口函数](./window-functions)
 - [LATERAL 与 FROM 子查询](./lateral-and-from-subquery)
 - [条件表达式](./conditional-expressions)
 - [分页与排序](./pagination-and-sorting)
-
+- [index](index.md)
+- [lateral-and-from-subquery](lateral-and-from-subquery.md)
+- [window-functions](window-functions.md)
 官方文档：[窗口函数参考](https://www.postgresql.org/docs/current/functions-window.html)、[窗口函数教程](https://www.postgresql.org/docs/current/tutorial-window.html)。

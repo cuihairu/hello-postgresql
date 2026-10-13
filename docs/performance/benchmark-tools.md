@@ -89,9 +89,18 @@ SELECT wal_bytes FROM pg_stat_wal;   -- PG 14+，评估 WAL 写入量
 
 除 pgbench 外，sysbench、TPC-C 系实现（BenchmarkSQL、TPCC-UVA）与 HammerDB 可用于跨数据库或更复杂业务模型的压测，日常单机验证 pgbench 通常足够。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · pgbench](https://www.postgresql.org/docs/current/pgbench.html)
+- [PostgreSQL 官方文档 · 14.1. Using EXPLAIN](https://www.postgresql.org/docs/current/using-explain.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [参数调优](./parameter-tuning)——被测参数的取值依据。
+- [capacity-and-scaling-limits](capacity-and-scaling-limits.md)
+- [index](index.md)
+- [parameter-tuning](parameter-tuning.md)
+- [write-throughput-optimization](write-throughput-optimization.md)- [参数调优](./parameter-tuning)——被测参数的取值依据。
 - [写入吞吐优化](./write-throughput-optimization)——写路径优化的具体手段。
 - [锁与并发瓶颈](./lock-and-concurrency-bottlenecks)——高并发下压测结果的解释框架。
 - [checkpoint 与 buffer](../internals/checkpoint-and-buffer)——压测干扰源之一。

@@ -72,11 +72,18 @@ Query Tool 会把历史查询保留在本地，排障时可以翻出上次跑过
 
 pgAdmin 的定位是"图形管理台"：建表、看依赖、跑备份、值班排查都顺手；高频写 SQL 的开发流程用 IDE 插件或 DBeaver 更轻快（见 [DBeaver 与 VS Code 插件](./dbeaver-and-vscode)）。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · psql](https://www.postgresql.org/docs/current/app-psql.html)
+- [PostgreSQL 官方文档 · F.32. pg_stat_statements — track statistics of SQL planning and execution](https://www.postgresql.org/docs/current/pgstatstatements.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [psql 高阶](./psql-advanced)
 - [DBeaver 与 VS Code 插件](./dbeaver-and-vscode)
 - [排障工具箱](./troubleshooting-toolbox)
 - [角色与权限](../security/roles-and-permissions)
-
+- [dbeaver-and-vscode](dbeaver-and-vscode.md)
+- [index](index.md)
 官方文档：[pgAdmin 4 文档](https://www.pgadmin.org/docs/pgadmin4/latest/)。

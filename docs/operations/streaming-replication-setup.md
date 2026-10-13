@@ -110,9 +110,20 @@ FROM pg_stat_replication;
 - **防火墙方向**：是备库主动连主库的 5432，安全组要按备库 → 主库方向放行。
 - **`application_name` 要设置**（`primary_conninfo` 里带上）：它是 `synchronous_standby_names` 和监控里识别备库的依据，默认值不含实例标识。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Chapter 25. Backup and Restore](https://www.postgresql.org/docs/current/backup.html)
+- [PostgreSQL 官方文档 · Chapter 19. Server Configuration](https://www.postgresql.org/docs/current/runtime-config.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [流复制与同步](../internals/streaming-replication-and-sync)
 - [WAL 机制](../internals/wal-mechanism)
 - [高可用架构](./high-availability-architecture)
 - [物理备份与 PITR](./physical-backup-and-pitr)
+- [streaming-replication-and-sync](/internals/streaming-replication-and-sync.md)
+- [knowledge](/knowledge.md)
+- [high-availability-architecture](high-availability-architecture.md)
+- [index](index.md)
+- [ops-sop](ops-sop.md)

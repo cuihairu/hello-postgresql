@@ -139,9 +139,23 @@ SELECT id, email_norm FROM users_e WHERE email_norm = 'user2@example.com';
 - 写入路径上每次都要计算表达式，函数越重写放大越明显；高频写入表上避免堆叠复杂函数（如正则替换）做索引。
 - 改了表达式定义（比如归一化规则从 `lower` 升级为 `lower(btrim(...))`）时，老索引不会自动跟进，要重建：`REINDEX` 不够，需删除后按新表达式重建。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Chapter 11. Indexes](https://www.postgresql.org/docs/current/indexes.html)
+- [PostgreSQL 官方文档 · 11.2. Index Types](https://www.postgresql.org/docs/current/indexes-types.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [部分索引](./partial-indexes) —— 表达式 + WHERE 谓词可组合出「归一化后的热点子集」索引。
+- [generated-columns-and-check](/advanced-sql/generated-columns-and-check.md)
+- [jsonb-operations](/advanced-sql/jsonb-operations.md)
+- [pattern-matching](/advanced-sql/pattern-matching.md)
+- [sql-functions-advanced](/advanced-sql/sql-functions-advanced.md)
+- [where-and-expressions](/basics/where-and-expressions.md)
+- [index-failure-and-misuse](index-failure-and-misuse.md)
+- [index-only-scans](index-only-scans.md)
+- [index](index.md)
+- [partial-indexes](partial-indexes.md)- [部分索引](./partial-indexes) —— 表达式 + WHERE 谓词可组合出「归一化后的热点子集」索引。
 - [索引失效与误用](./index-failure-and-misuse) —— `WHERE upper(col) = ...` 走不上普通索引，正是表达式索引的用武之地。
 - [生成列与 CHECK](../advanced-sql/generated-columns-and-check) —— 生成列语法的完整说明。
 - [GIN 索引](./gin) —— jsonb 包含查询的另一条路径。

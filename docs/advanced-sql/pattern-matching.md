@@ -117,11 +117,23 @@ SELECT title FROM articles ORDER BY title <-> 'PostgreSQL 性能' LIMIT 5;
 - 正则里 `.*`/`^`/`$` 等能力 `LIKE` 没有等价形式，别试图用 `LIKE` 模拟。
 - 表达式索引 `CREATE INDEX ON t ((lower(title)))` 要求查询里的表达式与建索引时完全一致（`WHERE lower(title) LIKE 'abc%'`），大小写函数名虽然合法但表达式树不同就匹配不上，写查询前先想好索引形态。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 7.8. WITH Queries (Common Table Expressions)](https://www.postgresql.org/docs/current/queries-with.html)
+- [PostgreSQL 官方文档 · 9.22. Window Functions](https://www.postgresql.org/docs/current/functions-window.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [函数与操作符](../basics/functions-and-operators)
 - [表达式索引](../indexing/expression-indexes)
 - [GIN 索引](../indexing/gin)
 - [全文搜索](./full-text-search)
-
+- [full-text-search](full-text-search.md)
+- [index](index.md)
+- [where-and-expressions](/basics/where-and-expressions.md)
+- [gin](/indexing/gin.md)
+- [index-failure-and-misuse](/indexing/index-failure-and-misuse.md)
+- [spgist-and-hash](/indexing/spgist-and-hash.md)
+- [toast](/internals/toast.md)
 官方文档：[字符串模式匹配](https://www.postgresql.org/docs/current/functions-matching.html)、[pg_trgm](https://www.postgresql.org/docs/current/pgtrgm.html)、[正则表达式操作符](https://www.postgresql.org/docs/current/functions-matching.html#FUNCTIONS-MATCH-POSIX)。

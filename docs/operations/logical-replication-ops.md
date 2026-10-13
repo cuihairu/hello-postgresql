@@ -133,9 +133,20 @@ FROM pg_stat_subscription_stats;
 - **`TRUNCATE` 会被复制**（PG 11+，publication 默认 `publish = 'insert, update, delete, truncate'`），下游为缓存/汇聚表时注意误清空。
 - **双向写就是冲突制造机**：同一主键两端都能写，冲突会不断发生，PG 16 的 origin 支持只解决回环，不解决业务冲突。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Chapter 25. Backup and Restore](https://www.postgresql.org/docs/current/backup.html)
+- [PostgreSQL 官方文档 · Chapter 19. Server Configuration](https://www.postgresql.org/docs/current/runtime-config.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [逻辑复制内部原理](../internals/logical-replication-internals)
 - [版本升级](./version-upgrade)
 - [备份策略](./backup-strategy)
 - [运维 SOP](./ops-sop)
+- [fdw-and-foreign-data](/ecosystem/fdw-and-foreign-data.md)
+- [postgresql-17-features](/ecosystem/postgresql-17-features.md)
+- [logical-replication-internals](/internals/logical-replication-internals.md)
+- [index](index.md)
+- [version-upgrade](version-upgrade.md)

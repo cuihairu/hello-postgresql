@@ -96,9 +96,18 @@ LIMIT 20;
 - **配送范围/服务区**：把运营边界存成 POLYGON，订单地址转点后用 `ST_Contains` / `ST_Intersects` 判定是否在范围内；用 `ST_Buffer` 可以由中心点生成近似圆，但精确范围建议用真实边界数据（如行政区划、自绘多边形）。
 - **按区域统计**：订单点与区域面做空间 JOIN（`ST_Contains(region, point)`），配合 GROUP BY 出各区域指标；大表先按区域分片或预投影，能显著降低计算量。
 
+## 参考资料
+
+- [wiki.postgresql.org/wiki/Foreign_data_wrappers](https://wiki.postgresql.org/wiki/Foreign_data_wrappers)
+- [GitHub · pgvector/pgvector](https://github.com/pgvector/pgvector)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [扩展管理](./extension-management)
 - [GiST 索引](../indexing/gist)
 - [范围类型与排他约束](../advanced-sql/range-types-and-exclude)
 - [索引失效与误用](../indexing/index-failure-and-misuse)
+- [index](index.md)
+- [gist](/indexing/gist.md)
+- [knowledge](/knowledge.md)

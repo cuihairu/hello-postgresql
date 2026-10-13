@@ -121,11 +121,21 @@ SELECT pg_reload_conf();
 
 先用 `pg_stat_activity` 定位是谁在跑、卡在什么 `wait_event`；`Lock` 类的去翻 `log_lock_waits` 找阻塞者；`CPU`/`IO` 类的去翻 `auto_explain` 日志看计划，判断是缺索引、还是统计信息过期导致估算失准。三条线串起来，慢查询治理的循环才闭合，见[慢查询治理](../performance/slow-query-governance)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · psql](https://www.postgresql.org/docs/current/app-psql.html)
+- [PostgreSQL 官方文档 · F.32. pg_stat_statements — track statistics of SQL planning and execution](https://www.postgresql.org/docs/current/pgstatstatements.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [pg_stat 观察视图](../internals/pg-stat-observation)
 - [锁冲突排查](../internals/lock-conflict-troubleshooting)
 - [慢查询治理](../performance/slow-query-governance)
 - [psql 高阶](./psql-advanced)
-
+- [common-errors-and-troubleshooting](/appendix/common-errors-and-troubleshooting.md)
+- [client-drivers](client-drivers.md)
+- [index](index.md)
+- [pgadmin-4](pgadmin-4.md)
+- [psql-advanced](psql-advanced.md)
 官方文档：[监控与统计](https://www.postgresql.org/docs/current/monitoring-stats.html)、[auto_explain](https://www.postgresql.org/docs/current/auto-explain.html)、[日志配置](https://www.postgresql.org/docs/current/runtime-config-logging.html)。

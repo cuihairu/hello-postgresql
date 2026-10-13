@@ -87,11 +87,25 @@ WHERE rolname = 'app_rw';   -- SCRAM-SHA-256$ 开头 = scram；md5 开头 = 旧�
 - 每条连接都要完整跑一遍认证，pg_hba 记录过多或频繁 reload 有轻微开销，一般可忽略，但不要把 pg_hba 当业务限流用。
 - 改文件不 reload 就生效不了，reload 了坏记录又被静默跳过——把 `pg_hba_file_rules` 检查固化进变更流程。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 5.9. Row Security Policies](https://www.postgresql.org/docs/current/ddl-rowsecurity.html)
+- [PostgreSQL 官方文档 · 20.3. Authentication Methods](https://www.postgresql.org/docs/current/auth-methods.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [SSL 与传输加密](./ssl-and-transport-encryption)
 - [角色与权限模型](./roles-and-permissions)
 - [加固清单](./hardening-checklist)
 - [常见报错与排查](../appendix/common-errors-and-troubleshooting)
-
+- [knowledge](/knowledge.md)
+- [audit](audit.md)
+- [hardening-checklist](hardening-checklist.md)
+- [index](index.md)
+- [roles-and-permissions](roles-and-permissions.md)
+- [row-level-security](row-level-security.md)
+- [ssl-and-transport-encryption](ssl-and-transport-encryption.md)
+- [dbeaver-and-vscode](/tools/dbeaver-and-vscode.md)
+- [pgadmin-4](/tools/pgadmin-4.md)
 官方文档：[pg_hba.conf 文件](https://www.postgresql.org/docs/current/auth-pg-hba-conf.html)、[认证方法](https://www.postgresql.org/docs/current/auth-methods.html)、[用户名映射](https://www.postgresql.org/docs/current/auth-username-maps.html)。

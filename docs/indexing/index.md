@@ -18,3 +18,11 @@
 ---
 
 - [查询调优与性能](../performance/) —— 用 EXPLAIN 验证索引是否被用上。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [index](/advanced-sql/index.md)
+- [index](/database-design/index.md)
+- [index](/internals/index.md)
+- [index](/performance/index.md)

@@ -135,11 +135,25 @@ ORDER  BY l.granted, l.pid;
 - **外键检查会拿父行 FOR KEY SHARE**：高并发向子表插入会锁住引用的父行，与"改父表主键"的 UPDATE 冲突（与普通父表 UPDATE 兼容）。
 - **不要用 `LOCK TABLE` 滥用强锁**：显式 `LOCK TABLE orders IN ACCESS EXCLUSIVE MODE` 会让所有查询排队，仅用于维护窗口。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 13.3. Explicit Locking](https://www.postgresql.org/docs/current/explicit-locking.html)
+- [PostgreSQL 官方文档 · Chapter 51. Overview of PostgreSQL Internals](https://www.postgresql.org/docs/current/overview.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [锁冲突排查](./lock-conflict-troubleshooting)
 - [事务与隔离级别](./transactions-and-isolation)
 - [MVCC 与多版本](./mvcc-and-multi-version)
 - [锁与并发瓶颈](../performance/lock-and-concurrency-bottlenecks)
-
+- [glossary](/appendix/glossary.md)
+- [data-types-overview](/basics/data-types-overview.md)
+- [transaction-basics](/basics/transaction-basics.md)
+- [index](index.md)
+- [lock-conflict-troubleshooting](lock-conflict-troubleshooting.md)
+- [transactions-and-isolation](transactions-and-isolation.md)
+- [ops-sop](/operations/ops-sop.md)
+- [lock-and-concurrency-bottlenecks](/performance/lock-and-concurrency-bottlenecks.md)
+- [schema-migration-tools](/tools/schema-migration-tools.md)
 官方文档参考：[Explicit Locking](https://www.postgresql.org/docs/current/explicit-locking.html)

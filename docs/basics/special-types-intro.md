@@ -144,11 +144,19 @@ SELECT name, (addr).city FROM customers;
 1. 类型越「自由」，数据库能做的检查越少。JSONB 内部没有 NOT NULL、外键和准确的统计信息，把主数据放进去，数据质量问题会转移到应用层。
 2. JSONB 和数组的大值会走 TOAST 机制行外存储，整行频繁更新时带来额外开销，见 [TOAST 与行外存储](../internals/toast)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Part I. Tutorial](https://www.postgresql.org/docs/current/tutorial.html)
+- [PostgreSQL 官方文档 · The SQL Language](https://www.postgresql.org/docs/current/sql.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [数据类型总览](./data-types-overview)
 - [JSONB 操作](../advanced-sql/jsonb-operations)
 - [数组操作](../advanced-sql/array-operations)
 - [范围类型与排他约束](../advanced-sql/range-types-and-exclude)
-
+- [data-types-overview](data-types-overview.md)
+- [index](index.md)
+- [what-is-postgresql](what-is-postgresql.md)
 官方文档：[JSON 类型](https://www.postgresql.org/docs/current/datatype-json.html)、[数组](https://www.postgresql.org/docs/current/arrays.html)、[范围类型](https://www.postgresql.org/docs/current/rangetypes.html)、[枚举](https://www.postgresql.org/docs/current/datatype-enum.html)。

@@ -112,9 +112,26 @@ pg_ctl -D $PGDATA start
 - 逻辑复制双跑期间，两边都可能有业务在写（比如忘了关的定时任务），会出现主键冲突。切换窗口要把所有写入口都纳入检查。
 - 升级后的第一天重点盯 `pg_stat_statements`（见 [pg_stat_statements](../performance/pg-stat-statements)）和慢查询日志，新版本优化器的代价模型变化可能让个别 SQL 选错计划，用 `plan_cache_mode` 或显式 hint 过渡。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · pg_upgrade](https://www.postgresql.org/docs/current/pgupgrade.html)
+- [PostgreSQL 官方文档 · 18.6. Upgrading a PostgreSQL Cluster](https://www.postgresql.org/docs/current/upgrading.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [集群初始化与目录布局](./cluster-init-and-layout)——多版本共存与 initdb 参数。
+- [install-and-quickstart](/basics/install-and-quickstart.md)
+- [extension-management](/ecosystem/extension-management.md)
+- [postgresql-16-features](/ecosystem/postgresql-16-features.md)
+- [postgresql-17-features](/ecosystem/postgresql-17-features.md)
+- [when-to-choose-postgresql](/ecosystem/when-to-choose-postgresql.md)
+- [logical-replication-internals](/internals/logical-replication-internals.md)
+- [backup-strategy](backup-strategy.md)
+- [cloud-native-and-containers](cloud-native-and-containers.md)
+- [cluster-init-and-layout](cluster-init-and-layout.md)
+- [index](index.md)
+- [logical-replication-ops](logical-replication-ops.md)
+- [streaming-replication-setup](streaming-replication-setup.md)- [集群初始化与目录布局](./cluster-init-and-layout)——多版本共存与 initdb 参数。
 - [物理备份与 PITR](./physical-backup-and-pitr)——升级前必备的备份保障。
 - [高可用架构](./high-availability-architecture)——用切换减少升级停机。
 - [逻辑复制运维](./logical-replication-ops)——双跑切换的细节与冲突处理。

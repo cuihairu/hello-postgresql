@@ -166,11 +166,24 @@ SRF 写在 SELECT 输出列表里也能运行（一行变多行的旧风格）�
 - LATERAL 只能引用左侧：把依赖项写在右边再引用是常见笔误。
 - 派生表必须起别名；函数展开多列时用 `AS t(col1, col2)` 显式命名，避免歧义。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 7.8. WITH Queries (Common Table Expressions)](https://www.postgresql.org/docs/current/queries-with.html)
+- [PostgreSQL 官方文档 · 9.22. Window Functions](https://www.postgresql.org/docs/current/functions-window.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [窗口函数](./window-functions)
 - [窗口函数进阶](./window-functions-advanced)
 - [子查询家族](./subquery-family)
 - [数组操作](./array-operations)
-
+- [array-operations](array-operations.md)
+- [index](index.md)
+- [sql-functions-advanced](sql-functions-advanced.md)
+- [subquery-family](subquery-family.md)
+- [window-functions-advanced](window-functions-advanced.md)
+- [join-family](/basics/join-family.md)
+- [join-implementations](/internals/join-implementations.md)
+- [connection-and-orm-optimization](/performance/connection-and-orm-optimization.md)
 官方文档：[FROM 与 LATERAL](https://www.postgresql.org/docs/current/queries-table-expressions.html)、[集合返回函数](https://www.postgresql.org/docs/current/functions-srf.html)。

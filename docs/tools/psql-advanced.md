@@ -126,11 +126,25 @@ psql 每次启动会执行 `~/.psqlrc`（Windows 为 `%APPDATA%\postgresql\psqlr
 
 运维脚本、CI 里跑 SQL 时要跳过它，加 `-X` 参数：`psql -X -f job.sql`——psqlrc 里任何输出性设置都会污染脚本输出，这是自动化场景的常见事故源。反过来，交互体验需要的别名、提示符都放 psqlrc，两者分清用途即可。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · psql](https://www.postgresql.org/docs/current/app-psql.html)
+- [PostgreSQL 官方文档 · F.32. pg_stat_statements — track statistics of SQL planning and execution](https://www.postgresql.org/docs/current/pgstatstatements.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [psql 入门](../basics/psql-getting-started)
 - [排障工具箱](./troubleshooting-toolbox)
 - [本地开发环境](./local-dev-environment)
 - [EXPLAIN 基础](../performance/explain-basics)
-
+- [batch-and-write](/advanced-sql/batch-and-write.md)
+- [psql-meta-command-reference](/appendix/psql-meta-command-reference.md)
+- [psql-getting-started](/basics/psql-getting-started.md)
+- [plan-cache-and-generic-plan](/internals/plan-cache-and-generic-plan.md)
+- [dbeaver-and-vscode](dbeaver-and-vscode.md)
+- [index](index.md)
+- [local-dev-environment](local-dev-environment.md)
+- [pgadmin-4](pgadmin-4.md)
+- [troubleshooting-toolbox](troubleshooting-toolbox.md)
 官方文档：[psql 命令参考](https://www.postgresql.org/docs/current/app-psql.html)、[大对象](https://www.postgresql.org/docs/current/largeobjects.html)。

@@ -93,9 +93,18 @@ pg_basebackup -D /backup/base -X stream --compress=server-zstd
 
 从 PG 13/14/15 升级到 16 的常见动机：pg_stat_io 与索引使用时间戳（观测）、备库逻辑解码与并行 apply（复制架构）、预排序聚合（报表类查询）。升级路径与注意事项见 [版本升级](../operations/version-upgrade)；2023 年之后的新项目可以直接以 PG 16 为起点。更完整的版本差异对照见 [PostgreSQL 17 新特性摘要](./postgresql-17-features)。
 
+## 参考资料
+
+- [wiki.postgresql.org/wiki/Foreign_data_wrappers](https://wiki.postgresql.org/wiki/Foreign_data_wrappers)
+- [GitHub · pgvector/pgvector](https://github.com/pgvector/pgvector)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [PostgreSQL 17 新特性摘要](./postgresql-17-features)
 - [pg_stat 观测体系](../internals/pg-stat-observation)
 - [逻辑复制原理](../internals/logical-replication-internals)
 - [版本升级](../operations/version-upgrade)
+- [index](index.md)
+- [postgresql-17-features](postgresql-17-features.md)
+- [knowledge](/knowledge.md)

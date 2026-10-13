@@ -135,10 +135,25 @@ WHERE state <> 'idle' AND wait_event_type IS NOT NULL;
 - 视图查询本身也有成本，高频轮询监控建议间隔不低于 10 秒，并固定查询列避免全行展开。
 - 扩展升级（`ALTER EXTENSION pg_stat_statements UPDATE;`）跨大版本时会重置统计，升级窗口要预期到。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 14.1. Using EXPLAIN](https://www.postgresql.org/docs/current/using-explain.html)
+- [PostgreSQL 官方文档 · Chapter 14. Performance Tips](https://www.postgresql.org/docs/current/performance-tips.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [慢查询治理流程](./slow-query-governance)
 - [EXPLAIN (ANALYZE, BUFFERS, WAL)](./explain-analyze-buffers)
 - [统计观察](../internals/pg-stat-observation)
-
+- [extension-management](/ecosystem/extension-management.md)
+- [when-to-choose-postgresql](/ecosystem/when-to-choose-postgresql.md)
+- [pg-stat-observation](/internals/pg-stat-observation.md)
+- [plan-cache-and-generic-plan](/internals/plan-cache-and-generic-plan.md)
+- [process-architecture](/internals/process-architecture.md)
+- [query-execution-pipeline](/internals/query-execution-pipeline.md)
+- [version-upgrade](/operations/version-upgrade.md)
+- [common-bad-plans](common-bad-plans.md)
+- [index](index.md)
+- [slow-query-governance](slow-query-governance.md)
 官方文档：[pg_stat_statements](https://www.postgresql.org/docs/current/pgstatstatements.html)、[统计收集器](https://www.postgresql.org/docs/current/monitoring-stats.html)。

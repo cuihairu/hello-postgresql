@@ -96,11 +96,22 @@ CREATE TABLE doc_bodies (
 - `ORDER BY`、`DISTINCT`、join 键出现在大字段上时，每行都要 detoast，代价远超直觉。
 - `VACUUM FULL`、`pg_dump`、逻辑复制都会整体搬运大字段，TOAST 巨大的表这些操作都慢。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 66.2. TOAST](https://www.postgresql.org/docs/current/storage-toast.html)
+- [PostgreSQL 官方文档 · Chapter 51. Overview of PostgreSQL Internals](https://www.postgresql.org/docs/current/overview.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [MVCC 与多版本](./mvcc-and-multi-version)
 - [VACUUM 与 HOT](./vacuum-and-hot)
 - [GIN 索引](../indexing/gin)
 - [JSONB 操作](../advanced-sql/jsonb-operations)
-
+- [array-operations](/advanced-sql/array-operations.md)
+- [jsonb-operations](/advanced-sql/jsonb-operations.md)
+- [data-types-overview](/basics/data-types-overview.md)
+- [special-types-intro](/basics/special-types-intro.md)
+- [index](index.md)
+- [connection-and-orm-optimization](/performance/connection-and-orm-optimization.md)
 官方文档参考：[TOAST](https://www.postgresql.org/docs/current/storage-toast.html)

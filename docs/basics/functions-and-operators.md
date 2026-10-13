@@ -192,9 +192,19 @@ LANGUAGE sql IMMUTABLE AS $$ SELECT md5(s) $$;
 - `random()` 每次调用产生新值，`SELECT random(), random()` 同行两列也不同——别指望它"在 SQL 里像种子一样可复现"，需要稳定随机请用 `seed()` 配合。
 - 字符串与数值混用（`WHERE varchar_col = 1`）会触发隐式转换，可能让索引失效（见 [常见新手错误](./common-beginner-mistakes)）；`CREATE OR REPLACE` 也不会同步刷新依赖该函数的视图/物化视图。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Part I. Tutorial](https://www.postgresql.org/docs/current/tutorial.html)
+- [PostgreSQL 官方文档 · The SQL Language](https://www.postgresql.org/docs/current/sql.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [WHERE 与表达式](./where-and-expressions)
 - [高级 SQL 函数](../advanced-sql/sql-functions-advanced)
 - [数据类型概览](./data-types-overview)
 - [常见新手错误](./common-beginner-mistakes)
+- [pattern-matching](/advanced-sql/pattern-matching.md)
+- [sql-functions-advanced](/advanced-sql/sql-functions-advanced.md)
+- [index](index.md)
+- [where-and-expressions](where-and-expressions.md)

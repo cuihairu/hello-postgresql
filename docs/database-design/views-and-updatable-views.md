@@ -86,9 +86,17 @@ UPDATE vip_users SET level = 3 WHERE id = 1;
 
 选择原则：只在一条语句里用一次的，写子查询或 CTE 就够；要被多处复用、或要做权限隔离的，才建成视图。CTE 的写法与内联行为见 [CTE 与非递归 WITH](../advanced-sql/cte-and-non-recursive-with)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 5.5. Constraints](https://www.postgresql.org/docs/current/ddl-constraints.html)
+- [PostgreSQL 官方文档 · 5.12. Table Partitioning](https://www.postgresql.org/docs/current/ddl-partitioning.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [物化视图](./materialized-views)
 - [CTE 与非递归 WITH](../advanced-sql/cte-and-non-recursive-with)
 - [行级安全](../security/row-level-security)
 - [系统目录与元数据](../basics/system-catalogs-and-metadata)
+- [index](index.md)
+- [materialized-views](materialized-views.md)

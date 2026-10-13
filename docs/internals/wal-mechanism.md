@@ -71,9 +71,26 @@ WHERE name IN ('wal_compression', 'full_page_writes', 'wal_buffers',
 - pg_wal 分区要与数据目录一起纳入容量监控，WAL 撑爆磁盘会让实例直接 PANIC；存量 WAL 增长异常先查 `pg_replication_slots` 的 inactive 槽。
 - WAL 生成速率异常升高的常见原因：checkpoint 后大量 FPW、长事务把大量变更攒到一起提交、大批量 UPDATE/DELETE。用 `pg_stat_wal` 与两次 LSN 差值对照业务写入量定位。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Chapter 28. Reliability and the Write-Ahead Log](https://www.postgresql.org/docs/current/wal.html)
+- [PostgreSQL 官方文档 · 28.5. WAL Configuration](https://www.postgresql.org/docs/current/wal-configuration.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [checkpoint 与 buffer](./checkpoint-and-buffer)——WAL 落盘之后脏页何时写出。
+- [glossary](/appendix/glossary.md)
+- [checkpoint-and-buffer](checkpoint-and-buffer.md)
+- [index](index.md)
+- [logical-replication-internals](logical-replication-internals.md)
+- [streaming-replication-and-sync](streaming-replication-and-sync.md)
+- [knowledge](/knowledge.md)
+- [disaster-recovery-drills](/operations/disaster-recovery-drills.md)
+- [physical-backup-and-pitr](/operations/physical-backup-and-pitr.md)
+- [streaming-replication-setup](/operations/streaming-replication-setup.md)
+- [capacity-and-scaling-limits](/performance/capacity-and-scaling-limits.md)
+- [vacuum-stall-and-performance](/performance/vacuum-stall-and-performance.md)
+- [write-throughput-optimization](/performance/write-throughput-optimization.md)- [checkpoint 与 buffer](./checkpoint-and-buffer)——WAL 落盘之后脏页何时写出。
 - [流复制与同步复制](./streaming-replication-and-sync)——WAL 如何被下游消费。
 - [物理备份与 PITR](../operations/physical-backup-and-pitr)——WAL 归档与时间点恢复。
 

@@ -106,9 +106,22 @@ FROM sales.orders GROUP BY 1;
 - **database 之间不能直接查询**：连错库报 `relation "xxx" does not exist` 时，先 `\l` 确认连的是不是预期的库。
 - **schema 不是"用户"**：PG 里 schema 与 role 是两个概念，只是默认 `"$user"` 占位符让两者名字常常相同。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 5.10. Schemas](https://www.postgresql.org/docs/current/ddl-schemas.html)
+- [PostgreSQL 官方文档 · Part I. Tutorial](https://www.postgresql.org/docs/current/tutorial.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [psql 入门](./psql-getting-started)
 - [数据类型总览](./data-types-overview)
 - [多租户建模](../database-design/multi-tenant-modeling)
 - [角色与权限](../security/roles-and-permissions)
+- [data-types-overview](data-types-overview.md)
+- [index](index.md)
+- [naming-and-style-conventions](naming-and-style-conventions.md)
+- [psql-getting-started](psql-getting-started.md)
+- [system-catalogs-and-metadata](system-catalogs-and-metadata.md)
+- [what-is-postgresql](what-is-postgresql.md)
+- [object-grant-hierarchy](/security/object-grant-hierarchy.md)

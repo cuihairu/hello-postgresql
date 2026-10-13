@@ -180,11 +180,25 @@ SELECT * FROM jsonb_to_record('{"color": "black", "weight_g": 98}')
 - 高频局部更新一个大 jsonb 列，每次都会重写整个 TOAST 值，写放大明显，见 [TOAST 与大字段存储](../internals/toast)。
 - 更新某个键走 `jsonb_set`/`||`，直接 `SET attrs = '{"a":1}'` 会把其他键整个覆盖掉。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 7.8. WITH Queries (Common Table Expressions)](https://www.postgresql.org/docs/current/queries-with.html)
+- [PostgreSQL 官方文档 · 9.22. Window Functions](https://www.postgresql.org/docs/current/functions-window.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [JSONB 设计模式](./jsonb-design-patterns)
 - [GIN 索引](../indexing/gin)
 - [生成列与 CHECK 约束](./generated-columns-and-check)
 - [TOAST 与大字段存储](../internals/toast)
-
+- [array-operations](array-operations.md)
+- [index](index.md)
+- [jsonb-design-patterns](jsonb-design-patterns.md)
+- [special-types-intro](/basics/special-types-intro.md)
+- [anti-patterns](/database-design/anti-patterns.md)
+- [postgresql-17-features](/ecosystem/postgresql-17-features.md)
+- [gin](/indexing/gin.md)
+- [toast](/internals/toast.md)
+- [knowledge](/knowledge.md)
 官方文档：[JSON 类型](https://www.postgresql.org/docs/current/datatype-json.html)、[JSON 函数与操作符](https://www.postgresql.org/docs/current/functions-json.html)。

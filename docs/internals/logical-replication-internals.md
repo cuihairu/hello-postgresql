@@ -109,9 +109,19 @@ SELECT subname, apply_error_count FROM pg_stat_subscription_stats;
 - 复制身份改 FULL 会放大主库 WAL，先在测试环境量一下增量再上生产。
 - 订阅端 apply 是单 worker 顺序回放，订阅端吞吐上限取决于最重的那张表，写入热点表不适合指望逻辑复制线性扩写。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Chapter 29. Logical Replication](https://www.postgresql.org/docs/current/logical-replication.html)
+- [PostgreSQL 官方文档 · Chapter 47. Logical Decoding](https://www.postgresql.org/docs/current/logicaldecoding.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [WAL 机制](./wal-mechanism)——被解码的原始日志。
+- [postgresql-16-features](/ecosystem/postgresql-16-features.md)
+- [postgresql-17-features](/ecosystem/postgresql-17-features.md)
+- [index](index.md)
+- [knowledge](/knowledge.md)
+- [logical-replication-ops](/operations/logical-replication-ops.md)- [WAL 机制](./wal-mechanism)——被解码的原始日志。
 - [流复制与同步](./streaming-replication-and-sync)——物理复制如何分工。
 - [逻辑复制运维](../operations/logical-replication-ops)——搭建与排障的操作手册。
 - [版本升级](../operations/version-upgrade)——逻辑复制跨版本升级的完整流程。

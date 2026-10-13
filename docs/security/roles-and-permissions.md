@@ -124,11 +124,34 @@ CREATE ROLE app_owner_login LOGIN PASSWORD '...' IN ROLE app_owner;
 - 删角色前先处理依赖：`DROP ROLE` 会因"仍被依赖"失败，先 `REASSIGN OWNED BY alice TO app_owner;` 和 `DROP OWNED BY alice;` 再删。
 - 角色是**实例级**的：一个实例上的所有数据库共享同一套角色，多业务共实例时用命名前缀区分，避免权限串库。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 5.9. Row Security Policies](https://www.postgresql.org/docs/current/ddl-rowsecurity.html)
+- [PostgreSQL 官方文档 · 20.3. Authentication Methods](https://www.postgresql.org/docs/current/auth-methods.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
+
+- 子树总纲：[第8部分：安全](/security/)
 
 - [对象授权层级](./object-grant-hierarchy)
 - [行级安全 RLS](./row-level-security)
 - [pg_hba 与认证](./pg-hba-and-authentication)
 - [加固清单](./hardening-checklist)
-
+- [sql-functions-advanced](/advanced-sql/sql-functions-advanced.md)
+- [sql-command-reference](/appendix/sql-command-reference.md)
+- [database-and-schema-objects](/basics/database-and-schema-objects.md)
+- [functions-and-operators](/basics/functions-and-operators.md)
+- [extension-management](/ecosystem/extension-management.md)
+- [fdw-and-foreign-data](/ecosystem/fdw-and-foreign-data.md)
+- [postgresql-16-features](/ecosystem/postgresql-16-features.md)
+- [knowledge](/knowledge.md)
+- [disaster-recovery-drills](/operations/disaster-recovery-drills.md)
+- [hardening-checklist](hardening-checklist.md)
+- [index](index.md)
+- [object-grant-hierarchy](object-grant-hierarchy.md)
+- [pg-hba-and-authentication](pg-hba-and-authentication.md)
+- [row-level-security](row-level-security.md)
+- [dbeaver-and-vscode](/tools/dbeaver-and-vscode.md)
+- [pgadmin-4](/tools/pgadmin-4.md)
 官方文档：[CREATE ROLE](https://www.postgresql.org/docs/current/sql-createrole.html)、[角色成员关系](https://www.postgresql.org/docs/current/role-membership.html)、[数据库角色](https://www.postgresql.org/docs/current/database-roles.html)。

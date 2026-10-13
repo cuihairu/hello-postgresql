@@ -153,11 +153,19 @@ SQL 里 JOIN 的书写顺序（除外连接外）不决定执行顺序，优化�
 - 外连接会限制优化器重排的自由度，多层外连接的计划变差时，检查是否真的需要 OUTER。
 - LEFT JOIN 的行数可能比左表多（一对多），拿它做去重假设前先 `EXPLAIN` 确认。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Part I. Tutorial](https://www.postgresql.org/docs/current/tutorial.html)
+- [PostgreSQL 官方文档 · The SQL Language](https://www.postgresql.org/docs/current/sql.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [聚合与 GROUP BY](./aggregate-and-group-by)
 - [JOIN 实现方式](../internals/join-implementations)
 - [外键与引用动作](../database-design/foreign-keys-and-referential-actions)
 - [LATERAL 与 FROM 子查询](../advanced-sql/lateral-and-from-subquery)
-
+- [subquery-family](/advanced-sql/subquery-family.md)
+- [aggregate-and-group-by](aggregate-and-group-by.md)
+- [index](index.md)
 官方文档：[连接查询教程](https://www.postgresql.org/docs/current/tutorial-join.html)、[FROM 与 JOIN 完整语法](https://www.postgresql.org/docs/current/queries-table-expressions.html)。

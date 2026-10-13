@@ -153,9 +153,22 @@ SELECT id, name, created_at FROM users ORDER BY id;
 - **`createdb` / `createuser` 是命令行快捷方式**：本质是封装的 SQL，等价于 `CREATE DATABASE` / `CREATE ROLE`，适合脚本化建库。
 - **忘记密码时**：`pg_hba.conf` 临时把本地认证改成 `trust`，reload 后用 `psql -U postgres` 进去改密码，再改回原规则，别忘 reload。
 
+## 参考资料
+
+- [postgresql.org/media/keys/ACCC4CF8.asc](https://www.postgresql.org/media/keys/ACCC4CF8.asc)
+- [apt.postgresql.org/pub/repos/apt](https://apt.postgresql.org/pub/repos/apt)
+- [download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm](https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm)
+- [postgresql.org/download/windows](https://www.postgresql.org/download/windows/)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [什么是 PostgreSQL](./what-is-postgresql)
 - [psql 入门](./psql-getting-started)
 - [连接管理](../operations/connection-management)
 - [版本升级](../operations/version-upgrade)
+- [index](index.md)
+- [psql-getting-started](psql-getting-started.md)
+- [what-is-postgresql](what-is-postgresql.md)
+- [cluster-init-and-layout](/operations/cluster-init-and-layout.md)
+- [local-dev-environment](/tools/local-dev-environment.md)

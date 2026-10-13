@@ -148,11 +148,25 @@ ORDER  BY xact_start;
 - **只读副本上也查得到**：`pg_stat_activity` 与 `pg_locks` 在备库同样可用，行锁等待则只在主库出现。
 - **终止用 `pg_terminate_backend(pid)`**：`pg_cancel_backend` 只取消当前正在执行的语句，杀不掉 idle in transaction。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Chapter 27. Monitoring Database Activity](https://www.postgresql.org/docs/current/monitoring.html)
+- [PostgreSQL 官方文档 · Chapter 51. Overview of PostgreSQL Internals](https://www.postgresql.org/docs/current/overview.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [锁系统](./lock-system)
 - [VACUUM 与 HOT](./vacuum-and-hot)
 - [锁与并发瓶颈](../performance/lock-and-concurrency-bottlenecks)
 - [连接与 ORM 优化](../performance/connection-and-orm-optimization)
-
+- [common-errors-and-troubleshooting](/appendix/common-errors-and-troubleshooting.md)
+- [index](index.md)
+- [lock-system](lock-system.md)
+- [streaming-replication-and-sync](streaming-replication-and-sync.md)
+- [monitoring-and-alerting](/operations/monitoring-and-alerting.md)
+- [ops-sop](/operations/ops-sop.md)
+- [lock-and-concurrency-bottlenecks](/performance/lock-and-concurrency-bottlenecks.md)
+- [pg-stat-statements](/performance/pg-stat-statements.md)
+- [troubleshooting-toolbox](/tools/troubleshooting-toolbox.md)
 官方文档参考：[Monitoring Database Activity](https://www.postgresql.org/docs/current/monitoring.html)

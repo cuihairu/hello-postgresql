@@ -86,11 +86,19 @@ Node 生态还有一个不绑定 ORM 的 [node-pg-migrate](https://github.com/sa
 
 迁移执行期间的锁与长事务风险，见[锁与并发瓶颈](../performance/lock-and-concurrency-bottlenecks)；约束与索引背后的机制见[锁系统](../internals/lock-system)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · psql](https://www.postgresql.org/docs/current/app-psql.html)
+- [PostgreSQL 官方文档 · F.32. pg_stat_statements — track statistics of SQL planning and execution](https://www.postgresql.org/docs/current/pgstatstatements.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [本地开发环境](./local-dev-environment)
 - [客户端驱动](./client-drivers)
 - [锁与并发瓶颈](../performance/lock-and-concurrency-bottlenecks)
 - [锁系统](../internals/lock-system)
-
+- [logical-replication-ops](/operations/logical-replication-ops.md)
+- [index](index.md)
+- [local-dev-environment](local-dev-environment.md)
 官方文档：[golang-migrate](https://github.com/golang-migrate/migrate)、[Flyway 文档](https://documentation.red-gate.com/flyway/)、[Prisma Migrate](https://www.prisma.io/docs/orm/prisma-migrate)。

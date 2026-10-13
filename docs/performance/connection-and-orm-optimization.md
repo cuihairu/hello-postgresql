@@ -131,11 +131,25 @@ COPY metrics (tag, value, taken_at) FROM STDIN WITH (FORMAT csv);
 - COPY 与多值 INSERT 都会撑大单条 WAL，超大批次拆成 1-5 万行一段，给复制与 checkpoint 留缓冲。
 - 事务里嵌套大量 SAVEPOINT 的 ORM 行为（如 Django 原子块嵌套）在连接池 transaction 模式下可能失效，上线前验证。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 14.1. Using EXPLAIN](https://www.postgresql.org/docs/current/using-explain.html)
+- [PostgreSQL 官方文档 · Chapter 14. Performance Tips](https://www.postgresql.org/docs/current/performance-tips.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [慢查询治理流程](./slow-query-governance)
 - [批量写入](../advanced-sql/batch-and-write)
 - [连接管理](../operations/connection-management)
 - [计划缓存与通用计划](../internals/plan-cache-and-generic-plan)
-
+- [common-errors-and-troubleshooting](/appendix/common-errors-and-troubleshooting.md)
+- [architecture-and-memory](/internals/architecture-and-memory.md)
+- [lock-conflict-troubleshooting](/internals/lock-conflict-troubleshooting.md)
+- [connection-management](/operations/connection-management.md)
+- [capacity-and-scaling-limits](capacity-and-scaling-limits.md)
+- [index](index.md)
+- [parameter-tuning](parameter-tuning.md)
+- [slow-query-governance](slow-query-governance.md)
+- [client-drivers](/tools/client-drivers.md)
 官方文档：[COPY](https://www.postgresql.org/docs/current/sql-copy.html)、[查询规划配置](https://www.postgresql.org/docs/current/runtime-config-query.html)。

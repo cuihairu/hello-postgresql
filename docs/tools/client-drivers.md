@@ -115,11 +115,22 @@ conn.execute("SELECT * FROM users WHERE name = %s", (request.args['name'],))
 
 参数化不只防注入，还让相同 SQL 结构复用同一份已编译计划，对性能也有好处。凡是"看起来只是拼接个数字或日期"的地方一样要参数化——今天传数字，明天传用户 ID 数组，防线不该靠自律而靠习惯。批量写入的正确姿势见[批量写入](../advanced-sql/batch-and-write)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · psql](https://www.postgresql.org/docs/current/app-psql.html)
+- [PostgreSQL 官方文档 · F.32. pg_stat_statements — track statistics of SQL planning and execution](https://www.postgresql.org/docs/current/pgstatstatements.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [排障工具箱](./troubleshooting-toolbox)
 - [连接与 ORM 优化](../performance/connection-and-orm-optimization)
 - [进程架构](../internals/process-architecture)
 - [连接管理](../operations/connection-management)
-
+- [dbeaver-and-vscode](dbeaver-and-vscode.md)
+- [index](index.md)
+- [local-dev-environment](local-dev-environment.md)
+- [real-world-cases](real-world-cases.md)
+- [schema-migration-tools](schema-migration-tools.md)
+- [troubleshooting-toolbox](troubleshooting-toolbox.md)
 官方文档：[psycopg 3](https://www.psycopg.org/psycopg3/docs/)、[node-postgres](https://node-postgres.com/)、[libpq 连接参数](https://www.postgresql.org/docs/current/libpq-connect.html)。

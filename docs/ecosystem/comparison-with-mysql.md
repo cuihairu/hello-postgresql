@@ -88,9 +88,19 @@ SELECT * FROM users WHERE phone = 13800138000;   -- 索引失效，且 '13800138
 - 确实需要跨库查询时用 [FDW](./fdw-and-foreign-data) 做只读联合查询，而不是互相同步全量数据；
 - 迁移决策看痛点：MySQL 团队频繁手工处理 JSON、数组、复杂报表时，PG 的 SQL 能力兑现为开发效率；反过来，团队 PG 经验为零而业务就是简单 CRUD，迁移收益覆盖不了学习与运维成本。
 
+## 参考资料
+
+- [wiki.postgresql.org/wiki/Foreign_data_wrappers](https://wiki.postgresql.org/wiki/Foreign_data_wrappers)
+- [GitHub · pgvector/pgvector](https://github.com/pgvector/pgvector)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [选型问答](./when-to-choose-postgresql)
 - [MVCC 与多版本](../internals/mvcc-and-multi-version)
 - [数据类型总览](../basics/data-types-overview)
 - [FDW 与外部数据](./fdw-and-foreign-data)
+- [what-is-postgresql](/basics/what-is-postgresql.md)
+- [index](index.md)
+- [when-to-choose-postgresql](when-to-choose-postgresql.md)
+- [knowledge](/knowledge.md)

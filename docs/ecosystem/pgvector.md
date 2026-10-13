@@ -125,9 +125,19 @@ LIMIT 10;
 - 批量灌数据时先灌完再建索引，边灌边维护 HNSW 图会明显拖慢导入。
 - 大于 2000 维的向量建议用 `halfvec`（半精度，上限 4000 维）或先降维，减小索引体积。
 
+## 参考资料
+
+- [wiki.postgresql.org/wiki/Foreign_data_wrappers](https://wiki.postgresql.org/wiki/Foreign_data_wrappers)
+- [GitHub · pgvector/pgvector](https://github.com/pgvector/pgvector)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [扩展管理](./extension-management)
 - [GiST 索引](../indexing/gin)
 - [索引选型决策树](../indexing/index-selection-decision-tree)
 - [选型问答](./when-to-choose-postgresql)
+- [extension-management](extension-management.md)
+- [index](index.md)
+- [gist](/indexing/gist.md)
+- [knowledge](/knowledge.md)

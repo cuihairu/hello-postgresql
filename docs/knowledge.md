@@ -64,3 +64,9 @@
 - [S4] 《PostgreSQL 14 Internals》官方免费 PDF — <https://postgrespro.com/community/books/internals>
 - [S5] use-the-index-luke.com — <https://use-the-index-luke.com/>
 - [S6] explain.depesz.com — <https://explain.depesz.com/>
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [index](/appendix/index.md)
+- [index](/basics/index.md)

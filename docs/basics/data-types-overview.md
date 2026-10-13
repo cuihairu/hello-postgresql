@@ -150,9 +150,23 @@ PG 保留了一批 SQL 标准与历史别名，`pg_catalog` 里看到 `int4`、`
 - **`money` 类型不建议**：区域设置影响输出、除法行为怪异，用 `numeric` 更可控；
 - **改列类型可能锁表重写**：`int` 改 `bigint` 在 PG 里需要重写整表（`ALTER TYPE ... USING`），大表要先规划窗口期，见 [锁系统](../internals/lock-system)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Chapter 8. Data Types](https://www.postgresql.org/docs/current/datatype.html)
+- [PostgreSQL 官方文档 · CREATE TABLE](https://www.postgresql.org/docs/current/sql-createtable.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [特色类型入门](./special-types-intro)
 - [数据库与 schema 对象](./database-and-schema-objects)
 - [主键设计](../database-design/primary-key-design)
 - [金额与数值](../database-design/money-and-numeric)
+- [common-beginner-mistakes](common-beginner-mistakes.md)
+- [database-and-schema-objects](database-and-schema-objects.md)
+- [functions-and-operators](functions-and-operators.md)
+- [index](index.md)
+- [special-types-intro](special-types-intro.md)
+- [money-and-numeric](/database-design/money-and-numeric.md)
+- [time-modeling](/database-design/time-modeling.md)
+- [comparison-with-mysql](/ecosystem/comparison-with-mysql.md)

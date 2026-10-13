@@ -116,11 +116,23 @@ SELECT id, amount FROM events TABLESAMPLE SYSTEM (0.1);   -- 约 0.1% 的块
 - `ORDER BY` 里对可空列排序注意 `NULLS FIRST/LAST` 的默认行为，见 [条件表达式](./conditional-expressions)。
 - 复合索引的列顺序必须与 `ORDER BY` 的方向一致（含 DESC），混合方向排序需要对应方向的索引，见 [复合索引设计](../indexing/composite-index-design)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 7.8. WITH Queries (Common Table Expressions)](https://www.postgresql.org/docs/current/queries-with.html)
+- [PostgreSQL 官方文档 · 9.22. Window Functions](https://www.postgresql.org/docs/current/functions-window.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [条件表达式](./conditional-expressions)
 - [复合索引设计](../indexing/composite-index-design)
 - [慢查询治理](../performance/slow-query-governance)
 - [常用执行计划劣化形态](../performance/common-bad-plans)
-
+- [conditional-expressions](conditional-expressions.md)
+- [index](index.md)
+- [window-functions-advanced](window-functions-advanced.md)
+- [primary-key-design](/database-design/primary-key-design.md)
+- [composite-index-design](/indexing/composite-index-design.md)
+- [knowledge](/knowledge.md)
+- [connection-and-orm-optimization](/performance/connection-and-orm-optimization.md)
 官方文档：[LIMIT 与 OFFSET](https://www.postgresql.org/docs/current/queries-limit.html)、[行值比较](https://www.postgresql.org/docs/current/functions-comparisons.html#ROWWISE-COMPARISON)、[TABLESAMPLE](https://www.postgresql.org/docs/current/sql-select.html#SQL-TABLESAMPLE)。

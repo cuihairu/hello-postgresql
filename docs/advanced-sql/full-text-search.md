@@ -124,10 +124,22 @@ LIMIT 10;
 - 大量写入时 GIN 的 pending list 会拖慢查询，高写入场景关注 fastupdate 与 autovacuum 的配合。
 - 中文场景先验证分词效果再定索引列结构，「先 LIKE 兜底」通常说明分词方案没选对。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 7.8. WITH Queries (Common Table Expressions)](https://www.postgresql.org/docs/current/queries-with.html)
+- [PostgreSQL 官方文档 · 9.22. Window Functions](https://www.postgresql.org/docs/current/functions-window.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [GIN 索引](../indexing/gin)
 - [模式匹配](./pattern-matching)
 - [索引选型决策树](../indexing/index-selection-decision-tree)
-
-官方文档：[全文检索简介](https://www.postgresql.org/docs/current/textsearch-intro.html)、[全文检索控制](https://www.postgresql.org/docs/current/textsearch-controls.html)、[ts_stat 统计](https://www.postgresql.org/docs/current/textsearch-statistics.html)。
+- [index](index.md)
+- [pattern-matching](pattern-matching.md)
+- [where-and-expressions](/basics/where-and-expressions.md)
+- [extension-management](/ecosystem/extension-management.md)
+- [gin](/indexing/gin.md)
+- [gist](/indexing/gist.md)
+- [index-selection-decision-tree](/indexing/index-selection-decision-tree.md)
+官方文档：[全文检索简介](https://www.postgresql.org/docs/current/textsearch-intro.html)、[全文检索控制](https://www.postgresql.org/docs/current/textsearch-controls.html)、[ts_stat 统计](https://www.postgresql.org/docs/current/textsearch-features.html)。

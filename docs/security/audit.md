@@ -88,11 +88,20 @@ csvlog / jsonlog 的每行自带时间戳、会话 ID、PID、用户、数据库
 - `log_min_duration_statement` 按完成时间记录，被取消的查询不落日志，不能拿它做完整审计。
 - 上线前先在测试环境跑一遍，确认审计输出内容（尤其参数与语句文本）符合预期，再定采集与脱敏策略。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 5.9. Row Security Policies](https://www.postgresql.org/docs/current/ddl-rowsecurity.html)
+- [PostgreSQL 官方文档 · 20.3. Authentication Methods](https://www.postgresql.org/docs/current/auth-methods.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [pg_hba 与认证](./pg-hba-and-authentication)
 - [加固清单](./hardening-checklist)
 - [监控与告警](../operations/monitoring-and-alerting)
 - [pg_stat 观测](../internals/pg-stat-observation)
-
+- [extension-management](/ecosystem/extension-management.md)
+- [data-encryption-at-rest](data-encryption-at-rest.md)
+- [hardening-checklist](hardening-checklist.md)
+- [index](index.md)
 官方文档：[错误报告与日志](https://www.postgresql.org/docs/current/runtime-config-logging.html)、[日志文件格式（csvlog/jsonlog）](https://www.postgresql.org/docs/current/runtime-config-logging.html#RUNTIME-CONFIG-LOGGING-CSVLOG)、[pgaudit](https://github.com/pgaudit/pgaudit)。

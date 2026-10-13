@@ -20,3 +20,10 @@ EXPLAIN 读法、统计信息、pg_stat_statements、慢查询治理流程与参
 ---
 
 - [内核机制](../internals/) · [索引体系](../indexing/) —— 调优背后的原理。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [index](/indexing/index.md)
+- [index](/internals/index.md)
+- [index](/tools/index.md)

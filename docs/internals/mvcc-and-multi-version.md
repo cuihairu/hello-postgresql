@@ -91,9 +91,28 @@ LIMIT 10;
 - 长事务是死元组堆积的第一根因：一个几小时不提交的事务会让它开始之后的所有旧版本都无法回收，配合 [快照与可见性](./snapshot-and-visibility) 检查 `pg_stat_activity.backend_xmin`。
 - 高频 UPDATE 场景先从源头减负：让更新尽量走 HOT、控制索引数量，而不是靠事后清理兜底。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Chapter 13. Concurrency Control](https://www.postgresql.org/docs/current/mvcc.html)
+- [PostgreSQL 官方文档 · Chapter 51. Overview of PostgreSQL Internals](https://www.postgresql.org/docs/current/overview.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [VACUUM 与 HOT](./vacuum-and-hot)——死元组的回收与索引免更新。
+- [glossary](/appendix/glossary.md)
+- [common-beginner-mistakes](/basics/common-beginner-mistakes.md)
+- [transaction-basics](/basics/transaction-basics.md)
+- [what-is-postgresql](/basics/what-is-postgresql.md)
+- [comparison-with-mysql](/ecosystem/comparison-with-mysql.md)
+- [index-only-scans](/indexing/index-only-scans.md)
+- [index](index.md)
+- [lock-system](lock-system.md)
+- [snapshot-and-visibility](snapshot-and-visibility.md)
+- [toast](toast.md)
+- [transactions-and-isolation](transactions-and-isolation.md)
+- [vacuum-and-hot](vacuum-and-hot.md)
+- [knowledge](/knowledge.md)
+- [lock-and-concurrency-bottlenecks](/performance/lock-and-concurrency-bottlenecks.md)- [VACUUM 与 HOT](./vacuum-and-hot)——死元组的回收与索引免更新。
 - [事务与隔离级别](./transactions-and-isolation)——快照时机决定各级别行为。
 - [快照与可见性](./snapshot-and-visibility)——可见性判断的完整规则。
 - [索引膨胀与维护](../indexing/index-bloat-and-maintenance)——多版本带来的索引侧代价。

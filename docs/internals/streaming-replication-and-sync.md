@@ -90,9 +90,24 @@ SELECT pg_is_in_recovery() AS in_recovery,
 - 重放延迟的告警要用字节差（`pg_wal_lsn_diff`）而非时间字段，理由见上文 lag 字段的刷新语义。
 - 主备切换后的重新接线、同步候选与 HA 编排的关系见[高可用架构](../operations/high-availability-architecture)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 26.2. Log-Shipping Standby Servers](https://www.postgresql.org/docs/current/warm-standby.html#STREAMING-REPLICATION)
+- [PostgreSQL 官方文档 · 19.6. Replication](https://www.postgresql.org/docs/current/runtime-config-replication.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [WAL 机制](./wal-mechanism)——被传输的到底是什么。
+- [sql-functions-advanced](/advanced-sql/sql-functions-advanced.md)
+- [citus](/ecosystem/citus.md)
+- [comparison-with-mysql](/ecosystem/comparison-with-mysql.md)
+- [index-bloat-and-maintenance](/indexing/index-bloat-and-maintenance.md)
+- [index](index.md)
+- [logical-replication-internals](logical-replication-internals.md)
+- [wal-mechanism](wal-mechanism.md)
+- [knowledge](/knowledge.md)
+- [high-availability-architecture](/operations/high-availability-architecture.md)
+- [streaming-replication-setup](/operations/streaming-replication-setup.md)- [WAL 机制](./wal-mechanism)——被传输的到底是什么。
 - [流复制搭建](../operations/streaming-replication-setup)——从零建一套主备。
 - [高可用架构](../operations/high-availability-architecture)——切换与选主。
 - [锁冲突排查](./lock-conflict-troubleshooting)——另一种"卡住"的排查方法。

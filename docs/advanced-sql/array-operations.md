@@ -149,11 +149,21 @@ SELECT * FROM articles WHERE tags <@ ARRAY['postgres', 'index', '入门'];
 - unnest 之后再过滤，数组形态已经没了，GIN 帮不上忙；要索引就保持数组操作符查询。
 - 更新数组任意一个元素都要重写整列存储，大数组高频更新是写放大来源。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 7.8. WITH Queries (Common Table Expressions)](https://www.postgresql.org/docs/current/queries-with.html)
+- [PostgreSQL 官方文档 · 9.22. Window Functions](https://www.postgresql.org/docs/current/functions-window.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [GIN 索引](../indexing/gin)
 - [JSONB 操作](./jsonb-operations)
 - [LATERAL 与 FROM 子查询](./lateral-and-from-subquery)
 - [范围类型与 EXCLUDE](./range-types-and-exclude)
-
+- [index](index.md)
+- [lateral-and-from-subquery](lateral-and-from-subquery.md)
+- [range-types-and-exclude](range-types-and-exclude.md)
+- [recursive-cte](recursive-cte.md)
+- [special-types-intro](/basics/special-types-intro.md)
 官方文档：[数组类型](https://www.postgresql.org/docs/current/arrays.html)、[数组函数与操作符](https://www.postgresql.org/docs/current/functions-array.html)。

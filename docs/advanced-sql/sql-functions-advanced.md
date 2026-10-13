@@ -170,11 +170,18 @@ $$;
 - `CREATE OR REPLACE FUNCTION` 不能改变返回类型或参数列表，改签名要先 `DROP FUNCTION`。
 - 默认 `VOLATILE` 的函数出现在 `WHERE` 中会阻止不少优化（如谓词下推、索引条件缓存），只读查询的辅助函数先想想能否标 STABLE。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 7.8. WITH Queries (Common Table Expressions)](https://www.postgresql.org/docs/current/queries-with.html)
+- [PostgreSQL 官方文档 · 9.22. Window Functions](https://www.postgresql.org/docs/current/functions-window.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [函数与操作符](../basics/functions-and-operators)
 - [批量与写入](./batch-and-write)
 - [角色与权限](../security/roles-and-permissions)
 - [表达式索引](../indexing/expression-indexes)
-
+- [index](index.md)
+- [functions-and-operators](/basics/functions-and-operators.md)
 官方文档：[PL/pgSQL 基础](https://www.postgresql.org/docs/current/plpgsql.html)、[错误与消息](https://www.postgresql.org/docs/current/plpgsql-control-structures.html#PLPGSQL-ERRORS-AND-MESSAGES)、[函数易变性](https://www.postgresql.org/docs/current/xfunc-volatility.html)。

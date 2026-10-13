@@ -97,11 +97,27 @@ ANALYZE orders;
 - **pg_statistic 需要特权读**：普通用户查 pg_stats 视图即可，且只看得到自己有权限的表。
 - 统计信息在变更后**不会自动立即更新**：autovacuum 的 analyze 触发阈值（`autovacuum_analyze_scale_factor`）在大表上意味着"几百万行变更后才分析"，关键表要靠定时任务。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 19.7. Query Planning](https://www.postgresql.org/docs/current/runtime-config-query.html)
+- [PostgreSQL 官方文档 · Chapter 51. Overview of PostgreSQL Internals](https://www.postgresql.org/docs/current/overview.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [统计信息与 ANALYZE](../performance/statistics-and-analyze)
 - [EXPLAIN 基础](../performance/explain-basics)
 - [join 实现](./join-implementations)
 - [常见坏计划](../performance/common-bad-plans)
-
+- [index](index.md)
+- [join-implementations](join-implementations.md)
+- [parallel-query](parallel-query.md)
+- [plan-cache-and-generic-plan](plan-cache-and-generic-plan.md)
+- [query-execution-pipeline](query-execution-pipeline.md)
+- [knowledge](/knowledge.md)
+- [common-bad-plans](/performance/common-bad-plans.md)
+- [explain-analyze-buffers](/performance/explain-analyze-buffers.md)
+- [explain-basics](/performance/explain-basics.md)
+- [parameter-tuning](/performance/parameter-tuning.md)
+- [statistics-and-analyze](/performance/statistics-and-analyze.md)
 官方文档参考：[Planner Cost Constants](https://www.postgresql.org/docs/current/runtime-config-query.html)

@@ -90,9 +90,22 @@ FROM pg_stat_checkpointer;
 - PG 的写出走普通 write（非 O_DIRECT），OS cache 回写行为会与 checkpoint 峰叠加，压测时用 iostat 对照 checkpoint 时间点分析 IO 曲线。
 - 恢复时间目标（RTO）有硬指标的系统，`max_wal_size` 不能无限放大：checkpoint 越稀疏，崩溃恢复越久，这是吞吐与恢复时长的权衡。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 28.5. WAL Configuration](https://www.postgresql.org/docs/current/wal-configuration.html)
+- [PostgreSQL 官方文档 · 19.4. Resource Consumption](https://www.postgresql.org/docs/current/runtime-config-resource.html#RUNTIME-CONFIG-RESOURCE-BACKGROUND-WRITER)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [WAL 机制](./wal-mechanism)——先写日志的另一半。
+- [architecture-and-memory](architecture-and-memory.md)
+- [index](index.md)
+- [process-architecture](process-architecture.md)
+- [wal-mechanism](wal-mechanism.md)
+- [benchmark-tools](/performance/benchmark-tools.md)
+- [explain-analyze-buffers](/performance/explain-analyze-buffers.md)
+- [parameter-tuning](/performance/parameter-tuning.md)
+- [write-throughput-optimization](/performance/write-throughput-optimization.md)- [WAL 机制](./wal-mechanism)——先写日志的另一半。
 - [架构与内存](./architecture-and-memory)——shared_buffers 在整体内存中的位置。
 - [参数调优](../performance/parameter-tuning)——相关参数的全局视角。
 - [EXPLAIN ANALYZE 与 BUFFERS](../performance/explain-analyze-buffers)——从单条查询看缓冲区命中。

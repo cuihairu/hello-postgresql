@@ -155,9 +155,19 @@ WHERE  c.relname = 'demo';
 - `pg_total_relation_size()` 只算对象自身，不包含**分区表**的子分区大小。分区表求总大小要 `SUM` 每个分区的 `pg_total_relation_size()`，或查 `pg_partition_tree()` 递归聚合。
 - `information_schema.columns.data_type` 对用户自定义类型只会显示 `USER-DEFINED`，此时要回落 `pg_attribute` + `pg_type` 查真实类型名。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Part I. Tutorial](https://www.postgresql.org/docs/current/tutorial.html)
+- [PostgreSQL 官方文档 · The SQL Language](https://www.postgresql.org/docs/current/sql.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [psql 元命令参考](../appendix/psql-meta-command-reference)
 - [数据库与模式对象](./database-and-schema-objects)
 - [psql 入门](./psql-getting-started)
 - [pg_stat 观测体系](../internals/pg-stat-observation)
+- [index](index.md)
+- [naming-and-style-conventions](naming-and-style-conventions.md)
+- [views-and-updatable-views](/database-design/views-and-updatable-views.md)
+- [extension-management](/ecosystem/extension-management.md)

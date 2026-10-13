@@ -85,9 +85,19 @@ SELECT sum(amount) FROM payments;          -- sum(numeric) 仍是 numeric，不�
 
 PostgreSQL 内置的 `money` 类型（个别资料里写作 pg_money）不推荐用于新表：标度固定为 2 位、输出与解析行为随 `lc_monetary` 区域设置变化（换区域后符号与分隔符都会变）、与其他数值类型混合运算必须显式 cast，且不适合多币种。需要"带币种的金额"时，用 `numeric` 加一个 `currency char(3)` 列自行建模，行为完全可控。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 5.5. Constraints](https://www.postgresql.org/docs/current/ddl-constraints.html)
+- [PostgreSQL 官方文档 · 5.12. Table Partitioning](https://www.postgresql.org/docs/current/ddl-partitioning.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [数据类型概览](../basics/data-types-overview)
 - [约束与数据质量](./constraints-and-data-quality)
 - [反模式清单](./anti-patterns)
 - [时间建模](./time-modeling)
+- [data-types-overview](/basics/data-types-overview.md)
+- [functions-and-operators](/basics/functions-and-operators.md)
+- [anti-patterns](anti-patterns.md)
+- [index](index.md)

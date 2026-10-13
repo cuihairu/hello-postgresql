@@ -111,9 +111,22 @@ COMMIT;                                   -- 提交时统一校验，交换成�
 - **约束参与查询裁剪**：继承表上的 CHECK 约束配合 `constraint_exclusion = on` 可让优化器跳过不相关的子表；分区表的对应机制是分区裁剪，见 [分区裁剪](../performance/partition-pruning)。
 - **VALIDATE 与 autovacuum 排队**：大表 VALIDATE 是长事务形态的扫描，安排在低峰期，避免与 autovacuum 互相等待，背景见 [autovacuum 调优](../internals/autovacuum-tuning)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · ALTER TABLE](https://www.postgresql.org/docs/current/sql-altertable.html)
+- [PostgreSQL 官方文档 · 5.5. Constraints](https://www.postgresql.org/docs/current/ddl-constraints.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [CHECK 与域类型](./check-and-domains)
 - [外键与引用动作](./foreign-keys-and-referential-actions)
 - [范围类型与 EXCLUDE](../advanced-sql/range-types-and-exclude)
 - [分区裁剪](../performance/partition-pruning)
+- [generated-columns-and-check](/advanced-sql/generated-columns-and-check.md)
+- [check-and-domains](check-and-domains.md)
+- [foreign-keys-and-referential-actions](foreign-keys-and-referential-actions.md)
+- [index](index.md)
+- [money-and-numeric](money-and-numeric.md)
+- [time-modeling](time-modeling.md)
+- [gist](/indexing/gist.md)

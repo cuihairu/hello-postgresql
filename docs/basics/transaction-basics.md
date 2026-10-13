@@ -114,9 +114,19 @@ ORDER  BY age DESC;
 - **DDL 也要包事务**：即使是 `CREATE INDEX CONCURRENTLY`（不锁表但不能在事务块内执行）之外的 DDL，也建议放进事务，避免半成品对象。
 - **别在事务里干慢活**：长事务 + DDL 组合会放大锁冲突，常见于"加索引 / 加列 / 改类型"混在业务事务里跑，见 [锁与并发瓶颈](../performance/lock-and-concurrency-bottlenecks)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Part I. Tutorial](https://www.postgresql.org/docs/current/tutorial.html)
+- [PostgreSQL 官方文档 · The SQL Language](https://www.postgresql.org/docs/current/sql.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [MVCC 与多版本](../internals/mvcc-and-multi-version)
 - [事务与隔离级别](../internals/transactions-and-isolation)
 - [锁系统](../internals/lock-system)
 - [psql 入门](./psql-getting-started)
+- [sql-command-reference](/appendix/sql-command-reference.md)
+- [crud-and-on-conflict](crud-and-on-conflict.md)
+- [index](index.md)
+- [transactions-and-isolation](/internals/transactions-and-isolation.md)

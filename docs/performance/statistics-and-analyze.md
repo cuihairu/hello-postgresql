@@ -144,11 +144,27 @@ WHERE n_live_tup > 100000
 - 表达式（如 `lower(email)`）上的查询要靠表达式索引附带的统计，普通列统计帮不上忙。
 - 频繁 TRUNCATE + 重灌的中间表，autovacuum 可能长期不触发 analyze（行数清零又涨回），这类表要写进导入流程手动 ANALYZE。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · PostgreSQL: Not Found](https://www.postgresql.org/docs/current/sql-createstatistics.html）。)
+- [PostgreSQL 官方文档 · 14.1. Using EXPLAIN](https://www.postgresql.org/docs/current/using-explain.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [EXPLAIN 读法](./explain-basics)
 - [常见坏计划](./common-bad-plans)
 - [优化器代价模型](../internals/optimizer-cost-model)
 - [autovacuum 调优](../internals/autovacuum-tuning)
-
+- [materialized-views](/database-design/materialized-views.md)
+- [fdw-and-foreign-data](/ecosystem/fdw-and-foreign-data.md)
+- [btree-structure](/indexing/btree-structure.md)
+- [index-failure-and-misuse](/indexing/index-failure-and-misuse.md)
+- [optimizer-cost-model](/internals/optimizer-cost-model.md)
+- [plan-cache-and-generic-plan](/internals/plan-cache-and-generic-plan.md)
+- [knowledge](/knowledge.md)
+- [common-bad-plans](common-bad-plans.md)
+- [explain-analyze-buffers](explain-analyze-buffers.md)
+- [explain-basics](explain-basics.md)
+- [index](index.md)
 官方文档：[规划器统计信息](https://www.postgresql.org/docs/current/planner-stats.html)、[例行清理](https://www.postgresql.org/docs/current/routine-vacuuming.html)。

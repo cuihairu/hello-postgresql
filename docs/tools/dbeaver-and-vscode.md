@@ -70,11 +70,18 @@ VS Code 的 PostgreSQL 客户端插件（微软官方的 PostgreSQL 扩展 vscod
 - **"no active connection"**：连接被服务端主动断开——常见原因有 `idle_in_transaction_session_timeout` 把挂着的事务会话回收、网络中断后连接池没清理，检查一下连接串参数与数据库侧超时配置。
 - **权限不足的报错**：先看连接列表里连的是哪个用户，不少情况是连到了默认用户而不是应用账户；角色与权限模型见[角色与权限](../security/roles-and-permissions)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · psql](https://www.postgresql.org/docs/current/app-psql.html)
+- [PostgreSQL 官方文档 · F.32. pg_stat_statements — track statistics of SQL planning and execution](https://www.postgresql.org/docs/current/pgstatstatements.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [pgAdmin 4](./pgadmin-4)
 - [客户端驱动](./client-drivers)
 - [psql 高阶](./psql-advanced)
 - [pg_hba 与认证](../security/pg-hba-and-authentication)
-
+- [index](index.md)
+- [pgadmin-4](pgadmin-4.md)
 官方文档：[DBeaver 官网](https://dbeaver.com/)、[VS Code PostgreSQL 扩展仓库](https://github.com/microsoft/vscode-pgsql)。

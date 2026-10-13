@@ -109,11 +109,23 @@ ORDER BY xact_age NULLS FIRST;
 2. 短期防御：设 `idle_in_transaction_session_timeout` 与 `statement_timeout`，让空闲连接自动退出；
 3. 治本：接入连接池（如 PgBouncer）、检查 ORM 连接池参数，再评估是否调大 `max_connections`（重启生效，注意共享内存开销，并留足 `superuser_reserved_connections`）。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 27.2. The Cumulative Statistics System](https://www.postgresql.org/docs/current/monitoring-stats.html)
+- [PostgreSQL 官方文档 · SQL Commands](https://www.postgresql.org/docs/current/sql-commands.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [锁冲突排查](../internals/lock-conflict-troubleshooting)
 - [连接与 ORM 优化](../performance/connection-and-orm-optimization)
 - [排障工具箱](../tools/troubleshooting-toolbox)
 - [新手常见错误](../basics/common-beginner-mistakes)
-
+- [index](index.md)
+- [psql-meta-command-reference](psql-meta-command-reference.md)
+- [references-and-docs](references-and-docs.md)
+- [common-beginner-mistakes](/basics/common-beginner-mistakes.md)
+- [crud-and-on-conflict](/basics/crud-and-on-conflict.md)
+- [parameter-tuning](/performance/parameter-tuning.md)
+- [pg-hba-and-authentication](/security/pg-hba-and-authentication.md)
 官方文档：[错误码附录](https://www.postgresql.org/docs/current/errcodes-appendix.html)、[pg_stat_activity 视图](https://www.postgresql.org/docs/current/monitoring-stats.html)

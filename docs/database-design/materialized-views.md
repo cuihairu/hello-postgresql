@@ -102,9 +102,19 @@ VACUUM (ANALYZE) mv_daily_summary;
 
 两个常被忽略的点：物化视图不会自动 `ANALYZE`，刷新后统计信息是旧的，复杂查询前记得手动统计；它也会积累死元组（尤其 `CONCURRENTLY` 刷新采用追加-替换方式），autovacuum 覆盖物化视图，但刷新频繁的视图值得纳入观察，相关现象见 [pg_stat 观测](../internals/pg-stat-observation)。
 
+## 参考资料
+
+- [GitHub · sraoss/pg_ivm](https://github.com/sraoss/pg_ivm)
+- [PostgreSQL 官方文档 · 5.5. Constraints](https://www.postgresql.org/docs/current/ddl-constraints.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [视图与可更新视图](./views-and-updatable-views)
 - [三范式与反范式](./normalization-and-denormalization)
 - [FDW 与外部数据](../ecosystem/fdw-and-foreign-data)
 - [统计信息与 ANALYZE](../performance/statistics-and-analyze)
+- [index](index.md)
+- [normalization-and-denormalization](normalization-and-denormalization.md)
+- [views-and-updatable-views](views-and-updatable-views.md)
+- [timescaledb](/ecosystem/timescaledb.md)

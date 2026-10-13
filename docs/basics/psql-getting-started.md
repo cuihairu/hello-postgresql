@@ -115,9 +115,24 @@ psql 用 GNU readline 保存命令历史：上下方向键翻历史、`Ctrl-R` �
 - **`\timing` 计的是客户端往返时间**：包含网络与渲染开销，做性能分析要用 `EXPLAIN ANALYZE`（见 [EXPLAIN 基础](../performance/explain-basics)）。
 - **`\x` 只影响显示**：不改变数据本身，复制粘贴结果时注意别把竖排格式当表结构。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Part I. Tutorial](https://www.postgresql.org/docs/current/tutorial.html)
+- [PostgreSQL 官方文档 · The SQL Language](https://www.postgresql.org/docs/current/sql.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [安装与快速上手](./install-and-quickstart)
 - [数据库与 schema 对象](./database-and-schema-objects)
 - [psql 进阶用法](../tools/psql-advanced)
 - [psql 元命令速查](../appendix/psql-meta-command-reference)
+- [psql-meta-command-reference](/appendix/psql-meta-command-reference.md)
+- [database-and-schema-objects](database-and-schema-objects.md)
+- [index](index.md)
+- [install-and-quickstart](install-and-quickstart.md)
+- [system-catalogs-and-metadata](system-catalogs-and-metadata.md)
+- [transaction-basics](transaction-basics.md)
+- [what-is-postgresql](what-is-postgresql.md)
+- [local-dev-environment](/tools/local-dev-environment.md)
+- [psql-advanced](/tools/psql-advanced.md)

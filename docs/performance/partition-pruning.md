@@ -100,9 +100,22 @@ prepared statement 执行若干次后可能切换到 generic plan（判定规则
 
 `constraint_exclusion` 是更老的机制，服务于**继承表**（手工建 CHECK 约束模拟分区）的年代；声明式分区（`PARTITION BY`）有专门的裁剪机制，不依赖它。默认值 `partition` 表示只对分区表启用声明式裁剪路径；只有还在用继承表时才需要把它设为 `on`。它只在规划期工作，不能识别分区边界，只能验证 CHECK 约束，慢且覆盖面窄——新项目直接用声明式分区，见 [表的继承与分区设计](../database-design/table-inheritance-and-partitioning-design)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 5.12. Table Partitioning](https://www.postgresql.org/docs/current/ddl-partitioning.html#DDL-PARTITIONING-PRUNING)
+- [PostgreSQL 官方文档 · 14.1. Using EXPLAIN](https://www.postgresql.org/docs/current/using-explain.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [EXPLAIN 入门](./explain-basics)——读懂 Append 与计划结构。
+- [constraints-and-data-quality](/database-design/constraints-and-data-quality.md)
+- [multi-tenant-modeling](/database-design/multi-tenant-modeling.md)
+- [table-inheritance-and-partitioning-design](/database-design/table-inheritance-and-partitioning-design.md)
+- [timescaledb](/ecosystem/timescaledb.md)
+- [brin](/indexing/brin.md)
+- [knowledge](/knowledge.md)
+- [capacity-and-scaling-limits](capacity-and-scaling-limits.md)
+- [index](index.md)- [EXPLAIN 入门](./explain-basics)——读懂 Append 与计划结构。
 - [EXPLAIN ANALYZE 与 BUFFERS](./explain-analyze-buffers)——量化每个分区实际扫了多少。
 - [计划缓存与通用计划](../internals/plan-cache-and-generic-plan)——generic plan 的判定与切换。
 - [表的继承与分区设计](../database-design/table-inheritance-and-partitioning-design)——分区键与粒度的设计决策。

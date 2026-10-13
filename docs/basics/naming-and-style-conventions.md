@@ -119,9 +119,20 @@ LIMIT  50;
 - **约束名是 schema 级唯一**：同一 schema 下两张表不能有同名 CHECK 约束，显式命名时务必带表名前缀。
 - **风格工具**：`pg_format`（`psql` 附带的 `sql_formatter` 生态）或 sqlfluff 能自动统一缩进与大小写，把风格约束交给工具而非 review。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Part I. Tutorial](https://www.postgresql.org/docs/current/tutorial.html)
+- [PostgreSQL 官方文档 · The SQL Language](https://www.postgresql.org/docs/current/sql.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [常见新手错误](./common-beginner-mistakes)
 - [数据库与模式对象](./database-and-schema-objects)
 - [主键设计](../database-design/primary-key-design)
 - [系统表与元数据](./system-catalogs-and-metadata)
+- [common-beginner-mistakes](common-beginner-mistakes.md)
+- [index](index.md)
+- [check-and-domains](/database-design/check-and-domains.md)
+- [logical-to-physical-modeling](/database-design/logical-to-physical-modeling.md)
+- [normalization-and-denormalization](/database-design/normalization-and-denormalization.md)

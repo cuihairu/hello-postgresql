@@ -170,9 +170,24 @@ EXPLAIN SELECT count(*) FROM users_f WHERE email IS NOT NULL;
 - 一条查询同时踩多个坑（函数包裹 + 前导通配）很常见，逐项剥离后再看计划。
 - 本页所有「不命中」都是针对 B-tree；同样的条件在 GIN/GiST 上有各自的可用算子，判断依据是算子类，不是直觉。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Chapter 11. Indexes](https://www.postgresql.org/docs/current/indexes.html)
+- [PostgreSQL 官方文档 · 11.2. Index Types](https://www.postgresql.org/docs/current/indexes-types.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [表达式索引](./expression-indexes) —— 函数包裹列的标准修法。
+- [where-and-expressions](/basics/where-and-expressions.md)
+- [postgis](/ecosystem/postgis.md)
+- [btree-structure](btree-structure.md)
+- [composite-index-design](composite-index-design.md)
+- [expression-indexes](expression-indexes.md)
+- [index](index.md)
+- [partial-indexes](partial-indexes.md)
+- [join-implementations](/internals/join-implementations.md)
+- [knowledge](/knowledge.md)
+- [common-bad-plans](/performance/common-bad-plans.md)- [表达式索引](./expression-indexes) —— 函数包裹列的标准修法。
 - [部分索引](./partial-indexes) —— `<>` 类条件的另一条出路。
 - [统计信息与 ANALYZE](../performance/statistics-and-analyze) —— 估算偏差的系统性治理。
 - [EXPLAIN 基础](../performance/explain-basics) —— 看懂本页所有计划输出的前提。

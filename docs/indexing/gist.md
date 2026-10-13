@@ -114,9 +114,20 @@ ALTER TABLE meetings ADD CONSTRAINT no_overlap
 
 经验判断：查询形态是"有没有交集/谁最近"用 GiST，是"包不包含/有没有这个词"用 GIN。对 tsvector 全文检索，官方也推荐 GIN 优先（GiST 属有损、且查询更慢），见 [全文检索](../advanced-sql/full-text-search)。完整的选型路径见 [索引选型决策树](./index-selection-decision-tree)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Chapter 11. Indexes](https://www.postgresql.org/docs/current/indexes.html)
+- [PostgreSQL 官方文档 · 11.2. Index Types](https://www.postgresql.org/docs/current/indexes-types.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [范围类型与 EXCLUDE](../advanced-sql/range-types-and-exclude)
 - [GIN 索引](./gin)
 - [PostGIS](../ecosystem/postgis)
 - [索引选型决策树](./index-selection-decision-tree)
+- [range-types-and-exclude](/advanced-sql/range-types-and-exclude.md)
+- [postgis](/ecosystem/postgis.md)
+- [index-selection-decision-tree](index-selection-decision-tree.md)
+- [index](index.md)
+- [spgist-and-hash](spgist-and-hash.md)

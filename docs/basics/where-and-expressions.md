@@ -117,11 +117,21 @@ SELECT * FROM accounts WHERE lower(email) = 'a@example.com';  -- 能走上面的
 - 浮点/`real` 列不要用 `=` 做相等判断，用范围或 `numeric`。
 - 空字符串 `''` 与 NULL 是两回事，`WHERE remark = ''` 不会匹配 NULL 行。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Part I. Tutorial](https://www.postgresql.org/docs/current/tutorial.html)
+- [PostgreSQL 官方文档 · The SQL Language](https://www.postgresql.org/docs/current/sql.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [函数与操作符](./functions-and-operators)
 - [模式匹配](../advanced-sql/pattern-matching)
 - [表达式索引](../indexing/expression-indexes)
 - [索引失效与误用](../indexing/index-failure-and-misuse)
-
+- [conditional-expressions](/advanced-sql/conditional-expressions.md)
+- [aggregate-and-group-by](aggregate-and-group-by.md)
+- [crud-and-on-conflict](crud-and-on-conflict.md)
+- [functions-and-operators](functions-and-operators.md)
+- [index](index.md)
 官方文档：[比较函数与操作符](https://www.postgresql.org/docs/current/functions-comparison.html)、[模式匹配](https://www.postgresql.org/docs/current/functions-matching.html)。

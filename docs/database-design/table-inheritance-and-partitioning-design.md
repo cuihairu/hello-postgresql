@@ -126,11 +126,28 @@ ALTER TABLE orders DETACH PARTITION orders_2026_09;
 | 读路径 | 父表查询自动剪枝 | 依赖 CHECK 约束做约束排除（constraint exclusion） |
 | 删数据 | DETACH/DROP 瞬间完成 | 逐子表 DROP |
 
-表继承的查询优化依赖子表上的 CHECK 约束和 `constraint_exclusion` 配置，使用门槛高、容易漏；除非维护有历史包袱的老系统，新系统没有理由用它替代声明式分区。两者语法细节见官方文档 [声明式分区](https://www.postgresql.org/docs/current/ddl-partitioning.html) 与 [表继承](https://www.postgresql.org/docs/current/ddl-inheritance.html)。
+表继承的查询优化依赖子表上的 CHECK 约束和 `constraint_exclusion` 配置，使用门槛高、容易漏；除非维护有历史包袱的老系统，新系统没有理由用它替代声明式分区。两者语法细节见官方文档 [声明式分区](https://www.postgresql.org/docs/current/ddl-partitioning.html) 与 [表继承](https://www.postgresql.org/docs/current/tutorial-inheritance.html)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 5.12. Table Partitioning](https://www.postgresql.org/docs/current/ddl-partitioning.html)
+- [PostgreSQL 官方文档 · 5.5. Constraints](https://www.postgresql.org/docs/current/ddl-constraints.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
+
+- 子树总纲：[第2部分：数据库设计](/database-design/)
 
 - [主键设计](./primary-key-design)
 - [多租户建模](./multi-tenant-modeling)
 - [分区裁剪](../performance/partition-pruning)
 - [时间建模](./time-modeling)
+- [batch-and-write](/advanced-sql/batch-and-write.md)
+- [index](index.md)
+- [multi-tenant-modeling](multi-tenant-modeling.md)
+- [citus](/ecosystem/citus.md)
+- [timescaledb](/ecosystem/timescaledb.md)
+- [brin](/indexing/brin.md)
+- [composite-index-design](/indexing/composite-index-design.md)
+- [capacity-and-scaling-limits](/performance/capacity-and-scaling-limits.md)
+- [partition-pruning](/performance/partition-pruning.md)

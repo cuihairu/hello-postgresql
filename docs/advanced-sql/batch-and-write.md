@@ -120,11 +120,28 @@ WHERE ctid IN (SELECT ctid FROM readings WHERE read_at < '2025-01-01' LIMIT 1000
 - 批量删除循环里若用 `OFFSET` 翻页会越删越慢（前缀重复扫描），用主键或 ctid 定位下一批起点。
 - COPY 到含触发器/生成列的表时，生成列不允许出现在列清单里，会直接报错。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 7.8. WITH Queries (Common Table Expressions)](https://www.postgresql.org/docs/current/queries-with.html)
+- [PostgreSQL 官方文档 · 9.22. Window Functions](https://www.postgresql.org/docs/current/functions-window.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [CRUD 与 ON CONFLICT](../basics/crud-and-on-conflict)
 - [写入吞吐优化](../performance/write-throughput-optimization)
 - [表继承与分区设计](../database-design/table-inheritance-and-partitioning-design)
 - [psql 进阶用法](../tools/psql-advanced)
-
+- [cte-and-non-recursive-with](cte-and-non-recursive-with.md)
+- [index](index.md)
+- [sql-functions-advanced](sql-functions-advanced.md)
+- [crud-and-on-conflict](/basics/crud-and-on-conflict.md)
+- [anti-patterns](/database-design/anti-patterns.md)
+- [soft-delete-and-tombstone](/database-design/soft-delete-and-tombstone.md)
+- [postgresql-17-features](/ecosystem/postgresql-17-features.md)
+- [logical-replication-ops](/operations/logical-replication-ops.md)
+- [connection-and-orm-optimization](/performance/connection-and-orm-optimization.md)
+- [write-throughput-optimization](/performance/write-throughput-optimization.md)
+- [client-drivers](/tools/client-drivers.md)
+- [real-world-cases](/tools/real-world-cases.md)
 官方文档：[COPY](https://www.postgresql.org/docs/current/sql-copy.html)、[INSERT 的 ON CONFLICT 子句](https://www.postgresql.org/docs/current/sql-insert.html#SQL-ON-CONFLICT)、[CREATE UNLOGGED TABLE](https://www.postgresql.org/docs/current/sql-createtable.html#SQL-CREATETABLE-UNLOGGED)。

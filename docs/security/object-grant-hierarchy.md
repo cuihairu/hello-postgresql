@@ -113,11 +113,22 @@ WHERE table_schema = 'app' AND table_name = 'orders';
 - `information_schema` 的授权视图只列显式 GRANT，不反映属主自带的隐式权限——属主对自己创建的对象永远全权。
 - 授权挂在组角色上、配合 `ALTER DEFAULT PRIVILEGES`，比零散的按人授权可维护得多。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 5.9. Row Security Policies](https://www.postgresql.org/docs/current/ddl-rowsecurity.html)
+- [PostgreSQL 官方文档 · 20.3. Authentication Methods](https://www.postgresql.org/docs/current/auth-methods.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [角色与权限模型](./roles-and-permissions)
 - [行级安全 RLS](./row-level-security)
 - [数据库与 schema 对象](../basics/database-and-schema-objects)
 - [加固清单](./hardening-checklist)
-
+- [fdw-and-foreign-data](/ecosystem/fdw-and-foreign-data.md)
+- [knowledge](/knowledge.md)
+- [hardening-checklist](hardening-checklist.md)
+- [index](index.md)
+- [roles-and-permissions](roles-and-permissions.md)
+- [row-level-security](row-level-security.md)
 官方文档：[GRANT](https://www.postgresql.org/docs/current/sql-grant.html)、[权限体系](https://www.postgresql.org/docs/current/ddl-priv.html)、[ALTER DEFAULT PRIVILEGES](https://www.postgresql.org/docs/current/sql-alterdefaultprivileges.html)。

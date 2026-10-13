@@ -84,9 +84,36 @@ VACUUM (VERBOSE, ANALYZE) orders;
 - HOT 帮不了「更新了索引列」的更新；宽表上索引越多，HOT 比例越低，建索引前权衡写入代价，见 [复合索引设计](../indexing/composite-index-design)。
 - 长事务是死元组清理的最大敌人：VACUUM 只能清理「所有快照都看不见」的元组，一个忘提交的事务能让整库膨胀。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 24.1. Routine Vacuuming](https://www.postgresql.org/docs/current/routine-vacuuming.html)
+- [PostgreSQL 官方文档 · 66.7. Heap-Only Tuples (HOT)](https://www.postgresql.org/docs/current/storage-hot.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [autovacuum 调优](./autovacuum-tuning)——让自动清理跟得上更新速度。
+- [glossary](/appendix/glossary.md)
+- [crud-and-on-conflict](/basics/crud-and-on-conflict.md)
+- [soft-delete-and-tombstone](/database-design/soft-delete-and-tombstone.md)
+- [comparison-with-mysql](/ecosystem/comparison-with-mysql.md)
+- [postgresql-17-features](/ecosystem/postgresql-17-features.md)
+- [timescaledb](/ecosystem/timescaledb.md)
+- [index-bloat-and-maintenance](/indexing/index-bloat-and-maintenance.md)
+- [index-only-scans](/indexing/index-only-scans.md)
+- [autovacuum-tuning](autovacuum-tuning.md)
+- [index](index.md)
+- [lock-conflict-troubleshooting](lock-conflict-troubleshooting.md)
+- [mvcc-and-multi-version](mvcc-and-multi-version.md)
+- [snapshot-and-visibility](snapshot-and-visibility.md)
+- [toast](toast.md)
+- [knowledge](/knowledge.md)
+- [monitoring-and-alerting](/operations/monitoring-and-alerting.md)
+- [connection-and-orm-optimization](/performance/connection-and-orm-optimization.md)
+- [explain-basics](/performance/explain-basics.md)
+- [statistics-and-analyze](/performance/statistics-and-analyze.md)
+- [vacuum-stall-and-performance](/performance/vacuum-stall-and-performance.md)
+- [pgadmin-4](/tools/pgadmin-4.md)
+- [real-world-cases](/tools/real-world-cases.md)- [autovacuum 调优](./autovacuum-tuning)——让自动清理跟得上更新速度。
 - [MVCC 与多版本](./mvcc-and-multi-version)——死元组的来源。
 - [索引膨胀与维护](../indexing/index-bloat-and-maintenance)——REINDEX 与膨胀测量。
 - [VACUUM 停顿与性能](../performance/vacuum-stall-and-performance)——vacuum 影响业务的场景与对策。

@@ -131,9 +131,22 @@ INSERT INTO products_v2 VALUES (3, 5, 'not-an-email');
 
 完整语法见官方文档 [CREATE DOMAIN](https://www.postgresql.org/docs/current/sql-createdomain.html) 与 [DDL 约束](https://www.postgresql.org/docs/current/ddl-constraints.html)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · CREATE DOMAIN](https://www.postgresql.org/docs/current/sql-createdomain.html)
+- [PostgreSQL 官方文档 · 5.5. Constraints](https://www.postgresql.org/docs/current/ddl-constraints.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [外键与引用动作](./foreign-keys-and-referential-actions)
 - [约束与数据质量](./constraints-and-data-quality)
 - [生成列与 CHECK](../advanced-sql/generated-columns-and-check)
 - [命名与风格约定](../basics/naming-and-style-conventions)
+- [generated-columns-and-check](/advanced-sql/generated-columns-and-check.md)
+- [jsonb-design-patterns](/advanced-sql/jsonb-design-patterns.md)
+- [range-types-and-exclude](/advanced-sql/range-types-and-exclude.md)
+- [constraints-and-data-quality](constraints-and-data-quality.md)
+- [foreign-keys-and-referential-actions](foreign-keys-and-referential-actions.md)
+- [index](index.md)
+- [normalization-and-denormalization](normalization-and-denormalization.md)

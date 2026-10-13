@@ -171,9 +171,20 @@ COMMIT;
 - **1:1 拆表有代价**：读时总是多一次 JOIN，只为低频大字段（如用户协议文本）拆表才值得；高频小字段留在主表。
 - **中间表别省复合主键**：靠应用去重，早晚出现重复行。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · CREATE TABLE](https://www.postgresql.org/docs/current/sql-createtable.html)
+- [PostgreSQL 官方文档 · 5.5. Constraints](https://www.postgresql.org/docs/current/ddl-constraints.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [主键设计](./primary-key-design)
 - [时间建模](./time-modeling)
 - [软删除与墓碑](./soft-delete-and-tombstone)
 - [命名与书写规范](../basics/naming-and-style-conventions)
+- [index](index.md)
+- [multi-tenant-modeling](multi-tenant-modeling.md)
+- [normalization-and-denormalization](normalization-and-denormalization.md)
+- [soft-delete-and-tombstone](soft-delete-and-tombstone.md)
+- [toast](/internals/toast.md)

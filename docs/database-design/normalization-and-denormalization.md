@@ -167,9 +167,19 @@ ON CONFLICT (stat_date) DO UPDATE
 
 三范式的通用定义可参考 [Database normalization - Wikipedia](https://en.wikipedia.org/wiki/Database_normalization)；PostgreSQL 侧的约束落地见 [CHECK 与域类型](./check-and-domains)，从逻辑模型到物理表结构的整体流程见 [逻辑模型到物理模型](./logical-to-physical-modeling)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 5.5. Constraints](https://www.postgresql.org/docs/current/ddl-constraints.html)
+- [PostgreSQL 官方文档 · 5.12. Table Partitioning](https://www.postgresql.org/docs/current/ddl-partitioning.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [主键设计](./primary-key-design)
 - [外键与引用动作](./foreign-keys-and-referential-actions)
 - [物化视图](./materialized-views)
 - [命名与风格约定](../basics/naming-and-style-conventions)
+- [generated-columns-and-check](/advanced-sql/generated-columns-and-check.md)
+- [anti-patterns](anti-patterns.md)
+- [index](index.md)
+- [materialized-views](materialized-views.md)

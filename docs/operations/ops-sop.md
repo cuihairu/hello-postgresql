@@ -132,9 +132,18 @@ SELECT indexrelid::regclass FROM pg_index WHERE NOT indisvalid;
 
 要点：时间线精确到分钟、影响用业务语言量化、每个 Action item 都有 owner 和截止时间。事故报告的价值在 Action items 的闭环率，写完没人跟进等于没写。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Chapter 24. Routine Database Maintenance Tasks](https://www.postgresql.org/docs/current/maintenance.html)
+- [PostgreSQL 官方文档 · 27.2. The Cumulative Statistics System](https://www.postgresql.org/docs/current/monitoring-stats.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [监控告警](./monitoring-and-alerting)——巡检指标的告警化。
+- [disaster-recovery-drills](disaster-recovery-drills.md)
+- [index](index.md)
+- [logical-replication-ops](logical-replication-ops.md)
+- [monitoring-and-alerting](monitoring-and-alerting.md)- [监控告警](./monitoring-and-alerting)——巡检指标的告警化。
 - [物理备份与 PITR](./physical-backup-and-pitr)——备份验证 SOP 的操作步骤。
 - [故障演练清单](./disaster-recovery-drills)——事故场景的处置细节。
 - [备份策略](./backup-strategy)——保留策略的备份侧设计。

@@ -120,9 +120,20 @@ INSERT INTO accounts (email) VALUES ('a@example.com');   -- 两次都成功
 
 唯一约束中 NULL 互不相等，含可空列的组合唯一形同虚设；软删表几乎必然踩中（`deleted_at` 为 NULL 的存活行可无限重复）。修法：部分唯一索引 `WHERE deleted_at IS NULL`，或 PG 15 起 `UNIQUE NULLS NOT DISTINCT`，两种方案的副作用对比见 [软删除与墓碑](./soft-delete-and-tombstone)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · SELECT](https://www.postgresql.org/docs/current/sql-select.html#SQL-FOR-UPDATE-SHARE)
+- [PostgreSQL 官方文档 · 5.5. Constraints](https://www.postgresql.org/docs/current/ddl-constraints.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [三范式与反范式](./normalization-and-denormalization)
 - [软删除与墓碑](./soft-delete-and-tombstone)
 - [金额与数值](./money-and-numeric)
 - [JSONB 设计模式](../advanced-sql/jsonb-design-patterns)
+- [generated-columns-and-check](/advanced-sql/generated-columns-and-check.md)
+- [jsonb-design-patterns](/advanced-sql/jsonb-design-patterns.md)
+- [index](index.md)
+- [money-and-numeric](money-and-numeric.md)
+- [soft-delete-and-tombstone](soft-delete-and-tombstone.md)

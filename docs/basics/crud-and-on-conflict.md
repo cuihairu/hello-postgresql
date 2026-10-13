@@ -120,11 +120,22 @@ RETURNING id;
 - **`ON CONFLICT` 判定的是唯一约束，不是业务语义**。换了另一个唯一约束（比如表上还有手机号唯一键），同一条插入也可能在没写的约束上冲突而走不进你预期的分支。
 - TRUNCATE 与 `DELETE` 的取舍涉及锁和死元组回收，见 [VACUUM 与 HOT](../internals/vacuum-and-hot)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Part I. Tutorial](https://www.postgresql.org/docs/current/tutorial.html)
+- [PostgreSQL 官方文档 · The SQL Language](https://www.postgresql.org/docs/current/sql.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [WHERE 与表达式](./where-and-expressions)
 - [事务基础](./transaction-basics)
 - [批量写入](../advanced-sql/batch-and-write)
 - [常见错误与排查](../appendix/common-errors-and-troubleshooting)
-
+- [batch-and-write](/advanced-sql/batch-and-write.md)
+- [sql-command-reference](/appendix/sql-command-reference.md)
+- [index](index.md)
+- [primary-key-design](/database-design/primary-key-design.md)
+- [transactions-and-isolation](/internals/transactions-and-isolation.md)
+- [real-world-cases](/tools/real-world-cases.md)
 官方文档：[INSERT](https://www.postgresql.org/docs/current/sql-insert.html)、[UPDATE](https://www.postgresql.org/docs/current/sql-update.html)、[DELETE](https://www.postgresql.org/docs/current/sql-delete.html)。

@@ -170,9 +170,21 @@ pg_ctl -D /tmp/restore -o "-p 5433" start
 - **记录内容**：演练时间、场景、每步实际耗时、与文档的偏差、发现的问题、修复责任人。演练中发现流程走不通的，当天修文档——演练的价值就在这里。
 - 演练要尽量在接近生产的副本环境做，至少数据量级要接近；在 10MB 的测试库上演练出的耗时对 500GB 的库没有参考意义。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 25.3. Continuous Archiving and Point-in-Time Recovery (PITR)](https://www.postgresql.org/docs/current/continuous-archiving.html)
+- [PostgreSQL 官方文档 · 26.2. Log-Shipping Standby Servers](https://www.postgresql.org/docs/current/warm-standby.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [物理备份与 PITR](./physical-backup-and-pitr)——场景五的完整步骤。
+- [knowledge](/knowledge.md)
+- [backup-strategy](backup-strategy.md)
+- [high-availability-architecture](high-availability-architecture.md)
+- [index](index.md)
+- [ops-sop](ops-sop.md)
+- [physical-backup-and-pitr](physical-backup-and-pitr.md)
+- [data-encryption-at-rest](/security/data-encryption-at-rest.md)- [物理备份与 PITR](./physical-backup-and-pitr)——场景五的完整步骤。
 - [备份策略](./backup-strategy)——演练依赖的备份体系。
 - [监控告警](./monitoring-and-alerting)——各场景的发现手段。
 - [ops SOP](./ops-sop)——演练记录与备份验证的制度化。

@@ -21,3 +21,10 @@
 ---
 
 - [知识点整理](../knowledge.md) —— 全站复习主线。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [index](/advanced-sql/index.md)
+- [index](/database-design/index.md)
+- [index](/tools/index.md)

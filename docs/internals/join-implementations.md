@@ -132,11 +132,23 @@ RESET enable_nestloop;
 - 非等值 join 只能 Nested Loop，两侧都是千万行的非等值 join 基本跑不动，应在建模或查询改写层解决。
 - 连接列类型不一致（int vs bigint、text vs varchar 两侧 collation 不同）会让索引和哈希都别扭，建模期就该对齐，见[主键设计](../database-design/primary-key-design)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 19.7. Query Planning](https://www.postgresql.org/docs/current/runtime-config-query.html)
+- [PostgreSQL 官方文档 · Chapter 51. Overview of PostgreSQL Internals](https://www.postgresql.org/docs/current/overview.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [优化器代价模型](./optimizer-cost-model)
 - [查询执行管道](./query-execution-pipeline)
 - [EXPLAIN 基础](../performance/explain-basics)
 - [组合索引设计](../indexing/composite-index-design)
-
+- [join-family](/basics/join-family.md)
+- [citus](/ecosystem/citus.md)
+- [index](index.md)
+- [optimizer-cost-model](optimizer-cost-model.md)
+- [parallel-query](parallel-query.md)
+- [query-execution-pipeline](query-execution-pipeline.md)
+- [explain-basics](/performance/explain-basics.md)
 官方文档参考：[Genetic Query Optimizer](https://www.postgresql.org/docs/current/runtime-config-query.html)

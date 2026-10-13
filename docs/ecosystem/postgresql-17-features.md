@@ -107,9 +107,18 @@ FROM json_table(
 
 从 PG 16 升级到 17 的常见动机：vacuum 内存重构（高写入负载库）、原生增量备份（大库备份）、`pg_createsubscriber` 与逻辑槽 failover（构建逻辑复制拓扑）、`JSON_TABLE`（重度 JSON 应用）。升级流程见 [版本升级](../operations/version-upgrade)。更新的版本特性请以官方 [release notes](https://www.postgresql.org/docs/release/) 为准。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · PostgreSQL: Release Notes](https://www.postgresql.org/docs/release/)
+- [wiki.postgresql.org/wiki/Foreign_data_wrappers](https://wiki.postgresql.org/wiki/Foreign_data_wrappers)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [PostgreSQL 16 新特性摘要](./postgresql-16-features)
 - [vacuum 与 HOT](../internals/vacuum-and-hot)
 - [物理备份与 PITR](../operations/physical-backup-and-pitr)
 - [版本升级](../operations/version-upgrade)
+- [index](index.md)
+- [postgresql-16-features](postgresql-16-features.md)
+- [knowledge](/knowledge.md)

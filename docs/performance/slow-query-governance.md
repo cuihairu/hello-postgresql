@@ -118,11 +118,22 @@ Limit (actual time=0.198..0.206 rows=20 loops=1)
 - 只看耗时不算数：耗时受缓存影响波动大，Buffers 与行数才是稳定证据；耗时也要多次取中位。
 - 验证只在测试库做回归：改写 SQL 时结果集回归必须在同数据量的库上做，行数对不上就是语义变了。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 14.1. Using EXPLAIN](https://www.postgresql.org/docs/current/using-explain.html)
+- [PostgreSQL 官方文档 · Chapter 14. Performance Tips](https://www.postgresql.org/docs/current/performance-tips.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [pg_stat_statements](./pg-stat-statements)
 - [EXPLAIN (ANALYZE, BUFFERS, WAL)](./explain-analyze-buffers)
 - [常见坏计划](./common-bad-plans)
 - [连接与 ORM 优化](./connection-and-orm-optimization)
-
+- [pagination-and-sorting](/advanced-sql/pagination-and-sorting.md)
+- [connection-and-orm-optimization](connection-and-orm-optimization.md)
+- [index](index.md)
+- [lock-and-concurrency-bottlenecks](lock-and-concurrency-bottlenecks.md)
+- [pg-stat-statements](pg-stat-statements.md)
+- [troubleshooting-toolbox](/tools/troubleshooting-toolbox.md)
 官方文档：[性能提示](https://www.postgresql.org/docs/current/performance-tips.html)、[auto_explain](https://www.postgresql.org/docs/current/auto-explain.html)。

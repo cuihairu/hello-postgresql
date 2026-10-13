@@ -80,11 +80,20 @@ WHERE a.datname IS NOT NULL;
 - TLS 的性能开销通常在个位数百分比以内，配合连接池复用长连接后基本可忽略，不要为性能关闭加密。
 - 证书过期忘记轮换会导致所有新连接失败，把到期时间纳入证书管理或用 cert-manager 之类自动签发。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 5.9. Row Security Policies](https://www.postgresql.org/docs/current/ddl-rowsecurity.html)
+- [PostgreSQL 官方文档 · 20.3. Authentication Methods](https://www.postgresql.org/docs/current/auth-methods.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [pg_hba 与认证](./pg-hba-and-authentication)
 - [数据静态加密](./data-encryption-at-rest)
 - [加固清单](./hardening-checklist)
 - [监控与告警](../operations/monitoring-and-alerting)
-
+- [data-encryption-at-rest](data-encryption-at-rest.md)
+- [hardening-checklist](hardening-checklist.md)
+- [index](index.md)
+- [pg-hba-and-authentication](pg-hba-and-authentication.md)
 官方文档：[SSL/TLS 支持](https://www.postgresql.org/docs/current/ssl-tcp.html)、[libpq SSL 支持](https://www.postgresql.org/docs/current/libpq-ssl.html)、[pg_stat_ssl](https://www.postgresql.org/docs/current/monitoring-stats.html)。

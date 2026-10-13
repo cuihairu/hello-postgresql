@@ -120,9 +120,19 @@ TimescaleDB 的增量价值集中在：chunk 自动创建与参数自适应、�
 
 常见坑：忘记配置 `shared_preload_libraries` 导致建扩展失败；chunk 间隔设得过小（几秒/几分钟）造成数万个 chunk，元数据开销拖垮规划；压缩策略覆盖了还在被高频写入的时间段；把 `time_bucket` 窗口建得比查询粒度细太多导致连续聚合体积失控。选型时也可以对照 [选型问答](./when-to-choose-postgresql)。
 
+## 参考资料
+
+- [wiki.postgresql.org/wiki/Foreign_data_wrappers](https://wiki.postgresql.org/wiki/Foreign_data_wrappers)
+- [GitHub · pgvector/pgvector](https://github.com/pgvector/pgvector)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [分区表设计](../database-design/table-inheritance-and-partitioning-design)
 - [分区裁剪](../performance/partition-pruning)
 - [时间建模](../database-design/time-modeling)
 - [扩展管理](./extension-management)
+- [time-modeling](/database-design/time-modeling.md)
+- [index](index.md)
+- [brin](/indexing/brin.md)
+- [knowledge](/knowledge.md)

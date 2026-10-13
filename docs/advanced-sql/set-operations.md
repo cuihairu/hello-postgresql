@@ -118,11 +118,18 @@ SELECT * FROM products_new;
 - 位置错位的类型「恰好兼容」不报错但语义错了（比如把 id 对到 amount 上），列顺序变化后要重新核对集合运算。
 - 集合运算不去重的三个运算都是重操作，监控里见到大量 Sort/HashAggregate 时，优先检查是不是不必要的 UNION。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 7.8. WITH Queries (Common Table Expressions)](https://www.postgresql.org/docs/current/queries-with.html)
+- [PostgreSQL 官方文档 · 9.22. Window Functions](https://www.postgresql.org/docs/current/functions-window.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [递归 CTE](./recursive-cte)
 - [聚合与 GROUP BY](../basics/aggregate-and-group-by)
 - [条件表达式](./conditional-expressions)
 - [EXPLAIN 基础](../performance/explain-basics)
-
+- [index](index.md)
+- [recursive-cte](recursive-cte.md)
 官方文档：[组合查询（UNION、INTERSECT、EXCEPT）](https://www.postgresql.org/docs/current/queries-union.html)、[SELECT 语法](https://www.postgresql.org/docs/current/sql-select.html)。

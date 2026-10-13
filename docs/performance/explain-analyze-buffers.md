@@ -134,11 +134,31 @@ EXPLAIN (ANALYZE, TIMING OFF, BUFFERS) SELECT ...;  -- 仍有节点行数与总�
 - 统计信息在执行瞬间被采样，输出里 `rows` 的平均值意味着极端倾斜分布下单次循环的行数可能差异巨大。
 - PG 13 起 `BUFFERS` 才包含规划期的缓冲区统计，老版本输出没有 Planning 段。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 14.1. Using EXPLAIN](https://www.postgresql.org/docs/current/using-explain.html)
+- [PostgreSQL 官方文档 · Chapter 14. Performance Tips](https://www.postgresql.org/docs/current/performance-tips.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [EXPLAIN 读法](./explain-basics)
 - [常见坏计划](./common-bad-plans)
 - [统计信息与 ANALYZE](./statistics-and-analyze)
 - [优化器代价模型](../internals/optimizer-cost-model)
-
+- [subquery-family](/advanced-sql/subquery-family.md)
+- [postgresql-17-features](/ecosystem/postgresql-17-features.md)
+- [index-failure-and-misuse](/indexing/index-failure-and-misuse.md)
+- [index-only-scans](/indexing/index-only-scans.md)
+- [index-selection-decision-tree](/indexing/index-selection-decision-tree.md)
+- [checkpoint-and-buffer](/internals/checkpoint-and-buffer.md)
+- [pg-stat-observation](/internals/pg-stat-observation.md)
+- [knowledge](/knowledge.md)
+- [common-bad-plans](common-bad-plans.md)
+- [explain-basics](explain-basics.md)
+- [index](index.md)
+- [partition-pruning](partition-pruning.md)
+- [pg-stat-statements](pg-stat-statements.md)
+- [slow-query-governance](slow-query-governance.md)
+- [troubleshooting-toolbox](/tools/troubleshooting-toolbox.md)
 官方文档：[EXPLAIN 命令](https://www.postgresql.org/docs/current/sql-explain.html)、[Using EXPLAIN 教程](https://www.postgresql.org/docs/current/using-explain.html)。

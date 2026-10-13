@@ -121,11 +121,24 @@ GiST 的结构与适用场景见 [GiST 索引](../indexing/gist)。
 - 范围字面量里的时间要带时区偏移（tstzrange），不带时区的字面量会按服务器时区解释，容器与本机时区不同时容易埋雷。
 - 排他约束冲突报错发生在写入时，应用侧要准备把 23P01（exclusion_violation）转成友好的提示。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 7.8. WITH Queries (Common Table Expressions)](https://www.postgresql.org/docs/current/queries-with.html)
+- [PostgreSQL 官方文档 · 9.22. Window Functions](https://www.postgresql.org/docs/current/functions-window.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [GiST 索引](../indexing/gist)
 - [数组操作](./array-operations)
 - [时间建模](../database-design/time-modeling)
 - [CHECK 与域](../database-design/check-and-domains)
-
+- [array-operations](array-operations.md)
+- [index](index.md)
+- [special-types-intro](/basics/special-types-intro.md)
+- [constraints-and-data-quality](/database-design/constraints-and-data-quality.md)
+- [time-modeling](/database-design/time-modeling.md)
+- [postgis](/ecosystem/postgis.md)
+- [postgresql-17-features](/ecosystem/postgresql-17-features.md)
+- [gist](/indexing/gist.md)
 官方文档：[范围类型](https://www.postgresql.org/docs/current/rangetypes.html)、[btree_gist 扩展](https://www.postgresql.org/docs/current/btree-gist.html)。

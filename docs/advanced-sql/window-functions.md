@@ -123,11 +123,21 @@ WHERE rn = 1;
 - 窗口函数不能嵌套（窗口里再套窗口）；需要两层计算时拆成两个 CTE 分步写。
 - OVER 里的 ORDER BY 只作用于该窗口；主查询末尾的 ORDER BY 才决定最终输出顺序，两者各管各的。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 7.8. WITH Queries (Common Table Expressions)](https://www.postgresql.org/docs/current/queries-with.html)
+- [PostgreSQL 官方文档 · 9.22. Window Functions](https://www.postgresql.org/docs/current/functions-window.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [窗口函数进阶](./window-functions-advanced)
 - [聚合与 GROUP BY](../basics/aggregate-and-group-by)
 - [CTE 与非递归 WITH](./cte-and-non-recursive-with)
 - [条件表达式](./conditional-expressions)
-
+- [conditional-expressions](conditional-expressions.md)
+- [index](index.md)
+- [lateral-and-from-subquery](lateral-and-from-subquery.md)
+- [window-functions-advanced](window-functions-advanced.md)
+- [aggregate-and-group-by](/basics/aggregate-and-group-by.md)
 官方文档：[窗口函数教程](https://www.postgresql.org/docs/current/tutorial-window.html)、[窗口函数参考](https://www.postgresql.org/docs/current/functions-window.html)。

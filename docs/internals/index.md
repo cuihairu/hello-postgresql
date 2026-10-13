@@ -26,3 +26,9 @@
 ---
 
 - [索引体系](../indexing/) · [查询调优与性能](../performance/) —— 内核知识的应用面。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [index](/operations/index.md)
+- [index](/performance/index.md)

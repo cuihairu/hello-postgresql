@@ -73,11 +73,24 @@ ps -o pid,rss,cmd -u postgres | sort -k2 -rn | head
 - `shared_buffers` 改动需要重启，`work_mem`/`effective_cache_size` 是 reload 级、还能会话级覆盖——排障时先 `SHOW` 当前会话的实际值，别只看配置文件。
 - 一个连接空闲时只占几十 MB，内存峰值都发生在查询执行中；按"平均连接内存 × 连接数"做容量规划会严重低估。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 19.4. Resource Consumption](https://www.postgresql.org/docs/current/runtime-config-resource.html)
+- [PostgreSQL 官方文档 · 66.6. Database Page Layout](https://www.postgresql.org/docs/current/storage-page-layout.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [进程架构](./process-architecture)——postmaster/backend/worker 全家福。
+- [checkpoint-and-buffer](checkpoint-and-buffer.md)
+- [index](index.md)
+- [join-implementations](join-implementations.md)
+- [lock-system](lock-system.md)
+- [parallel-query](parallel-query.md)
+- [process-architecture](process-architecture.md)
+- [query-execution-pipeline](query-execution-pipeline.md)
+- [cloud-native-and-containers](/operations/cloud-native-and-containers.md)- [进程架构](./process-architecture)——postmaster/backend/worker 全家福。
 - [checkpoint 与 buffer](./checkpoint-and-buffer)——shared_buffers 的写入侧。
 - [参数调优](../performance/parameter-tuning)——这些参数在整体调优中的位置。
 - [连接与 ORM 优化](../performance/connection-and-orm-optimization)——把并发先压下来。
 
-官方文档：<https://www.postgresql.org/docs/current/runtime-config-resource.html> 与 <https://www.postgresql.org/docs/current/storage-slru.html>
+官方文档：<https://www.postgresql.org/docs/current/runtime-config-resource.html> 与 <https://www.postgresql.org/docs/current/storage-page-layout.html>

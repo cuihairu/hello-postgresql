@@ -119,10 +119,20 @@ GROUP BY GROUPING SETS ((region, category), (region), (category), ());
 - JOIN 之后再 GROUP BY，要小心一对多把行数撑大导致计数虚高，见 [JOIN 全家族](./join-family) 的对应小节。
 - `sum` 空组返回 NULL 已在开头强调；`avg` 忽略 NULL 的语义也要在需求层面确认。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Part I. Tutorial](https://www.postgresql.org/docs/current/tutorial.html)
+- [PostgreSQL 官方文档 · The SQL Language](https://www.postgresql.org/docs/current/sql.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [WHERE 与表达式](./where-and-expressions)
 - [窗口函数](../advanced-sql/window-functions)
 - [条件表达式](../advanced-sql/conditional-expressions)
-
+- [conditional-expressions](/advanced-sql/conditional-expressions.md)
+- [set-operations](/advanced-sql/set-operations.md)
+- [window-functions](/advanced-sql/window-functions.md)
+- [index](index.md)
+- [join-family](join-family.md)
 官方文档：[聚合函数](https://www.postgresql.org/docs/current/functions-aggregate.html)、[GROUP BY 与 HAVING 教程](https://www.postgresql.org/docs/current/tutorial-agg.html)。

@@ -87,11 +87,19 @@ gpg --decrypt appdb.dump.gpg | pg_restore -d appdb
 - pgcrypto 还有 `digest` / `hmac` / `crypt` 等函数：密码哈希存储用 `crypt + gen_salt('bf')`，不要用 `md5()` 函数族。
 - 加密不等于审计：谁在什么时候解密过哪些数据，要靠 [审计](./audit)回答。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 5.9. Row Security Policies](https://www.postgresql.org/docs/current/ddl-rowsecurity.html)
+- [PostgreSQL 官方文档 · 20.3. Authentication Methods](https://www.postgresql.org/docs/current/auth-methods.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [SSL 与传输加密](./ssl-and-transport-encryption)
 - [备份策略](../operations/backup-strategy)
 - [灾难恢复演练](../operations/disaster-recovery-drills)
 - [加固清单](./hardening-checklist)
-
+- [hardening-checklist](hardening-checklist.md)
+- [index](index.md)
+- [ssl-and-transport-encryption](ssl-and-transport-encryption.md)
 官方文档：[pgcrypto](https://www.postgresql.org/docs/current/pgcrypto.html)、[加密选项](https://www.postgresql.org/docs/current/encryption-options.html)。

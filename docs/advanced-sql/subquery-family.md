@@ -187,11 +187,22 @@ FROM departments d;
 - 关联子查询出现在 OR 分支或聚合函数里时，去相关化经常失效；复杂查询先 EXPLAIN 确认形态。
 - CTE 从 PG 12 起默认会被内联展平（行为与派生表一致），需要优化屏障时加 MATERIALIZED，见 [CTE 与非递归 WITH](./cte-and-non-recursive-with)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 7.8. WITH Queries (Common Table Expressions)](https://www.postgresql.org/docs/current/queries-with.html)
+- [PostgreSQL 官方文档 · 9.22. Window Functions](https://www.postgresql.org/docs/current/functions-window.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
+
+- 子树总纲：[第3部分：高级 SQL](/advanced-sql/)
 
 - [EXPLAIN 读法](../performance/explain-basics)
 - [LATERAL 与 FROM 子查询](./lateral-and-from-subquery)
 - [CTE 与非递归 WITH](./cte-and-non-recursive-with)
 - [JOIN 全家族](../basics/join-family)
-
-官方文档：[子查询表达式](https://www.postgresql.org/docs/current/functions-subqueries.html)、[子查询教程](https://www.postgresql.org/docs/current/queries-subqueries.html)。
+- [cte-and-non-recursive-with](cte-and-non-recursive-with.md)
+- [index](index.md)
+- [lateral-and-from-subquery](lateral-and-from-subquery.md)
+- [common-beginner-mistakes](/basics/common-beginner-mistakes.md)
+官方文档：[子查询表达式](https://www.postgresql.org/docs/current/sql-expressions.html)、[子查询教程](https://www.postgresql.org/docs/current/sql-expressions.html)。

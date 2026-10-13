@@ -172,11 +172,22 @@ GROUP BY user_id;
 - CTE 名遮蔽同名真实表：排查「查出来的数据不对」时先看 WITH 区有没有同名定义。
 - CTE 解决的是可读性，不是性能：内联之后 CTE 和子查询计划相同，别为「提速」盲目套 CTE。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 7.8. WITH Queries (Common Table Expressions)](https://www.postgresql.org/docs/current/queries-with.html)
+- [PostgreSQL 官方文档 · 9.22. Window Functions](https://www.postgresql.org/docs/current/functions-window.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [递归 CTE](./recursive-cte)
 - [子查询家族](./subquery-family)
 - [EXPLAIN 基础](../performance/explain-basics)
 - [批量与写入](./batch-and-write)
-
+- [index](index.md)
+- [lateral-and-from-subquery](lateral-and-from-subquery.md)
+- [recursive-cte](recursive-cte.md)
+- [subquery-family](subquery-family.md)
+- [window-functions](window-functions.md)
+- [views-and-updatable-views](/database-design/views-and-updatable-views.md)
 官方文档：[WITH 查询（CTE）](https://www.postgresql.org/docs/current/queries-with.html)、[SELECT 语法与 WITH 子句](https://www.postgresql.org/docs/current/sql-select.html)。

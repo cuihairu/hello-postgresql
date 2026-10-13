@@ -114,11 +114,20 @@ jsonb 的正确定位是关系模型的补充，不是替代；更多类似陷�
 - CHECK 校验的是「写入那一刻」，历史数据不受新约束管（加约束时默认全表校验，可加 NOT VALID 分步走）。
 - 大 jsonb 列的高频小更新会反复重写 TOAST 值，更新密集的场景考虑把热字段挪出去。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 7.8. WITH Queries (Common Table Expressions)](https://www.postgresql.org/docs/current/queries-with.html)
+- [PostgreSQL 官方文档 · 9.22. Window Functions](https://www.postgresql.org/docs/current/functions-window.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [JSONB 操作](./jsonb-operations)
 - [生成列与 CHECK 约束](./generated-columns-and-check)
 - [反模式清单](../database-design/anti-patterns)
 - [GIN 索引](../indexing/gin)
-
+- [index](index.md)
+- [jsonb-operations](jsonb-operations.md)
+- [anti-patterns](/database-design/anti-patterns.md)
+- [knowledge](/knowledge.md)
 官方文档：[生成列](https://www.postgresql.org/docs/current/ddl-generated-columns.html)、[JSON 类型](https://www.postgresql.org/docs/current/datatype-json.html)。

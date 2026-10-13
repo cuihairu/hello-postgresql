@@ -75,9 +75,12 @@
 - 深入原理：两本 Internals 对照读，官方 MVCC、WAL 章节当锚点。
 - 跟踪版本：Release Notes 与 PostgreSQL Weekly，升级前必看。
 
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [术语表](./glossary)
 - [SQL 命令速查](./sql-command-reference)
 - [psql 元命令速查](./psql-meta-command-reference)
 - [常见错误与排查对照表](./common-errors-and-troubleshooting)
+- [index](index.md)
+- [knowledge](/knowledge.md)

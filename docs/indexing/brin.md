@@ -121,9 +121,17 @@ CREATE INDEX ON metrics_2026_10 USING brin (ts);
 
 BRIN 不适合替代每个分区上的常规索引，而是与它们互补：热点列用 B-tree，时间列用 BRIN 控制存储成本。分区设计见 [分区表设计](../database-design/table-inheritance-and-partitioning-design)，裁剪机制见 [分区裁剪](../performance/partition-pruning)；托管时序方案见 [TimescaleDB](../ecosystem/timescaledb)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Chapter 11. Indexes](https://www.postgresql.org/docs/current/indexes.html)
+- [PostgreSQL 官方文档 · 11.2. Index Types](https://www.postgresql.org/docs/current/indexes-types.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [分区表设计](../database-design/table-inheritance-and-partitioning-design)
 - [分区裁剪](../performance/partition-pruning)
 - [索引选型决策树](./index-selection-decision-tree)
 - [B-tree 结构与原则](./btree-structure)
+- [index-selection-decision-tree](index-selection-decision-tree.md)
+- [index](index.md)

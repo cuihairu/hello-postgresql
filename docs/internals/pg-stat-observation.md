@@ -94,9 +94,27 @@ SELECT pg_stat_statements_reset();                   -- 扩展 pg_stat_statement
 - 统计收集本身有开销，但默认档位（`track_counts=on`、`track_activities=on`）是生产标配，关掉省不了多少还瞎了眼。
 - 备库上的表级/实例级统计独立累计，主备数字不能直接相加比较。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 27.2. The Cumulative Statistics System](https://www.postgresql.org/docs/current/monitoring-stats.html)
+- [PostgreSQL 官方文档 · 27.2. The Cumulative Statistics System](https://www.postgresql.org/docs/current/monitoring-stats.html#MONITORING-PG-STAT-IO-VIEW)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [autovacuum 调优](./autovacuum-tuning)——n_dead_tup 异常的下一步。
+- [system-catalogs-and-metadata](/basics/system-catalogs-and-metadata.md)
+- [materialized-views](/database-design/materialized-views.md)
+- [postgresql-16-features](/ecosystem/postgresql-16-features.md)
+- [architecture-and-memory](architecture-and-memory.md)
+- [index](index.md)
+- [process-architecture](process-architecture.md)
+- [knowledge](/knowledge.md)
+- [monitoring-and-alerting](/operations/monitoring-and-alerting.md)
+- [explain-analyze-buffers](/performance/explain-analyze-buffers.md)
+- [lock-and-concurrency-bottlenecks](/performance/lock-and-concurrency-bottlenecks.md)
+- [pg-stat-statements](/performance/pg-stat-statements.md)
+- [audit](/security/audit.md)
+- [troubleshooting-toolbox](/tools/troubleshooting-toolbox.md)- [autovacuum 调优](./autovacuum-tuning)——n_dead_tup 异常的下一步。
 - [pg_stat_statements](../performance/pg-stat-statements)——语句级耗时的另一半观测。
 - [监控与告警](../operations/monitoring-and-alerting)——把本页 SQL 变成告警项。
 - [EXPLAIN ANALYZE 与 buffers](../performance/explain-analyze-buffers)——单条查询粒度的 IO 观测。

@@ -109,9 +109,25 @@ WHERE sku = 'A1'
 
 需要保留历史版本的维度数据（价格、组织架构、会员等级），用 `valid_from`/`valid_to` 双列把每次变更记成一行区间（即 SCD2 模式），查询历史时用 `during @> 某时刻` 定位当时版本——索引、约束、查询写法与上文完全一致，只是区间由系统在变更时自动封口。实现细节与触发器维护方式见 [约束与数据质量](./constraints-and-data-quality)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 5.5. Constraints](https://www.postgresql.org/docs/current/ddl-constraints.html)
+- [PostgreSQL 官方文档 · 5.12. Table Partitioning](https://www.postgresql.org/docs/current/ddl-partitioning.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [数据类型概览](../basics/data-types-overview)
 - [范围类型与 EXCLUDE](../advanced-sql/range-types-and-exclude)
 - [约束与数据质量](./constraints-and-data-quality)
 - [TimescaleDB](../ecosystem/timescaledb)
+- [range-types-and-exclude](/advanced-sql/range-types-and-exclude.md)
+- [data-types-overview](/basics/data-types-overview.md)
+- [naming-and-style-conventions](/basics/naming-and-style-conventions.md)
+- [anti-patterns](anti-patterns.md)
+- [constraints-and-data-quality](constraints-and-data-quality.md)
+- [index](index.md)
+- [logical-to-physical-modeling](logical-to-physical-modeling.md)
+- [money-and-numeric](money-and-numeric.md)
+- [table-inheritance-and-partitioning-design](table-inheritance-and-partitioning-design.md)
+- [timescaledb](/ecosystem/timescaledb.md)

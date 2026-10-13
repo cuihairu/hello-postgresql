@@ -100,9 +100,22 @@ SHOW STATS;     -- 总 QPS、平均查询时长、收发字节数
 - **监控别只看数据库**：PgBouncer 自身进程挂掉等于数据库断连，它也要纳入存活探测。
 - **超级用户直连不受池化约束**，运维脚本走直连反而干净，但要给 `superuser_reserved_connections` 留位。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Chapter 25. Backup and Restore](https://www.postgresql.org/docs/current/backup.html)
+- [PostgreSQL 官方文档 · Chapter 19. Server Configuration](https://www.postgresql.org/docs/current/runtime-config.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [进程架构](../internals/process-architecture)
 - [连接与 ORM 优化](../performance/connection-and-orm-optimization)
 - [参数调优](../performance/parameter-tuning)
 - [高可用架构](./high-availability-architecture)
+- [install-and-quickstart](/basics/install-and-quickstart.md)
+- [comparison-with-mysql](/ecosystem/comparison-with-mysql.md)
+- [process-architecture](/internals/process-architecture.md)
+- [knowledge](/knowledge.md)
+- [index](index.md)
+- [connection-and-orm-optimization](/performance/connection-and-orm-optimization.md)
+- [client-drivers](/tools/client-drivers.md)

@@ -1,8 +1,11 @@
 # 术语表
 
-中英对照术语速查，按主题分组。每个术语给一句话定位；个别核心概念在其后附展开说明。遇到陌生词先查这里，需要原理细节再进对应章节。
+中英对照术语速查，按主题分组。每个术语给一句话定位；个别核心概念在其后附展开说明。遇到陌生词先查这里，需要原理细节再进对应章节。附录导航见[附录总览](/appendix/)。（2026-10-14 批：四组术语表各补一行可点出处，均为 PostgreSQL 官方文档实测页面，链接全部经实测可达后再写入。）
 
 ## MVCC、WAL、VACUUM、事务与锁
+
+> 出处：PostgreSQL 官方文档：[并发控制（MVCC）](https://www.postgresql.org/docs/current/mvcc.html) · [事务隔离级别](https://www.postgresql.org/docs/current/transaction-iso.html) · [例行清理（VACUUM）](https://www.postgresql.org/docs/current/routine-vacuuming.html) · [预写日志（WAL）](https://www.postgresql.org/docs/current/wal.html) · [显式锁](https://www.postgresql.org/docs/current/explicit-locking.html)
+
 
 | 术语 | 英文 | 一句话解释 |
 | --- | --- | --- |
@@ -38,6 +41,9 @@ UPDATE 和 DELETE 不会立即释放空间，而是留下死元组。VACUUM 把�
 
 ## 索引与查询执行
 
+> 出处：PostgreSQL 官方文档：[索引概览](https://www.postgresql.org/docs/current/indexes.html) · [索引类型](https://www.postgresql.org/docs/current/indexes-types.html) · [操作符类与操作符族](https://www.postgresql.org/docs/current/indexes-opclass.html) · [阅读执行计划（EXPLAIN）](https://www.postgresql.org/docs/current/using-explain.html)
+
+
 | 术语 | 英文 | 一句话解释 |
 | --- | --- | --- |
 | B 树索引 | B-tree | 默认索引类型，支持等值与范围条件，多路平衡树结构。 |
@@ -62,6 +68,9 @@ PostgreSQL 的索引不存行版本信息，所以仅索引扫描还要确认行
 
 ## 复制与高可用
 
+> 出处：PostgreSQL 官方文档：[流复制与同步复制（warm-standby）](https://www.postgresql.org/docs/current/warm-standby.html) · [WAL 归档与持续归档](https://www.postgresql.org/docs/current/continuous-archiving.html) · [逻辑解码与逻辑复制](https://www.postgresql.org/docs/current/logicaldecoding.html) · [监控统计](https://www.postgresql.org/docs/current/monitoring-stats.html)
+
+
 | 术语 | 英文 | 一句话解释 |
 | --- | --- | --- |
 | 流复制 | Streaming Replication | 主库把 WAL 实时发送给备库重放的物理复制方式。 |
@@ -77,6 +86,9 @@ PostgreSQL 的索引不存行版本信息，所以仅索引扫描还要确认行
 | RPO / RTO | Recovery Point / Time Objective | 最多能容忍丢失的数据量，与最长能容忍的服务中断时间。 |
 
 ## 对象与权限
+
+> 出处：PostgreSQL 官方文档：[实例、数据库与 schema](https://www.postgresql.org/docs/current/ddl-schemas.html) · [角色](https://www.postgresql.org/docs/current/database-roles.html) · [权限管理（GRANT/REVOKE）](https://www.postgresql.org/docs/current/ddl-priv.html) · [行级安全 RLS](https://www.postgresql.org/docs/current/ddl-rowsecurity.html)
+
 
 | 术语 | 英文 | 一句话解释 |
 | --- | --- | --- |
@@ -95,6 +107,7 @@ PostgreSQL 的索引不存行版本信息，所以仅索引扫描还要确认行
 
 一台机器上的一个 PostgreSQL 服务是一个实例（官方文档也称 cluster）。实例里建多个数据库，库与库之间隔离。每个库里再分多个 schema，schema 下才是表、视图、函数等对象。日常说的"连库、找表"，完整路径是：实例 → 数据库 → schema → 对象。
 
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [MVCC 与多版本实现](../internals/mvcc-and-multi-version)
@@ -102,5 +115,6 @@ PostgreSQL 的索引不存行版本信息，所以仅索引扫描还要确认行
 - [VACUUM 与 HOT 更新](../internals/vacuum-and-hot)
 - [锁系统](../internals/lock-system)
 - [PostgreSQL 是什么](../basics/what-is-postgresql)
-
-官方文档：[并发控制（MVCC）](https://www.postgresql.org/docs/current/mvcc.html)、[例行清理（VACUUM）](https://www.postgresql.org/docs/current/maintenance.html)、[预写日志（WAL）](https://www.postgresql.org/docs/current/wal.html)
+- [index](index.md)
+- [references-and-docs](references-and-docs.md)
+- [sql-command-reference](sql-command-reference.md)

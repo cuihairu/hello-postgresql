@@ -92,9 +92,20 @@ CREATE TABLE tenant_42.orders (LIKE public.orders INCLUDING ALL);
 - 为运维/统计建独立角色访问全量数据，并纳入审计。
 - 迁移模板固定包含 `tenant_id` 列与配套索引，避免新表漏配。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 5.5. Constraints](https://www.postgresql.org/docs/current/ddl-constraints.html)
+- [PostgreSQL 官方文档 · 5.12. Table Partitioning](https://www.postgresql.org/docs/current/ddl-partitioning.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [行级安全](../security/row-level-security)
 - [逻辑建模到物理落地](./logical-to-physical-modeling)
 - [表继承与分区表设计](./table-inheritance-and-partitioning-design)
 - [备份策略](../operations/backup-strategy)
+- [database-and-schema-objects](/basics/database-and-schema-objects.md)
+- [index](index.md)
+- [table-inheritance-and-partitioning-design](table-inheritance-and-partitioning-design.md)
+- [knowledge](/knowledge.md)
+- [row-level-security](/security/row-level-security.md)

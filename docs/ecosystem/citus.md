@@ -87,9 +87,18 @@ Citus 的分片本质上就是「分区 + 放到别的机器」：分布式表�
 
 Citus Data 于 2019 年被微软收购，其托管服务 Azure Cosmos DB for PostgreSQL（前身 Hyperscale/Citus）已由微软宣布进入退役流程（计划 2029 年 3 月退役，不再推荐新项目采用）；Citus 本体仍持续开源维护，自托管或第三方托管不受影响。
 
+## 参考资料
+
+- [wiki.postgresql.org/wiki/Foreign_data_wrappers](https://wiki.postgresql.org/wiki/Foreign_data_wrappers)
+- [GitHub · pgvector/pgvector](https://github.com/pgvector/pgvector)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [分区表设计](../database-design/table-inheritance-and-partitioning-design)
 - [流复制与同步](../internals/streaming-replication-and-sync)
 - [FDW 与外部数据](./fdw-and-foreign-data)
 - [选型问答](./when-to-choose-postgresql)
+- [index](index.md)
+- [when-to-choose-postgresql](when-to-choose-postgresql.md)
+- [capacity-and-scaling-limits](/performance/capacity-and-scaling-limits.md)

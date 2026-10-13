@@ -94,9 +94,20 @@ EXPLAIN EXECUTE q('pending');
 - 本页讨论的是**执行计划缓存**；`EXPLAIN` 的行数估算来自 `pg_statistic`，两者如何配合见[优化器代价模型](./optimizer-cost-model)与[统计信息与 ANALYZE](../performance/statistics-and-analyze)。
 - 测试时注意：psql 的 `PREPARE` 与驱动的扩展查询是两套入口，但服务端切换规则相同；复现问题时优先用驱动自己的连接参数。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · PREPARE](https://www.postgresql.org/docs/current/sql-prepare.html)
+- [PostgreSQL 官方文档 · 19.7. Query Planning](https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-PLAN-CACHE-MODE)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [优化器代价模型](./optimizer-cost-model)——custom/generic 的代价都由它算出。
+- [postgresql-16-features](/ecosystem/postgresql-16-features.md)
+- [index](index.md)
+- [query-execution-pipeline](query-execution-pipeline.md)
+- [common-bad-plans](/performance/common-bad-plans.md)
+- [connection-and-orm-optimization](/performance/connection-and-orm-optimization.md)
+- [partition-pruning](/performance/partition-pruning.md)- [优化器代价模型](./optimizer-cost-model)——custom/generic 的代价都由它算出。
 - [统计信息与 ANALYZE](../performance/statistics-and-analyze)——选择性的来源。
 - [pg_stat_statements](../performance/pg-stat-statements)——量化规划开销与语句耗时。
 - [psql 进阶](../tools/psql-advanced)——PREPARE/EXPLAIN EXECUTE 的交互技巧。

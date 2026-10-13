@@ -92,11 +92,18 @@ generic plan 与 custom plan 的切换规则见[计划缓存与 generic plan](./
 - 绑定参数让用户输入永远只是数据，不进入第 ① 步的 SQL 文本——SQL 注入的根源是字符串拼接把这层边界打穿了。
 - execute 阶段的内存分配受 `work_mem` 约束，Sort/Hash 超限就落盘，见[体系结构与内存](./architecture-and-memory)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Chapter 51. Overview of PostgreSQL Internals](https://www.postgresql.org/docs/current/overview.html)
+- [PostgreSQL 官方文档 · Chapter 13. Concurrency Control](https://www.postgresql.org/docs/current/mvcc.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [优化器代价模型](./optimizer-cost-model)
 - [join 实现](./join-implementations)
 - [计划缓存与 generic plan](./plan-cache-and-generic-plan)
 - [EXPLAIN 基础](../performance/explain-basics)
-
+- [index](index.md)
+- [join-implementations](join-implementations.md)
 官方文档参考：[Query Processing Overview](https://www.postgresql.org/docs/current/overview.html)

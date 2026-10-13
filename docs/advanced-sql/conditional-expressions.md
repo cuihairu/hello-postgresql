@@ -144,11 +144,22 @@ SELECT id, paid_at FROM orders ORDER BY paid_at DESC NULLS LAST;
 - `ORDER BY` 别名与列名同名字段优先解析为输出别名，`ORDER BY lower(status)` 与 `ORDER BY status` 引用的可能不是同一个东西，排序表达式与索引表达式要一致。
 - 在聚合参数里依赖 CASE 短路来规避除零/转型错误不可靠，把可能抛错的表达式放进分支内部。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 7.8. WITH Queries (Common Table Expressions)](https://www.postgresql.org/docs/current/queries-with.html)
+- [PostgreSQL 官方文档 · 9.22. Window Functions](https://www.postgresql.org/docs/current/functions-window.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [聚合与 GROUP BY](../basics/aggregate-and-group-by)
 - [窗口函数](./window-functions)
 - [分页与排序](./pagination-and-sorting)
 - [btree 索引结构](../indexing/btree-structure)
-
+- [index](index.md)
+- [pagination-and-sorting](pagination-and-sorting.md)
+- [set-operations](set-operations.md)
+- [window-functions-advanced](window-functions-advanced.md)
+- [window-functions](window-functions.md)
+- [aggregate-and-group-by](/basics/aggregate-and-group-by.md)
 官方文档：[条件表达式](https://www.postgresql.org/docs/current/functions-conditional.html)、[SELECT 的 DISTINCT 子句](https://www.postgresql.org/docs/current/sql-select.html#SQL-DISTINCT)、[排序顺序与 NULL](https://www.postgresql.org/docs/current/queries-order.html)。

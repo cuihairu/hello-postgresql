@@ -18,3 +18,8 @@
 ---
 
 - [内核机制](../internals/) —— 复制与崩溃恢复的底层逻辑。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [index](/security/index.md)

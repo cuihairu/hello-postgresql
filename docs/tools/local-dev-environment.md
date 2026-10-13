@@ -112,11 +112,19 @@ alias pgexec='psql -X -v ON_ERROR_STOP=1 -f'
 
 psql 的日常用法（`\d`、`\x`、`\copy`）见[psql 入门](../basics/psql-getting-started)与[psql 高阶](./psql-advanced)；第一次在机器上装 PostgreSQL 见[安装与快速上手](../basics/install-and-quickstart)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · psql](https://www.postgresql.org/docs/current/app-psql.html)
+- [PostgreSQL 官方文档 · F.32. pg_stat_statements — track statistics of SQL planning and execution](https://www.postgresql.org/docs/current/pgstatstatements.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [psql 高阶](./psql-advanced)
 - [schema 迁移工具](./schema-migration-tools)
 - [客户端驱动](./client-drivers)
 - [安装与快速上手](../basics/install-and-quickstart)
-
+- [index](index.md)
+- [psql-advanced](psql-advanced.md)
+- [schema-migration-tools](schema-migration-tools.md)
 官方文档：[postgres 镜像文档](https://hub.docker.com/_/postgres)、[模板数据库](https://www.postgresql.org/docs/current/manage-ag-templatedbs.html)、[libpq 环境变量](https://www.postgresql.org/docs/current/libpq-envars.html)。

@@ -150,9 +150,16 @@ spec:
 
 另一个坑是资源限制：给容器设了 `memory limit` 却没同步调小 `shared_buffers` 和 `work_mem`，cgroup OOM killer 会直接杀掉 postmaster，实例反复重启。容器的内存限制要和 PG 内存参数一起规划（见 [架构与内存](../internals/architecture-and-memory)）。
 
+## 参考资料
+
+- [hub.docker.com/_/postgres](https://hub.docker.com/_/postgres)
+- [PostgreSQL 官方文档 · Chapter 19. Server Configuration](https://www.postgresql.org/docs/current/runtime-config.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [集群初始化与目录布局](./cluster-init-and-layout)——initdb 与数据目录的基础。
+- [when-to-choose-postgresql](/ecosystem/when-to-choose-postgresql.md)
+- [index](index.md)- [集群初始化与目录布局](./cluster-init-and-layout)——initdb 与数据目录的基础。
 - [高可用架构](./high-availability-architecture)——operator 与 Patroni 的切换机制。
 - [备份策略](./backup-strategy)——容器环境下备份怎么落地。
 

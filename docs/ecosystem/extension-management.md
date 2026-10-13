@@ -107,9 +107,23 @@ PostGIS 这类扩展还要跑它自带的 `postgis_upgrade` 脚本，且建议�
 
 这份清单与各扩展的深入用法贯穿全书：监控见 [pg_stat_statements](../performance/pg-stat-statements) 与 [审计](../security/audit)，文本匹配见 [全文检索](../advanced-sql/full-text-search)。
 
+## 参考资料
+
+- [GitHub · pgvector/pgvector](https://github.com/pgvector/pgvector)
+- [wiki.postgresql.org/wiki/Foreign_data_wrappers](https://wiki.postgresql.org/wiki/Foreign_data_wrappers)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
+
+- 子树总纲：[第9部分：生态与新特性](/ecosystem/)
 
 - [系统目录与元数据](../basics/system-catalogs-and-metadata)
 - [版本升级](../operations/version-upgrade)
 - [向量检索 pgvector](./pgvector)
 - [角色与权限](../security/roles-and-permissions)
+- [fdw-and-foreign-data](fdw-and-foreign-data.md)
+- [index](index.md)
+- [pgvector](pgvector.md)
+- [postgis](postgis.md)
+- [timescaledb](timescaledb.md)
+- [knowledge](/knowledge.md)

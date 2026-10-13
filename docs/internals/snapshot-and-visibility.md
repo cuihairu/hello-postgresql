@@ -102,11 +102,22 @@ ORDER  BY 2 DESC;
 - **别用 `txid_current()` 做业务 ID**：它消耗 xid 且只增不回退，业务序列用 sequences 或 `pg_current_xact_id_if_assigned()`。
 - pg_xact 只有 2 bit/事务，但会随事务号区间持续增长；长期不冻结的库即使没有数据膨胀，pg_xact 也会异常大。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 24.1. Routine Vacuuming](https://www.postgresql.org/docs/current/routine-vacuuming.html)
+- [PostgreSQL 官方文档 · Chapter 51. Overview of PostgreSQL Internals](https://www.postgresql.org/docs/current/overview.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [MVCC 与多版本](./mvcc-and-multi-version)
 - [事务与隔离级别](./transactions-and-isolation)
 - [VACUUM 与 HOT](./vacuum-and-hot)
 - [监控与告警](../operations/monitoring-and-alerting)
-
-官方文档参考：[Preventing Transaction ID Wraparound Failures](https://www.postgresql.org/docs/current/xidwraparound.html)
+- [architecture-and-memory](architecture-and-memory.md)
+- [index](index.md)
+- [lock-conflict-troubleshooting](lock-conflict-troubleshooting.md)
+- [mvcc-and-multi-version](mvcc-and-multi-version.md)
+- [transactions-and-isolation](transactions-and-isolation.md)
+- [knowledge](/knowledge.md)
+官方文档参考：[Preventing Transaction ID Wraparound Failures](https://www.postgresql.org/docs/current/routine-vacuuming.html)

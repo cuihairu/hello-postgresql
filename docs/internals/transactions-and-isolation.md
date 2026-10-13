@@ -112,9 +112,22 @@ ORDER BY xact_start;
 - REPEATABLE READ/SERIALIZABLE 下长事务叠加大并发写，40001 会明显变多；升级隔离级别前先确认业务能接受重试。
 - 连接池（事务级复用）下 `SET default_transaction_isolation` 的会话效果可能被下一个租户复用，建议在事务内用 `SET TRANSACTION` 显式声明。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 13.2. Transaction Isolation](https://www.postgresql.org/docs/current/transaction-iso.html)
+- [PostgreSQL 官方文档 · Chapter 51. Overview of PostgreSQL Internals](https://www.postgresql.org/docs/current/overview.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [MVCC 与多版本](./mvcc-and-multi-version)——快照与可见性的底层机制。
+- [pagination-and-sorting](/advanced-sql/pagination-and-sorting.md)
+- [transaction-basics](/basics/transaction-basics.md)
+- [comparison-with-mysql](/ecosystem/comparison-with-mysql.md)
+- [index](index.md)
+- [lock-system](lock-system.md)
+- [mvcc-and-multi-version](mvcc-and-multi-version.md)
+- [snapshot-and-visibility](snapshot-and-visibility.md)
+- [knowledge](/knowledge.md)- [MVCC 与多版本](./mvcc-and-multi-version)——快照与可见性的底层机制。
 - [快照与可见性](./snapshot-and-visibility)——可见性判断的完整规则。
 - [锁系统](./lock-system)——显式锁与死锁排查。
 - [事务基础](../basics/transaction-basics)——BEGIN/COMMIT/SAVEPOINT 基本用法。

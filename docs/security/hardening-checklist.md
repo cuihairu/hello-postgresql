@@ -156,11 +156,25 @@ systemctl restart postgresql
 SELECT version();   -- 对照安全公告核对具体小版本号
 ```
 
+## 参考资料
+
+- [postgresql.org/support/security](https://www.postgresql.org/support/security/)
+- [PostgreSQL 官方文档 · 5.9. Row Security Policies](https://www.postgresql.org/docs/current/ddl-rowsecurity.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [角色与权限模型](./roles-and-permissions)
 - [pg_hba 与认证](./pg-hba-and-authentication)
 - [SSL 与传输加密](./ssl-and-transport-encryption)
 - [审计](./audit)
-
+- [database-and-schema-objects](/basics/database-and-schema-objects.md)
+- [audit](audit.md)
+- [data-encryption-at-rest](data-encryption-at-rest.md)
+- [index](index.md)
+- [object-grant-hierarchy](object-grant-hierarchy.md)
+- [pg-hba-and-authentication](pg-hba-and-authentication.md)
+- [roles-and-permissions](roles-and-permissions.md)
+- [row-level-security](row-level-security.md)
+- [ssl-and-transport-encryption](ssl-and-transport-encryption.md)
 官方文档：[服务端配置](https://www.postgresql.org/docs/current/runtime-config.html)、[安全公告](https://www.postgresql.org/support/security/)。

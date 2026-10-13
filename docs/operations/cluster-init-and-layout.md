@@ -140,9 +140,19 @@ tail -f /var/lib/pgsql/17/data/log/postgresql-*.log  # 默认 logging_collector=
 - **postmaster.pid 残留**：机器掉电后目录里可能留下旧 pid 文件，正常启动会自行清理；若报「pre-existing shared memory block」，先确认真没有旧进程再处理，别上来就删文件。
 - **多版本下 psql 与服务器版本不匹配**：客户端版本低于服务器会缺功能甚至行为差异，脚本里建议写全路径或用包装器确认版本。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Chapter 25. Backup and Restore](https://www.postgresql.org/docs/current/backup.html)
+- [PostgreSQL 官方文档 · Chapter 19. Server Configuration](https://www.postgresql.org/docs/current/runtime-config.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [安装与快速上手](../basics/install-and-quickstart)
 - [进程架构](../internals/process-architecture)
 - [物理备份与 PITR](./physical-backup-and-pitr)
 - [版本升级](./version-upgrade)
+- [backup-strategy](backup-strategy.md)
+- [cloud-native-and-containers](cloud-native-and-containers.md)
+- [index](index.md)
+- [version-upgrade](version-upgrade.md)

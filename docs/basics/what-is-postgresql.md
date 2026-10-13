@@ -96,9 +96,19 @@ DROP TABLE products;
 - 标准 SQL 兼容 + 完整 ACID + MVCC，读写不互相阻塞；
 - 对象-关系特性让它从 OLTP 一路扩展到地理、时序、向量等生态。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Chapter 13. Concurrency Control](https://www.postgresql.org/docs/current/mvcc.html)
+- [PostgreSQL 官方文档 · Part I. Tutorial](https://www.postgresql.org/docs/current/tutorial.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [安装与快速上手](./install-and-quickstart)
 - [psql 入门](./psql-getting-started)
 - [数据库与 schema 对象](./database-and-schema-objects)
 - [MVCC 与多版本](../internals/mvcc-and-multi-version)
+- [glossary](/appendix/glossary.md)
+- [index](index.md)
+- [install-and-quickstart](install-and-quickstart.md)
+- [when-to-choose-postgresql](/ecosystem/when-to-choose-postgresql.md)

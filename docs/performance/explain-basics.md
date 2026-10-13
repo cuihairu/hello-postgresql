@@ -149,11 +149,40 @@ Execution Time: 0.089 ms
 - 计划树缩进对齐容易看串行，复杂计划可以加 `FORMAT JSON`（GJSON 树形结构）或用 explain 可视化工具排版后再读。
 - `EXPLAIN` 显示的是规划时刻的决策，实际执行中缓冲区冷热、并发负载都会影响耗时，cost 高的计划在缓存全热时未必比 cost 低的慢。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 14.1. Using EXPLAIN](https://www.postgresql.org/docs/current/using-explain.html)
+- [PostgreSQL 官方文档 · Chapter 14. Performance Tips](https://www.postgresql.org/docs/current/performance-tips.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [EXPLAIN (ANALYZE, BUFFERS, WAL)](./explain-analyze-buffers)
 - [常见坏计划](./common-bad-plans)
 - [统计信息与 ANALYZE](./statistics-and-analyze)
 - [优化器代价模型](../internals/optimizer-cost-model)
-
+- [cte-and-non-recursive-with](/advanced-sql/cte-and-non-recursive-with.md)
+- [lateral-and-from-subquery](/advanced-sql/lateral-and-from-subquery.md)
+- [set-operations](/advanced-sql/set-operations.md)
+- [subquery-family](/advanced-sql/subquery-family.md)
+- [common-beginner-mistakes](/basics/common-beginner-mistakes.md)
+- [join-family](/basics/join-family.md)
+- [psql-getting-started](/basics/psql-getting-started.md)
+- [pgvector](/ecosystem/pgvector.md)
+- [postgresql-17-features](/ecosystem/postgresql-17-features.md)
+- [when-to-choose-postgresql](/ecosystem/when-to-choose-postgresql.md)
+- [btree-structure](/indexing/btree-structure.md)
+- [composite-index-design](/indexing/composite-index-design.md)
+- [index-failure-and-misuse](/indexing/index-failure-and-misuse.md)
+- [join-implementations](/internals/join-implementations.md)
+- [optimizer-cost-model](/internals/optimizer-cost-model.md)
+- [parallel-query](/internals/parallel-query.md)
+- [query-execution-pipeline](/internals/query-execution-pipeline.md)
+- [knowledge](/knowledge.md)
+- [common-bad-plans](common-bad-plans.md)
+- [explain-analyze-buffers](explain-analyze-buffers.md)
+- [index](index.md)
+- [partition-pruning](partition-pruning.md)
+- [statistics-and-analyze](statistics-and-analyze.md)
+- [psql-advanced](/tools/psql-advanced.md)
 官方文档：[EXPLAIN 命令](https://www.postgresql.org/docs/current/sql-explain.html)、[Using EXPLAIN 教程](https://www.postgresql.org/docs/current/using-explain.html)。

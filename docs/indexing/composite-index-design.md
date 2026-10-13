@@ -133,9 +133,28 @@ WHERE pa.indisprimary = false;
 
 经验法则：**一个组合索引覆盖一种高频查询形态**。与其为每种条件组合都建索引，不如让最高频的形态走最优索引，低频形态退化为较宽的索引扫描或顺序扫描——索引数量对写入吞吐的影响是线性的，见 [写吞吐优化](../performance/write-throughput-optimization)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Chapter 11. Indexes](https://www.postgresql.org/docs/current/indexes.html)
+- [PostgreSQL 官方文档 · 11.2. Index Types](https://www.postgresql.org/docs/current/indexes-types.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [B-tree 结构与原则](./btree-structure)
 - [部分索引](./partial-indexes)
 - [索引失效与误用](./index-failure-and-misuse)
 - [EXPLAIN 读法](../performance/explain-basics)
+- [lateral-and-from-subquery](/advanced-sql/lateral-and-from-subquery.md)
+- [pagination-and-sorting](/advanced-sql/pagination-and-sorting.md)
+- [anti-patterns](/database-design/anti-patterns.md)
+- [logical-to-physical-modeling](/database-design/logical-to-physical-modeling.md)
+- [btree-structure](btree-structure.md)
+- [index-only-scans](index-only-scans.md)
+- [index-selection-decision-tree](index-selection-decision-tree.md)
+- [index](index.md)
+- [join-implementations](/internals/join-implementations.md)
+- [vacuum-and-hot](/internals/vacuum-and-hot.md)
+- [common-bad-plans](/performance/common-bad-plans.md)
+- [slow-query-governance](/performance/slow-query-governance.md)
+- [real-world-cases](/tools/real-world-cases.md)

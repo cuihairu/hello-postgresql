@@ -149,11 +149,17 @@ GROUP BY 1 ORDER BY 1;
 
 另一个极端是**只追加不更新**：PV 全部 `INSERT` 进 `page_views_raw`，写放大最小、完全没有锁冲突，但每次展示都要 `GROUP BY` 聚合；读多写少、要求低延迟的场景再用聚合表兜住。近似去重计数（如独立访客数）可以引入 HLL 类扩展用概率数据结构估算，牺牲精度换取常数空间。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · psql](https://www.postgresql.org/docs/current/app-psql.html)
+- [PostgreSQL 官方文档 · F.32. pg_stat_statements — track statistics of SQL planning and execution](https://www.postgresql.org/docs/current/pgstatstatements.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [批量写入](../advanced-sql/batch-and-write)
 - [复合索引设计](../indexing/composite-index-design)
 - [vacuum 与死元组](../internals/vacuum-and-hot)
 - [CRUD 与 ON CONFLICT](../basics/crud-and-on-conflict)
-
+- [index](index.md)
 官方文档：[INSERT 命令](https://www.postgresql.org/docs/current/sql-insert.html)、[UPDATE 命令](https://www.postgresql.org/docs/current/sql-update.html)。

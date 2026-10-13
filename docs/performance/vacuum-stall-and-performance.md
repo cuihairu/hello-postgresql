@@ -82,9 +82,20 @@ SELECT * FROM pg_stat_progress_vacuum;
 - 业务高峰敏感：维持默认限速，改在低峰对大表手动 `VACUUM`。注意手动 VACUUM 走 `vacuum_cost_delay`（默认 0，不限速），比 autovacuum 猛得多，安排在窗口内执行；
 - 优先减少垃圾产生量本身：高频 UPDATE 的小表降低触发阈值、能用 HOT 的更新保持 HOT 链，见 [autovacuum 调优](../internals/autovacuum-tuning)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 24.1. Routine Vacuuming](https://www.postgresql.org/docs/current/routine-vacuuming.html#VACUUM-FOR-WRAPAROUND)
+- [PostgreSQL 官方文档 · 14.1. Using EXPLAIN](https://www.postgresql.org/docs/current/using-explain.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [autovacuum 调优](../internals/autovacuum-tuning)——触发公式与参数全景。
+- [autovacuum-tuning](/internals/autovacuum-tuning.md)
+- [vacuum-and-hot](/internals/vacuum-and-hot.md)
+- [knowledge](/knowledge.md)
+- [monitoring-and-alerting](/operations/monitoring-and-alerting.md)
+- [index](index.md)
+- [lock-and-concurrency-bottlenecks](lock-and-concurrency-bottlenecks.md)- [autovacuum 调优](../internals/autovacuum-tuning)——触发公式与参数全景。
 - [VACUUM 与 HOT](../internals/vacuum-and-hot)——清理动作与 HOT 减负机制。
 - [监控与告警](../operations/monitoring-and-alerting)——xid age 与膨胀的告警落地。
 - [写入吞吐优化](./write-throughput-optimization)——从源头减少死元组的写法。

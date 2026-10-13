@@ -100,9 +100,20 @@ ANALYZE erp_customers;
 
 另一个容易忽略的点：外表上的写操作会加入本地事务，跨多个远端时 postgres_fdw 用远端预备事务协调提交；远端若禁用了 prepared transactions，跨库写的一致性会打折扣，生产上写远端前先确认 `max_prepared_transactions` 配置。
 
+## 参考资料
+
+- [wiki.postgresql.org/wiki/Foreign_data_wrappers](https://wiki.postgresql.org/wiki/Foreign_data_wrappers)
+- [GitHub · pgvector/pgvector](https://github.com/pgvector/pgvector)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [扩展管理](./extension-management)
 - [逻辑复制运维](../operations/logical-replication-ops)
 - [角色与权限](../security/roles-and-permissions)
 - [统计信息与 ANALYZE](../performance/statistics-and-analyze)
+- [materialized-views](/database-design/materialized-views.md)
+- [citus](citus.md)
+- [comparison-with-mysql](comparison-with-mysql.md)
+- [index](index.md)
+- [knowledge](/knowledge.md)

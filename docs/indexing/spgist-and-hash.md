@@ -100,9 +100,17 @@ CREATE INDEX h_multi ON users_h USING hash (email, email);
 
 **Hash 不要用**：需要唯一约束（用 B-tree）；多列条件（用 B-tree 组合索引）；范围或排序需求（用 B-tree）；PG 10 之前的服务器（无 WAL，直接禁用）。一句话：**等值场景默认 B-tree，hash 只在基准测试说话时才出场**。完整选型路径见 [索引选型决策树](./index-selection-decision-tree)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Chapter 11. Indexes](https://www.postgresql.org/docs/current/indexes.html)
+- [PostgreSQL 官方文档 · 11.2. Index Types](https://www.postgresql.org/docs/current/indexes-types.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [模式匹配](../advanced-sql/pattern-matching)
 - [GiST 索引](./gist)
 - [B-tree 结构与原则](./btree-structure)
 - [索引选型决策树](./index-selection-decision-tree)
+- [index-selection-decision-tree](index-selection-decision-tree.md)
+- [index](index.md)

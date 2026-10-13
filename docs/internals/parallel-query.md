@@ -112,11 +112,18 @@ WHERE backend_type = 'parallel worker';
 - 并行 worker 的排序、哈希各自独立耗用 `work_mem`，并行度越高内存峰值越大，容量规划见[体系结构与内存](./architecture-and-memory)。
 - 同一条 SQL 时而并行时而不并行（worker 抢占所致），排查性能抖动时先固定会话的 `max_parallel_workers_per_gather` 再对比。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 15.1. How Parallel Query Works](https://www.postgresql.org/docs/current/how-parallel-query-works.html)
+- [PostgreSQL 官方文档 · Chapter 51. Overview of PostgreSQL Internals](https://www.postgresql.org/docs/current/overview.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [进程架构](./process-architecture)——backend 与后台进程从哪来。
+- [index-selection-decision-tree](/indexing/index-selection-decision-tree.md)
+- [index](index.md)- [进程架构](./process-architecture)——backend 与后台进程从哪来。
 - [join 实现方式](./join-implementations)——hash/merge/nested loop 的选择依据。
 - [优化器代价模型](./optimizer-cost-model)——并行代价如何进入总成本。
 - [EXPLAIN 基础](../performance/explain-basics)——读取并行计划的 loops 与行数。
 
-官方文档：<https://www.postgresql.org/docs/current/how-parallel-query-works.html> 与 <https://www.postgresql.org/docs/current/parallel-planning.html>
+官方文档：<https://www.postgresql.org/docs/current/how-parallel-query-works.html>

@@ -100,9 +100,21 @@ ORDER BY 3 DESC;
 
 定位顺序建议：先看等待事件分布锁定大类，再用 `pg_blocking_pids()` / `pg_locks` 收敛到具体会话与对象，最后回到应用层看这条会话对应的业务代码。锁系统本身的机制见 [锁系统](../internals/lock-system)，锁冲突的逐一排查见 [锁冲突排查](../internals/lock-conflict-troubleshooting)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 27.2. The Cumulative Statistics System](https://www.postgresql.org/docs/current/monitoring-stats.html#MONITORING-PG-STAT-ACTIVITY-VIEW)
+- [PostgreSQL 官方文档 · 14.1. Using EXPLAIN](https://www.postgresql.org/docs/current/using-explain.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [锁系统](../internals/lock-system)——锁类型与粒度的完整机制。
+- [transaction-basics](/basics/transaction-basics.md)
+- [lock-conflict-troubleshooting](/internals/lock-conflict-troubleshooting.md)
+- [lock-system](/internals/lock-system.md)
+- [benchmark-tools](benchmark-tools.md)
+- [connection-and-orm-optimization](connection-and-orm-optimization.md)
+- [index](index.md)
+- [schema-migration-tools](/tools/schema-migration-tools.md)- [锁系统](../internals/lock-system)——锁类型与粒度的完整机制。
 - [锁冲突排查](../internals/lock-conflict-troubleshooting)——逐个案例的排查路径。
 - [pg_stat 观测体系](../internals/pg-stat-observation)——等待事件与统计视图全景。
 - [慢查询治理](./slow-query-governance)——把本页的定位动作纳入日常流程。

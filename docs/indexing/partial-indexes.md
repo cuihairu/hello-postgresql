@@ -127,9 +127,23 @@ SELECT count(*) FROM orders_p WHERE status <> 'done';
 - **不要用部分索引替代分区**。谓词只是「索引里收不收这行」，数据仍全在同一张表里；按状态做查询隔离的需求到了数据量很大时，应考虑表分区。
 - **统计信息按全表计算**。优化器知道部分索引只覆盖一部分行并据此估算，一般无需干预；但如果谓词列的统计严重过期，估算失真同样会导致弃用索引。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Chapter 11. Indexes](https://www.postgresql.org/docs/current/indexes.html)
+- [PostgreSQL 官方文档 · 11.2. Index Types](https://www.postgresql.org/docs/current/indexes-types.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [表达式索引](./expression-indexes) —— WHERE 谓词里也常用表达式，两者可组合。
+- [jsonb-design-patterns](/advanced-sql/jsonb-design-patterns.md)
+- [soft-delete-and-tombstone](/database-design/soft-delete-and-tombstone.md)
+- [pgvector](/ecosystem/pgvector.md)
+- [btree-structure](btree-structure.md)
+- [composite-index-design](composite-index-design.md)
+- [expression-indexes](expression-indexes.md)
+- [index-failure-and-misuse](index-failure-and-misuse.md)
+- [index](index.md)
+- [slow-query-governance](/performance/slow-query-governance.md)- [表达式索引](./expression-indexes) —— WHERE 谓词里也常用表达式，两者可组合。
 - [索引失效与误用](./index-failure-and-misuse) —— 谓词不匹配是「用不上」的一种，还有更多形态。
 - [软删除与墓碑](../database-design/soft-delete-and-tombstone) —— `deleted_at` 方案的完整设计。
 - [B-tree 结构与原则](./btree-structure) —— 部分索引默认仍是最常用的 B-tree。

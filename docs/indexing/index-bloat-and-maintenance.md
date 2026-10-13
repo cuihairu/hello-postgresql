@@ -123,9 +123,24 @@ ORDER BY pg_relation_size(s.indexrelid) DESC;
 - **不能停写也不能等窗口**：外部扩展 `pg_repack` 可以在线整理表和索引（重建为新文件后换名），适合膨胀严重、CONCURRENTLY 又解决不了的整表场景。
 - **自动巡检**：把「INVALID 索引数」「avg_leaf_density 低于阈值的索引数」纳入监控告警（对接方式见 [监控与告警](../operations/monitoring-and-alerting)），膨胀是慢性病，靠巡检而不是等查询变慢才想起来。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Chapter 11. Indexes](https://www.postgresql.org/docs/current/indexes.html)
+- [PostgreSQL 官方文档 · 11.2. Index Types](https://www.postgresql.org/docs/current/indexes-types.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [仅索引扫描](./index-only-scans) —— 膨胀如何直接削弱 IOS 收益。
+- [composite-index-design](composite-index-design.md)
+- [gin](gin.md)
+- [index-only-scans](index-only-scans.md)
+- [index](index.md)
+- [autovacuum-tuning](/internals/autovacuum-tuning.md)
+- [mvcc-and-multi-version](/internals/mvcc-and-multi-version.md)
+- [vacuum-and-hot](/internals/vacuum-and-hot.md)
+- [disaster-recovery-drills](/operations/disaster-recovery-drills.md)
+- [ops-sop](/operations/ops-sop.md)
+- [vacuum-stall-and-performance](/performance/vacuum-stall-and-performance.md)- [仅索引扫描](./index-only-scans) —— 膨胀如何直接削弱 IOS 收益。
 - [VACUUM 与 HOT](../internals/vacuum-and-hot) —— 死条目的产生与回收机制。
 - [B-tree 结构与原则](./btree-structure) —— 页分裂与叶页密度的结构背景。
 - [autovacuum 调优](../internals/autovacuum-tuning) —— 让清理追上写入的上游手段。

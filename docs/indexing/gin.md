@@ -37,7 +37,7 @@ EXPLAIN (COSTS OFF) SELECT id FROM articles WHERE tags @> ARRAY['rare_tag'];
 
 ## 适用类型与操作符配合
 
-内置操作符类及其支持的索引化操作符（见[官方操作符类表](https://www.postgresql.org/docs/current/gin-builtin-opclasses.html)）：
+内置操作符类及其支持的索引化操作符（见[官方操作符类表](https://www.postgresql.org/docs/current/indexes-opclass.html)）：
 
 | 操作符类 | 索引类型 | 可索引操作符 |
 | --- | --- | --- |
@@ -113,9 +113,27 @@ FROM pg_index WHERE indrelid = 'articles3'::regclass ORDER BY 1;
 
 trigram 方面的用法（`LIKE '%关键词%'` 走索引）见 [模式匹配](../advanced-sql/pattern-matching)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Chapter 11. Indexes](https://www.postgresql.org/docs/current/indexes.html)
+- [PostgreSQL 官方文档 · 11.2. Index Types](https://www.postgresql.org/docs/current/indexes-types.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [jsonb 操作](../advanced-sql/jsonb-operations)
 - [全文检索](../advanced-sql/full-text-search)
 - [索引膨胀与维护](./index-bloat-and-maintenance)
 - [索引选型决策树](./index-selection-decision-tree)
+- [array-operations](/advanced-sql/array-operations.md)
+- [full-text-search](/advanced-sql/full-text-search.md)
+- [jsonb-design-patterns](/advanced-sql/jsonb-design-patterns.md)
+- [jsonb-operations](/advanced-sql/jsonb-operations.md)
+- [pattern-matching](/advanced-sql/pattern-matching.md)
+- [pgvector](/ecosystem/pgvector.md)
+- [expression-indexes](expression-indexes.md)
+- [gist](gist.md)
+- [index-failure-and-misuse](index-failure-and-misuse.md)
+- [index-selection-decision-tree](index-selection-decision-tree.md)
+- [index](index.md)
+- [toast](/internals/toast.md)

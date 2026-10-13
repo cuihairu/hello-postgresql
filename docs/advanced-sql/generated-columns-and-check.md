@@ -90,11 +90,21 @@ ALTER TABLE users ADD CONSTRAINT email_lowercase_chk
 - CHECK 约束对 NULL 恒放行（结果为 NULL 视为通过），所以 `CHECK (age BETWEEN 0 AND 150)` 对 `age IS NULL` 的行不报错；要拒绝 NULL 另加 `NOT NULL`。
 - 大表上 `ADD CONSTRAINT ... CHECK` 默认全表扫描锁表，生产环境用 `NOT VALID` + `VALIDATE CONSTRAINT` 两段式，见 [约束与数据质量](../database-design/constraints-and-data-quality)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 7.8. WITH Queries (Common Table Expressions)](https://www.postgresql.org/docs/current/queries-with.html)
+- [PostgreSQL 官方文档 · 9.22. Window Functions](https://www.postgresql.org/docs/current/functions-window.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [CHECK 约束与域](../database-design/check-and-domains)
 - [约束与数据质量](../database-design/constraints-and-data-quality)
 - [表达式索引](../indexing/expression-indexes)
 - [建模反模式](../database-design/anti-patterns)
-
+- [index](index.md)
+- [jsonb-design-patterns](jsonb-design-patterns.md)
+- [jsonb-operations](jsonb-operations.md)
+- [check-and-domains](/database-design/check-and-domains.md)
+- [expression-indexes](/indexing/expression-indexes.md)
 官方文档：[生成列](https://www.postgresql.org/docs/current/ddl-generated-columns.html)、[CHECK 约束](https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-CHECK-CONSTRAINTS)。

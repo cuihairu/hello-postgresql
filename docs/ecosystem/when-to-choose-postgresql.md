@@ -72,9 +72,20 @@ PG 每年一个大版本，minor 版本只修 bug 不改行为。大版本升级
 
 把判断压缩成三问：业务是否需要 PG 的 SQL 深度与扩展生态？团队能否承担运维模型的切换？现有 MySQL 方案是否有真实痛点？三问里有两个「是」，迁移和选 PG 就值得做；反之，MySQL 继续服务好这类负载也完全成立。两个都是经过大规模生产验证的系统，选型分歧的代价通常小于选型后不用心运维的代价。
 
+## 参考资料
+
+- [wiki.postgresql.org/wiki/Foreign_data_wrappers](https://wiki.postgresql.org/wiki/Foreign_data_wrappers)
+- [GitHub · pgvector/pgvector](https://github.com/pgvector/pgvector)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [与 MySQL 对比](./comparison-with-mysql)
 - [PostgreSQL 是什么](../basics/what-is-postgresql)
 - [分布式 Citus](./citus)
 - [容量与扩展上限](../performance/capacity-and-scaling-limits)
+- [citus](citus.md)
+- [comparison-with-mysql](comparison-with-mysql.md)
+- [index](index.md)
+- [pgvector](pgvector.md)
+- [timescaledb](timescaledb.md)

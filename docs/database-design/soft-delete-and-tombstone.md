@@ -95,9 +95,22 @@ INSERT INTO accounts_tombstones SELECT * FROM moved;
 - **不要拿软删当备份**：误删恢复的正解是备份与时间点恢复（PITR），见 [备份策略](../operations/backup-strategy)。
 - **常见折中**：软删 + 有限保留期（如 30/90 天）+ 到期归档硬删，兼顾误删恢复与合规。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 5.5. Constraints](https://www.postgresql.org/docs/current/ddl-constraints.html)
+- [PostgreSQL 官方文档 · 5.12. Table Partitioning](https://www.postgresql.org/docs/current/ddl-partitioning.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [逻辑建模到物理落地](./logical-to-physical-modeling)
 - [反模式清单](./anti-patterns)
 - [部分索引](../indexing/partial-indexes)
 - [VACUUM 与 HOT](../internals/vacuum-and-hot)
+- [common-beginner-mistakes](/basics/common-beginner-mistakes.md)
+- [anti-patterns](anti-patterns.md)
+- [foreign-keys-and-referential-actions](foreign-keys-and-referential-actions.md)
+- [index](index.md)
+- [logical-to-physical-modeling](logical-to-physical-modeling.md)
+- [primary-key-design](primary-key-design.md)
+- [partial-indexes](/indexing/partial-indexes.md)

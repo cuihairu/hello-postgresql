@@ -131,10 +131,25 @@ psql -p 5433 -c "SELECT pg_wal_replay_resume();"   # PG 15+ 恢复中恢复
 - `recovery_target_action` 默认 pause，演练时看到「恢复暂停」不要以为失败了，这是到达目标后的预期行为。
 - 演练环境要能拿到真实的归档文件，而不是「归档是好的所以不用测」。至少每季度跑一次完整 PITR 演练。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 25.3. Continuous Archiving and Point-in-Time Recovery (PITR)](https://www.postgresql.org/docs/current/continuous-archiving.html)
+- [PostgreSQL 官方文档 · Chapter 25. Backup and Restore](https://www.postgresql.org/docs/current/backup.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [备份策略](./backup-strategy)——逻辑备份与物理备份的取舍与组合。
+- [postgresql-17-features](/ecosystem/postgresql-17-features.md)
+- [wal-mechanism](/internals/wal-mechanism.md)
+- [knowledge](/knowledge.md)
+- [backup-strategy](backup-strategy.md)
+- [cluster-init-and-layout](cluster-init-and-layout.md)
+- [disaster-recovery-drills](disaster-recovery-drills.md)
+- [index](index.md)
+- [ops-sop](ops-sop.md)
+- [streaming-replication-setup](streaming-replication-setup.md)
+- [version-upgrade](version-upgrade.md)- [备份策略](./backup-strategy)——逻辑备份与物理备份的取舍与组合。
 - [WAL 机制](../internals/wal-mechanism)——LSN、段文件与重放原理。
 - [故障演练清单](./disaster-recovery-drills)——PITR 抽回在生产里的完整步骤。
 
-官方文档：<https://www.postgresql.org/docs/current/continuous-archiving.html> 与 <https://www.postgresql.org/docs/current/continuous-archiving-pitr.html>
+官方文档：<https://www.postgresql.org/docs/current/continuous-archiving.html> 与 <https://www.postgresql.org/docs/current/backup.html>

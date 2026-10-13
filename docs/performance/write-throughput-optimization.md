@@ -104,9 +104,25 @@ ALTER TABLE staging_events SET UNLOGGED;
 - unlogged 表当成缓存对待：写监控告警脚本时别把关键数据算进去。
 - 导入后如果查询变慢，先怀疑统计信息没刷新，先 ANALYZE 再谈别的。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 14.4. Populating a Database](https://www.postgresql.org/docs/current/populate.html)
+- [PostgreSQL 官方文档 · 28.4. Asynchronous Commit](https://www.postgresql.org/docs/current/wal-async-commit.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [WAL 机制](../internals/wal-mechanism)——为什么 commit 要等 fsync，WAL 量从哪来。
+- [batch-and-write](/advanced-sql/batch-and-write.md)
+- [when-to-choose-postgresql](/ecosystem/when-to-choose-postgresql.md)
+- [composite-index-design](/indexing/composite-index-design.md)
+- [wal-mechanism](/internals/wal-mechanism.md)
+- [benchmark-tools](benchmark-tools.md)
+- [capacity-and-scaling-limits](capacity-and-scaling-limits.md)
+- [connection-and-orm-optimization](connection-and-orm-optimization.md)
+- [index](index.md)
+- [lock-and-concurrency-bottlenecks](lock-and-concurrency-bottlenecks.md)
+- [parameter-tuning](parameter-tuning.md)
+- [vacuum-stall-and-performance](vacuum-stall-and-performance.md)- [WAL 机制](../internals/wal-mechanism)——为什么 commit 要等 fsync，WAL 量从哪来。
 - [checkpoint 与 buffer](../internals/checkpoint-and-buffer)——max_wal_size 与刷盘节奏的关系。
 - [参数调优](./parameter-tuning)——maintenance_work_mem、max_wal_size 的取值。
 - [基准工具](./benchmark-tools)——用 pgbench 量化上面每一步的实际收益。

@@ -107,9 +107,29 @@ WHERE xmin IS NOT NULL OR catalog_xmin IS NOT NULL;
 - 全局激进调参（如 scale_factor 0.001）会让 vacuum 频繁扫描大表，与 cost_delay、worker 数一起评估总 IO 预算，其他内存与 IO 参数见 [参数调优](../performance/parameter-tuning)。
 - 手动 `VACUUM` 不受 autovacuum 限速参数控制（走 `vacuum_cost_limit` 本身），应急清理大表时注意它可能比 autovacuum 更猛。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 24.1. Routine Vacuuming](https://www.postgresql.org/docs/current/routine-vacuuming.html#AUTOVACUUM)
+- [PostgreSQL 官方文档 · Chapter 51. Overview of PostgreSQL Internals](https://www.postgresql.org/docs/current/overview.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [VACUUM 与 HOT](./vacuum-and-hot)——清理动作本身与 HOT 减负。
+- [constraints-and-data-quality](/database-design/constraints-and-data-quality.md)
+- [postgresql-17-features](/ecosystem/postgresql-17-features.md)
+- [when-to-choose-postgresql](/ecosystem/when-to-choose-postgresql.md)
+- [gin](/indexing/gin.md)
+- [index-bloat-and-maintenance](/indexing/index-bloat-and-maintenance.md)
+- [index](index.md)
+- [lock-conflict-troubleshooting](lock-conflict-troubleshooting.md)
+- [mvcc-and-multi-version](mvcc-and-multi-version.md)
+- [pg-stat-observation](pg-stat-observation.md)
+- [process-architecture](process-architecture.md)
+- [vacuum-and-hot](vacuum-and-hot.md)
+- [knowledge](/knowledge.md)
+- [disaster-recovery-drills](/operations/disaster-recovery-drills.md)
+- [statistics-and-analyze](/performance/statistics-and-analyze.md)
+- [vacuum-stall-and-performance](/performance/vacuum-stall-and-performance.md)- [VACUUM 与 HOT](./vacuum-and-hot)——清理动作本身与 HOT 减负。
 - [VACUUM 停顿与性能](../performance/vacuum-stall-and-performance)——清理与业务争抢 IO 的场景。
 - [参数调优](../performance/parameter-tuning)——相关内存与 IO 参数全景。
 - [索引膨胀与维护](../indexing/index-bloat-and-maintenance)——膨胀的精确测量与 REINDEX。

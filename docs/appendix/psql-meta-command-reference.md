@@ -122,11 +122,20 @@ ORDER BY state, xact_start;
 -- 仍不退出：     SELECT pg_terminate_backend(pid);  断开该连接
 ```
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · psql](https://www.postgresql.org/docs/current/app-psql.html)
+- [PostgreSQL 官方文档 · SQL Commands](https://www.postgresql.org/docs/current/sql-commands.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [psql 入门](../basics/psql-getting-started)
 - [psql 进阶用法](../tools/psql-advanced)
 - [常见错误与排查对照表](./common-errors-and-troubleshooting)
 - [监控与告警](../operations/monitoring-and-alerting)
-
+- [index](index.md)
+- [references-and-docs](references-and-docs.md)
+- [psql-getting-started](/basics/psql-getting-started.md)
+- [system-catalogs-and-metadata](/basics/system-catalogs-and-metadata.md)
 官方文档：[psql 手册](https://www.postgresql.org/docs/current/app-psql.html)

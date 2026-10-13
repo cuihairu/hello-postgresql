@@ -110,9 +110,17 @@ SELECT amount, status FROM orders_i WHERE user_id = 42;
 - `count(*)`、存在性判断、只取索引列的报表查询是 IOS 的最大受益者；低选择性 + 大表时收益尤其明显。
 - 频繁更新的表不要为了 IOS 堆 INCLUDE 列：每多带一列，索引就多一分写放大，而 VM 长期不干净时这些投入换不来收益。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Chapter 11. Indexes](https://www.postgresql.org/docs/current/indexes.html)
+- [PostgreSQL 官方文档 · 11.2. Index Types](https://www.postgresql.org/docs/current/indexes-types.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [组合索引设计](./composite-index-design) —— INCLUDE 列与键列的设计细节。
+- [naming-and-style-conventions](/basics/naming-and-style-conventions.md)
+- [index-bloat-and-maintenance](index-bloat-and-maintenance.md)
+- [index](index.md)- [组合索引设计](./composite-index-design) —— INCLUDE 列与键列的设计细节。
 - [索引膨胀与维护](./index-bloat-and-maintenance) —— 索引页密度与 REINDEX 对 IOS 的影响。
 - [VACUUM 与 HOT](../internals/vacuum-and-hot) —— visibility map 的产生机制。
 - [EXPLAIN ANALYZE 与 BUFFERS](../performance/explain-analyze-buffers) —— 如何量化 Heap Fetches 的实际代价。

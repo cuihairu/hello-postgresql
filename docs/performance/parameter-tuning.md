@@ -75,9 +75,22 @@ WHERE pending_restart;
 - **max_connections 动辄 1000**：每连接是独立进程，基础内存 + work_mem 叠加，调度开销也随连接数涨。用连接池收敛活动连接数，见 [连接数与 ORM 优化](./connection-and-orm-optimization)。
 - **只调内存不调 max_wal_size**：写多的库 checkpoint 频繁触发刷盘风暴，把缓冲调优的收益吃掉，两边要一起看。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 19.1. Setting Parameters](https://www.postgresql.org/docs/current/config-setting.html)
+- [PostgreSQL 官方文档 · Chapter 19. Server Configuration](https://www.postgresql.org/docs/current/runtime-config.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [optimizer 成本模型](../internals/optimizer-cost-model)——random_page_cost 等如何影响计划选择。
+- [architecture-and-memory](/internals/architecture-and-memory.md)
+- [autovacuum-tuning](/internals/autovacuum-tuning.md)
+- [checkpoint-and-buffer](/internals/checkpoint-and-buffer.md)
+- [connection-management](/operations/connection-management.md)
+- [benchmark-tools](benchmark-tools.md)
+- [common-bad-plans](common-bad-plans.md)
+- [index](index.md)
+- [write-throughput-optimization](write-throughput-optimization.md)- [optimizer 成本模型](../internals/optimizer-cost-model)——random_page_cost 等如何影响计划选择。
 - [checkpoint 与 buffer](../internals/checkpoint-and-buffer)——max_wal_size 背后的机制。
 - [写入吞吐优化](./write-throughput-optimization)——写路径上其他可用手段。
 - [常见错误与排查](../appendix/common-errors-and-troubleshooting)——OOM、内存超限等症状对照。

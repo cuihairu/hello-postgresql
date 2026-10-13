@@ -92,9 +92,24 @@ psql "postgres://app:***@pg1,pg2,pg3:5432/appdb?target_session_attrs=read-write&
 - **DCS 与数据库同机混合部署**（3 台机器各跑 etcd + postgres）在小规模下可行，但要注意资源竞争与升级顺序，别把 DCS 和 DB 一起停。
 - **计划内切换先演练**：switchover 流程与故障切换路径不同，上线前用 `patronictl switchover` 验证一次，见 [灾备演练](./disaster-recovery-drills)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Chapter 25. Backup and Restore](https://www.postgresql.org/docs/current/backup.html)
+- [PostgreSQL 官方文档 · Chapter 19. Server Configuration](https://www.postgresql.org/docs/current/runtime-config.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [流复制搭建](./streaming-replication-setup)
 - [流复制与同步](../internals/streaming-replication-and-sync)
 - [备份策略](./backup-strategy)
 - [灾备演练](./disaster-recovery-drills)
+- [streaming-replication-and-sync](/internals/streaming-replication-and-sync.md)
+- [knowledge](/knowledge.md)
+- [cloud-native-and-containers](cloud-native-and-containers.md)
+- [connection-management](connection-management.md)
+- [disaster-recovery-drills](disaster-recovery-drills.md)
+- [index](index.md)
+- [streaming-replication-setup](streaming-replication-setup.md)
+- [version-upgrade](version-upgrade.md)
+- [capacity-and-scaling-limits](/performance/capacity-and-scaling-limits.md)

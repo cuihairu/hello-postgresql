@@ -164,11 +164,21 @@ SELECT src, dst, depth, is_cycle FROM walk ORDER BY depth;
 - 树数据里 `manager_id = id` 的自环同样会成环，CYCLE 与 visited 都能正常拦住，别只防「长环」。
 - anchor 部分忘了过滤（如不写 `WHERE manager_id IS NULL`）会让每个节点都成为起点，行数指数膨胀。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 7.8. WITH Queries (Common Table Expressions)](https://www.postgresql.org/docs/current/queries-with.html)
+- [PostgreSQL 官方文档 · 9.22. Window Functions](https://www.postgresql.org/docs/current/functions-window.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [CTE 与非递归 WITH](./cte-and-non-recursive-with)
 - [集合运算](./set-operations)
 - [外键与引用动作](../database-design/foreign-keys-and-referential-actions)
 - [数组操作](./array-operations)
-
+- [cte-and-non-recursive-with](cte-and-non-recursive-with.md)
+- [index](index.md)
+- [set-operations](set-operations.md)
+- [join-family](/basics/join-family.md)
+- [anti-patterns](/database-design/anti-patterns.md)
 官方文档：[WITH RECURSIVE 与 CYCLE 子句](https://www.postgresql.org/docs/current/queries-with.html)。

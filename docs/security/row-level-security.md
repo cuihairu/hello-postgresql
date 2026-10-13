@@ -114,11 +114,23 @@ CREATE POLICY tenant_rw ON orders
 - `UPDATE ... WHERE`、`ON CONFLICT`、`RETURNING` 都可能隐式要求对应行的 `SELECT` 策略，漏配时表现在的报错不会直接指向 RLS。
 - SQL 注入可以 `set_config` 伪造租户上下文——RLS 是纵深防御的一层，不是注入漏洞的替代品。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 5.9. Row Security Policies](https://www.postgresql.org/docs/current/ddl-rowsecurity.html)
+- [PostgreSQL 官方文档 · 20.3. Authentication Methods](https://www.postgresql.org/docs/current/auth-methods.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [角色与权限模型](./roles-and-permissions)
 - [对象授权层级](./object-grant-hierarchy)
 - [多租户建模](../database-design/multi-tenant-modeling)
 - [加固清单](./hardening-checklist)
-
+- [multi-tenant-modeling](/database-design/multi-tenant-modeling.md)
+- [views-and-updatable-views](/database-design/views-and-updatable-views.md)
+- [pgvector](/ecosystem/pgvector.md)
+- [knowledge](/knowledge.md)
+- [index](index.md)
+- [object-grant-hierarchy](object-grant-hierarchy.md)
+- [roles-and-permissions](roles-and-permissions.md)
 官方文档：[行级安全](https://www.postgresql.org/docs/current/ddl-rowsecurity.html)、[CREATE POLICY](https://www.postgresql.org/docs/current/sql-createpolicy.html)。

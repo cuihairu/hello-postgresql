@@ -144,11 +144,24 @@ Unique  (cost=48836.94..51211.94 rows=4 width=18)
 - `SET enable_seqscan = off` 这类开关只用于验证「优化器为什么不用索引」，生产不要长期关闭任何 enable 开关。
 - 计划抖动（时快时慢）常与 generic plan/custom plan 切换有关，见 [计划缓存与通用计划](../internals/plan-cache-and-generic-plan)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 14.1. Using EXPLAIN](https://www.postgresql.org/docs/current/using-explain.html)
+- [PostgreSQL 官方文档 · Chapter 14. Performance Tips](https://www.postgresql.org/docs/current/performance-tips.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [EXPLAIN (ANALYZE, BUFFERS, WAL)](./explain-analyze-buffers)
 - [统计信息与 ANALYZE](./statistics-and-analyze)
 - [索引失效与误用](../indexing/index-failure-and-misuse)
 - [复合索引设计](../indexing/composite-index-design)
-
+- [pagination-and-sorting](/advanced-sql/pagination-and-sorting.md)
+- [optimizer-cost-model](/internals/optimizer-cost-model.md)
+- [explain-analyze-buffers](explain-analyze-buffers.md)
+- [explain-basics](explain-basics.md)
+- [index](index.md)
+- [pg-stat-statements](pg-stat-statements.md)
+- [slow-query-governance](slow-query-governance.md)
+- [statistics-and-analyze](statistics-and-analyze.md)
 官方文档：[性能提示](https://www.postgresql.org/docs/current/performance-tips.html)、[Using EXPLAIN 教程](https://www.postgresql.org/docs/current/using-explain.html)。

@@ -114,9 +114,30 @@ psql -d appdb -c "SELECT max(updated_at) FROM orders;"   # 数据新鲜度核对
 - **逻辑复制/迁移场景的序列值**：dump-restore 会恢复序列，但逻辑复制不搬序列，切换前手动 `setval` 对齐。
 - **备份本身没有监控**：备份任务失败一周没人发现，等于裸奔——对备份文件的存在性、大小和新鲜度设告警。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Chapter 25. Backup and Restore](https://www.postgresql.org/docs/current/backup.html)
+- [PostgreSQL 官方文档 · Chapter 19. Server Configuration](https://www.postgresql.org/docs/current/runtime-config.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [物理备份与 PITR](./physical-backup-and-pitr)
 - [灾备演练](./disaster-recovery-drills)
 - [版本升级](./version-upgrade)
 - [集群初始化与目录布局](./cluster-init-and-layout)
+- [common-beginner-mistakes](/basics/common-beginner-mistakes.md)
+- [install-and-quickstart](/basics/install-and-quickstart.md)
+- [multi-tenant-modeling](/database-design/multi-tenant-modeling.md)
+- [soft-delete-and-tombstone](/database-design/soft-delete-and-tombstone.md)
+- [postgresql-17-features](/ecosystem/postgresql-17-features.md)
+- [when-to-choose-postgresql](/ecosystem/when-to-choose-postgresql.md)
+- [knowledge](/knowledge.md)
+- [cloud-native-and-containers](cloud-native-and-containers.md)
+- [disaster-recovery-drills](disaster-recovery-drills.md)
+- [high-availability-architecture](high-availability-architecture.md)
+- [index](index.md)
+- [logical-replication-ops](logical-replication-ops.md)
+- [ops-sop](ops-sop.md)
+- [physical-backup-and-pitr](physical-backup-and-pitr.md)
+- [data-encryption-at-rest](/security/data-encryption-at-rest.md)

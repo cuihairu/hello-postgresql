@@ -157,9 +157,28 @@ log_autovacuum_min_duration = 10s    # 记录 autovacuum 动作，便于判断�
 
 分级的原则：P0 只留「现在不处理业务就会受损」的事件，其余下沉到 P1/P2，避免告警疲劳。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 27.2. The Cumulative Statistics System](https://www.postgresql.org/docs/current/monitoring-stats.html)
+- [PostgreSQL 官方文档 · 19.8. Error Reporting and Logging](https://www.postgresql.org/docs/current/runtime-config-logging.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [pg_stat 观测](../internals/pg-stat-observation)——各统计视图的字段含义。
+- [psql-meta-command-reference](/appendix/psql-meta-command-reference.md)
+- [index-bloat-and-maintenance](/indexing/index-bloat-and-maintenance.md)
+- [logical-replication-internals](/internals/logical-replication-internals.md)
+- [pg-stat-observation](/internals/pg-stat-observation.md)
+- [snapshot-and-visibility](/internals/snapshot-and-visibility.md)
+- [cloud-native-and-containers](cloud-native-and-containers.md)
+- [disaster-recovery-drills](disaster-recovery-drills.md)
+- [index](index.md)
+- [ops-sop](ops-sop.md)
+- [pg-stat-statements](/performance/pg-stat-statements.md)
+- [slow-query-governance](/performance/slow-query-governance.md)
+- [vacuum-stall-and-performance](/performance/vacuum-stall-and-performance.md)
+- [audit](/security/audit.md)
+- [ssl-and-transport-encryption](/security/ssl-and-transport-encryption.md)- [pg_stat 观测](../internals/pg-stat-observation)——各统计视图的字段含义。
 - [vacuum 停滞与性能](../performance/vacuum-stall-and-performance)——dead ratio 与 xid age 的处置手段。
 - [监控与巡检 SOP](./ops-sop)——告警之外的日常巡检 SQL。
 - [锁冲突排查](../internals/lock-conflict-troubleshooting)——log_lock_waits 的分析方法。

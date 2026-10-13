@@ -118,9 +118,22 @@ SELECT id FROM articles_g WHERE tags @> ARRAY['pg'];
 - GIN 与 GiST 都能索引 range 类型：检索性能 GIN 更快，更新更快的是 GiST，按读写比选。
 - 决策树给出的是「从哪类开始试」，最终以 EXPLAIN BUFFERS 的前后对照为准；组合索引的列序问题在 AM 选定之后还有一层，见[组合索引设计](./composite-index-design)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Chapter 11. Indexes](https://www.postgresql.org/docs/current/indexes.html)
+- [PostgreSQL 官方文档 · 11.2. Index Types](https://www.postgresql.org/docs/current/indexes-types.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [B-tree 结构与原则](./btree-structure)、[GIN 索引](./gin)、[GiST 索引](./gist)、[BRIN 索引](./brin)、[SP-GiST 与 Hash](./spgist-and-hash) —— 各 AM 的结构与算子类细节。
+- [full-text-search](/advanced-sql/full-text-search.md)
+- [pgvector](/ecosystem/pgvector.md)
+- [brin](brin.md)
+- [gin](gin.md)
+- [gist](gist.md)
+- [index](index.md)
+- [spgist-and-hash](spgist-and-hash.md)
+- [knowledge](/knowledge.md)- [B-tree 结构与原则](./btree-structure)、[GIN 索引](./gin)、[GiST 索引](./gist)、[BRIN 索引](./brin)、[SP-GiST 与 Hash](./spgist-and-hash) —— 各 AM 的结构与算子类细节。
 - [EXPLAIN ANALYZE 与 BUFFERS](../performance/explain-analyze-buffers) —— 本页验证手法的完整教程。
 - [全文检索](../advanced-sql/full-text-search) —— GIN 分支最常见的业务场景。
 

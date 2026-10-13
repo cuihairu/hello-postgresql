@@ -114,9 +114,24 @@ ON CONFLICT DO NOTHING;
 
 配合 `ON CONFLICT DO NOTHING`（见 [CRUD 与 ON CONFLICT](../basics/crud-and-on-conflict)）实现「至少一次投递 + 幂等落库」。逻辑复制、多主合并场景选 UUID 主键，正是为了避开不同节点自增序列的区间冲突。
 
+## 参考资料
+
+- [GitHub · fboulnois/pg_uuidv7](https://github.com/fboulnois/pg_uuidv7)
+- [PostgreSQL 官方文档 · 5.5. Constraints](https://www.postgresql.org/docs/current/ddl-constraints.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
 - [外键与引用动作](./foreign-keys-and-referential-actions)
 - [B-tree 结构](../indexing/btree-structure)
 - [软删与墓碑](./soft-delete-and-tombstone)
 - [分页与排序](../advanced-sql/pagination-and-sorting)
+- [common-beginner-mistakes](/basics/common-beginner-mistakes.md)
+- [data-types-overview](/basics/data-types-overview.md)
+- [naming-and-style-conventions](/basics/naming-and-style-conventions.md)
+- [foreign-keys-and-referential-actions](foreign-keys-and-referential-actions.md)
+- [index](index.md)
+- [logical-to-physical-modeling](logical-to-physical-modeling.md)
+- [normalization-and-denormalization](normalization-and-denormalization.md)
+- [table-inheritance-and-partitioning-design](table-inheritance-and-partitioning-design.md)
+- [join-implementations](/internals/join-implementations.md)

@@ -77,9 +77,19 @@ SELECT num_timed, num_requested FROM pg_stat_checkpointer;
 - p95 延迟余量：当前高峰延迟 ÷ 目标利用率，留出至少 2 倍余量。
 ```
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · Appendix K. PostgreSQL Limits](https://www.postgresql.org/docs/current/limits.html)
+- [PostgreSQL 官方文档 · 14.1. Using EXPLAIN](https://www.postgresql.org/docs/current/using-explain.html)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [写入吞吐优化](./write-throughput-optimization)——到顶之前先榨单机写能力。
+- [pgvector](/ecosystem/pgvector.md)
+- [when-to-choose-postgresql](/ecosystem/when-to-choose-postgresql.md)
+- [checkpoint-and-buffer](/internals/checkpoint-and-buffer.md)
+- [connection-and-orm-optimization](connection-and-orm-optimization.md)
+- [index](index.md)- [写入吞吐优化](./write-throughput-optimization)——到顶之前先榨单机写能力。
 - [连接与 ORM 优化](./connection-and-orm-optimization)——连接数算术的工程落地。
 - [表的继承与分区设计](../database-design/table-inheritance-and-partitioning-design)——大表拆分的第一个台阶。
 - [Citus](../ecosystem/citus)——真到写分片时的方案参考。

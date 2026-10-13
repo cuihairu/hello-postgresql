@@ -95,10 +95,23 @@ pstree -p $(head -1 $PGDATA/postmaster.pid)
 - 单个 backend 的 OOM 或断言失败会拖垮整个实例并触发崩溃恢复——共享内存机制决定的，不能当成"一个连接坏了"。排查时先看实例日志，再看是否是某个大查询/连接池配置导致的。
 - `pg_stat_activity` 只反映当下快照，历史问题要结合实例日志和 [pg_stat_statements](../performance/pg-stat-statements)。
 
+## 参考资料
+
+- [PostgreSQL 官方文档 · 1.2. Architectural Fundamentals](https://www.postgresql.org/docs/current/tutorial-arch.html)
+- [PostgreSQL 官方文档 · 27.2. The Cumulative Statistics System](https://www.postgresql.org/docs/current/monitoring-stats.html#MONITORING-STATS-ACTIVITY-VIEW)
+
+<!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [架构与内存](./architecture-and-memory)——共享内存与私有内存的完整布局。
+- [when-to-choose-postgresql](/ecosystem/when-to-choose-postgresql.md)
+- [architecture-and-memory](architecture-and-memory.md)
+- [index](index.md)
+- [parallel-query](parallel-query.md)
+- [knowledge](/knowledge.md)
+- [cluster-init-and-layout](/operations/cluster-init-and-layout.md)
+- [connection-management](/operations/connection-management.md)
+- [client-drivers](/tools/client-drivers.md)- [架构与内存](./architecture-and-memory)——共享内存与私有内存的完整布局。
 - [连接管理](../operations/connection-management)——连接数控制与池化实践。
 - [pg_stat 观测](./pg-stat-observation)——pg_stat 系列视图的系统用法。
 
-官方文档：<https://www.postgresql.org/docs/current/tutorial-architecture.html> 与 <https://www.postgresql.org/docs/current/monitoring-stats.html#MONITORING-STATS-ACTIVITY-VIEW>
+官方文档：<https://www.postgresql.org/docs/current/tutorial-arch.html> 与 <https://www.postgresql.org/docs/current/monitoring-stats.html#MONITORING-STATS-ACTIVITY-VIEW>
