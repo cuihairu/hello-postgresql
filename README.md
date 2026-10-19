@@ -22,7 +22,11 @@ npm run docs:preview  # preview the built site
 ## Layout
 
 ```
-docs/
+Repository root:
+├── OUTLINE.md          # 136-item editorial outline and progress checklist
+└── todo.md             # maintenance ledger with commit evidence
+
+Published site (docs/):
 ├── index.md            # home
 ├── knowledge.md        # knowledge map (review track)
 ├── basics/             # Part 1  Basics (15 pages)
@@ -38,13 +42,11 @@ docs/
 ├── appendix/           # Appendix (5 pages)
 ├── .vitepress/
 │   ├── config.mts      # site config (base / nav / search / dead-link gate)
-│   └── sidebar.json    # sidebar — the single slug list for all 136 pages
+│   └── sidebar.json    # authoritative site navigation and route list
 └── public/             # favicon / logo
-OUTLINE.md              # knowledge map, 136 items; checkboxes track progress
-todo.md                 # audit ledger: open items / done items with commit evidence
 ```
 
-Each part starts with its own `index.md` (guide page).
+Directory page counts above exclude each directory's `index.md`; the sidebar is the authoritative site navigation. `index.md` pages provide topic overviews, while `knowledge.md` is a cross-topic review summary. Update the sidebar when published routes change; do not maintain a second hand-written route list.
 
 ## Writing rules
 

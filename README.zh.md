@@ -22,7 +22,11 @@ npm run docs:preview  # 本地预览构建产物
 ## 目录结构
 
 ```
-docs/
+仓库根目录：
+├── OUTLINE.md          # 136 项内容大纲与进度勾选
+└── todo.md             # 带 commit 证据的维护台账
+
+站点内容（docs/）：
 ├── index.md            # 首页
 ├── knowledge.md        # 知识点整理（复习主线）
 ├── basics/             # 第1部分 基础知识（15 页）
@@ -38,13 +42,11 @@ docs/
 ├── appendix/           # 附录（5 页）
 ├── .vitepress/
 │   ├── config.mts      # 站点配置（base / 导航 / 搜索 / 死链门禁）
-│   └── sidebar.json    # 侧边栏（全站 136 页的唯一 slug 清单）
+│   └── sidebar.json    # 站点导航与路由的权威来源
 └── public/             # favicon / logo
-OUTLINE.md              # 知识地图，136 项，勾选状态即内容进度
-todo.md                 # 巡检台账：未完成项 / 已完成项与 commit 证据
 ```
 
-每个部分的入口是该目录下的 `index.md`（导览页）。
+上方目录篇数统计正文页，不含各目录的 `index.md`。站点导航以 sidebar 为唯一真源；发布路由变化时更新 sidebar，不另维护手写路由副本。各目录的 `index.md` 是主题总览，`knowledge.md` 是跨主题复习摘要。
 
 ## 写作口径
 
