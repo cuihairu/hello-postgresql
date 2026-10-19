@@ -115,3 +115,15 @@ API、history 独立目录/页面编组：**未发现**。`history` 只作为 Po
 3. 为 psql、复制、索引等跨篇主题补一条清晰的学习/运维/速查路径；维持 slug 不变，先用链接解决发现问题。
 
 **限制**：本次未安装依赖，因此正式 VitePress 构建及构建器级死链校验未核实；本地 Markdown 路径扫描结果为 0 缺失。
+
+## B 阶段：跨轴内容逐组判定（2026-10-19）
+
+以下按正文实际表达对照。判定“真重复”要求同一事实在两页以同一职责维护，改动一处会使另一处过期；概述引用、速查摘录及不同操作任务不自动算真重复。
+
+| 主题组 | 分类与动作 | 两处文本对比证据 |
+|---|---|---|
+| psql 入门、psql 高阶、psql 元命令速查 | 不同角度，保留并互链；不合并。前者是连接和高频元命令上手，第二页聚焦脚本自动化与进阶能力，附录按命令类别速查。 | `docs/basics/psql-getting-started.md:3` 写“只挑高频用法”，并链接完整元命令速查；`docs/tools/psql-advanced.md:3` 定义本页为变量、`\\gexec`、`\\watch` 的自动化用法；`docs/appendix/psql-meta-command-reference.md:3` 说明按用途分组逐条查阅。三处承担上手、进阶、查表任务。 |
+| 流复制与同步、流复制搭建、逻辑复制运维 | 不同角度，保留并互链；不合并。前两页分别解释物理复制语义与物理复制搭建，第三页处理逻辑复制的日常运维。 | `docs/internals/streaming-replication-and-sync.md:3` 聚焦进程链路、`synchronous_commit`、降级风险与备库冲突；`docs/operations/streaming-replication-setup.md:3` 声明是含 `pg_basebackup` 和复制槽的搭建手册；`docs/operations/logical-replication-ops.md:3` 聚焦逻辑复制建立、DDL、冲突和监控。原理页与搭建页已互链。 |
+| 索引选型、性能验证 | 不同角度，保留并互链；不合并。前者按谓词形态选择访问方法，后者是执行计划读取与诊断方法。 | `docs/indexing/index-selection-decision-tree.md:3` 以查询条件形态选择 AM；`docs/performance/explain-basics.md:3` 介绍 EXPLAIN 对规划结果的呈现，并链接 ANALYZE/BUFFERS 深入页。选型页已链接 BUFFERS 验证说明。 |
+
+本轮确认的真重复为 **0 组**，按不同角度保留的主题组为 **3 组**。不以知识地图中的短结论摘要作为重复正文：`docs/knowledge.md:3` 明确说明条目只留结论、推导与示例在正文，职责是复习索引而非第二份事实说明。
