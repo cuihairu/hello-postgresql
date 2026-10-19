@@ -1,6 +1,6 @@
 # 视图与可更新视图
 
-视图（View）是「存起来的查询」：不保存数据，只保存 SELECT 定义，每次查询视图都实时执行底层 SQL。这一页讲简单视图为什么能直接 INSERT/UPDATE/DELETE、自动更新的规则清单、WITH CHECK OPTION 如何阻止写入越界，以及视图与 CTE、子查询的取舍。
+视图（View）是「存起来的查询」：不保存数据，只保存 SELECT 定义，每次查询视图都实时执行底层 SQL。这里整理简单视图为什么能直接 INSERT/UPDATE/DELETE、自动更新的规则清单、WITH CHECK OPTION 如何阻止写入越界，以及视图与 CTE、子查询的取舍。
 
 ## 视图是存起来的查询
 

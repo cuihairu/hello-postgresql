@@ -1,6 +1,6 @@
 # 聚合与 GROUP BY
 
-聚合函数把多行折叠成一个值，`GROUP BY` 先把行分成若干组，聚合函数再逐组计算。这一页覆盖最常用的五个聚合函数、`COUNT` 的三种形态、非聚合列的规则、`HAVING` 与 `WHERE` 的分工、NULL 分组的行为，以及条件聚合 `FILTER` 和多维汇总 `GROUPING SETS` 的入口。
+聚合函数把多行折叠成一个值，`GROUP BY` 先把行分成若干组，聚合函数再逐组计算。这里整理最常用的五个聚合函数、`COUNT` 的三种形态、非聚合列的规则、`HAVING` 与 `WHERE` 的分工、NULL 分组的行为，以及条件聚合 `FILTER` 和多维汇总 `GROUPING SETS` 的入口。
 
 ## 示例表
 
@@ -135,4 +135,4 @@ GROUP BY GROUPING SETS ((region, category), (region), (category), ());
 - [window-functions](/advanced-sql/window-functions.md)
 - [index](index.md)
 - [join-family](join-family.md)
-官方文档：[聚合函数](https://www.postgresql.org/docs/current/functions-aggregate.html)、[GROUP BY 与 HAVING 教程](https://www.postgresql.org/docs/current/tutorial-agg.html)。
+官方文档：[聚合函数](https://www.postgresql.org/docs/current/functions-aggregate.html)、[GROUP BY 与 HAVING 文档](https://www.postgresql.org/docs/current/tutorial-agg.html)。

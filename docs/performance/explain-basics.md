@@ -186,4 +186,4 @@ Execution Time: 0.089 ms
 - [partition-pruning](partition-pruning.md)
 - [statistics-and-analyze](statistics-and-analyze.md)
 - [psql-advanced](/tools/psql-advanced.md)
-官方文档：[EXPLAIN 命令](https://www.postgresql.org/docs/current/sql-explain.html)、[Using EXPLAIN 教程](https://www.postgresql.org/docs/current/using-explain.html)。
+官方文档：[EXPLAIN 命令](https://www.postgresql.org/docs/current/sql-explain.html)、[Using EXPLAIN 文档](https://www.postgresql.org/docs/current/using-explain.html)。

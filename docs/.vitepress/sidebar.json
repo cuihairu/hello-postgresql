@@ -1,28 +1,28 @@
 [
   {
-    "text": "第1部分：基础知识",
+    "text": "基础与常用 SQL",
     "link": "/basics/",
     "collapsed": true,
     "items": [
       { "text": "什么是 PostgreSQL", "link": "/basics/what-is-postgresql" },
-      { "text": "安装与快速上手", "link": "/basics/install-and-quickstart" },
-      { "text": "psql 入门", "link": "/basics/psql-getting-started" },
+      { "text": "安装与首次连接", "link": "/basics/install-and-quickstart" },
+      { "text": "psql 常用操作", "link": "/basics/psql-getting-started" },
       { "text": "数据库与 schema 对象", "link": "/basics/database-and-schema-objects" },
       { "text": "数据类型总览", "link": "/basics/data-types-overview" },
-      { "text": "特色类型入门", "link": "/basics/special-types-intro" },
+      { "text": "特色类型概览", "link": "/basics/special-types-intro" },
       { "text": "CRUD 与 ON CONFLICT", "link": "/basics/crud-and-on-conflict" },
       { "text": "WHERE 与表达式", "link": "/basics/where-and-expressions" },
       { "text": "聚合与 GROUP BY", "link": "/basics/aggregate-and-group-by" },
       { "text": "JOIN 全家族", "link": "/basics/join-family" },
       { "text": "函数与运算符", "link": "/basics/functions-and-operators" },
-      { "text": "事务入门", "link": "/basics/transaction-basics" },
+      { "text": "事务基础", "link": "/basics/transaction-basics" },
       { "text": "常用系统表与元数据", "link": "/basics/system-catalogs-and-metadata" },
       { "text": "命名与书写规范", "link": "/basics/naming-and-style-conventions" },
-      { "text": "常见新手错误", "link": "/basics/common-beginner-mistakes" }
+      { "text": "常见踩坑", "link": "/basics/common-beginner-mistakes" }
     ]
   },
   {
-    "text": "第2部分：数据库设计",
+    "text": "数据库设计",
     "link": "/database-design/",
     "collapsed": true,
     "items": [
@@ -43,7 +43,7 @@
     ]
   },
   {
-    "text": "第3部分：高级 SQL",
+    "text": "高级 SQL",
     "link": "/advanced-sql/",
     "collapsed": true,
     "items": [
@@ -68,7 +68,7 @@
     ]
   },
   {
-    "text": "第4部分：内核机制",
+    "text": "内核观察",
     "link": "/internals/",
     "collapsed": true,
     "items": [
@@ -95,7 +95,7 @@
     ]
   },
   {
-    "text": "第5部分：索引体系",
+    "text": "索引与使用",
     "link": "/indexing/",
     "collapsed": true,
     "items": [
@@ -114,7 +114,7 @@
     ]
   },
   {
-    "text": "第6部分：查询调优与性能",
+    "text": "查询性能",
     "link": "/performance/",
     "collapsed": true,
     "items": [
@@ -135,7 +135,7 @@
     ]
   },
   {
-    "text": "第7部分：架构与部署",
+    "text": "架构与运维",
     "link": "/operations/",
     "collapsed": true,
     "items": [
@@ -154,7 +154,7 @@
     ]
   },
   {
-    "text": "第8部分：安全",
+    "text": "安全",
     "link": "/security/",
     "collapsed": true,
     "items": [
@@ -169,7 +169,7 @@
     ]
   },
   {
-    "text": "第9部分：生态与新特性",
+    "text": "生态与新特性",
     "link": "/ecosystem/",
     "collapsed": true,
     "items": [
@@ -186,7 +186,7 @@
     ]
   },
   {
-    "text": "第10部分：工具与实战",
+    "text": "开发工具与案例",
     "link": "/tools/",
     "collapsed": true,
     "items": [
@@ -213,7 +213,7 @@
     ]
   },
   {
-    "text": "知识点整理",
+    "text": "开发者备忘",
     "link": "/knowledge"
   }
 ]

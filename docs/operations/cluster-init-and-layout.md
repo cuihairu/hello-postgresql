@@ -148,7 +148,7 @@ tail -f /var/lib/pgsql/17/data/log/postgresql-*.log  # 默认 logging_collector=
 <!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [安装与快速上手](../basics/install-and-quickstart)
+- [安装与首次连接](../basics/install-and-quickstart)
 - [进程架构](../internals/process-architecture)
 - [物理备份与 PITR](./physical-backup-and-pitr)
 - [版本升级](./version-upgrade)

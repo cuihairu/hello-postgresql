@@ -1,6 +1,6 @@
 # 角色与权限模型
 
-PostgreSQL 里没有独立的"用户"体系，一切主体都是角色（role）：带 `LOGIN` 属性的角色就是我们通常说的用户，不带 `LOGIN` 的角色则作为组角色（group role）承接权限。推荐的用法不是把权限直接授给一个个登录账号，而是把权限挂在职责明确的组角色上，人与服务通过加入组角色获得能力。权限最终落在哪些对象上、怎么授，见 [对象授权层级](./object-grant-hierarchy)；本页先讲角色本身。
+PostgreSQL 里没有独立的"用户"体系，一切主体都是角色（role）：带 `LOGIN` 属性的角色就是我们通常说的用户，不带 `LOGIN` 的角色则作为组角色（group role）承接权限。推荐的用法不是把权限直接授给一个个登录账号，而是把权限挂在职责明确的组角色上，人与服务通过加入组角色获得能力。权限最终落在哪些对象上、怎么授，见 [对象授权层级](./object-grant-hierarchy)；这里先记录角色本身。
 
 ## CREATE ROLE 与角色属性
 
@@ -132,7 +132,7 @@ CREATE ROLE app_owner_login LOGIN PASSWORD '...' IN ROLE app_owner;
 <!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- 子树总纲：[第8部分：安全](/security/)
+- 子树总纲：[安全](/security/)
 
 - [对象授权层级](./object-grant-hierarchy)
 - [行级安全 RLS](./row-level-security)

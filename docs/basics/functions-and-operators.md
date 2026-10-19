@@ -1,6 +1,6 @@
 # 函数与运算符
 
-函数（function）与运算符（operator）是 SQL 里可直接复用的计算单元。运算符大多是内置语法（`+`、`= ANY`、`@>`），函数则是可调用的具名逻辑（`lower()`、`date_part()`）。两者都能在 `SELECT`、`WHERE`、`ORDER BY`、`UPDATE SET` 里使用，也都能被注册成自定义函数供后续 SQL 复用。本篇先给出常用函数速览与类型强转写法，再演示从 `LANGUAGE SQL` 到 PL/pgSQL 的自定义函数最小可跑示例，最后讲清 `VOLATILE/STABLE/IMMUTABLE` 这组标注为何影响执行计划。
+函数（function）与运算符（operator）是 SQL 里可直接复用的计算单元。运算符大多是内置语法（`+`、`= ANY`、`@>`），函数则是可调用的具名逻辑（`lower()`、`date_part()`）。两者都能在 `SELECT`、`WHERE`、`ORDER BY`、`UPDATE SET` 里使用，也都能被注册成自定义函数供后续 SQL 复用。这里先列出常用函数速览与类型强转写法，并附上示例从 `LANGUAGE SQL` 到 PL/pgSQL 的自定义函数最小可跑示例，最后梳理 `VOLATILE/STABLE/IMMUTABLE` 这组标注为何影响执行计划。
 
 ## 常用字符串函数
 
@@ -83,7 +83,7 @@ SELECT '42'::int                 AS a,      -- 42
 `::` 是 PostgreSQL 扩展写法，简短，适合交互；`CAST(... AS ...)` 是 SQL 标准，便于跨数据库迁移的代码。注意两点：
 
 - 字符串→整数的隐式转换**只在表达式上下文**发生（如 `WHERE id = '1'`），`SELECT '1'` 原样返回字符串，不会自动变成整数。
-- 失败会抛错而非返回 `NULL`。需要容忍脏数据时用 `NULLIF` + `try_cast`（PG 没有 `TRY_CAST`，需自建函数或依赖 `dblink`/PL/pgSQL `EXCEPTION` 块），见 [常见新手错误](./common-beginner-mistakes)。
+- 失败会抛错而非返回 `NULL`。需要容忍脏数据时用 `NULLIF` + `try_cast`（PG 没有 `TRY_CAST`，需自建函数或依赖 `dblink`/PL/pgSQL `EXCEPTION` 块），见 [常见踩坑](./common-beginner-mistakes)。
 
 ## `COALESCE` / `NULLIF` / `GREATEST` / `LEAST`
 
@@ -127,7 +127,7 @@ SELECT money_round(3.14159), money_round(NULL);
 
 如果函数需要修改数据、或返回值依赖当前事务外的状态，不能标 `IMMUTABLE`，见下一节。
 
-## PL/pgSQL 入门
+## PL/pgSQL 基础用法
 
 PL/pgSQL 是 PostgreSQL 自带的过程语言，支持变量、流程控制、异常处理，是写复杂业务逻辑的主力。最小子例：
 
@@ -190,7 +190,7 @@ LANGUAGE sql IMMUTABLE AS $$ SELECT md5(s) $$;
 
 - `NULL` 入参多数函数返回 `NULL`，`||` 拼接同样传染 NULL（`'a' || NULL` 返回 `NULL`）。需要"跳过 NULL 继续拼"的语义时用 `concat()` / `concat_ws()`（NULL 参数被忽略），或用 `COALESCE(col, '')` 包一层。
 - `random()` 每次调用产生新值，`SELECT random(), random()` 同行两列也不同——别指望它"在 SQL 里像种子一样可复现"，需要稳定随机请用 `seed()` 配合。
-- 字符串与数值混用（`WHERE varchar_col = 1`）会触发隐式转换，可能让索引失效（见 [常见新手错误](./common-beginner-mistakes)）；`CREATE OR REPLACE` 也不会同步刷新依赖该函数的视图/物化视图。
+- 字符串与数值混用（`WHERE varchar_col = 1`）会触发隐式转换，可能让索引失效（见 [常见踩坑](./common-beginner-mistakes)）；`CREATE OR REPLACE` 也不会同步刷新依赖该函数的视图/物化视图。
 
 ## 参考资料
 
@@ -203,7 +203,7 @@ LANGUAGE sql IMMUTABLE AS $$ SELECT md5(s) $$;
 - [WHERE 与表达式](./where-and-expressions)
 - [高级 SQL 函数](../advanced-sql/sql-functions-advanced)
 - [数据类型概览](./data-types-overview)
-- [常见新手错误](./common-beginner-mistakes)
+- [常见踩坑](./common-beginner-mistakes)
 - [pattern-matching](/advanced-sql/pattern-matching.md)
 - [sql-functions-advanced](/advanced-sql/sql-functions-advanced.md)
 - [index](index.md)

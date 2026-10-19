@@ -1,6 +1,6 @@
 # 锁系统
 
-PostgreSQL 的锁按对象层级分为表级锁、行级锁与咨询锁（advisory lock），外加保护共享内存结构、不参与死锁检测的 lightweight lock。应用开发者最常打交道的是前两类：表级锁决定 DDL 与 DML 能否并行，行级锁决定两个事务改同一行时谁先谁后。这一页给出完整的表锁模式与冲突矩阵、行级锁与咨询锁的用法；排查正在发生的锁等待见[锁冲突排查](./lock-conflict-troubleshooting)。官方参考：[Explicit Locking](https://www.postgresql.org/docs/current/explicit-locking.html)。
+PostgreSQL 的锁按对象层级分为表级锁、行级锁与咨询锁（advisory lock），外加保护共享内存结构、不参与死锁检测的 lightweight lock。应用开发者最常打交道的是前两类：表级锁决定 DDL 与 DML 能否并行，行级锁决定两个事务改同一行时谁先谁后。这里记录完整的表锁模式与冲突矩阵、行级锁与咨询锁的用法；排查正在发生的锁等待见[锁冲突排查](./lock-conflict-troubleshooting)。官方参考：[Explicit Locking](https://www.postgresql.org/docs/current/explicit-locking.html)。
 
 ## 表级锁：八种模式与冲突矩阵
 

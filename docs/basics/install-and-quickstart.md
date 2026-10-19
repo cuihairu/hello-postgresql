@@ -1,4 +1,4 @@
-# 安装与快速上手
+# 安装与首次连接
 
 安装 PostgreSQL 的目标是：跑起一个**集群**（一组进程 + 一个数据目录），建一个库，然后用 psql 连上去执行第一条 SQL。不同操作系统的安装路径差别主要在"软件包从哪来"和"服务怎么起"，概念本身是一致的。
 
@@ -113,7 +113,7 @@ sudo systemctl start postgresql-16   # PGDG 包名
 
 ## 建库建用户与第一条 SQL
 
-装好服务后，默认只有 `postgres` 超级用户。生产上建议另建业务账号；学习阶段直接用 `postgres` 即可。
+装好服务后，默认只有 `postgres` 超级用户。生产上建议另建业务账号；本地试跑时可直接用 `postgres` 即可。
 
 ```bash
 # 在 Debian/Ubuntu 上，postgres 用户的 peer 认证要求系统用户同名
@@ -164,7 +164,7 @@ SELECT id, name, created_at FROM users ORDER BY id;
 ## 相关页面
 
 - [什么是 PostgreSQL](./what-is-postgresql)
-- [psql 入门](./psql-getting-started)
+- [psql 常用操作](./psql-getting-started)
 - [连接管理](../operations/connection-management)
 - [版本升级](../operations/version-upgrade)
 - [index](index.md)

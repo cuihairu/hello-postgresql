@@ -1,6 +1,6 @@
 # psql 高阶
 
-入门篇讲过 `\d`、`\l`、`\copy` 这些基础元命令（见 [psql 入门](../basics/psql-getting-started)）。这一页讲让 psql 从"查询工具"变成"自动化工具"的几件武器：变量、`\gexec`、`\watch`。它们全部在 psql 客户端实现，不需要在服务器上装任何东西。
+基础记录里提到过 `\d`、`\l`、`\copy` 这些基础元命令（见 [psql 常用操作](../basics/psql-getting-started)）。这里记录我用 psql 做自动化时常用的几种能力：变量、`\gexec`、`\watch`。它们全部在 psql 客户端实现，不需要在服务器上装任何东西。
 
 ## 变量：\set 与 ：var
 
@@ -79,7 +79,7 @@ WHERE state <> 'idle' AND backend_type = 'client backend'
 
 ## \copy 与大对象
 
-`\copy`（客户端侧导出导入）的权限模型和用法在 [psql 入门](../basics/psql-getting-started)讲过，这里补一个查询级导出的形式——导出的不是整张表而是任意结果集：
+`\copy`（客户端侧导出导入）的权限模型和用法在 [psql 常用操作](../basics/psql-getting-started)记录过，这里补一个查询级导出的形式——导出的不是整张表而是任意结果集：
 
 ```sql
 \copy (SELECT id, user_id, amount FROM orders WHERE created_at >= '2026-01-01')
@@ -134,7 +134,7 @@ psql 每次启动会执行 `~/.psqlrc`（Windows 为 `%APPDATA%\postgresql\psqlr
 <!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [psql 入门](../basics/psql-getting-started)
+- [psql 常用操作](../basics/psql-getting-started)
 - [排障工具箱](./troubleshooting-toolbox)
 - [本地开发环境](./local-dev-environment)
 - [EXPLAIN 基础](../performance/explain-basics)

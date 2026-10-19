@@ -1,4 +1,4 @@
-# 第3部分：高级 SQL
+# 高级 SQL
 
 CTE、窗口函数、LATERAL、JSONB、数组、全文检索——把 PostgreSQL 表达能力真正用起来的部分。
 

@@ -120,7 +120,7 @@ ORDER BY xact_age NULLS FIRST;
 - [锁冲突排查](../internals/lock-conflict-troubleshooting)
 - [连接与 ORM 优化](../performance/connection-and-orm-optimization)
 - [排障工具箱](../tools/troubleshooting-toolbox)
-- [新手常见错误](../basics/common-beginner-mistakes)
+- [常见错误](../basics/common-beginner-mistakes)
 - [index](index.md)
 - [psql-meta-command-reference](psql-meta-command-reference.md)
 - [references-and-docs](references-and-docs.md)

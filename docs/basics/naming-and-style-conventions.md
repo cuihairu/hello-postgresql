@@ -1,6 +1,6 @@
 # 命名与书写规范
 
-命名规范的核心不是审美，而是**避免与 PostgreSQL 的标识符解析规则打架**。PostgreSQL 会把未加引号的标识符折叠为小写，这条规则决定了"驼峰 + 双引号"建出来的表为什么后续写裸名会报错。本篇讲清这条折叠规则及其陷阱，再给出表/列/约束/索引的命名约定与一套统一的 SQL 书写风格，让团队产出的 schema 与迁移脚本能长期维护。
+命名规范的核心不是审美，而是**避免与 PostgreSQL 的标识符解析规则打架**。PostgreSQL 会把未加引号的标识符折叠为小写，这条规则决定了"驼峰 + 双引号"建出来的表为什么后续写裸名会报错。这里记录这条折叠规则及其陷阱，并列出表/列/约束/索引的命名约定与一套统一的 SQL 书写风格，让团队产出的 schema 与迁移脚本能长期维护。
 
 ## 未加引号的标识符会折叠为小写
 
@@ -15,7 +15,7 @@ SELECT Id FROM Orders WHERE UserName = 'a';    -- 等价 SELECT id FROM orders W
 
 ## 双引号保留大小写的陷阱
 
-加了双引号的标识符**完全按字面保留**，不再折叠。这是新手最容易踩的坑：
+加了双引号的标识符**完全按字面保留**，不再折叠。这是常见陷阱：
 
 ```sql
 CREATE TABLE "Users" ("Id" int, "Name" text);   -- 目录里就是 Users / Id / Name
@@ -26,7 +26,7 @@ SELECT * FROM "Users";         -- OK，必须处处带引号
 SELECT "Id" FROM "Users";      -- OK，列名同样要带引号
 ```
 
-后果是**引号债务**：一旦用双引号建出 `"Users"`，之后所有 ORM、迁移脚本、`psql` 命令、日志排查都必须精确带上引号，漏一处就报 `does not exist`。ORM（如 SQLAlchemy、Hibernate）生成 SQL 时若检测到大小写不一致会自动加引号，进一步放大混乱。结论只有一条：**标识符一律小写 snake_case，从不使用双引号**。已经踩坑的修复方式见 [常见新手错误](./common-beginner-mistakes)。
+后果是**引号债务**：一旦用双引号建出 `"Users"`，之后所有 ORM、迁移脚本、`psql` 命令、日志排查都必须精确带上引号，漏一处就报 `does not exist`。ORM（如 SQLAlchemy、Hibernate）生成 SQL 时若检测到大小写不一致会自动加引号，进一步放大混乱。结论只有一条：**标识符一律小写 snake_case，从不使用双引号**。已经踩坑的修复方式见 [常见踩坑](./common-beginner-mistakes)。
 
 ## snake_case 与表名单复数
 
@@ -127,7 +127,7 @@ LIMIT  50;
 <!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [常见新手错误](./common-beginner-mistakes)
+- [常见踩坑](./common-beginner-mistakes)
 - [数据库与模式对象](./database-and-schema-objects)
 - [主键设计](../database-design/primary-key-design)
 - [系统表与元数据](./system-catalogs-and-metadata)

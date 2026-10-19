@@ -1,6 +1,6 @@
 # 常见坏计划
 
-绝大多数慢查询都能归到几类坏计划上：该用索引却在顺序扫、估算失真导致连接方式选错、Nested Loop 外层过大、排序落盘、以及 DISTINCT 与 ORDER BY 各排一遍。这一页给每类坏计划的计划特征、成因与修复方法，最后收拢成「诊断 → 修复 → 复验」三步法。所有示例基于 [EXPLAIN 读法](./explain-basics) 里的 users/orders 表。
+绝大多数慢查询都能归到几类坏计划上：该用索引却在顺序扫、估算失真导致连接方式选错、Nested Loop 外层过大、排序落盘、以及 DISTINCT 与 ORDER BY 各排一遍。这里归纳各类坏计划的计划特征、成因与修复方法，最后收拢成「诊断 → 修复 → 复验」三步法。所有示例基于 [EXPLAIN 读法](./explain-basics) 里的 users/orders 表。
 
 ## 大表 Seq Scan
 
@@ -164,4 +164,4 @@ Unique  (cost=48836.94..51211.94 rows=4 width=18)
 - [pg-stat-statements](pg-stat-statements.md)
 - [slow-query-governance](slow-query-governance.md)
 - [statistics-and-analyze](statistics-and-analyze.md)
-官方文档：[性能提示](https://www.postgresql.org/docs/current/performance-tips.html)、[Using EXPLAIN 教程](https://www.postgresql.org/docs/current/using-explain.html)。
+官方文档：[性能提示](https://www.postgresql.org/docs/current/performance-tips.html)、[Using EXPLAIN 文档](https://www.postgresql.org/docs/current/using-explain.html)。

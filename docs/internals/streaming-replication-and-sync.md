@@ -1,6 +1,6 @@
 # 流复制与同步
 
-流复制（物理复制）把主库生成的 WAL 记录几乎实时地流式传输到备库，备库重放同样的物理变更，得到一份字节级一致的副本。9.0 引入流式传输、9.1 引入同步复制。这一页讲清传输链路上的进程分工、`synchronous_commit` 的强度频谱、半同步的降级风险，以及备库可读时的冲突处理。
+流复制（物理复制）把主库生成的 WAL 记录几乎实时地流式传输到备库，备库重放同样的物理变更，得到一份字节级一致的副本。9.0 引入流式传输、9.1 引入同步复制。这里记录传输链路上的进程分工、`synchronous_commit` 的强度频谱、半同步的降级风险，以及备库可读时的冲突处理。
 
 ## 进程与传输链路
 
@@ -108,7 +108,7 @@ SELECT pg_is_in_recovery() AS in_recovery,
 - [knowledge](/knowledge.md)
 - [high-availability-architecture](/operations/high-availability-architecture.md)
 - [streaming-replication-setup](/operations/streaming-replication-setup.md)- [WAL 机制](./wal-mechanism)——被传输的到底是什么。
-- [流复制搭建](../operations/streaming-replication-setup)——从零建一套主备。
+- [流复制搭建](../operations/streaming-replication-setup)——搭建一套主备。
 - [高可用架构](../operations/high-availability-architecture)——切换与选主。
 - [锁冲突排查](./lock-conflict-troubleshooting)——另一种"卡住"的排查方法。
 

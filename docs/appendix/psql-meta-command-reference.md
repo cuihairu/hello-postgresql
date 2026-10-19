@@ -130,7 +130,7 @@ ORDER BY state, xact_start;
 <!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [psql 入门](../basics/psql-getting-started)
+- [psql 常用操作](../basics/psql-getting-started)
 - [psql 进阶用法](../tools/psql-advanced)
 - [常见错误与排查对照表](./common-errors-and-troubleshooting)
 - [监控与告警](../operations/monitoring-and-alerting)

@@ -1,4 +1,4 @@
-# 第9部分：生态与新特性
+# 生态与新特性
 
 PG 16/17 变化、向量与扩展生态（pgvector/TimescaleDB/PostGIS/Citus）、FDW、扩展管理与选型问答。
 

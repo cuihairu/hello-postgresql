@@ -134,7 +134,7 @@ SELECT id FROM articles_g WHERE tags @> ARRAY['pg'];
 - [index](index.md)
 - [spgist-and-hash](spgist-and-hash.md)
 - [knowledge](/knowledge.md)- [B-tree 结构与原则](./btree-structure)、[GIN 索引](./gin)、[GiST 索引](./gist)、[BRIN 索引](./brin)、[SP-GiST 与 Hash](./spgist-and-hash) —— 各 AM 的结构与算子类细节。
-- [EXPLAIN ANALYZE 与 BUFFERS](../performance/explain-analyze-buffers) —— 本页验证手法的完整教程。
+- [EXPLAIN ANALYZE 与 BUFFERS](../performance/explain-analyze-buffers) —— 本页验证手法的展开记录。
 - [全文检索](../advanced-sql/full-text-search) —— GIN 分支最常见的业务场景。
 
 官方文档：[索引类型](https://www.postgresql.org/docs/current/indexes-types.html)、[索引与算子类](https://www.postgresql.org/docs/current/indexes-opclass.html)。

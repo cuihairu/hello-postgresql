@@ -1,6 +1,6 @@
 # PostgreSQL 16 新特性摘要
 
-PostgreSQL 16 于 2023 年 9 月 14 日发布。这是一个偏「夯实基础」的版本：新增语法不多，重点放在逻辑复制的可用性、I/O 观测能力（pg_stat_io）以及执行器和 vacuum 的细节优化上。本页按类别整理对日常开发和运维影响较大的条目，完整列表见 [官方 release notes](https://www.postgresql.org/docs/release/16.0/)。
+PostgreSQL 16 于 2023 年 9 月 14 日发布。这是一个偏「夯实基础」的版本：新增语法不多，重点放在逻辑复制的可用性、I/O 观测能力（pg_stat_io）以及执行器和 vacuum 的细节优化上。这里按类别整理对日常开发和运维影响较大的条目，完整列表见 [官方 release notes](https://www.postgresql.org/docs/release/16.0/)。
 
 ## SQL 与查询
 

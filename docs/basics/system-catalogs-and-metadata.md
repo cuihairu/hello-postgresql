@@ -1,6 +1,6 @@
 # 常用系统表与元数据
 
-PostgreSQL 把"数据库里有哪些表、哪些列、哪些索引"这些元信息也当作普通数据存放在系统目录（system catalog）里。它们本质上就是普通表，你可以直接 `SELECT`、`JOIN`、`WHERE`，甚至给它们建视图。掌握目录查询是排障、自动生成代码、写运维脚本的基础：`\d`、`\dt` 这些 psql 元命令，底层其实就是对目录的封装查询。本篇先讲三类最常用的速查视图，再展开 `pg_class/pg_attribute/pg_namespace` 的 OID 世界观，以及 `information_schema`、表大小统计、`COMMENT ON`。
+PostgreSQL 把"数据库里有哪些表、哪些列、哪些索引"这些元信息也当作普通数据存放在系统目录（system catalog）里。它们本质上就是普通表，你可以直接 `SELECT`、`JOIN`、`WHERE`，甚至给它们建视图。我在排障、生成代码和写运维脚本时常查目录：`\d`、`\dt` 这些 psql 元命令，底层其实就是对目录的封装查询。这里先列三类常用速查视图，再记录 `pg_class/pg_attribute/pg_namespace` 的 OID 世界观，以及 `information_schema`、表大小统计、`COMMENT ON`。
 
 ## 速查视图：pg_tables / pg_indexes / pg_sequences
 
@@ -80,7 +80,7 @@ ORDER  BY ordinal_position;
 
 ## `\d+` 与目录查询对照
 
-psql 元命令是目录查询的"语法糖"，两者结果等价。用 `psql -E` 启动可以让 psql 打印它实际发出的 SQL，是学习目录查询的捷径：
+psql 元命令是目录查询的"语法糖"，两者结果等价。用 `psql -E` 启动可以让 psql 打印它实际发出的 SQL，便于熟悉目录查询：
 
 ```plaintext
 \d+ users                          -- 表结构 + 注释 + 存储 + 压缩
@@ -165,7 +165,7 @@ WHERE  c.relname = 'demo';
 
 - [psql 元命令参考](../appendix/psql-meta-command-reference)
 - [数据库与模式对象](./database-and-schema-objects)
-- [psql 入门](./psql-getting-started)
+- [psql 常用操作](./psql-getting-started)
 - [pg_stat 观测体系](../internals/pg-stat-observation)
 - [index](index.md)
 - [naming-and-style-conventions](naming-and-style-conventions.md)

@@ -1,6 +1,6 @@
 # 窗口函数进阶
 
-在 OVER 三要素的基础上，这一页覆盖日常分析里最高频的几组进阶用法：LAG/LEAD 环比、FIRST_VALUE/LAST_VALUE 取边界值、NTILE 分桶、按行数 frame 做移动平均、组内 Top-N，以及 FILTER 与窗口函数的组合限制。基础语法（PARTITION BY/ORDER BY/frame 默认行为）见 [窗口函数](./window-functions)。
+在 OVER 三要素的基础上，这里整理日常分析里最高频的几组进阶用法：LAG/LEAD 环比、FIRST_VALUE/LAST_VALUE 取边界值、NTILE 分桶、按行数 frame 做移动平均、组内 Top-N，以及 FILTER 与窗口函数的组合限制。基础语法（PARTITION BY/ORDER BY/frame 默认行为）见 [窗口函数](./window-functions)。
 
 ## LAG 与 LEAD：相邻行取值
 
@@ -149,4 +149,4 @@ CASE 不匹配的行返回 NULL，聚合函数自动忽略 NULL，语义与 FILT
 - [index](index.md)
 - [lateral-and-from-subquery](lateral-and-from-subquery.md)
 - [window-functions](window-functions.md)
-官方文档：[窗口函数参考](https://www.postgresql.org/docs/current/functions-window.html)、[窗口函数教程](https://www.postgresql.org/docs/current/tutorial-window.html)。
+官方文档：[窗口函数参考](https://www.postgresql.org/docs/current/functions-window.html)、[窗口函数文档](https://www.postgresql.org/docs/current/tutorial-window.html)。

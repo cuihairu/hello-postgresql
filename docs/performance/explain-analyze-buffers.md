@@ -1,6 +1,6 @@
 # EXPLAIN (ANALYZE, BUFFERS, WAL)
 
-裸 `EXPLAIN` 只给估算；加上 `ANALYZE` 让语句真实执行一遍，计划里每个节点就有了实际耗时、实际行数和执行次数；再加 `BUFFERS` 能看到每个节点读了多少块、多少来自缓存、多少落了临时文件；`WAL`（PG 13+）还能统计写语句产生的日志量。这一页讲这套组合的用法、输出逐字段解读，以及两个高频误读：loops 乘法和临时文件。
+裸 `EXPLAIN` 只给估算；加上 `ANALYZE` 让语句真实执行一遍，计划里每个节点就有了实际耗时、实际行数和执行次数；再加 `BUFFERS` 能看到每个节点读了多少块、多少来自缓存、多少落了临时文件；`WAL`（PG 13+）还能统计写语句产生的日志量。这里整理这套组合的用法、输出逐字段解读，以及两个高频误读：loops 乘法和临时文件。
 
 ## ANALYZE 会真实执行：写语句要包事务回滚
 
@@ -161,4 +161,4 @@ EXPLAIN (ANALYZE, TIMING OFF, BUFFERS) SELECT ...;  -- 仍有节点行数与总�
 - [pg-stat-statements](pg-stat-statements.md)
 - [slow-query-governance](slow-query-governance.md)
 - [troubleshooting-toolbox](/tools/troubleshooting-toolbox.md)
-官方文档：[EXPLAIN 命令](https://www.postgresql.org/docs/current/sql-explain.html)、[Using EXPLAIN 教程](https://www.postgresql.org/docs/current/using-explain.html)。
+官方文档：[EXPLAIN 命令](https://www.postgresql.org/docs/current/sql-explain.html)、[Using EXPLAIN 文档](https://www.postgresql.org/docs/current/using-explain.html)。

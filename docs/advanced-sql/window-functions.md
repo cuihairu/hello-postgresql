@@ -140,4 +140,4 @@ WHERE rn = 1;
 - [lateral-and-from-subquery](lateral-and-from-subquery.md)
 - [window-functions-advanced](window-functions-advanced.md)
 - [aggregate-and-group-by](/basics/aggregate-and-group-by.md)
-官方文档：[窗口函数教程](https://www.postgresql.org/docs/current/tutorial-window.html)、[窗口函数参考](https://www.postgresql.org/docs/current/functions-window.html)。
+官方文档：[窗口函数文档](https://www.postgresql.org/docs/current/tutorial-window.html)、[窗口函数参考](https://www.postgresql.org/docs/current/functions-window.html)。

@@ -1,6 +1,6 @@
 # PostgreSQL 17 新特性摘要
 
-PostgreSQL 17 于 2024 年 9 月 26 日发布。这是一个围绕「大规模数据运维」打磨的版本：vacuum 内存模型重写、原生的增量备份、物理备库一键转逻辑订阅者，再加上 `JSON_TABLE` 和 `MERGE` 的标准 SQL 补全。本页按类别整理对日常开发和运维影响较大的条目，完整列表见 [官方 release notes](https://www.postgresql.org/docs/release/17.0/)。
+PostgreSQL 17 于 2024 年 9 月 26 日发布。这是一个围绕「大规模数据运维」打磨的版本：vacuum 内存模型重写、原生的增量备份、物理备库一键转逻辑订阅者，再加上 `JSON_TABLE` 和 `MERGE` 的标准 SQL 补全。这里按类别整理对日常开发和运维影响较大的条目，完整列表见 [官方 release notes](https://www.postgresql.org/docs/release/17.0/)。
 
 ## vacuum 与内存管理
 
@@ -22,7 +22,7 @@ EXPLAIN (ANALYZE, BUFFERS, MEMORY, SERIALIZE)
 SELECT * FROM orders WHERE status = 'pending';
 ```
 
-读计划的基础方法见 [EXPLAIN 入门](../performance/explain-basics) 与 [EXPLAIN (ANALYZE, BUFFERS)](../performance/explain-analyze-buffers)。
+读计划的基础方法见 [EXPLAIN 基础](../performance/explain-basics) 与 [EXPLAIN (ANALYZE, BUFFERS)](../performance/explain-analyze-buffers)。
 
 ## MERGE 增强
 

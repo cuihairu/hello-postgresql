@@ -168,4 +168,4 @@ SQL 里 JOIN 的书写顺序（除外连接外）不决定执行顺序，优化�
 - [subquery-family](/advanced-sql/subquery-family.md)
 - [aggregate-and-group-by](aggregate-and-group-by.md)
 - [index](index.md)
-官方文档：[连接查询教程](https://www.postgresql.org/docs/current/tutorial-join.html)、[FROM 与 JOIN 完整语法](https://www.postgresql.org/docs/current/queries-table-expressions.html)。
+官方文档：[连接查询文档](https://www.postgresql.org/docs/current/tutorial-join.html)、[FROM 与 JOIN 完整语法](https://www.postgresql.org/docs/current/queries-table-expressions.html)。

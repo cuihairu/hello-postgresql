@@ -1,6 +1,6 @@
 # 扩展管理
 
-扩展（extension）是 PostgreSQL 生态的装载机制：一组打包好的 SQL 对象（类型、函数、操作符、索引方法）加上 C 代码，用一条 `CREATE EXTENSION` 整体安装。pgvector、PostGIS、TimescaleDB、pg_stat_statements 都以扩展形式交付，掌握扩展的安装、升级与版本管理，是运维 PG 环境的基本功。
+扩展（extension）是 PostgreSQL 生态的装载机制：一组打包好的 SQL 对象（类型、函数、操作符、索引方法）加上 C 代码，用一条 `CREATE EXTENSION` 整体安装。pgvector、PostGIS、TimescaleDB、pg_stat_statements 都以扩展形式交付，在运维 PG 环境时，扩展的安装、升级与版本管理是我会反复核对的基本项。
 
 ## 基本操作
 
@@ -105,7 +105,7 @@ PostGIS 这类扩展还要跑它自带的 `postgis_upgrade` 脚本，且建议�
 | unaccent | 去除重音符号的文本规范化 | 全文检索常用 |
 | btree_gin | 让 GIN 索引支持普通标量列组合 | 多列混合过滤索引 |
 
-这份清单与各扩展的深入用法贯穿全书：监控见 [pg_stat_statements](../performance/pg-stat-statements) 与 [审计](../security/audit)，文本匹配见 [全文检索](../advanced-sql/full-text-search)。
+这份清单里提到的扩展实践，另有记录：监控见 [pg_stat_statements](../performance/pg-stat-statements) 与 [审计](../security/audit)，文本匹配见 [全文检索](../advanced-sql/full-text-search)。
 
 ## 参考资料
 
@@ -115,7 +115,7 @@ PostGIS 这类扩展还要跑它自带的 `postgis_upgrade` 脚本，且建议�
 <!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- 子树总纲：[第9部分：生态与新特性](/ecosystem/)
+- 子树总纲：[生态与新特性](/ecosystem/)
 
 - [系统目录与元数据](../basics/system-catalogs-and-metadata)
 - [版本升级](../operations/version-upgrade)

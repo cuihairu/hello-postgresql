@@ -1,6 +1,6 @@
 # 子查询家族
 
-子查询是嵌在另一条 SQL 里的 SELECT，按出现位置分成两大类：写在 WHERE/SELECT 表达式里的（标量、IN、EXISTS、ANY/ALL）和写在 FROM 里的（派生表）。写法上层层嵌套，但优化器并不总是「先算内层再算外层」——多数子查询会被改写成 join 或一次性求值的计划。这一页过一遍家族成员，讲清 IN 与 EXISTS 的 NULL 语义差异、哪些形态能被优化器展平、哪些去不掉，以及怎么用 EXPLAIN 验证。
+子查询是嵌在另一条 SQL 里的 SELECT，按出现位置分成两大类：写在 WHERE/SELECT 表达式里的（标量、IN、EXISTS、ANY/ALL）和写在 FROM 里的（派生表）。写法上层层嵌套，但优化器并不总是「先算内层再算外层」——多数子查询会被改写成 join 或一次性求值的计划。这里记录家族成员，梳理 IN 与 EXISTS 的 NULL 语义差异、哪些形态能被优化器展平、哪些去不掉，以及怎么用 EXPLAIN 验证。
 
 ## 示例表
 
@@ -195,7 +195,7 @@ FROM departments d;
 <!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- 子树总纲：[第3部分：高级 SQL](/advanced-sql/)
+- 子树总纲：[高级 SQL](/advanced-sql/)
 
 - [EXPLAIN 读法](../performance/explain-basics)
 - [LATERAL 与 FROM 子查询](./lateral-and-from-subquery)
@@ -205,4 +205,4 @@ FROM departments d;
 - [index](index.md)
 - [lateral-and-from-subquery](lateral-and-from-subquery.md)
 - [common-beginner-mistakes](/basics/common-beginner-mistakes.md)
-官方文档：[子查询表达式](https://www.postgresql.org/docs/current/sql-expressions.html)、[子查询教程](https://www.postgresql.org/docs/current/sql-expressions.html)。
+官方文档：[子查询表达式](https://www.postgresql.org/docs/current/sql-expressions.html)、[子查询表达式文档](https://www.postgresql.org/docs/current/sql-expressions.html)。

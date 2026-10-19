@@ -1,6 +1,6 @@
 # LATERAL 与 FROM 子查询
 
-FROM 子句里除了表，还可以放子查询（派生表）和集合返回函数；LATERAL 关键字（PG 9.3 起）进一步允许这些 FROM 项引用左侧其他 FROM 项的列，让「对左表的每一行跑一段带参数的子查询」成为一条普通 SQL。这一页覆盖派生表、相关子查询、LATERAL 语法、每组 Top-N 的两种写法对比，以及 unnest/generate_series 的常规展开用法。
+FROM 子句里除了表，还可以放子查询（派生表）和集合返回函数；LATERAL 关键字（PG 9.3 起）进一步允许这些 FROM 项引用左侧其他 FROM 项的列，让「对左表的每一行跑一段带参数的子查询」成为一条普通 SQL。这里整理派生表、相关子查询、LATERAL 语法、每组 Top-N 的两种写法对比，以及 unnest/generate_series 的常规展开用法。
 
 ## FROM 子查询（派生表）
 

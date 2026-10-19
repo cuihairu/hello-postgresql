@@ -114,7 +114,7 @@ FROM sales.orders GROUP BY 1;
 <!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [psql 入门](./psql-getting-started)
+- [psql 常用操作](./psql-getting-started)
 - [数据类型总览](./data-types-overview)
 - [多租户建模](../database-design/multi-tenant-modeling)
 - [角色与权限](../security/roles-and-permissions)

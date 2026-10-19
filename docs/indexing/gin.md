@@ -1,6 +1,6 @@
 # GIN 索引
 
-GIN（Generalized Inverted Index，广义倒排索引）为"一个值里包含多个组成部分"的数据设计：数组、jsonb、tsvector、trigram 字符串。它为每个组成部分（元素、键、词素）单独建条目，查询时直接取"包含该部分的行"列表。代价是结构复杂、更新较慢。本文讲清倒排结构、各类型的操作符配合、pending list 的性能影响与 jsonb 两种操作符类的选择。官方文档见 [GIN 索引](https://www.postgresql.org/docs/current/gin.html)。
+GIN（Generalized Inverted Index，广义倒排索引）为"一个值里包含多个组成部分"的数据设计：数组、jsonb、tsvector、trigram 字符串。它为每个组成部分（元素、键、词素）单独建条目，查询时直接取"包含该部分的行"列表。代价是结构复杂、更新较慢。本文梳理倒排结构、各类型的操作符配合、pending list 的性能影响与 jsonb 两种操作符类的选择。官方文档见 [GIN 索引](https://www.postgresql.org/docs/current/gin.html)。
 
 ## 倒排结构：从组成部分到行
 

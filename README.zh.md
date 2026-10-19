@@ -1,6 +1,6 @@
 # hello-postgresql
 
-个人学习笔记、心得与经验，从游戏开发者的视角记录 PostgreSQL 使用体会，使用 VitePress 发布。
+一个游戏开发者的 PostgreSQL 项目记录：整理实际使用中的取舍、踩坑、排障过程和原理观察，由 VitePress 发布。
 
 **在线阅读**：<https://cuihairu.github.io/hello-postgresql/>
 
@@ -23,22 +23,22 @@ npm run docs:preview  # 本地预览构建产物
 
 ```
 仓库根目录：
-├── OUTLINE.md          # 136 项内容大纲与进度勾选
+├── OUTLINE.md          # 内容大纲与进度记录
 └── todo.md             # 带 commit 证据的维护台账
 
 站点内容（docs/）：
 ├── index.md            # 首页
-├── knowledge.md        # 知识点整理（复习主线）
-├── basics/             # 第1部分 基础知识（15 页）
-├── database-design/    # 第2部分 数据库设计（14 页）
-├── advanced-sql/       # 第3部分 高级 SQL（18 页）
-├── internals/          # 第4部分 底层原理（20 页）
-├── indexing/           # 第5部分 索引体系（12 页）
-├── performance/        # 第6部分 查询调优（14 页）
-├── operations/         # 第7部分 架构部署（12 页）
-├── security/           # 第8部分 安全（8 页）
-├── ecosystem/          # 第9部分 生态与新特性（10 页）
-├── tools/              # 第10部分 工具实战（8 页）
+├── knowledge.md        # 开发者备忘
+├── basics/             # 基础与常用 SQL（15 页）
+├── database-design/    # 数据库设计（14 页）
+├── advanced-sql/       # 高级 SQL（18 页）
+├── internals/          # 内核观察（20 页）
+├── indexing/           # 索引与使用（12 页）
+├── performance/        # 查询性能（14 页）
+├── operations/         # 架构与运维（12 页）
+├── security/           # 安全（8 页）
+├── ecosystem/          # 生态与新特性（10 页）
+├── tools/              # 开发工具与案例（8 页）
 ├── appendix/           # 附录（5 页）
 ├── .vitepress/
 │   ├── config.mts      # 站点配置（base / 导航 / 搜索 / 死链门禁）
@@ -46,9 +46,9 @@ npm run docs:preview  # 本地预览构建产物
 └── public/             # favicon / logo
 ```
 
-上方目录篇数统计正文页，不含各目录的 `index.md`。站点导航以 sidebar 为唯一真源；发布路由变化时更新 sidebar，不另维护手写路由副本。各目录的 `index.md` 是主题总览，`knowledge.md` 是跨主题复习摘要。
+上方目录篇数统计正文页，不含各目录的 `index.md`。站点导航以 sidebar 为唯一真源；发布路由变化时更新 sidebar，不另维护手写路由副本。各目录的 `index.md` 是主题总览，`knowledge.md` 是跨主题备忘。
 
-## 写作口径
+## 内容记录方式
 
 - 每页聚焦 **1–2 个核心知识点**，80–200 行，中文正文。
 - 命令与 SQL 示例**可复现**：建表给完整 DDL，查询可直接粘贴执行；版本差异显式标注（如「PG 16 起」）。

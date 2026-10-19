@@ -1,6 +1,6 @@
 # 流复制搭建
 
-流复制的传输链路、`synchronous_commit` 语义与备库冲突处理在原理篇（[流复制与同步](../internals/streaming-replication-and-sync)）讲过，这一页是可以照抄的搭建手册：主库放行复制、`pg_basebackup` 拉起备库、用复制槽管住 WAL 保留，最后看懂两个观测视图。
+流复制的传输链路、`synchronous_commit` 语义与备库冲突处理在原理篇（[流复制与同步](../internals/streaming-replication-and-sync)）讲过，这里记录一套可复用的搭建流程：主库放行复制、`pg_basebackup` 拉起备库、用复制槽管住 WAL 保留，最后看懂两个观测视图。
 
 ## 主库准备
 

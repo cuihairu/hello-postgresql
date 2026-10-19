@@ -1,6 +1,6 @@
-# 知识点整理
+# 开发者备忘
 
-本页把全站内容收拢成一条复习主线：核心概念、权威书籍、官方文档、应用场景、常见坑。站内链接指向展开正文，条目只留结论，推导与示例在正文里。
+这页是我给自己整理的 PostgreSQL 备忘：概念、书目、官方文档、应用场景和常见坑放在一起。站内链接通向展开记录，这里保留常用结论与出处。
 
 ## 一、核心概念
 
@@ -23,7 +23,7 @@
 
 1. **《PostgreSQL 14 Internals》（Egor Rogov，Postgres Professional）**：官方免费 PDF，MVCC、快照、WAL、锁、vacuum 的实现级讲解；本站底层原理部分与它对齐。
 2. **《The Art of PostgreSQL》（Dimitri Fontaine）**：面向应用开发者的 SQL 能力书，窗口函数、CTE、jsonb 的实战用法对应本站高级 SQL 部分。
-3. **《PostgreSQL: Up and Running》（Regina Obe & Leo Hsu）**：快速上手与运维概览，对应本站基础知识与架构部署部分。
+3. **《PostgreSQL: Up and Running》（Regina Obe & Leo Hsu）**：安装配置与运维概览，对应本站基础知识与架构部署部分。
 4. **《数据密集型应用系统设计》（DDIA）**：存储、复制、一致性的系统视角，给复制、备份、高可用章节提供背景框架。
 
 书目均收录在本站[参考书与官方文档索引](./appendix/references-and-docs)。

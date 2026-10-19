@@ -1,4 +1,4 @@
-# psql 入门
+# psql 常用操作
 
 psql 是 PostgreSQL 自带的官方命令行客户端，装完服务端或单独装 `postgresql-client` 即可用。写 SQL 之外，它还提供一组以反斜杠开头的**元命令**（meta-command）用来查元数据、切换库、控制输出格式。后端开发者每天打交道的对象、索引、执行计划，都靠它顺手查看。本文只挑高频用法，完整参考见官方 [psql 手册](https://www.postgresql.org/docs/current/app-psql.html)与站内 [psql 元命令速查](../appendix/psql-meta-command-reference)。
 
@@ -123,7 +123,7 @@ psql 用 GNU readline 保存命令历史：上下方向键翻历史、`Ctrl-R` �
 <!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [安装与快速上手](./install-and-quickstart)
+- [安装与首次连接](./install-and-quickstart)
 - [数据库与 schema 对象](./database-and-schema-objects)
 - [psql 进阶用法](../tools/psql-advanced)
 - [psql 元命令速查](../appendix/psql-meta-command-reference)

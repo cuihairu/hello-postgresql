@@ -110,7 +110,7 @@ alias pgexec='psql -X -v ON_ERROR_STOP=1 -f'
 
 密码提示可以用 `~/.pgpass` 解决（权限必须 0600）：`127.0.0.1:5432:appdb:app:app`。密码进了 shell 历史或别处的写法都不应该出现在代码里，见[客户端驱动](./client-drivers)的连接串章节。
 
-psql 的日常用法（`\d`、`\x`、`\copy`）见[psql 入门](../basics/psql-getting-started)与[psql 高阶](./psql-advanced)；第一次在机器上装 PostgreSQL 见[安装与快速上手](../basics/install-and-quickstart)。
+psql 的日常用法（`\d`、`\x`、`\copy`）见[psql 常用操作](../basics/psql-getting-started)与[psql 高阶](./psql-advanced)；第一次在机器上装 PostgreSQL 见[安装与首次连接](../basics/install-and-quickstart)。
 
 ## 参考资料
 
@@ -123,7 +123,7 @@ psql 的日常用法（`\d`、`\x`、`\copy`）见[psql 入门](../basics/psql-g
 - [psql 高阶](./psql-advanced)
 - [schema 迁移工具](./schema-migration-tools)
 - [客户端驱动](./client-drivers)
-- [安装与快速上手](../basics/install-and-quickstart)
+- [安装与首次连接](../basics/install-and-quickstart)
 - [index](index.md)
 - [psql-advanced](psql-advanced.md)
 - [schema-migration-tools](schema-migration-tools.md)

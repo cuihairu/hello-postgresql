@@ -1,6 +1,6 @@
 # 参考书与官方文档索引
 
-写文档、查问题、深入原理时常用的资源入口。官方资源以 PostgreSQL 官方站点为主；社区与书目只列长期维护、广为人知的来源。
+写文档、查问题、查资料和回看原理时我常用的资源入口。官方资源以 PostgreSQL 官方站点为主；社区与书目只列长期维护、广为人知的来源。
 
 官方手册按版本组织：`docs/current` 永远指向最新稳定版，需要与线上版本严格一致时把 URL 中的 `current` 换成具体版本号（如 `docs/16/`）。
 
@@ -25,7 +25,7 @@
 | 错误码附录 | [errcodes-appendix.html](https://www.postgresql.org/docs/current/errcodes-appendix.html) | 每条 SQLSTATE 错误码的含义与触发场景 |
 | Release Notes | [release.html](https://www.postgresql.org/docs/current/release.html) | 各版本行为变化、新增功能与不兼容点 |
 | 官方 Wiki | [wiki.postgresql.org](https://wiki.postgresql.org/) | 社区维护的 HOWTO、迁移与运维经验合集 |
-| 官方教程 | [tutorial.html](https://www.postgresql.org/docs/current/tutorial.html) | 从建库到查询的入门教程 |
+| PostgreSQL Tutorial（外部文档） | [tutorial.html](https://www.postgresql.org/docs/current/tutorial.html) | 官方提供的建库与查询示例 |
 | 性能 Tips | [performance-tips.html](https://www.postgresql.org/docs/current/performance-tips.html) | 官方给出的查询与配置调优建议 |
 | 监控视图 | [monitoring-stats.html](https://www.postgresql.org/docs/current/monitoring-stats.html) | pg_stat_* 系列视图的字段说明 |
 | 配置参考 | [runtime-config.html](https://www.postgresql.org/docs/current/runtime-config.html) | 全部 GUC 参数的取值与含义 |
@@ -65,11 +65,11 @@
 | PostgreSQL 14 Internals | Egor Rogov | Postgres Professional 出品，官方免费 PDF，系统讲 MVCC、WAL、锁与查询执行 |
 | The Internals of PostgreSQL | Hironobu Suzuki | 免费在线（interdb.jp），按子系统讲源码级原理 |
 | The Art of PostgreSQL | Dimitri Fontaine | 面向应用开发者，把 SQL 与数据库设计写好的实践书 |
-| PostgreSQL: Up and Running | Regina Obe、Leo Hsu | O'Reilly 入门到管理的速成手册 |
+| PostgreSQL: Up and Running | Regina Obe、Leo Hsu | O'Reilly 的安装与管理实践参考 |
 
-## 怎么用这份索引
+## 按场景查找
 
-- 刚入门：官方教程 + The Art of PostgreSQL，先把建库、CRUD 与约束走通。
+- 应用开发起步：PostgreSQL Tutorial 与 The Art of PostgreSQL，可对照建库、CRUD 与约束示例。
 - 日常排障：先在[错误码附录](https://www.postgresql.org/docs/current/errcodes-appendix.html)查 SQLSTATE，再对照站内[常见错误与排查对照表](./common-errors-and-troubleshooting)。
 - 索引与慢查询：Use The Index, Luke 与 pganalyze 博客，配合 `EXPLAIN ANALYZE` 与 explain.depesz.com 看计划。
 - 深入原理：两本 Internals 对照读，官方 MVCC、WAL 章节当锚点。

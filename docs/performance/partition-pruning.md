@@ -1,6 +1,6 @@
 # 分区裁剪与裁剪失败
 
-分区表查得快的前提，是 planner 或 executor 能把不含目标数据的分区从计划中剔除——即「分区裁剪」。裁剪没发生时，查询会退化成扫描全部分区的 Append，性能可能还不如不分区。本页讲裁剪发生的三个时机、哪些写法会让它失效，以及如何在 EXPLAIN 输出里确认裁剪有没有发生。
+分区表查得快的前提，是 planner 或 executor 能把不含目标数据的分区从计划中剔除——即「分区裁剪」。裁剪没发生时，查询会退化成扫描全部分区的 Append，性能可能还不如不分区。这里记录裁剪发生的三个时机、哪些写法会让它失效，以及如何在 EXPLAIN 输出里确认裁剪有没有发生。
 
 ## 裁剪的三个时机
 
@@ -115,7 +115,7 @@ prepared statement 执行若干次后可能切换到 generic plan（判定规则
 - [brin](/indexing/brin.md)
 - [knowledge](/knowledge.md)
 - [capacity-and-scaling-limits](capacity-and-scaling-limits.md)
-- [index](index.md)- [EXPLAIN 入门](./explain-basics)——读懂 Append 与计划结构。
+- [index](index.md)- [EXPLAIN 基础](./explain-basics)——读懂 Append 与计划结构。
 - [EXPLAIN ANALYZE 与 BUFFERS](./explain-analyze-buffers)——量化每个分区实际扫了多少。
 - [计划缓存与通用计划](../internals/plan-cache-and-generic-plan)——generic plan 的判定与切换。
 - [表的继承与分区设计](../database-design/table-inheritance-and-partitioning-design)——分区键与粒度的设计决策。

@@ -1,6 +1,6 @@
 # SQL 函数进阶
 
-基础 SQL 函数（标量函数、简单 `CREATE FUNCTION ... LANGUAGE sql`）之外，业务逻辑下沉到数据库时真正依赖的是 PL/pgSQL 的过程能力：变量、异常捕获、返回表结构。这一页覆盖 PL/pgSQL 的变量与赋值、`RAISE` 与 `EXCEPTION` 错误处理、`RETURNS TABLE` 与 OUT 参数、以及决定优化器如何对待你的函数的**易变性分类**——标错易变性是函数性能问题的头号来源。
+基础 SQL 函数（标量函数、简单 `CREATE FUNCTION ... LANGUAGE sql`）之外，业务逻辑下沉到数据库时真正依赖的是 PL/pgSQL 的过程能力：变量、异常捕获、返回表结构。这里整理 PL/pgSQL 的变量与赋值、`RAISE` 与 `EXCEPTION` 错误处理、`RETURNS TABLE` 与 OUT 参数、以及决定优化器如何对待你的函数的**易变性分类**——标错易变性是函数性能问题的头号来源。
 
 ## 示例表
 

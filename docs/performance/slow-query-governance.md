@@ -1,6 +1,6 @@
 # 慢查询治理流程
 
-零散地「感觉慢了就调一下」解决不了长期问题，慢查询治理需要一条固定流水线：采集 → 复现 → 定位 → 改写 → 验证。这一页按这五步走一遍完整案例：一条商品订单列表 SQL 从生产 1.8 秒降到 0.2 毫秒的全过程。单件工具的细节在 [EXPLAIN (ANALYZE, BUFFERS, WAL)](./explain-analyze-buffers) 和 [pg_stat_statements](./pg-stat-statements)，本页聚焦流程本身。
+零散地「感觉慢了就调一下」解决不了长期问题，慢查询治理需要一条固定流水线：采集 → 复现 → 定位 → 改写 → 验证。这里按这五步走一遍完整案例：一条商品订单列表 SQL 从生产 1.8 秒降到 0.2 毫秒的全过程。单件工具的细节在 [EXPLAIN (ANALYZE, BUFFERS, WAL)](./explain-analyze-buffers) 和 [pg_stat_statements](./pg-stat-statements)，本页聚焦流程本身。
 
 ## 第 1 步：采集——找到该治理的 SQL
 

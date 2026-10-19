@@ -1,6 +1,6 @@
 # 表继承与分区表设计
 
-把一张逻辑大表拆成多块物理存储，PostgreSQL 提供两条路：表继承（INHERITS）和声明式分区（`PARTITION BY`）。PG 10 起官方推荐声明式分区——分区是父表的组成部分，路由、约束、索引都由系统管理；表继承是更早的机制，子表是完全独立的表，需要应用层自己拼。这一页以声明式分区为主，讲三种分区方式、默认分区、分区键对主键的限制、数量与大小建议，最后对比两者的差异。
+把一张逻辑大表拆成多块物理存储，PostgreSQL 提供两条路：表继承（INHERITS）和声明式分区（`PARTITION BY`）。PG 10 起官方推荐声明式分区——分区是父表的组成部分，路由、约束、索引都由系统管理；表继承是更早的机制，子表是完全独立的表，需要应用层自己拼。这里以声明式分区为主，记录三种分区方式、默认分区、分区键对主键的限制、数量与大小建议，最后对比两者的差异。
 
 ## PARTITION BY RANGE / LIST / HASH
 
@@ -136,7 +136,7 @@ ALTER TABLE orders DETACH PARTITION orders_2026_09;
 <!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- 子树总纲：[第2部分：数据库设计](/database-design/)
+- 子树总纲：[数据库设计](/database-design/)
 
 - [主键设计](./primary-key-design)
 - [多租户建模](./multi-tenant-modeling)

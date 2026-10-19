@@ -5,7 +5,7 @@ import sidebar from './sidebar.json'
 export default defineConfig({
   lang: 'zh-CN',
   title: 'Hello PostgreSQL',
-  description: 'PostgreSQL 知识手册——基础与 SQL、数据库设计、高级 SQL、内核机制、索引体系、查询调优、架构部署、安全与工具实战',
+  description: 'PostgreSQL 开发记录——项目实践、选型判断、排障过程与内核观察',
   base: '/hello-postgresql/',
   cleanUrls: true,
   lastUpdated: true,
@@ -24,7 +24,7 @@ export default defineConfig({
 
     nav: [
       { text: '首页', link: '/' },
-      { text: '基础知识', link: '/basics/' },
+      { text: '基础与常用 SQL', link: '/basics/' },
       { text: '数据库设计', link: '/database-design/' },
       { text: '高级SQL', link: '/advanced-sql/' },
       { text: '底层原理', link: '/internals/' },
@@ -33,9 +33,9 @@ export default defineConfig({
       { text: '架构部署', link: '/operations/' },
       { text: '安全', link: '/security/' },
       { text: '生态与新特性', link: '/ecosystem/' },
-      { text: '工具实战', link: '/tools/' },
+      { text: '开发工具', link: '/tools/' },
       { text: '附录', link: '/appendix/' },
-      { text: '知识点整理', link: '/knowledge' }
+      { text: '开发者备忘', link: '/knowledge' }
     ],
 
     sidebar: sidebar as never,

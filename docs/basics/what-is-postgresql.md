@@ -65,7 +65,7 @@ WHERE valid_during @> now();
 DROP TABLE products;
 ```
 
-这段脚本无需任何扩展即可在 PG 13+ 上运行（`tstzrange` 是内置类型）。数组、JSONB、range 的完整用法见 [特色类型入门](./special-types-intro)。
+这段脚本无需任何扩展即可在 PG 13+ 上运行（`tstzrange` 是内置类型）。数组、JSONB、range 的完整用法见 [特色类型概览](./special-types-intro)。
 
 ## 生态位与选型
 
@@ -104,8 +104,8 @@ DROP TABLE products;
 <!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [安装与快速上手](./install-and-quickstart)
-- [psql 入门](./psql-getting-started)
+- [安装与首次连接](./install-and-quickstart)
+- [psql 常用操作](./psql-getting-started)
 - [数据库与 schema 对象](./database-and-schema-objects)
 - [MVCC 与多版本](../internals/mvcc-and-multi-version)
 - [glossary](/appendix/glossary.md)

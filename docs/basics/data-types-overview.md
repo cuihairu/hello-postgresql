@@ -1,6 +1,6 @@
 # 数据类型总览
 
-PostgreSQL 的类型系统是它区别于许多数据库的地方：内置类型覆盖数值、字符、时间、布尔、二进制、UUID、网络地址等，还允许用户自定义类型。本文梳理业务建表最常用的几类，以及 `serial` 与 `GENERATED ... AS IDENTITY` 的取舍。每种类型的完整规格见官方 [Data Types](https://www.postgresql.org/docs/current/datatype.html) 一章；JSONB、数组、range 等特色类型见 [特色类型入门](./special-types-intro)。
+PostgreSQL 的类型系统是它区别于许多数据库的地方：内置类型覆盖数值、字符、时间、布尔、二进制、UUID、网络地址等，还允许用户自定义类型。本文梳理业务建表最常用的几类，以及 `serial` 与 `GENERATED ... AS IDENTITY` 的取舍。每种类型的完整规格见官方 [Data Types](https://www.postgresql.org/docs/current/datatype.html) 一章；JSONB、数组、range 等特色类型见 [特色类型概览](./special-types-intro)。
 
 ## 数值类型
 
@@ -158,7 +158,7 @@ PG 保留了一批 SQL 标准与历史别名，`pg_catalog` 里看到 `int4`、`
 <!-- BACKLINKS-AUTO -->
 ## 相关页面
 
-- [特色类型入门](./special-types-intro)
+- [特色类型概览](./special-types-intro)
 - [数据库与 schema 对象](./database-and-schema-objects)
 - [主键设计](../database-design/primary-key-design)
 - [金额与数值](../database-design/money-and-numeric)

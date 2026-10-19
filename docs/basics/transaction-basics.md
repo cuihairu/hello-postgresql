@@ -1,4 +1,4 @@
-# 事务入门
+# 事务基础
 
 事务是数据库保证一组操作"要么全做、要么全不做"的机制。PostgreSQL 默认每条语句都在一个事务里执行（autocommit），你手写的 `BEGIN/COMMIT/ROLLBACK` 只是显式地把多条语句包进同一个原子单元。事务的正确性来自 MVCC 与 WAL，这里只讲最基础的控制语句、回滚语义与常见的隔离级别读现象，深入的锁与可见性规则见 [MVCC 与多版本](../internals/mvcc-and-multi-version)。
 
@@ -125,7 +125,7 @@ ORDER  BY age DESC;
 - [MVCC 与多版本](../internals/mvcc-and-multi-version)
 - [事务与隔离级别](../internals/transactions-and-isolation)
 - [锁系统](../internals/lock-system)
-- [psql 入门](./psql-getting-started)
+- [psql 常用操作](./psql-getting-started)
 - [sql-command-reference](/appendix/sql-command-reference.md)
 - [crud-and-on-conflict](crud-and-on-conflict.md)
 - [index](index.md)
