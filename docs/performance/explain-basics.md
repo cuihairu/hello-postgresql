@@ -161,6 +161,7 @@ Execution Time: 0.089 ms
 - [常见坏计划](./common-bad-plans)
 - [统计信息与 ANALYZE](./statistics-and-analyze)
 - [优化器代价模型](../internals/optimizer-cost-model)
+- [索引选型决策树](../indexing/index-selection-decision-tree)
 - [cte-and-non-recursive-with](/advanced-sql/cte-and-non-recursive-with.md)
 - [lateral-and-from-subquery](/advanced-sql/lateral-and-from-subquery.md)
 - [set-operations](/advanced-sql/set-operations.md)

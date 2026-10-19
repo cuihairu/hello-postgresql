@@ -1,6 +1,6 @@
 # hello-postgresql
 
-PostgreSQL 中文知识手册，VitePress 静态站。
+个人学习笔记、心得与经验，从游戏开发者的视角记录 PostgreSQL 使用体会，使用 VitePress 发布。
 
 **在线阅读**：<https://cuihairu.github.io/hello-postgresql/>
 

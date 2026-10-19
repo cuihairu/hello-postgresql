@@ -1,6 +1,6 @@
 # hello-postgresql
 
-PostgreSQL knowledge handbook (Chinese), built as a VitePress site.
+Personal notes, lessons, and experience from a game developer working with PostgreSQL, built as a VitePress site.
 
 **Read online**: <https://cuihairu.github.io/hello-postgresql/>
 
