@@ -135,7 +135,7 @@ Notes: replicas and the primary run different query sets, so an index unused on 
 - [gin](gin.md)
 - [index-only-scans](index-only-scans.md)
 - [index](index.md)
-- [autovacuum-tuning](/internals/autvacuum-tuning.md)
+- [autovacuum-tuning](/internals/autovacuum-tuning.md)
 - [mvcc-and-multi-version](/internals/mvcc-and-multi-version.md)
 - [vacuum-and-hot](/internals/vacuum-and-hot.md)
 - [disaster-recovery-drills](/operations/disaster-recovery-drills.md)

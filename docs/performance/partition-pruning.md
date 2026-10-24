@@ -113,7 +113,7 @@ Workarounds: make critical queries use a custom plan (usually automatic when par
 - [table-inheritance-and-partitioning-design](/database-design/table-inheritance-and-partitioning-design.md)
 - [timescaledb](/ecosystem/timescaledb.md)
 - [brin](/indexing/brin.md)
-- [knowledge](knowledge.md)
+- [knowledge](/knowledge.md)
 - [capacity-and-scaling-limits](capacity-and-scaling-limits.md)
 - [index](index.md)- [EXPLAIN Basics](./explain-basics)——understanding Append and plan structure.
 - [EXPLAIN ANALYZE and Buffers](./explain-analyze-buffers)——quantifying how much each partition actually scanned.
