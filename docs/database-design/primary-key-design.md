@@ -1,0 +1,137 @@
+# Primary Key Design
+
+A primary key is the unique identifier of a row, the anchor for foreign-key references, and it often determines your pagination strategy and index shape. This page compares three common options — `BIGINT GENERATED AS IDENTITY`, UUID, and composite primary keys — and covers the primary key's impact on the heap and indexes, the business key versus surrogate key debate, and the ordering requirements keyset pagination places on the primary key.
+
+## The Default Choice: BIGINT GENERATED AS IDENTITY
+
+```sql
+CREATE TABLE users (
+    id         bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    username   text NOT NULL UNIQUE,
+    created_at timestamptz NOT NULL DEFAULT now()
+);
+
+INSERT INTO users (username) VALUES ('alice'), ('bob');
+
+SELECT id, username FROM users;
+--  id | username
+-- ----+----------
+--   1 | alice
+--   2 | bob
+```
+
+IDENTITY is the standard syntax since PG 10, semantically equivalent to `serial` but closer to the SQL standard: the sequence is managed by the column definition, `INSERT` auto-assigns it when omitted, and the misuse pattern of "assigning sequence values like an ordinary column" is harder to hit. Its practical benefits as the default primary key:
+
+- **Compact**: 8 bytes; foreign keys referencing it also take just 8 bytes, so index entries stay small.
+- **Write-friendly**: monotonically increasing, so new rows always append to the rightmost edge of the B-tree, with fewer page splits and better cache hits.
+- **Simple and controllable**: `GENERATED ALWAYS` blocks the application layer from writing arbitrary IDs; only `OVERRIDING SYSTEM VALUE` can specify one explicitly.
+
+For type and syntax details, see the official documentation on [CREATE TABLE](https://www.postgresql.org/docs/current/sql-createtable.html).
+
+## UUID: Distributed-Safe, but Unordered by Default
+
+UUID fits scenarios where "multiple writers each generate IDs and cannot share one sequence": microservices minting their own IDs, client-side pre-generation, cross-database merges. Generation is built in since PG 13:
+
+```sql
+CREATE TABLE events (
+    id         uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+    payload    jsonb NOT NULL,
+    created_at timestamptz NOT NULL DEFAULT now()
+);
+
+INSERT INTO events (payload) VALUES ('{"type": "login"}');
+```
+
+The cost is that UUID v4 is essentially random: 16 bytes, insertion positions scattered across the B-tree, causing page splits, index bloat, and cache-unfriendly behavior; on write-heavy tables the gap versus auto-increment integers is obvious. Ways to improve:
+
+- **Since PG 18**, time-ordered `uuidv7()` is built in — insertions are nearly monotonic, combining distributed generation with index friendliness;
+- On PG 17 and earlier, the third-party extension [pg_uuidv7](https://github.com/fboulnois/pg_uuidv7) can generate v7 inside the database;
+- Or fall back to generating time-prefixed ordered IDs in the application layer (such as ULID) and storing them in a uuid column.
+
+UUID is also a good fit for external exposure: it cannot be enumerated, so nobody can walk your data with `id+1`. For type and function details, see the [UUID type documentation](https://www.postgresql.org/docs/current/datatype-uuid.html).
+
+## Composite Primary Keys
+
+When a row is naturally and uniquely determined by several fields together, a composite primary key is a reasonable choice:
+
+```sql
+CREATE TABLE enrollments (
+    student_id int REFERENCES students(id),
+    course_id  int REFERENCES courses(id),
+    enrolled_at timestamptz NOT NULL DEFAULT now(),
+    PRIMARY KEY (student_id, course_id)
+);
+```
+
+The rule of thumb is to keep the primary key "narrow": primary-key columns are copied into every foreign key and secondary index that references them, so more columns or longer columns mean higher downstream cost. If the composite key exceeds three or four columns, or includes a long text column, switching to a surrogate key plus `UNIQUE (columns...)` usually pays off.
+
+## How the Primary Key Affects the Heap and Indexes
+
+- Declaring a primary key automatically creates a unique B-tree index, but it does **not** physically sort the heap by the key; heap write order is unrelated to the primary key (to physically cluster by the key you need `CLUSTER`, which takes effect once — later writes still append in arbitrary order).
+- The referenced column (such as `users.id`) must have a unique index before a foreign key can be created, which the primary key satisfies naturally; the referencing column (such as `orders.user_id`) gets no index automatically — add one yourself (see [Foreign Keys and Referential Actions](./foreign-keys-and-referential-actions)).
+- Updating a primary-key value rewrites the heap row and every index, so a primary key should be "immutable after write" — one more reason surrogate keys beat business keys.
+
+## Business Keys vs. Surrogate Keys
+
+- **Surrogate key**: an identifier with no business meaning, generated by the database or an algorithm (identity, uuid). Pros: stable and unchanging, controllable width.
+- **Natural key**: an identifier with business meaning (email, order number, ID card number). Pros: intuitive semantics, naturally usable for deduplication.
+
+The common practice is to use both: a surrogate key as the primary key and foreign-key anchor, plus a `UNIQUE` constraint on the business key to guarantee business-level uniqueness:
+
+```sql
+CREATE TABLE users (
+    id    bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    email text NOT NULL UNIQUE   -- business key: unique externally; internal references always use id
+);
+```
+
+The risk of a business key is that it "changes": people switch email addresses and ID numbers change. Once it is referenced by foreign keys, cascading that change costs far more than changing a surrogate key nobody references.
+
+## Keyset Pagination Requires Ordered Keys
+
+`OFFSET` pagination gets slower the deeper you page; keyset (cursor) pagination instead requires the sort columns to be indexed and their order to be stable and comparable:
+
+```sql
+SELECT id, username, created_at
+FROM users
+WHERE (created_at, id) < (now() - interval '7 days', 9223372036854775807)
+ORDER BY created_at DESC, id DESC
+LIMIT 20;
+```
+
+The key point: the last column of `ORDER BY` must be able to break ties (here `id` is the fallback), otherwise rows sharing the same `created_at` will be lost or duplicated across pages. When the sort key has many duplicates, the sturdier approach is to use the primary key itself as the cursor: `WHERE id < :cursor ORDER BY id DESC LIMIT 20` — this requires the primary key to be ordered, exactly the strength of identity or uuidv7, while a random uuidv4 as a keyset cursor is meaningless. For the full pagination patterns, see [Pagination and Sorting](../advanced-sql/pagination-and-sorting).
+
+## UUID Deduplication for Eventually Consistent Workloads
+
+When multiple writers each generate UUID primary keys, collision probability is tiny but nonzero; the more common duplication comes from the same logical record being delivered twice (retries, dual writes, message replay). The approach is to let the unique constraint handle deduplication:
+
+```sql
+-- Idempotent write: a redelivered UUID keeps only the first copy
+INSERT INTO events (id, payload, created_at)
+VALUES (gen_random_uuid(), '{"type": "login"}', now())
+ON CONFLICT DO NOTHING;
+```
+
+Combined with `ON CONFLICT DO NOTHING` (see [CRUD and ON CONFLICT](../basics/crud-and-on-conflict)) this implements "at-least-once delivery plus idempotent storage". Logical replication and multi-master merge scenarios pick UUID primary keys precisely to avoid range conflicts between auto-increment sequences on different nodes.
+
+## References
+
+- [GitHub · fboulnois/pg_uuidv7](https://github.com/fboulnois/pg_uuidv7)
+- [PostgreSQL Documentation · 5.5. Constraints](https://www.postgresql.org/docs/current/ddl-constraints.html)
+
+<!-- BACKLINKS-AUTO -->
+## Related Pages
+
+- [Foreign Keys and Referential Actions](./foreign-keys-and-referential-actions)
+- [B-tree Structure](../indexing/btree-structure)
+- [Soft Delete and Tombstones](./soft-delete-and-tombstone)
+- [Pagination and Sorting](../advanced-sql/pagination-and-sorting)
+- [common-beginner-mistakes](/basics/common-beginner-mistakes.md)
+- [data-types-overview](/basics/data-types-overview.md)
+- [naming-and-style-conventions](/basics/naming-and-style-conventions.md)
+- [foreign-keys-and-referential-actions](foreign-keys-and-referential-actions.md)
+- [index](index.md)
+- [logical-to-physical-modeling](logical-to-physical-modeling.md)
+- [normalization-and-denormalization](normalization-and-denormalization.md)
+- [table-inheritance-and-partitioning-design](table-inheritance-and-partitioning-design.md)
+- [join-implementations](/internals/join-implementations.md)
