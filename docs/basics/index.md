@@ -1,30 +1,30 @@
-# 基础知识
+# Basics & Core SQL
 
-这里汇集我处理建库、查询、事务和排错时常回看的基础记录；内容按主题排列，数据库背景不同也可以直接从具体问题查起。
+The core pages I come back to when creating databases, writing queries, handling transactions and diagnosing problems. They are arranged by topic, but if you already have a database background you can jump straight to the problem you are hitting.
 
-- [什么是 PostgreSQL](what-is-postgresql.md) —— 历史、许可、ACID 与 MVCC 取向、生态位。
-- [安装与首次连接](install-and-quickstart.md) —— apt/yum/Homebrew/Windows 安装、initdb 初始化集群、跑通第一条查询。
-- [psql 常用操作](psql-getting-started.md) —— 连接参数、`\dt`/`\d`/`\timing`/`\x` 等元命令、psqlrc 个性化。
-- [数据库与 schema 对象](database-and-schema-objects.md) —— cluster/database/schema/table 层级、owner、search_path。
-- [数据类型总览](data-types-overview.md) —— 数值/文本/时间/布尔/UUID，serial 与 identity 的取舍。
-- [特色类型概览](special-types-intro.md) —— JSONB、数组、range、枚举、复合类型的最小可用知识。
-- [CRUD 与 ON CONFLICT](crud-and-on-conflict.md) —— INSERT/UPDATE/DELETE、UPSERT、RETURNING。
-- [WHERE 与表达式](where-and-expressions.md) —— 比较、LIKE/ILIKE、IN、NULL 语义。
-- [聚合与 GROUP BY](aggregate-and-group-by.md) —— 聚合函数、HAVING、FILTER、分组空值。
-- [JOIN 全家族](join-family.md) —— inner/left/right/full/cross、USING/NATURAL、自连接。
-- [函数与运算符](functions-and-operators.md) —— `::` 强转、COALESCE、SQL 与 PL/pgSQL 函数基础。
-- [事务基础](transaction-basics.md) —— BEGIN/COMMIT/ROLLBACK、SAVEPOINT、DDL 也可回滚。
-- [常用系统表与元数据](system-catalogs-and-metadata.md) —— pg_class/pg_tables/information_schema 与表大小查询。
-- [命名与书写规范](naming-and-style-conventions.md) —— 大小写折叠规则、双引号陷阱、命名与风格约定。
-- [常见踩坑](common-beginner-mistakes.md) —— NULL 比较、隐式转换、时区等高频坑位清单。
+- [What Is PostgreSQL](/basics/what-is-postgresql) — history, license, the ACID and MVCC stance, and where it fits.
+- [Installation and First Connection](/basics/install-and-quickstart) — apt/yum/Homebrew/Windows installs, bootstrapping a cluster with `initdb`, and running your first query.
+- [Everyday psql](/basics/psql-getting-started) — connection flags, meta-commands like `\dt`, `\d`, `\timing` and `\x`, and personalising with `psqlrc`.
+- [Databases and Schema Objects](database-and-schema-objects.md) — the cluster/database/schema/table hierarchy, ownership, and `search_path`.
+- [Data Types Overview](data-types-overview.md) — numeric, text, timestamp, boolean and UUID types, and the `serial` versus `identity` choice.
+- [A Tour of Special Types](special-types-intro.md) — the minimum viable knowledge for JSONB, arrays, ranges, enums and composite types.
+- [CRUD and ON CONFLICT](crud-and-on-conflict.md) — INSERT, UPDATE, DELETE, upserts and `RETURNING`.
+- [WHERE and Expressions](where-and-expressions.md) — comparisons, `LIKE`/`ILIKE`, `IN`, and NULL semantics.
+- [Aggregation and GROUP BY](aggregate-and-group-by.md) — aggregate functions, `HAVING`, `FILTER`, and NULLs in groups.
+- [The JOIN Family](join-family.md) — inner, left, right, full and cross, `USING` and `NATURAL`, and self joins.
+- [Functions and Operators](functions-and-operators.md) — the `::` cast, `COALESCE`, and SQL and PL/pgSQL function basics.
+- [Transaction Basics](transaction-basics.md) — `BEGIN`, `COMMIT`, `ROLLBACK`, SAVEPOINTs, and the fact that DDL rolls back too.
+- [System Catalogs and Metadata](system-catalogs-and-metadata.md) — `pg_class`, `pg_tables`, `information_schema`, and queries for table sizes.
+- [Naming and Style Conventions](naming-and-style-conventions.md) — the case-folding rules, the double-quote trap, and naming conventions.
+- [Common Beginner Mistakes](common-beginner-mistakes.md) — a checklist of frequent traps: NULL comparisons, implicit casts, time zones and more.
 
 ---
 
-- [开发者备忘](../knowledge.md) —— 跨主题备忘。
+- [Dev Notes](../knowledge.md) — cross-topic notes.
 
 <!-- BACKLINKS-AUTO -->
-## 相关页面
+## Related Pages
 
-- [index](/advanced-sql/index.md)
-- [index](/database-design/index.md)
-- [index](/tools/index.md)
+- [Advanced SQL](/advanced-sql/index.md)
+- [Database Design](/database-design/index.md)
+- [Tools & Cases](/tools/index.md)

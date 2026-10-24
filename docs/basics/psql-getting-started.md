@@ -1,46 +1,46 @@
-# psql 常用操作
+# Everyday psql
 
-psql 是 PostgreSQL 自带的官方命令行客户端，装完服务端或单独装 `postgresql-client` 即可用。写 SQL 之外，它还提供一组以反斜杠开头的**元命令**（meta-command）用来查元数据、切换库、控制输出格式。后端开发者每天打交道的对象、索引、执行计划，都靠它顺手查看。本文只挑高频用法，完整参考见官方 [psql 手册](https://www.postgresql.org/docs/current/app-psql.html)与站内 [psql 元命令速查](../appendix/psql-meta-command-reference)。
+psql is PostgreSQL's official built-in command-line client, available after you install the server or install `postgresql-client` on its own. Beyond writing SQL, it provides a set of **meta-commands** starting with a backslash for inspecting metadata, switching databases, and controlling output format. The objects, indexes, and execution plans backend developers deal with daily are all checked with it on the fly. This article covers only the high-frequency uses; for full reference, see the official [psql manual](https://www.postgresql.org/docs/current/app-psql.html) and the in-site [psql Meta-Command Reference](/appendix/psql-meta-command-reference).
 
-## 连接方式
+## Connecting
 
-psql 需要知道四件事：主机、端口、用户、数据库。四条途径按优先级覆盖：命令行参数 > 环境变量 > 默认值。
+psql needs to know four things: host, port, user, and database. They are supplied in descending priority: command-line arguments > environment variables > defaults.
 
 ```bash
-# 1) 短参数：-h 主机  -p 端口  -U 用户  -d 数据库
+# 1) Short flags: -h host  -p port  -U user  -d database
 psql -h localhost -p 5432 -U postgres -d postgres
 psql -h 10.0.0.8 -p 5432 -U app -d appdb
 
-# 2) 连接串（URI / key=value 均可）
+# 2) Connection string (URI or key=value, both work)
 psql "postgresql://app:secret@10.0.0.8:5432/appdb"
 psql "host=10.0.0.8 port=5432 dbname=appdb user=app password=secret"
 
-# 3) 环境变量（适合脚本与会话级默认）
+# 3) Environment variables (suitable for scripts and session-level defaults)
 export PGHOST=localhost PGPORT=5432 PGUSER=postgres PGDATABASE=postgres
-psql      # 直接进入，等价于上面四个变量拼起来
+psql      # Connect directly, equivalent to the four variables above combined
 ```
 
-不传 `-h` 时，本地连接默认走 Unix socket，认证方式由 `pg_hba.conf` 的 `local` 行决定（Debian/Ubuntu 上是 peer，要求系统用户与数据库用户同名，所以常写 `sudo -u postgres psql`）。连上后提示符形如 `postgres=#`，`#` 表示超级用户。
+Without `-h`, local connections default to a Unix socket, and the authentication method is decided by the `local` line in `pg_hba.conf` (peer on Debian/Ubuntu, which requires the system user and database user to match, which is why you often write `sudo -u postgres psql`). Once connected the prompt looks like `postgres=#`, where `#` indicates a superuser.
 
-## 核心元命令
+## Core Meta-Commands
 
 ```sql
-\l                 -- 列出所有数据库（大小、owner、编码）
-\c appdb           -- 切换到另一个数据库
-\dt                -- 列出当前 schema 下的表
-\d users           -- 查看表结构：列、类型、约束、索引、外键
-\d+ users          -- 更详细：存储、压缩、注释等
-\dn                -- 列出 schema
-\di                -- 列出索引
-\di users_pkey     -- 查看具体索引定义
-\timing            -- 打开/关闭 SQL 执行耗时显示
-\x                 -- 切换扩展显示（行转竖排，宽表必用）
-\q                 -- 退出 psql
+\l                 -- List all databases (size, owner, encoding)
+\c appdb           -- Switch to another database
+\dt                -- List tables in the current schema
+\d users           -- Inspect table structure: columns, types, constraints, indexes, foreign keys
+\d+ users          -- More detail: storage, compression, comments, etc.
+\dn                -- List schemas
+\di                -- List indexes
+\di users_pkey     -- Inspect a specific index definition
+\timing            -- Toggle SQL execution time display
+\x                 -- Toggle expanded display (rows go vertical; essential for wide tables)
+\q                 -- Quit psql
 ```
 
-`\d` 后面可以跟不同字母看不同对象：`\dt` 表、`\dv` 视图、`\ds` 序列、`\df` 函数、`\du` 用户/角色、`\dx` 扩展。`\d+`、`\l+` 会追加存储细节与注释。
+`\d` can be followed by different letters to inspect different objects: `\dt` tables, `\dv` views, `\ds` sequences, `\df` functions, `\du` users/roles, `\dx` extensions. `\d+` and `\l+` append storage details and comments.
 
-一个典型会话：
+A typical session:
 
 ```text
 appdb=> \timing
@@ -50,40 +50,40 @@ Expanded display is on.
 appdb=> SELECT * FROM users LIMIT 1;
 -[ RECORD 1 ]+---------------------------
 id           | 1
-name         | 张三
+name         | Zhang San
 email        | zhangsan@example.com
 created_at   | 2026-10-12 08:00:00+08
 ```
 
-## 求助：\? 与 \h
+## Help: \? and \h
 
-- `\?` 列出**所有元命令**的帮助，忘掉 `\copy` 参数时在这里翻；
-- `\h` 列出**SQL 命令**的语法，`\h INSERT`、`\h CREATE TABLE` 会给出对应语法骨架，比翻文档快。
+- `\?` lists help for **all meta-commands**; flip to it when you forget the `\copy` arguments;
+- `\h` lists the syntax of **SQL commands**; `\h INSERT` and `\h CREATE TABLE` give you the corresponding syntax skeleton, faster than flipping through the docs.
 
-两者是纯客户端帮助，不连服务端也能用。
+Both are pure client-side help and work without connecting to a server.
 
-## 输出格式：\pset
+## Output Format: \pset
 
-`\pset` 控制查询结果的呈现，常用的几组：
+`\pset` controls how query results are rendered. A few common groups:
 
 ```sql
-\pset null '(null)'     -- 让 NULL 显示为 (null)，避免和空串混淆
-\pset format aligned    -- 默认对齐格式；可选 unaligned / csv / html
-\pset border 2          -- 边框样式
-\pset pager off         -- 关闭分页器（少条数时省事）
-\pset tuples_only on    -- 只输出数据行，不要表头和行数统计
+\pset null '(null)'     -- Render NULL as (null) to avoid confusion with empty strings
+\pset format aligned    -- Default aligned format; also unaligned / csv / html
+\pset border 2          -- Border style
+\pset pager off         -- Turn off the pager (saves trouble for small result sets)
+\pset tuples_only on    -- Output only data rows, no header and no row count
 ```
 
-`\pset` 只对当前会话生效；要持久化就写进 `~/.psqlrc`（见下节）。`psql -c "..."` 配合 `\pset format csv` 或 `\copy` 也是导出数据的常用组合。
+`\pset` only affects the current session; to make it persistent, write it into `~/.psqlrc` (next section). `psql -c "..."` combined with `\pset format csv` or `\copy` is also a common recipe for exporting data.
 
-## 历史与 ~/.psqlrc
+## History and ~/.psqlrc
 
-psql 用 GNU readline 保存命令历史：上下方向键翻历史、`Ctrl-R` 反向搜索，历史文件默认在 `~/.psql_history`，可用 `PSQL_HISTORY` 环境变量改位置。
+psql uses GNU readline to save command history: use the Up and Down arrow keys to walk history and `Ctrl-R` for reverse search. The history file defaults to `~/.psql_history`; use the `PSQL_HISTORY` environment variable to change its location.
 
-`~/.psqlrc` 在每次 psql 启动时执行，适合放个性化设置：
+`~/.psqlrc` runs at every psql startup, making it a good place for personalized settings:
 
 ```text
--- ~/.psqlrc：每次启动自动生效
+-- ~/.psqlrc: takes effect at every startup
 \set PROMPT1 '%n@%/%R%# '
 \pset null '(null)'
 \pset pager off
@@ -91,48 +91,48 @@ psql 用 GNU readline 保存命令历史：上下方向键翻历史、`Ctrl-R` �
 \set ON_ERROR_STOP on
 ```
 
-- `\set ON_ERROR_STOP on` 让脚本在第一条出错语句处停下，避免迁移脚本错一半；
-- `\set PROMPT1` 定制提示符，`%n` 用户、`%` 数据库、`%#` 超级用户显示 `#`；
-- Windows 下对应文件是 `%APPDATA%\postgresql\psqlrc.conf`。
+- `\set ON_ERROR_STOP on` makes a script stop at the first erroring statement, avoiding a half-applied migration;
+- `\set PROMPT1` customizes the prompt: `%n` user, `%` database, `%#` shows `#` for a superuser;
+- On Windows the corresponding file is `%APPDATA%\postgresql\psqlrc.conf`.
 
-注意 `~/.psqlrc` 里的内容必须是合法 psql 输入（SQL 或元命令），写错会导致每次启动报一行错。
+Note that the contents of `~/.psqlrc` must be valid psql input (SQL or meta-commands); a mistake will produce an error line at every startup.
 
-## 数据导入导出：\copy
+## Import and Export: \copy
 
-`\copy` 是 psql 客户端侧的命令：数据流经 psql 进程读写本地文件，因此**不需要服务端文件权限**，比服务端的 `COPY` 命令更常用于日常导入导出：
+`\copy` is a psql client-side command: data flows through the psql process to read and write local files, so it **does not require server-side file permissions** and is more commonly used than the server-side `COPY` command for day-to-day import and export:
 
 ```sql
 \copy users TO '/tmp/users.csv' WITH (FORMAT csv, HEADER true)
 \copy users FROM '/tmp/users.csv' WITH (FORMAT csv, HEADER true)
 ```
 
-服务端的 `COPY ... TO '/path'` 要求 postgres 系统用户对目标路径有写权限，还默认受 `superuser` 限制；`\copy` 以当前系统用户身份读写文件，权限模型更友好。大批量装载的性能对比见 [psql 进阶](../tools/psql-advanced)。
+The server-side `COPY ... TO '/path'` requires the postgres system user to have write permission on the target path, and is restricted to `superuser` by default; `\copy` reads and writes files as the current system user, with a friendlier permission model. For a performance comparison of bulk loading, see [psql Advanced](/tools/psql-advanced).
 
-## 注意事项与常见坑
+## Caveats and Common Pitfalls
 
-- **元命令不能跨行**：`\d users` 必须一行写完；SQL 语句以分号结束，元命令以换行结束。
-- **`\dt` 默认只看 search_path 里的 schema**：看不到其它 schema 的表时，先 `SET search_path` 或用 `\dt schema.*`。
-- **`\timing` 计的是客户端往返时间**：包含网络与渲染开销，做性能分析要用 `EXPLAIN ANALYZE`（见 [EXPLAIN 基础](../performance/explain-basics)）。
-- **`\x` 只影响显示**：不改变数据本身，复制粘贴结果时注意别把竖排格式当表结构。
+- **Meta-commands cannot span lines**: `\d users` must be written on one line; SQL statements end with a semicolon, meta-commands end with a newline.
+- **`\dt` only looks at schemas in search_path by default**: when you cannot see tables in other schemas, `SET search_path` first or use `\dt schema.*`.
+- **`\timing` measures client round-trip time**: it includes network and rendering overhead; for performance analysis use `EXPLAIN ANALYZE` (see [Reading EXPLAIN](/performance/explain-basics)).
+- **`\x` only affects display**: it does not change the data itself, so when copying and pasting results, do not mistake the vertical format for the table structure.
 
-## 参考资料
+## References
 
-- [PostgreSQL 官方文档 · Part I. Tutorial](https://www.postgresql.org/docs/current/tutorial.html)
-- [PostgreSQL 官方文档 · The SQL Language](https://www.postgresql.org/docs/current/sql.html)
+- [PostgreSQL Official Docs · Part I. Tutorial](https://www.postgresql.org/docs/current/tutorial.html)
+- [PostgreSQL Official Docs · The SQL Language](https://www.postgresql.org/docs/current/sql.html)
 
 <!-- BACKLINKS-AUTO -->
-## 相关页面
+## Related Pages
 
-- [安装与首次连接](./install-and-quickstart)
-- [数据库与 schema 对象](./database-and-schema-objects)
-- [psql 进阶用法](../tools/psql-advanced)
-- [psql 元命令速查](../appendix/psql-meta-command-reference)
-- [psql-meta-command-reference](/appendix/psql-meta-command-reference.md)
-- [database-and-schema-objects](database-and-schema-objects.md)
-- [index](index.md)
-- [install-and-quickstart](install-and-quickstart.md)
-- [system-catalogs-and-metadata](system-catalogs-and-metadata.md)
-- [transaction-basics](transaction-basics.md)
-- [what-is-postgresql](what-is-postgresql.md)
-- [local-dev-environment](/tools/local-dev-environment.md)
-- [psql-advanced](/tools/psql-advanced.md)
+- [Installation and First Connection](/basics/install-and-quickstart)
+- [Databases and Schema Objects](/basics/database-and-schema-objects)
+- [psql Advanced](/tools/psql-advanced)
+- [psql Meta-Command Reference](/appendix/psql-meta-command-reference)
+- [psql Meta-Command Reference](/appendix/psql-meta-command-reference)
+- [Databases and Schema Objects](/basics/database-and-schema-objects)
+- [Basics & Core SQL](/basics/index)
+- [Installation and First Connection](/basics/install-and-quickstart)
+- [System Catalogs and Metadata](/basics/system-catalogs-and-metadata)
+- [Transaction Basics](/basics/transaction-basics)
+- [What Is PostgreSQL](/basics/what-is-postgresql)
+- [Local Dev Environment](/tools/local-dev-environment)
+- [psql Advanced](/tools/psql-advanced)
