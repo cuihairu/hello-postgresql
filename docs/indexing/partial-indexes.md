@@ -143,7 +143,7 @@ Both queries touch only a few rows semantically, but the optimizer performs only
 - [expression-indexes](expression-indexes.md)
 - [index-failure-and-misuse](index-failure-and-misuse.md)
 - [index](index.md)
-- [partial-indexes](partial-indexes.md)- [Expression Indexes](./expression-indexes) — expressions are common in WHERE predicates too; the two can be combined.
+- [slow-query-governance](/performance/slow-query-governance.md)- [Expression Indexes](./expression-indexes) — expressions are common in WHERE predicates too; the two can be combined.
 - [Index Failures and Misuse](./index-failure-and-misuse) — a mismatched predicate is one form of "unusable", and there are more shapes.
 - [Soft Delete and Tombstones](../database-design/soft-delete-and-tombstone) — the complete design of the `deleted_at` approach.
 - [B-tree Structure and Principles](./btree-structure) — a partial index is still most commonly a B-tree underneath.

@@ -34,7 +34,7 @@ Most businesses do not. The middleware-based sharding popular in the MySQL ecosy
 
 ### How do you choose a managed service?
 
-Mainstream managed offerings such as RDS for PostgreSQL, Cloud SQL, and Alibaba Cloud RDS for PostgreSQL all work. Beyond price comparison, check four things: whether the extension allowlist includes what you need (pgvector, PostGIS, and similar), how fast it follows major versions, whether logical replication is supported (your way out for upgrades and migrations), and how the storage architecture differs from native (some compatible implementations have their own I/O model). For self-hosted containerized options, see [Cloud-Native and Containerized Deployment](../operations/cloud-native-and-containers).
+Mainstream managed offerings such as RDS for PostgreSQL, Cloud SQL, and Alibaba Cloud RDS for PostgreSQL all work. Beyond price comparison, check four things: whether the extension allowlist includes what you need (pgvector, PostGIS, and similar), how fast it follows major versions, whether logical replication is supported (your way out for upgrades and migrations), and how the storage architecture differs from native (some compatible implementations have their own I/O model). For self-hosted containerized options, see [Cloud-Native and Containers](../operations/cloud-native-and-containers).
 
 ### Is migrating from MySQL worth it?
 
@@ -52,7 +52,7 @@ If documents need to transact, JOIN, and be constraint-checked together with rel
 
 ### How risky is a major version upgrade?
 
-PG ships one major version a year, and minor versions only fix bugs without changing behavior. There are two mature paths for a major upgrade: `pg_upgrade` (a minute-scale downtime window) and a logical-replication cutover (near-zero downtime). See [Version Upgrade](../operations/version-upgrade). Managed services usually offer one-click minor upgrades. Compared with some databases' major-version breaks, PG's upgrade cost is controllable — do not stay on an old version out of "fear of upgrading", because losing security fixes is the real risk.
+PG ships one major version a year, and minor versions only fix bugs without changing behavior. There are two mature paths for a major upgrade: `pg_upgrade` (a minute-scale downtime window) and a logical-replication cutover (near-zero downtime). See [Version Upgrades](../operations/version-upgrade). Managed services usually offer one-click minor upgrades. Compared with some databases' major-version breaks, PG's upgrade cost is controllable — do not stay on an old version out of "fear of upgrading", because losing security fixes is the real risk.
 
 ### What if the team has no PG experience?
 

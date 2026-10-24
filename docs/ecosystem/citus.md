@@ -7,7 +7,7 @@ Citus is the extension that turns PostgreSQL into a distributed cluster: data is
 A Citus cluster has two kinds of nodes:
 
 - **coordinator**: ordinary PostgreSQL plus the citus extension. It stores metadata (shard distribution, node list), accepts all client connections, rewrites SQL into shard-targeted subqueries, dispatches execution, and assembles results. DDL (table creation, sharding) is also initiated here.
-- **worker**: a PostgreSQL node holding shard data. Each shard is just an ordinary PG table (in partition form), and high availability comes from the worker's own streaming replication. See [Streaming Replication and Synchronous Commit](../internals/streaming-replication-and-sync).
+- **worker**: a PostgreSQL node holding shard data. Each shard is just an ordinary PG table (in partition form), and high availability comes from the worker's own streaming replication. See [Streaming and Synchronous Replication](../internals/streaming-replication-and-sync).
 
 All traffic passes through the coordinator, so the coordinator's connection count and aggregate throughput are one of the cluster's ceilings (since Citus 11, read-only failover patterns and similar are supported to ease this).
 
@@ -81,7 +81,7 @@ Signals that it does not fit:
 
 ## Relationship to Native Partitioning
 
-Citus sharding is essentially "partitioning + putting it on other machines": a distributed table is logically a partitioned table, each shard is a physical partition, except that the partition can live on a remote node. So the two concepts stack — a common approach is to distribute by shard key hash first, then partition inside the shard by time range, so that cleanup and archival of time series data still follow the approach in [Partitioned Table Design](../database-design/table-inheritance-and-partitioning-design). Once you understand that, Citus's `citus_tables` and the rebalancer and other metadata operations map easily back to the partitioned table mental model.
+Citus sharding is essentially "partitioning + putting it on other machines": a distributed table is logically a partitioned table, each shard is a physical partition, except that the partition can live on a remote node. So the two concepts stack — a common approach is to distribute by shard key hash first, then partition inside the shard by time range, so that cleanup and archival of time series data still follow the approach in [Table Inheritance and Partitioning](../database-design/table-inheritance-and-partitioning-design). Once you understand that, Citus's `citus_tables` and the rebalancer and other metadata operations map easily back to the partitioned table mental model.
 
 ## Status on Azure
 
@@ -95,8 +95,8 @@ Citus Data was acquired by Microsoft in 2019, and its managed service Azure Cosm
 <!-- BACKLINKS-AUTO -->
 ## Related Pages
 
-- [Partitioned Table Design](../database-design/table-inheritance-and-partitioning-design)
-- [Streaming Replication and Synchronous Commit](../internals/streaming-replication-and-sync)
+- [Table Inheritance and Partitioning](../database-design/table-inheritance-and-partitioning-design)
+- [Streaming and Synchronous Replication](../internals/streaming-replication-and-sync)
 - [FDW and Foreign Data](./fdw-and-foreign-data)
 - [Choosing PostgreSQL](./when-to-choose-postgresql)
 - [index](index.md)

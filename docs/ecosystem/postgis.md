@@ -88,7 +88,7 @@ ORDER BY geog <-> :center
 LIMIT 20;
 ```
 
-Note that geography's KNN (`<->`) is approximated by the bounding box center in older PostGIS versions; you can re-sort with `ST_Distance` on the small candidate set for exact ordering. Also, when the data is heavily skewed (the vast majority of rows belong to one city), partitioning or filtering on a city column works better than relying on the spatial index alone. See [Index Failure and Misuse](../indexing/index-failure-and-misuse) for the reasoning.
+Note that geography's KNN (`<->`) is approximated by the bounding box center in older PostGIS versions; you can re-sort with `ST_Distance` on the small candidate set for exact ordering. Also, when the data is heavily skewed (the vast majority of rows belong to one city), partitioning or filtering on a city column works better than relying on the spatial index alone. See [Index Failures and Misuse](../indexing/index-failure-and-misuse) for the reasoning.
 
 ## Typical Application Patterns
 
@@ -106,8 +106,8 @@ Note that geography's KNN (`<->`) is approximated by the bounding box center in 
 
 - [Extension Management](./extension-management)
 - [GiST Indexes](../indexing/gist)
-- [Range Types and Exclusion Constraints](../advanced-sql/range-types-and-exclude)
-- [Index Failure and Misuse](../indexing/index-failure-and-misuse)
+- [Range Types and EXCLUDE](../advanced-sql/range-types-and-exclude)
+- [Index Failures and Misuse](../indexing/index-failure-and-misuse)
 - [index](index.md)
 - [gist](/indexing/gist.md)
 - [knowledge](/knowledge.md)

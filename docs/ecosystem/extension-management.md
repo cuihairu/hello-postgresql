@@ -51,7 +51,7 @@ trusted = true
 
 - `default_version`: the version installed when `CREATE EXTENSION` omits `VERSION`.
 - `relocatable`: when true, `WITH SCHEMA` can place it in any schema.
-- `trusted`: **introduced in PG 13**. Extensions marked trusted (pg_trgm, citext, btree_gin, pgcrypto, and others) may be installed by the database owner or an ordinary user with CREATE privileges, with no superuser required. This is especially useful in managed environments where you only get database-level privileges; untrusted extensions (PostGIS, TimescaleDB, the kind that ship a C library) still need a superuser to install. See [Roles and Permissions](../security/roles-and-permissions) for the permission model.
+- `trusted`: **introduced in PG 13**. Extensions marked trusted (pg_trgm, citext, btree_gin, pgcrypto, and others) may be installed by the database owner or an ordinary user with CREATE privileges, with no superuser required. This is especially useful in managed environments where you only get database-level privileges; untrusted extensions (PostGIS, TimescaleDB, the kind that ship a C library) still need a superuser to install. See [Roles and the Permission Model](../security/roles-and-permissions) for the permission model.
 
 ## Where to Install From: Distribution Packages, PGXN, Source
 
@@ -87,7 +87,7 @@ ALTER EXTENSION postgis UPDATE;
 ALTER EXTENSION pg_trgm  UPDATE;
 ```
 
-Extensions like PostGIS also run their bundled `postgis_upgrade` script, and it is worth verifying the upgrade path in a rehearsal environment first. For the full upgrade flow, see [Version Upgrade](../operations/version-upgrade).
+Extensions like PostGIS also run their bundled `postgis_upgrade` script, and it is worth verifying the upgrade path in a rehearsal environment first. For the full upgrade flow, see [Version Upgrades](../operations/version-upgrade).
 
 ## Common Extensions Checklist
 
@@ -105,7 +105,7 @@ Extensions like PostGIS also run their bundled `postgis_upgrade` script, and it 
 | unaccent | Text normalization that strips diacritics | commonly used with full-text search |
 | btree_gin | Lets GIN indexes support combinations of ordinary scalar columns | mixed multi-column filtering indexes |
 
-For practice notes on the extensions in this checklist, there is more elsewhere: monitoring in [pg_stat_statements](../performance/pg-stat-statements) and [audit](../security/audit), text matching in [Full-Text Search](../advanced-sql/full-text-search).
+For practice notes on the extensions in this checklist, there is more elsewhere: monitoring in [pg_stat_statements](../performance/pg-stat-statements) and [Auditing](../security/audit), text matching in [Full-Text Search](../advanced-sql/full-text-search).
 
 ## References
 
@@ -118,9 +118,9 @@ For practice notes on the extensions in this checklist, there is more elsewhere:
 - Subtree overview: [Ecosystem and New Features](/ecosystem/)
 
 - [System Catalogs and Metadata](../basics/system-catalogs-and-metadata)
-- [Version Upgrade](../operations/version-upgrade)
+- [Version Upgrades](../operations/version-upgrade)
 - [pgvector: Vector Search](./pgvector)
-- [Roles and Permissions](../security/roles-and-permissions)
+- [Roles and the Permission Model](../security/roles-and-permissions)
 - [fdw-and-foreign-data](fdw-and-foreign-data.md)
 - [index](index.md)
 - [pgvector](pgvector.md)

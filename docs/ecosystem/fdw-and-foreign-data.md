@@ -110,7 +110,7 @@ One easy-to-miss point: writes on a foreign table join the local transaction, an
 
 - [Extension Management](./extension-management)
 - [Logical Replication Operations](../operations/logical-replication-ops)
-- [Roles and Permissions](../security/roles-and-permissions)
+- [Roles and the Permission Model](../security/roles-and-permissions)
 - [Statistics and ANALYZE](../performance/statistics-and-analyze)
 - [materialized-views](/database-design/materialized-views.md)
 - [citus](citus.md)

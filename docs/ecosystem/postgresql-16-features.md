@@ -53,7 +53,7 @@ SELECT pg_log_standby_snapshot();
 
 ## Monitoring and Observability
 
-- **The `pg_stat_io` view**: counts read/write hits, evictions, reuses, and fsyncs broken down by backend type (normal / vacuum / autovacuum, etc.), I/O object, and context. Cache hit rates can finally be attributed to "who is reading". This is PG 16's most worthwhile observability upgrade; see [The pg_stat Observation Stack](../internals/pg-stat-observation).
+- **The `pg_stat_io` view**: counts read/write hits, evictions, reuses, and fsyncs broken down by backend type (normal / vacuum / autovacuum, etc.), I/O object, and context. Cache hit rates can finally be attributed to "who is reading". This is PG 16's most worthwhile observability upgrade; see [Observing With pg_stat](../internals/pg-stat-observation).
 - **Last-access timestamps**: views such as `pg_stat_all_tables` gain columns like `last_seq_scan` and `last_idx_scan`, so "which tables/indexes nobody really uses" finally has a direct answer.
 - **Other**: the `n_tup_newpage_upd` counter for UPDATEs that move to a new page; `pg_locks` exposes speculative lock information; `SYSTEM_USER()` returns the authentication method and authenticated identity, making it easier to distinguish audit sources.
 
@@ -70,7 +70,7 @@ LIMIT 10;
 
 - **Regular expressions in `pg_hba.conf`**: entries for usernames and database names that begin with `/` are matched as regular expressions, so the rule count can be brought under control.
 - **Tighter CREATEROLE**: a CREATEROLE role can no longer change "roles created by someone else" by default; administering membership requires `ADMIN OPTION`, shrinking the pitfall around role self-governance boundaries.
-- **Explicit role inheritance**: `GRANT ... WITH INHERIT TRUE/FALSE` and `GRANT ... SET` control inheritance and role switching at per-role granularity, making least-privilege grants finer when combined with [Roles and Permissions](../security/roles-and-permissions).
+- **Explicit role inheritance**: `GRANT ... WITH INHERIT TRUE/FALSE` and `GRANT ... SET` control inheritance and role switching at per-role granularity, making least-privilege grants finer when combined with [Roles and the Permission Model](../security/roles-and-permissions).
 - **The predefined role `pg_create_subscription`**: non-superusers get a dedicated role for creating subscriptions, so you no longer have to grant `CREATEDB` or superuser rights.
 - **Client-side `require_auth`**: libpq can require that a connection authenticate through a specified method, preventing a silent downgrade to `trust`.
 - **`scram_iterations`**: tune the SCRAM-SHA-256 iteration count, trading off login cost against offline cracking difficulty.
@@ -91,7 +91,7 @@ Note: block-level **incremental backup is not a PG 16 feature**. `pg_basebackup 
 
 ## Upgrade Guidance
 
-Common reasons to upgrade from PG 13/14/15 to 16: pg_stat_io and last-access timestamps on indexes (observability), logical decoding on standbys and parallel apply (replication topology), presorted aggregates (report-style queries). For the upgrade path and its caveats, see [Version Upgrade](../operations/version-upgrade); projects started after 2023 can simply start on PG 16. For a fuller version-by-version comparison, see [PostgreSQL 17 Highlights](./postgresql-17-features).
+Common reasons to upgrade from PG 13/14/15 to 16: pg_stat_io and last-access timestamps on indexes (observability), logical decoding on standbys and parallel apply (replication topology), presorted aggregates (report-style queries). For the upgrade path and its caveats, see [Version Upgrades](../operations/version-upgrade); projects started after 2023 can simply start on PG 16. For a fuller version-by-version comparison, see [PostgreSQL 17 Highlights](./postgresql-17-features).
 
 ## References
 
@@ -102,9 +102,9 @@ Common reasons to upgrade from PG 13/14/15 to 16: pg_stat_io and last-access tim
 ## Related Pages
 
 - [PostgreSQL 17 Highlights](./postgresql-17-features)
-- [The pg_stat Observation Stack](../internals/pg-stat-observation)
+- [Observing With pg_stat](../internals/pg-stat-observation)
 - [Logical Replication Internals](../internals/logical-replication-internals)
-- [Version Upgrade](../operations/version-upgrade)
+- [Version Upgrades](../operations/version-upgrade)
 - [index](index.md)
 - [postgresql-17-features](postgresql-17-features.md)
 - [knowledge](/knowledge.md)

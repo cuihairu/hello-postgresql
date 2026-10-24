@@ -105,7 +105,7 @@ Dropping by chunk is far cheaper than `DELETE`: no dead tuples, no vacuum pressu
 
 ## TimescaleDB vs. Native Partitioning
 
-Cases where PostgreSQL's native declarative partitioning (see [Partitioned Table Design](../database-design/table-inheritance-and-partitioning-design)) is good enough for time series:
+Cases where PostgreSQL's native declarative partitioning (see [Table Inheritance and Partitioning](../database-design/table-inheritance-and-partitioning-design)) is good enough for time series:
 
 - Partition counts in the dozens to hundreds range, and partition creation / cleanup can be managed with simple scripts or pg_partman;
 - You do not need columnar compression and the disk cost is acceptable;
@@ -128,9 +128,9 @@ Common pitfalls: forgetting to configure `shared_preload_libraries`, which makes
 <!-- BACKLINKS-AUTO -->
 ## Related Pages
 
-- [Partitioned Table Design](../database-design/table-inheritance-and-partitioning-design)
+- [Table Inheritance and Partitioning](../database-design/table-inheritance-and-partitioning-design)
 - [Partition Pruning](../performance/partition-pruning)
-- [Time Modeling](../database-design/time-modeling)
+- [Modeling Time](../database-design/time-modeling)
 - [Extension Management](./extension-management)
 - [time-modeling](/database-design/time-modeling.md)
 - [index](index.md)

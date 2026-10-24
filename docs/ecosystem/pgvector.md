@@ -135,7 +135,7 @@ Reasons to stay in PostgreSQL: embeddings share the same database and transactio
 
 - [Extension Management](./extension-management)
 - [GiST Indexes](../indexing/gist)
-- [Index Selection Decision Tree](../indexing/index-selection-decision-tree)
+- [The Index Selection Decision Tree](../indexing/index-selection-decision-tree)
 - [Choosing PostgreSQL](./when-to-choose-postgresql)
 - [extension-management](extension-management.md)
 - [index](index.md)

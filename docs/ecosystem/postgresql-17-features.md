@@ -44,7 +44,7 @@ WHEN NOT MATCHED THEN
 RETURNING merge_action(), s.sku;
 ```
 
-For more bulk-write patterns, see [Batch and Write](../advanced-sql/batch-and-write).
+For more bulk-write patterns, see [Batching and Writes](../advanced-sql/batch-and-write).
 
 ## Backup and Recovery: Native Incremental Backup
 
@@ -90,7 +90,7 @@ For more JSONB usage, see [JSONB Operations](../advanced-sql/jsonb-operations).
 
 ## Constraints and Table Definitions
 
-- **Exclusion constraints on partitioned tables**: the precondition is that the partition key column uses equality comparison and the remaining columns use an exclusion comparison. Constraints like "room booking time ranges must not overlap" can finally live on partitioned tables. See [Range Types and Exclusion Constraints](../advanced-sql/range-types-and-exclude).
+- **Exclusion constraints on partitioned tables**: the precondition is that the partition key column uses equality comparison and the remaining columns use an exclusion comparison. Constraints like "room booking time ranges must not overlap" can finally live on partitioned tables. See [Range Types and EXCLUDE](../advanced-sql/range-types-and-exclude).
 - **Identity columns on partitioned tables**: a partitioned table's primary key can now uniformly use `GENERATED ALWAYS AS IDENTITY`.
 - **btree multi-valued lookups**: btree index scans are more efficient for multi-valued conditions such as an `IN` constant list.
 
@@ -105,7 +105,7 @@ For more JSONB usage, see [JSONB Operations](../advanced-sql/jsonb-operations).
 
 ## Upgrade Guidance
 
-Common reasons to upgrade from PG 16 to 17: the vacuum memory rebuild (high-write-load databases), native incremental backup (backups for large databases), `pg_createsubscriber` and logical slot failover (building logical replication topologies), `JSON_TABLE` (JSON-heavy applications). For the upgrade process, see [Version Upgrade](../operations/version-upgrade). For up-to-date version features, treat the official [release notes](https://www.postgresql.org/docs/release/) as the source of truth.
+Common reasons to upgrade from PG 16 to 17: the vacuum memory rebuild (high-write-load databases), native incremental backup (backups for large databases), `pg_createsubscriber` and logical slot failover (building logical replication topologies), `JSON_TABLE` (JSON-heavy applications). For the upgrade process, see [Version Upgrades](../operations/version-upgrade). For up-to-date version features, treat the official [release notes](https://www.postgresql.org/docs/release/) as the source of truth.
 
 ## References
 
@@ -118,7 +118,7 @@ Common reasons to upgrade from PG 16 to 17: the vacuum memory rebuild (high-writ
 - [PostgreSQL 16 Highlights](./postgresql-16-features)
 - [VACUUM and HOT](../internals/vacuum-and-hot)
 - [Physical Backup and PITR](../operations/physical-backup-and-pitr)
-- [Version Upgrade](../operations/version-upgrade)
+- [Version Upgrades](../operations/version-upgrade)
 - [index](index.md)
 - [postgresql-16-features](postgresql-16-features.md)
 - [knowledge](/knowledge.md)
