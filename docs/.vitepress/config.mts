@@ -1,6 +1,4 @@
 import { defineConfig } from 'vitepress'
-import fs from 'node:fs'
-import path from 'node:path'
 import { pages, sections, titles } from './i18n-map.mjs'
 
 const base = '/hello-postgresql/'
@@ -42,50 +40,6 @@ function buildSidebar(key: LocaleKey) {
   return sidebar as never
 }
 
-// The English root is back-translated page by page. A link to a page that has no
-// English version yet is not an error as long as the Chinese original exists at
-// the same path under /zh/, where readers can read it in the meantime. Drop this
-// entry once every page under docs/ has an English twin and use `ignoreDeadLinks: false`.
-const docsRoot = path.join(__dirname, '..')
-const zhDir = path.join(docsRoot, 'zh')
-
-function slugSet(root: string, skip: string[]) {
-  const slugs = new Set<string>()
-  const walk = (dir: string) => {
-    if (!fs.existsSync(dir)) return
-    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-      if (skip.includes(entry.name)) continue
-      const full = path.join(dir, entry.name)
-      if (entry.isDirectory()) {
-        walk(full)
-      } else if (entry.name.endsWith('.md')) {
-        slugs.add(path.relative(root, full).replace(/\\/g, '/').replace(/\.md$/, ''))
-      }
-    }
-  }
-  walk(root)
-  return slugs
-}
-
-const untranslated = new Set<string>()
-for (const slug of slugSet(zhDir, ['.vitepress'])) {
-  if (!slugSet(docsRoot, ['.vitepress', 'zh', 'public']).has(slug)) untranslated.add(slug)
-}
-const untranslatedBases = new Set([...untranslated].map((slug) => slug.split('/').pop() as string))
-
-// Dead links are reported as written, so relative forms have to be normalised
-// before they can be compared with the page slugs.
-function isUntranslatedTarget(link: string) {
-  if (link.startsWith('//') || /^[a-z][a-z0-9+.-]*:\/\//.test(link)) return false
-  let p = link.split(/[?#]/)[0]
-  if (p.startsWith(base)) p = p.slice(base.length)
-  p = p.replace(/^(?:\.\.\/|\.\/)+/, '').replace(/^\//, '')
-  p = p.replace(/\.(md|html)$/, '')
-  if (p.endsWith('/index')) p = p.replace(/\/index$/, '')
-  if (!p || p.startsWith('zh/')) return false
-  return untranslated.has(p) || untranslated.has(`${p}/index`) || untranslatedBases.has(p)
-}
-
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: 'en-US',
@@ -95,7 +49,7 @@ export default defineConfig({
   base,
   cleanUrls: true,
   lastUpdated: true,
-  ignoreDeadLinks: [isUntranslatedTarget],
+  ignoreDeadLinks: false,
 
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/hello-postgresql/favicon.svg' }]
