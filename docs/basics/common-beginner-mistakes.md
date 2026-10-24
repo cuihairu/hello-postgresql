@@ -50,11 +50,11 @@ SELECT id FROM users
 WHERE  id NOT IN (SELECT user_id FROM blacklist);
 
 -- two correct forms
-SELECT id from users
-WHERE  id NOT IN (SELECT user_id from blacklist WHERE user_id IS NOT NULL);
+SELECT id FROM users
+WHERE  id NOT IN (SELECT user_id FROM blacklist WHERE user_id IS NOT NULL);
 
-SELECT id from users u
-WHERE  NOT EXISTS (SELECT 1 from blacklist b WHERE b.user_id = u.id);  -- recommended
+SELECT id FROM users u
+WHERE  NOT EXISTS (SELECT 1 FROM blacklist b WHERE b.user_id = u.id);  -- recommended
 ```
 
 `NOT EXISTS` is unaffected by `NULL` and is also the form the planner most easily turns into an anti join, see [The Subquery Family](../advanced-sql/subquery-family).
@@ -89,7 +89,7 @@ SET timezone = 'Asia/Shanghai';
 INSERT INTO ev VALUES ('2026-10-12 08:00:00', '2026-10-12 08:00:00');
 
 SET timezone = 'UTC';
-SELECT ts, tstz from ev;
+SELECT ts, tstz FROM ev;
 -- ts   : 2026-10-12 08:00:00   (unchanged, no time-zone concept)
 -- tstz : 2026-10-12 00:00:00+00 (converted to UTC for display)
 ```
