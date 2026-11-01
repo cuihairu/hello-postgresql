@@ -1,11 +1,12 @@
 # hello-postgresql
 
+<p align="center"><a href="https://cuihairu.github.io/hello-postgresql/zh/"><img src="https://img.shields.io/badge/docs-文档-blue" alt="docs"></a></p>
+
 一个游戏开发者的 PostgreSQL 项目记录：整理实际使用中的取舍、踩坑、排障过程和原理观察，由 VitePress 发布。
 
-**在线阅读**：<https://cuihairu.github.io/hello-postgresql/>
+**在线阅读**：<https://cuihairu.github.io/hello-postgresql/zh/>
 
 English document: [README.md](README.md)。
-
 ## 本地运行
 
 要求 Node.js 18+（建议 20+）。

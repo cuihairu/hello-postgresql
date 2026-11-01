@@ -1,11 +1,12 @@
 # hello-postgresql
 
+<p align="center"><a href="https://cuihairu.github.io/hello-postgresql/"><img src="https://img.shields.io/badge/docs-docs-blue" alt="docs"></a></p>
+
 Field notes from a game developer using PostgreSQL: implementation tradeoffs, debugging stories, and observations from real projects. Published with VitePress.
 
-**Read online**: <https://cuihairu.github.io/hello-postgresql/>
+**Read online**: <https://cuihairu.github.io/hello-postgresql//>
 
 中文文档见 [README.zh.md](README.zh.md)。
-
 ## Run locally
 
 Requires Node.js 18+ (20+ recommended).
