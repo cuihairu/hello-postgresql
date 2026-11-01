@@ -1,8 +1,8 @@
 # hello-postgresql
 
-<p align="center"><a href="https://cuihairu.github.io/hello-postgresql/"><img src="https://img.shields.io/badge/docs-docs-blue" alt="docs"></a></p>
+<p align="center"><a href="https://cuihairu.github.io/hello-postgresql//"><img src="https://img.shields.io/badge/docs-blue" alt="docs"></a></p>
 
-Field notes from a game developer using PostgreSQL: implementation tradeoffs, debugging stories, and observations from real projects. Published with VitePress.
+Personal notes, lessons, and experience from a game developer working with PostgreSQL, built as a VitePress site.
 
 **Read online**: <https://cuihairu.github.io/hello-postgresql//>
 
@@ -24,7 +24,7 @@ npm run docs:preview  # preview the built site
 
 ```
 Repository root:
-├── OUTLINE.md          # editorial outline and progress checklist
+├── OUTLINE.md          # 136-item editorial outline and progress checklist
 └── todo.md             # maintenance ledger with commit evidence
 
 Published site (docs/):
@@ -49,7 +49,7 @@ Published site (docs/):
 
 Directory page counts above exclude each directory's `index.md`; the sidebar is the authoritative site navigation. `index.md` pages provide topic overviews, while `knowledge.md` is a cross-topic review summary. Update the sidebar when published routes change; do not maintain a second hand-written route list.
 
-## Editorial notes
+## Writing rules
 
 - One or two core ideas per page, 80–200 lines, body text in Chinese.
 - Commands and SQL examples are **reproducible**: full DDL for tables, queries you can paste and run; version differences are called out explicitly (e.g. “since PG 16”).
