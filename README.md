@@ -1,10 +1,20 @@
-# hello-postgresql
+<div align="center">
 
-<p align="center"><a href="https://cuihairu.github.io/hello-postgresql//"><img src="https://img.shields.io/badge/docs-blue" alt="docs"></a></p>
+[English](README.md) | [中文](README.zh.md)
+
+<p align="center"><img src="docs/public/logo.svg" width="64" height="64" alt="logo" /></p>
+
+# Hello PostgreSQL
+
+<p align="center"><a href="https://cuihairu.github.io/hello-postgresql/"><img src="https://img.shields.io/badge/docs-blue" alt="docs"></a></p>
+
+</div>
+
+---
 
 Personal notes, lessons, and experience from a game developer working with PostgreSQL, built as a VitePress site.
 
-**Read online**: <https://cuihairu.github.io/hello-postgresql//>
+**Read online**: <https://cuihairu.github.io/hello-postgresql/>
 
 中文文档见 [README.zh.md](README.zh.md)。
 ## Run locally
@@ -12,13 +22,13 @@ Personal notes, lessons, and experience from a game developer working with Postg
 Requires Node.js 18+ (20+ recommended).
 
 ```bash
-npm ci                # install deps
-npm run docs:dev      # dev server with hot reload
-npm run docs:build    # build static site to docs/.vitepress/dist/ (dead-link check fails the build)
-npm run docs:preview  # preview the built site
+pnpm install                # install deps
+pnpm run docs:dev      # dev server with hot reload
+pnpm run docs:build    # build static site to docs/.vitepress/dist/ (dead-link check fails the build)
+pnpm run docs:preview  # preview the built site
 ```
 
-> If npm is configured with install scripts disabled (`npm warn install-scripts`) and the build fails on a missing esbuild binary, run `npm rebuild esbuild` and retry.
+> If install scripts are disabled for the package manager and the build fails on a missing esbuild binary, run `pnpm rebuild esbuild` and retry.
 
 ## Layout
 
