@@ -36,3 +36,22 @@
 - [x] vite/esbuild dev-server 告警（原 4 条：GHSA-67mh-4wv8-2f99 esbuild + GHSA-4w7w-66w2-5vf9 / GHSA-v6wh-96g9-6wx3 / GHSA-fx2h-pf6j-xcff vite，npm audit 报「No fix available」）。验收口径：npm audit 无 vite/esbuild 行。期次 P2。**已完成**（2026-10-13）：`overrides` 把 vite 压到修复版 **6.4.4**（vitepress 1.6.4 声明 `vite ^5.4.14`，5.x 线止于 5.4.21 无修复，vitepress 2 至今只有 `2.0.0-alpha.20`），vite 6.4.4 依赖 esbuild 0.25.x 连带清掉 esbuild 告警，**npm audit: found 0 vulnerabilities**；三条代码路径实测全绿：`docs:build`（client + SSR 137 页）、`docs:dev`（`/` 与 `/basics/` 200）、`docs:preview`（首页/落地页/深页 200）。**解除条件**：vitepress 2 stable 发布后升级并删掉 `overrides` 块。曾试只压 esbuild 到 0.25.12（audit 3→2，vite 三条仍在），已回退。
 - [x] 仓库根 README.md：项目简介、本地构建（npm ci + npm run docs:build）、写作口径（每页 1-2 个知识点/可复现示例）、与 OUTLINE.md 的对照说明。验收口径：新读者按 README 能在 10 分钟内本地跑起站点。期次 P1。**已完成**（patrol-20261013-A1）：`npm ci` + `npm run docs:build` 按 README 实测一次通过（51s），构建含死链核查。
 - [x] part 目录 URL 404（`/basics/` 返回 404 而 `/basics/README` 200：VitePress 把 `part/README.md` 生成 `README.html` 而非 `index.html`；hello-mysql 同病）。验收口径：`curl /basics/` 返回 200。期次 P2。**已完成**（2026-10-13，依据用户「todo 未完成项全部拉起推进」指令视为拍板，与 hello-mysql 结构自此分叉）：11 个 part 落地页 `README.md` → `index.md`，同步更新 nav/侧边栏/首页 hero/part 互链/仓库 README；构建 + 死链门禁绿，dist 产出 `basics/index.html`。姊妹站 hello-mysql 的同款问题未动。
+
+## 源码分层分析 2026-11-07
+
+### 抽象层清单（层=职责，非目录名）
+
+- 内容层：PostgreSQL 知识正文落盘（136 页 + 11 个分区 index + 首页 + knowledge），代表 `docs/basics/what-is-postgresql.md:1`。
+- 导航/i18n 层：双语 slug/标题注册表并派生双侧边栏与双导航，代表 `docs/.vitepress/i18n-map.mjs:5`。
+- 配置层：VitePress 主题/语言/搜索/死链门禁绑定，代表 `docs/.vitepress/config.mts:44`。
+- 交付层：GitHub Actions 构建并发布静态站到 Pages，代表 `.github/workflows/deploy-docs.yml:1`。
+
+### 超大文件候选（>1000 行）
+
+无 >1000 行文件（英文最大页 `docs/basics/functions-and-operators.md` 210 行；非文档代码最大 `docs/.vitepress/i18n-map.mjs` 200 行）。
+
+### 目录/分类不合理处
+
+- `docs/.vitepress/theme/custom.css:1` 与 `docs/.vitepress/theme/index.ts:1` 仅 20 行/4 行，作为独立 theme 目录尚可；无分类问题需要立项拆分。
+- `docs/review/` 与 `docs/zh/review/` 承载巡检/审计报告，与正文分区（basics…tools）不同轴，属维护性侧目录，非分类不合理。
+- 未见需拆分/重排的目录问题。
