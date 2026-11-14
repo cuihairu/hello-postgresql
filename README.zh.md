@@ -53,18 +53,18 @@ pnpm run docs:preview  # 本地预览构建产物
 ├── appendix/           # 附录（5 页）
 ├── .vitepress/
 │   ├── config.mts      # 站点配置（base / 导航 / 搜索 / 死链门禁）
-│   └── sidebar.json    # 站点导航与路由的权威来源
+│   └── i18n-map.mjs    # 页面清单与分节标题；config.mts 据此派生 sidebar
 └── public/             # favicon / logo
 ```
 
-上方目录篇数统计正文页，不含各目录的 `index.md`。站点导航以 sidebar 为唯一真源；发布路由变化时更新 sidebar，不另维护手写路由副本。各目录的 `index.md` 是主题总览，`knowledge.md` 是跨主题复习摘要。
+上方目录篇数统计正文页，不含各目录的 `index.md`。站点导航由 config.mts 依 i18n-map.mjs 派生，该清单为唯一真源；发布路由变化时更新 sidebar，不另维护手写路由副本。各目录的 `index.md` 是主题总览，`knowledge.md` 是跨主题复习摘要。
 
 ## 写作口径
 
 - 每页聚焦 **1–2 个核心知识点**，80–200 行，中文正文。
 - 命令与 SQL 示例**可复现**：建表给完整 DDL，查询可直接粘贴执行；版本差异显式标注（如「PG 16 起」）。
 - 标题层级：每页单一 H1，内文 `##` / `###`，与 hello-mysql 姊妹站同构。
-- 页尾固定两段：`## 相关页面`（站内相对链接，不带 `.md` 后缀，slug 以 `sidebar.json` 为准）+ 官方文档链接一行。
+- 页尾固定两段：`## 相关页面`（站内相对链接，不带 `.md` 后缀，slug 以 `i18n-map.mjs` 的页面清单为准）+ 官方文档链接一行。
 - 事实核验：拿不准的语法/参数/版本归属对照 [官方文档](https://www.postgresql.org/docs/current/) 核实后落笔。
 
 ## 部署

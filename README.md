@@ -53,18 +53,18 @@ Published site (docs/):
 ├── appendix/           # Appendix (5 pages)
 ├── .vitepress/
 │   ├── config.mts      # site config (base / nav / search / dead-link gate)
-│   └── sidebar.json    # authoritative site navigation and route list
+│   └── i18n-map.mjs    # page list and section titles; config.mts derives the sidebar from it
 └── public/             # favicon / logo
 ```
 
-Directory page counts above exclude each directory's `index.md`; the sidebar is the authoritative site navigation. `index.md` pages provide topic overviews, while `knowledge.md` is a cross-topic review summary. Update the sidebar when published routes change; do not maintain a second hand-written route list.
+Directory page counts above exclude each directory's `index.md`; the sidebar built from `i18n-map.mjs` is the authoritative site navigation. `index.md` pages provide topic overviews, while `knowledge.md` is a cross-topic review summary. Update the sidebar when published routes change; do not maintain a second hand-written route list.
 
 ## Writing rules
 
 - One or two core ideas per page, 80–200 lines, body text in Chinese.
 - Commands and SQL examples are **reproducible**: full DDL for tables, queries you can paste and run; version differences are called out explicitly (e.g. “since PG 16”).
 - Heading structure: a single H1 per page, `##` / `###` inside; same shape as the sister site hello-mysql.
-- Every page ends with two blocks: `## 相关页面` (in-site relative links without the `.md` suffix, slugs from `sidebar.json`) and one official-docs link line.
+- Every page ends with two blocks: `## 相关页面` (in-site relative links without the `.md` suffix, slugs from the `i18n-map.mjs` page list) and one official-docs link line.
 - Fact checking: verify uncertain syntax/parameters/version details against the [official docs](https://www.postgresql.org/docs/current/) before writing them down.
 
 ## Deploy
